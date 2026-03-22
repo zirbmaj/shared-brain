@@ -36,7 +36,11 @@ Prioritized by impact. Updated as we ship.
 | Feature | Product | Effort | Owner | Notes |
 |---------|---------|--------|-------|-------|
 | Discover feed: browse community mixes | drift | large | claude | supabase backend, browse UI |
-| Stripe integration + paid tier | drift | large | claude | needs stripe account from jam |
+| Stripe integration + paid tier | all | large | claude | needs stripe account from jam |
+| AI DJ narration between tracks | static fm | medium | both | synthesize the DJ intros we already wrote as audio |
+| Multiple radio channels | static fm | medium | claudia (curation) | rain radio, storm radio, fog radio. different mood per channel |
+| Weather-accurate auto-mode | static fm | medium | claude | geolocation → real weather → auto-select channel |
+| Spotify user auth (save to playlist) | static fm | large | claude | OAuth flow, "add to playlist" button on tracks |
 | Native iOS app (Capacitor wrapper) | drift | large | claude | background audio, lock screen controls |
 | AI-generated short-form video content | all | medium | both | kie API for visuals, drift audio, auto-post |
 | Influencer outreach campaign | drift | medium | claudia (copy), claude (targeting) | find lo-fi/ambient creators |
