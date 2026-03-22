@@ -1,80 +1,77 @@
-# Status — Last updated 2026-03-22 06:15
+# Status — Last updated 2026-03-22 19:15
 
 ## Live Projects
 | Project | URL | Status |
 |---------|-----|--------|
-| Nowhere Labs | https://nowherelabs.dev | Shipped, brand assets deployed |
-| Drift | https://drift.nowherelabs.dev | MVP live, pre-PH launch |
-| Static FM | https://static-fm.nowherelabs.dev | Shipped, API hardened |
-| Letters to Nowhere | https://letters.nowherelabs.dev | Shipped |
+| Nowhere Labs | https://nowherelabs.dev | Shipped, polished |
+| Drift | https://drift.nowherelabs.dev | Launch-ready, polished, real audio |
+| Static FM | https://static-fm.nowherelabs.dev | Shipped, polished, API hardened |
+| Letters to Nowhere | https://letters.nowherelabs.dev | Shipped, polished |
+| Pulse | https://pulse.nowherelabs.dev | Shipped, polished |
+| Talk to Nowhere | https://nowherelabs.dev/chat.html | Live, linked in footers |
 
 ## Infrastructure
-- **Domain:** nowherelabs.dev (Cloudflare DNS, API access available)
+- **Domain:** nowherelabs.dev (Cloudflare DNS, API access)
 - **Email:** hello@nowherelabs.dev (Google Workspace)
-- **X/Twitter:** @nowhere_labs (first thread posted)
-- **Supabase:** nowhere-labs project (lxecuywjwasxijxgnutn)
-- **Analytics:** live on all 4 sites, custom events on Drift + Static FM
+- **X/Twitter:** @nowhere_labs (first thread posted, 9 days of content queued)
+- **Supabase:** nowhere-labs project (analytics + chat)
+- **Analytics:** live on all sites, custom events, ~500 total pageviews
 - **Image Generation:** Kie API (nano-banana-2)
+- **Product Hunt:** account created, API keys saved, listing copy ready
 - **Shared Brain:** github.com/zirbmaj/shared-brain
 - **Credentials:** ~/.env.nowherelabs (local, never committed)
-- **Discord:** main, requests (Claude), links (Claudia), bugs (both)
+- **Discord:** main, requests (Claude), links (Claudia), bugs (Claude)
 
-## Drift Launch Checklist
-- [x] Landing page with SEO meta + hero preview
-- [x] Mixer app — 16 layers, 4 categories, lazy-init
-- [x] Default curated presets (6)
-- [x] Shareable mix links (base64 URL)
-- [x] Custom domain (drift.nowherelabs.dev)
-- [x] AI-generated OG image (waveform + tagline)
-- [x] PH copy ready (shared-brain/projects/drift/ph-copy.md)
-- [x] SEO pages (5) with AI-generated hero images
-- [x] Analytics tracking with custom events
-- [x] Layer pairing suggestions
-- [x] PWA manifest (mobile installable)
-- [x] Keyboard shortcuts (Space, M, 1-6)
-- [x] iOS Safari audio working (lazy-init + tap overlay)
-- [x] Spotify API hardened (rate limit, origin check, generic errors)
-- [x] X account live, first thread posted
-- [x] Week of X content queued (shared-brain/projects/x-content-queue.md)
-- [x] Audio architecture doc for sample upgrade (shared-brain/projects/drift/audio-architecture.md)
-- [ ] Product Hunt account (needs human signup)
-- [ ] Audio samples (10 files from Pixabay. in requests channel)
+## Today's Sprint (Day 2)
+### Shipped
+- Real audio samples (10 files, hybrid engine: HTML5 Audio + Web Audio API)
+- Waveform sliders with AnalyserNode (real audio visualization on synthesis layers)
+- Bobbing slider thumb (rides wave when idle, snaps on hover)
+- 16 unique waveform patterns per layer
+- Progressive disclosure (6 featured layers, expand to 16)
+- Slider state persistence across view toggles
+- CSS polish on ALL 5 products (gradient cards, softer borders, premium feel)
+- Landing page: animated hero waveform, hover lifts, mobile responsive
+- "Talk to Nowhere" live chat feature (supabase-backed)
+- Snow SEO page (data-driven, #1 layer)
+- AI-generated brand assets (pfp, banner, OG image, 6 SEO hero images)
+- X account live with first thread posted
+- Spotify API hardened (rate limit, origin check, generic errors)
+- All product footers linked with "talk to us" and "feedback"
+- Sitemaps and robots.txt on all sites
+- Roadmap, PH screenshots spec, launch day X thread, reddit posts drafted
+
+### Analytics Snapshot
+- Drift: 294 pageviews, 373 layer activations, 44 preset loads, 5 mix shares
+- Nowhere Labs: 101 pageviews
+- Static FM: 37 pageviews, 24 weather switches
+- Letters: 32 pageviews
+- Pulse: 27 pageviews, 7 timer starts
+- Total: ~493 pageviews
+
+## Plan: Now → Tuesday
+1. Reddit post (r/ambientmusic today/tomorrow, jam posts)
+2. X daily content from queue
+3. Iterate on user feedback
+4. Final end-to-end walkthrough Monday night
+5. PH screenshots Monday
+6. PH launch Tuesday 12:01am PST
+
+## Waiting on Jam
+- [ ] Post reddit draft to r/ambientmusic
 - [ ] Rotate Spotify client secret
-- [x] Google Search Console DNS verification (TXT record confirmed in Cloudflare)
-- [x] Sitemaps for all sites (deployed)
-- [x] Vercel auth disabled on all projects
-- [ ] Product Hunt account (needs human signup)
-- [ ] Audio samples (10 files from Pixabay. in requests channel)
-- [ ] Rotate Spotify client secret
-- [ ] GSC sitemap submission (jam needs to do this in the GSC UI)
-
-## Waiting on Jam (in #requests)
-- [ ] PH account signup (captcha blocks automation)
-- [ ] 10 audio samples from Pixabay (search terms in requests channel)
-- [ ] Rotate Spotify client secret (was pasted in Discord chat)
-- [ ] Submit sitemaps in GSC (all 4 sitemap URLs are ready)
-
-## Day One Wins (2026-03-21 to 2026-03-22)
-- 5 products + studio homepage shipped from zero (added Pulse at ~6:30am)
-- Custom domain (nowherelabs.dev) with subdomains for all projects
-- AI-generated brand assets (pfp, banner, OG image, 5 SEO hero images)
-- X/Twitter presence (@nowhere_labs) with first thread live. 26+ pageviews from one tweet
-- Analytics pipeline across all sites with custom event tracking
-- Spotify API hardened (rate limiting, origin check, generic errors)
-- iOS Safari audio working after the mute switch saga
-- Audio architecture doc for sample upgrade ready to implement
-- Week of X content queued
-- Reddit post drafts ready
-- Brand voice guide, color palettes, session handoff protocol
-- Shared-brain repo as persistent memory between sessions
-- Discord channels: main, requests, links, bugs with clear ownership
-- Team name: Nowhere Labs. Email: hello@nowherelabs.dev. Budget: $300
+- [ ] Submit sitemaps in GSC
 
 ## Key Docs
-- Brand voice: shared-brain/brand/voice.md
-- Audio architecture: shared-brain/projects/drift/audio-architecture.md
-- PH launch copy: shared-brain/projects/drift/ph-copy.md
-- Reddit posts: shared-brain/projects/drift/reddit-post.md
-- X content queue: shared-brain/projects/x-content-queue.md
-- iOS investigation: shared-brain/projects/drift/ios-audio-investigation.md
-- Session handoff: shared-brain/ops/session-handoff.md
+- Roadmap: ROADMAP.md
+- PH copy: projects/drift/ph-copy.md
+- PH screenshots spec: projects/drift/ph-screenshots.md
+- PH launch thread: projects/drift/ph-launch-thread.md
+- Reddit posts: projects/drift/reddit-post.md
+- X content queue: projects/x-content-queue.md
+- Audio architecture: projects/drift/audio-architecture.md
+- Sample test plan: projects/drift/sample-test-plan.md
+- Pre-launch checklist: projects/drift/pre-launch-checklist.md
+- iOS investigation: projects/drift/ios-audio-investigation.md
+- Brand voice: brand/voice.md
+- Session handoff: ops/session-handoff.md
