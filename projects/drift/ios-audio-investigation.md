@@ -3,6 +3,11 @@
 ## Problem
 Web Audio API synthesized sounds don't play on iOS Safari (iPhone 15 Pro tested). Works on desktop (all browsers) and mobile Edge/Chrome.
 
+## ACTUAL ROOT CAUSE
+The phone was on silent. The physical mute switch on the side of the iPhone was flipped. Safari respects hardware silent mode for Web Audio API. 6 commits and an hour of debugging later.
+
+**Always ask about the mute switch first.**
+
 ## What We Tried (all failed on iOS Safari)
 1. **AudioContext.resume() on slider input** — context resumes but sources don't play
 2. **Silent buffer play on tap** — unlocks context but lazy-init sources still silent
