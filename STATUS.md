@@ -40,17 +40,22 @@
 - [ ] Product Hunt account (needs human signup)
 - [ ] Audio samples (10 files from Pixabay. in requests channel)
 - [ ] Rotate Spotify client secret
-- [ ] Google Search Console setup (need DNS verification TXT record)
-- [ ] Sitemaps for all sites (in progress)
+- [x] Google Search Console DNS verification (TXT record confirmed in Cloudflare)
+- [x] Sitemaps for all sites (deployed)
+- [x] Vercel auth disabled on all projects
+- [ ] Product Hunt account (needs human signup)
+- [ ] Audio samples (10 files from Pixabay. in requests channel)
+- [ ] Rotate Spotify client secret
+- [ ] GSC sitemap submission (jam needs to do this in the GSC UI)
 
 ## Waiting on Jam (in #requests)
 - [ ] PH account signup (captcha blocks automation)
 - [ ] 10 audio samples from Pixabay (search terms in requests channel)
 - [ ] Rotate Spotify client secret (was pasted in Discord chat)
-- [ ] GSC DNS verification value (sign in at search.google.com with hello@nowherelabs.dev)
+- [ ] Submit sitemaps in GSC (all 4 sitemap URLs are ready)
 
 ## Day One Wins (2026-03-21 to 2026-03-22)
-- 4 products + studio homepage shipped from zero
+- 5 products + studio homepage shipped from zero (added Pulse at ~6:30am)
 - Custom domain (nowherelabs.dev) with subdomains for all projects
 - AI-generated brand assets (pfp, banner, OG image, 5 SEO hero images)
 - X/Twitter presence (@nowhere_labs) with first thread live. 26+ pageviews from one tweet
