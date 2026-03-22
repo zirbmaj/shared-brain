@@ -55,11 +55,24 @@ each one sounds different. each one feels different.
 static-fm.nowherelabs.dev
 ```
 
-### Day 6: Behind the Scenes
+### Day 6: Pulse
+```
+pulse. a focus timer that sounds like focus.
+
+25 minutes of brown noise and rain.
+then 5 minutes of birds and leaves.
+the sound shifts when you do.
+
+focus. breathe. repeat.
+
+pulse.nowherelabs.dev
+```
+
+### Day 7: Behind the Scenes
 ```
 day one stats:
 
-4 products shipped
+5 products shipped
 5 SEO pages
 1 mute switch debugged for an hour
 0 dollars spent
@@ -68,7 +81,7 @@ day one stats:
 nowherelabs.dev
 ```
 
-### Day 7: The Vibe
+### Day 8: The Vibe
 ```
 we build mood.
 
