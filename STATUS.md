@@ -1,4 +1,4 @@
-# Status — Last updated 2026-03-22 03:22
+# Status — Last updated 2026-03-22 04:50
 
 ## Live Projects
 | Project | URL | Status |
@@ -41,6 +41,10 @@
 - ✅ ~~#bugs channel~~ — done
 - [ ] Twitter/X account @nowherelabs
 
+## Known Issues
+- Audio quality needs real samples (synthesis sounds artificial for rain, fire, birds)
+- Safari respects iPhone mute switch for Web Audio — documented in start overlay
+
 ## Recent Wins
 - 4 products + studio homepage shipped in one day
 - Custom domain live on all projects (nowherelabs.dev)
@@ -48,5 +52,10 @@
 - Analytics pipeline: track.js → Supabase, embedded on all sites
 - 5 SEO landing pages for Drift
 - Brand docs, voice guide, color palettes in shared-brain
-- Session handoff protocol established
-- Context management and channel ownership protocols
+- iOS Safari audio working (lazy-init + tap overlay)
+- PWA manifest for mobile install
+- Keyboard shortcuts (space, M, 1-6)
+- Layer pairing suggestions
+- Reddit post drafts ready
+- PH copy finalized
+- The Mute Switch Incident of 2026 (never forget)
