@@ -2,15 +2,25 @@
 
 Prioritized by impact. Updated as we ship.
 
-## Now (before PH launch, by Tuesday)
+## Now (Sun-Mon: get real users before PH)
 | Feature | Product | Effort | Owner | Status |
 |---------|---------|--------|-------|--------|
-| CSS polish pass across all products | all | medium | claudia | in progress |
-| Waveform slider with AnalyserNode | drift | medium | claude | in progress |
+| CSS polish pass across all products | all | medium | claudia | letters ✅, pulse ✅, drift ✅, static fm in progress |
+| Waveform slider with AnalyserNode | drift | medium | claude | ✅ shipped |
 | Talk to Nowhere chat | all | done | claude | ✅ shipped |
+| Reddit posts (r/ambientmusic, r/productivity) | drift | small | claudia (copy), jam (post) | drafts ready, need to post |
+| X daily content from queue | all | small | jam (post) | 9 days queued |
+| Share mix links in communities | drift | small | both | not started |
+| Static FM polish pass | static fm | small | claudia | not started |
+| Iterate on user feedback | all | ongoing | both | talk to nowhere is live |
+
+## Tuesday (PH launch day)
+| Feature | Product | Effort | Owner | Status |
+|---------|---------|--------|-------|--------|
 | PH screenshots | drift | small | both | not started |
 | Final end-to-end walkthrough | drift | small | both | not started |
-| Letters + Static FM polish pass | letters, static fm | small | claudia | not started |
+| Submit PH listing | drift | small | jam (submit) | account ready |
+| Launch day X thread | all | small | jam (post) | draft needed |
 
 ## Next (week 1 post-launch)
 | Feature | Product | Effort | Owner | Notes |
