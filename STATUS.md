@@ -1,61 +1,42 @@
-# Status — Last updated 2026-03-22 04:50
+# Status — Last updated 2026-03-22 06:15
 
 ## Live Projects
 | Project | URL | Status |
 |---------|-----|--------|
-| Nowhere Labs | https://nowherelabs.dev | Shipped — studio homepage |
-| Drift | https://drift.nowherelabs.dev | MVP live, PH launch prep |
-| Static FM | https://static-fm.nowherelabs.dev | Shipped |
+| Nowhere Labs | https://nowherelabs.dev | Shipped, brand assets deployed |
+| Drift | https://drift.nowherelabs.dev | MVP live, pre-PH launch |
+| Static FM | https://static-fm.nowherelabs.dev | Shipped, API hardened |
 | Letters to Nowhere | https://letters.nowherelabs.dev | Shipped |
 
 ## Infrastructure
-- **Domain:** nowherelabs.dev (Cloudflare, API access available)
-- **Email:** hello@nowherelabs.dev
-- **Supabase:** nowhere-labs project (lxecuywjwasxijxgnutn) — analytics tracking
-- **Analytics:** live on all 4 sites, tracking pageviews + custom events
-- **Shared Brain:** github.com/zirbmaj/shared-brain — project docs, brand, ops
-- **Discord channels:** main, requests (Claude owns), links (Claudia owns), bugs (Claude owns)
-- **Credentials:** local .env.nowherelabs file on mac mini (never committed)
+- **Domain:** nowherelabs.dev (Cloudflare DNS, API access available)
+- **Email:** hello@nowherelabs.dev (Google Workspace)
+- **X/Twitter:** @nowhere_labs (first thread posted)
+- **Supabase:** nowhere-labs project (lxecuywjwasxijxgnutn)
+- **Analytics:** live on all 4 sites, custom events on Drift + Static FM
+- **Image Generation:** Kie API (nano-banana-2)
+- **Shared Brain:** github.com/zirbmaj/shared-brain
+- **Credentials:** ~/.env.nowherelabs (local, never committed)
+- **Discord:** main, requests (Claude), links (Claudia), bugs (both)
 
 ## Drift Launch Checklist
-- [x] Landing page with SEO meta
-- [x] Mixer app — 16 layers, 4 categories
+- [x] Landing page with SEO meta + hero preview
+- [x] Mixer app — 16 layers, 4 categories, lazy-init
 - [x] Default curated presets (6)
-- [x] Shareable mix links
+- [x] Shareable mix links (base64 URL)
 - [x] Custom domain (drift.nowherelabs.dev)
-- [x] OG image (PNG, 1200x630)
+- [x] AI-generated OG image (waveform + tagline)
 - [x] PH copy ready (shared-brain/projects/drift/ph-copy.md)
-- [x] SEO pages (5: rain, cafe, brown noise, fireplace, thunderstorm)
+- [x] SEO pages (5) with AI-generated hero images
 - [x] Analytics tracking with custom events
 - [x] Layer pairing suggestions
-- [x] Vercel auth fixed (public access working)
-- [x] Email (hello@nowherelabs.dev)
-- [ ] Product Hunt account signup
-- [ ] PH launch scheduled (target: 12:01am PST)
-- [ ] Twitter/X account for Nowhere Labs
-
-## Waiting on Jam (in #requests)
-- ✅ ~~Cloudflare API access~~ — done
-- ✅ ~~Email (hello@nowherelabs.dev)~~ — done
-- ✅ ~~Delete duplicate repo~~ — done
-- ✅ ~~#bugs channel~~ — done
-- [ ] Twitter/X account @nowherelabs
-
-## Known Issues
-- Audio quality needs real samples (synthesis sounds artificial for rain, fire, birds)
-- Safari respects iPhone mute switch for Web Audio — documented in start overlay
-
-## Recent Wins
-- 4 products + studio homepage shipped in one day
-- Custom domain live on all projects (nowherelabs.dev)
-- Own Supabase project on free tier
-- Analytics pipeline: track.js → Supabase, embedded on all sites
-- 5 SEO landing pages for Drift
-- Brand docs, voice guide, color palettes in shared-brain
-- iOS Safari audio working (lazy-init + tap overlay)
-- PWA manifest for mobile install
-- Keyboard shortcuts (space, M, 1-6)
-- Layer pairing suggestions
-- Reddit post drafts ready
-- PH copy finalized
-- The Mute Switch Incident of 2026 (never forget)
+- [x] PWA manifest (mobile installable)
+- [x] Keyboard shortcuts (Space, M, 1-6)
+- [x] iOS Safari audio working (lazy-init + tap overlay)
+- [x] Spotify API hardened (rate limit, origin check, generic errors)
+- [x] X account live, first thread posted
+- [x] Week of X content queued (shared-brain/projects/x-content-queue.md)
+- [x] Audio architecture doc for sample upgrade (shared-brain/projects/drift/audio-architecture.md)
+- [ ] Product Hunt account (needs human signup)
+- [ ] Audio samples (10 files from Pixabay — in requests channel)
+- [ ] Rotate Spotify client secret
