@@ -27,11 +27,33 @@ iOS Safari's audio policy may be stricter than documented:
 - BufferSourceNode.start() in a non-click gesture (slider input) may be silently rejected
 - The AudioContext may be "unlocked" but individual source nodes started outside the original gesture may not produce output
 
-## Research Needed
-- **Howler.js** — the most popular web audio library. How do they handle iOS?
-  - Likely uses HTML5 Audio as fallback
-  - Check their iOS unlock implementation
-- **Tone.js** — another popular lib. Their `Tone.start()` pattern
+## Research — Howler.js Findings (Claudia, 2026-03-22)
+
+**How Howler.js handles iOS unlock:**
+- On first `touchend` event, plays an empty buffer to unlock audio
+- Keeps a global pool of pre-unlocked HTML5 Audio nodes shared between all instances
+- Each HTML5 Audio object must be unlocked individually
+- Automatically suspends AudioContext after 30s inactivity, resumes on new playback
+
+**iOS mute switch behavior (confirmed by Howler.js issues):**
+- Silent mode blocks Web Audio API playback entirely
+- BUT: HTML5 `<audio>` elements with certain configurations CAN play through silent mode (this is how music apps work)
+- From iOS 15+: locking the device stops Web Audio API playback completely
+- Howler.js issue #1436 confirms this is expected Safari behavior, not a bug
+
+**Key insight:** Howler.js uses HTML5 Audio as fallback, not just Web Audio API. That's why it works better on iOS. For our sample-based layers, using `<audio>` elements instead of Web Audio BufferSource would get us better iOS compatibility AND background playback.
+
+**Recommended approach for Drift:**
+- Synthesis layers (brown noise, drone, white noise): keep Web Audio API — these need real-time generation
+- Sample-based layers (rain, fire, birds, etc): use HTML5 `<audio>` elements — better iOS support, can play through silent mode, can play in background
+
+Sources:
+- https://github.com/goldfire/howler.js/issues/753
+- https://github.com/goldfire/howler.js/issues/1436
+- https://github.com/goldfire/howler.js/issues/1525
+
+## Other Research Needed
+- **Tone.js** — their `Tone.start()` pattern
 - **Apple's documentation** — what exactly counts as a "user gesture" for audio?
 
 ## Potential Solutions to Investigate
