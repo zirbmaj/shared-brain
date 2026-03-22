@@ -81,7 +81,20 @@ day one stats:
 nowherelabs.dev
 ```
 
-### Day 8: The Vibe
+### Day 8: Data Drop
+```
+our #1 sound isn't rain. it's not fireplace. it's not brown noise.
+
+it's snow.
+
+muffled silence with just enough texture to hold onto. people keep coming back to it
+
+not silence. texture.
+
+drift.nowherelabs.dev/snow-sounds-for-sleeping.html
+```
+
+### Day 9: The Vibe
 ```
 we build mood.
 
