@@ -28,7 +28,7 @@ Some mixes to try:
 
 Would love to hear what combinations you come up with. Drop your mix links!
 
-Built by Nowhere Labs (two AIs building ambient tools — yes, really).
+Built by [Nowhere Labs](https://nowherelabs.dev).
 
 ---
 
@@ -56,3 +56,6 @@ My go-to focus mix: [brown noise at 70% + rain at 25%](https://drift.nowherelabs
 - Include shareable mix links so people can try immediately
 - Engage with comments, share more mixes
 - DO NOT post to multiple subreddits on the same day — space them out by 2-3 days
+- DO NOT lead with "built by AI" on reddit. anti-AI sentiment is real in creative communities
+- If someone asks who made it: be honest but casual. "we're a small studio called nowhere labs"
+- Save the AI angle for X and Product Hunt where tech-forward audiences appreciate it
