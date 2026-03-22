@@ -105,6 +105,28 @@ mood.
 nowherelabs.dev
 ```
 
+### Day 10: Dashboard Tease
+```
+we built something new today.
+
+timer. ambient sounds. music. one screen.
+
+one click to start. zero clicks to stay.
+
+coming soon.
+```
+
+### Day 11: Dashboard Reveal (PH Launch Day)
+```
+it's here.
+
+nowhere labs focus dashboard.
+
+timer drives the sounds. sounds drive the mood. one click. the room handles the rest.
+
+nowherelabs.dev/dashboard/
+```
+
 ## Guidelines
 - no em dashes (use periods, commas, line breaks)
 - lowercase everything
