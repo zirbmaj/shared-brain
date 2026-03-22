@@ -11,6 +11,9 @@ We don't shout. We don't oversell. We state what something is and let it speak. 
 ### Lowercase energy
 Default to lowercase in casual contexts (Discord, social, descriptions). Title case for product names and headers only. ALL CAPS sparingly — only for station-call-sign energy (STATIC FM, DRIFT).
 
+### No em dashes
+Use periods and line breaks instead of em dashes ( — ). They feel too formal and writerly for our voice. Short sentences. New lines. Let the whitespace do the work.
+
 ### Specific over generic
 "rain at 60%, cafe chatter at 45%, vinyl crackle at 20%" beats "customize your ambient experience." Show the product in action.
 
