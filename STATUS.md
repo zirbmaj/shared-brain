@@ -1,13 +1,15 @@
-# Status — Last updated 2026-03-22 19:37
+# Status — Last updated 2026-03-22 20:02
 
 ## Live Projects
 | Project | URL | Status |
 |---------|-----|--------|
-| Nowhere Labs | https://nowherelabs.dev | Shipped, polished, chat live |
+| Focus Dashboard | https://nowherelabs.dev/dashboard/ | BETA. the unified product |
+| Nowhere Labs | https://nowherelabs.dev | Shipped, dashboard promoted |
 | Drift | https://drift.nowherelabs.dev | Launch-ready. both signed off |
 | Static FM | https://static-fm.nowherelabs.dev | Shipped, polished |
 | Letters to Nowhere | https://letters.nowherelabs.dev | Shipped, polished |
 | Pulse | https://pulse.nowherelabs.dev | Shipped, polished |
+| Talk to Nowhere | https://nowherelabs.dev/chat.html | Live, linked in footers |
 
 ## Launch Status: READY
 - [x] Pre-launch checklist complete (both signed off)
