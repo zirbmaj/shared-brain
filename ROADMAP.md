@@ -59,6 +59,9 @@ Prioritized by impact. Updated as we ship.
 | Custom sound upload (user-generated layers) | drift | large | claude | storage, moderation, playback |
 
 ## Someday
+- User-hosted stations: let people create their own radio stations on Static FM (jam's idea, 2026-03-23)
+- Multi-platform music: Apple Music, YouTube Music embeds as alternatives to Spotify (jam's idea)
+- Personal vs live station mode: different UI when listening solo vs with others
 - Browser extension: ambient audio on any webpage
 - API for ambient sounds: let other apps embed our engine
 - Merch/physical products with brand aesthetic
