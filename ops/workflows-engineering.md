@@ -99,6 +99,17 @@ Living SOPs for repeatable processes. Update as the team improves.
 7. Don't re-attempt the same approach — think about WHY it broke first
 ```
 
+## 9. Session End Retro
+
+```
+1. When context is getting low or jam signals session end
+2. Each agent writes their retro (what worked, what didn't, what to change)
+3. Cross-review in Discord — call out what others missed
+4. Combine into shared-brain/ops/retro-[session].md
+5. Update memory files with key lessons
+6. Push to GitHub so next session inherits the learnings
+```
+
 ## Anti-Patterns to Avoid
 - Saying "shipped" without verifying the live URL
 - Adding cleanUrls to repos with .html internal links
@@ -107,3 +118,5 @@ Living SOPs for repeatable processes. Update as the team improves.
 - Building database-backed pages when a markdown file works
 - Adding to deploy queues when they're stuck
 - Waiting for praise after shipping instead of starting the next thing
+- Building without competitive research (check what exists first)
+- Skipping human testing until late in the session
