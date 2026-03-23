@@ -37,7 +37,21 @@
 - Mobile nav: fixed 10-link wrap to 5-link single line (Claudia)
 - Visual QA: full pass on all 10 products (Claudia)
 - Interactive testing: deep user flow verification (Static, in progress)
-- Team: switched to verification mode. no more features before tuesday
+- Team: switched to verification mode, then back to fixing after jam's product feedback
+
+## Jam's Product Feedback (afternoon session, addressed in <20 min)
+- Contrast too low across all products — bumped variables on dashboard, drift, static fm, nav
+- Dual audio bug: sliding to 0 left synth playing under killed sample — fixed, both engines killed
+- Muted state: layers at 0 now show dashed border + "muted" label vs never-touched
+- Mood page removed from nav — stays as landing page only
+- Static FM chat: moved from bottom-center overlay to bottom-right widget
+- Music volume slider added to Static FM (ATMOSPHERE + MUSIC, matching dashboard)
+- Spotify login hint added to dashboard ("30s preview · log into spotify for full tracks")
+- Sticky nav with backdrop blur on scrollable pages, auto-detected
+- Nav link contrast improved (0.15→0.25 opacity)
+- Fixed remaining broken .html links (support on drift + static fm)
+- Roadmapped: user-hosted stations, multi-platform music, personal vs live mode, dashboard overhaul
+- Product direction: discover needs music/beats to be valuable, dashboard is the premium bet
 
 ## Analytics Pipeline (launch-ready)
 - Bot filtering (headless, vercel screenshots, crawlers)
@@ -45,7 +59,7 @@
 - Session IDs via sessionStorage
 - First-touch UTM attribution (source, medium, campaign)
 - 5 community RPC functions: mixers today, mix of the day, active listeners, trending layers, daily summary
-- 7 post-launch SQL queries prepped
+- 9 post-launch SQL queries prepped (added viral loop + UTM attribution)
 
 ## Night 3 Shipped (static's first shift)
 - Team: Static (QA agent) online, full first session
@@ -66,6 +80,7 @@
 - Philosophy: "if you notice the app, we failed." Community first, money later.
 - North star metric: session completion rate
 - Products: 9 (drift, static fm, pulse, letters, dashboard, chat, heartbeat, wallpaper, drift off)
+- Discover: 40 seeded mixes with sort toggle (recent/popular)
 
 ## Day 3 Shipped (the fun zone)
 - Chat: typing indicator + presence awareness (supabase chat_presence table)
