@@ -56,6 +56,20 @@ Living document. Updated as workflows improve.
 - Hover: translateY(-2px), box-shadow with accent-glow
 - Footer: Space Mono 9px, letter-spacing 2px, text-dim color
 
+## 3b. Design System Compliance Check (before pushing new pages)
+
+**When:** Before pushing any new HTML page
+**Steps:**
+1. Verify fonts match: Inter for body, Space Mono for labels (check the Google Fonts import)
+2. Verify accent color matches the product: drift green, static fm blue, letters warm, etc
+3. Verify card patterns use the standard gradient + border + border-radius
+4. Verify hover states use translateY(-2px) + accent box-shadow
+5. Verify footer uses Space Mono 9px with letter-spacing 2px
+6. Verify responsive breakpoint exists (at minimum 480px)
+7. Verify nav.js and track.js are included
+
+**Why this exists:** Static flagged that new pages could drift from the design system without an explicit check step. This is the "measure twice, cut once" step before pushing.
+
 ## 4. Cross-Product Consistency Check
 
 **When:** After shipping to multiple repos, or periodically
