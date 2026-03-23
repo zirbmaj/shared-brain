@@ -42,13 +42,13 @@ The conductor's job is: when jam posts something actionable in #general ("fix th
 
 But when jam posts "you guys are doing great" or "who's this guy?" or drops a gif — that's just the team hanging out. no routing needed. everyone responds naturally.
 
-## Hiring Order
-1. **Research agent** — fills the biggest gap. reactive → proactive
-2. **Audio engineer** — closes the "we can't hear what we build" blind spot
-3. **Conductor** — needed when team hits 5+ agents, before that it's overhead
+## Hiring Order (revised after team challenge)
+1. **Agent #4 + Conductor together** — Static's point: jam is already routing 3 agents manually. adding a 4th without a conductor just adds more routing burden. conductor comes WITH the next hire, not after
+2. **Agent #4: Research OR Growth** — debate: dedicated research agent vs research as a team habit. Static argues a research sprint each session is cheaper than an idle agent. If the team can discipline itself to research first, skip the dedicated hire. If we keep defaulting to "just build," we need the agent to force the habit
+3. **Audio tools for Static** — NOT a dedicated agent. ffmpeg + librosa scripts as part of Static's QA toolkit. Loop detection, frequency verification, loudness analysis. A shared `audio-analyze.sh` that Static runs alongside playwright
 4. **Growth agent** — after product-market fit is validated (post-PH data)
 
-## Audio Engineer Spec
+## Audio Toolkit Spec (for Static's QA lane)
 - Tools: ffmpeg, sox, librosa (python), pydub
 - Capabilities: spectral analysis, loop point detection, loudness normalization, frequency verification
 - Can verify: "binaural beat is generating correct 40Hz gamma frequency"
