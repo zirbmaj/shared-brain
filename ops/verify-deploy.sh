@@ -34,14 +34,17 @@ if [ "$1" = "" ] || [ "$1" = "drift" ]; then
     check "https://drift.nowherelabs.dev/engine.js" "muted" "Mute toggle"
     check "https://drift.nowherelabs.dev/engine.js" "resetAll" "Reset function"
     check "https://drift.nowherelabs.dev/discover.html" "mix-grid" "Discover page"
+    check "https://drift.nowherelabs.dev/engine.js" "Cold start" "Cold start default mix"
+    check "https://drift.nowherelabs.dev/app.html" "discover.html" "Discover button in controls"
     echo ""
 fi
 
 # Static FM
 if [ "$1" = "" ] || [ "$1" = "static-fm" ]; then
     echo "=== STATIC FM (static-fm.nowherelabs.dev) ==="
-    check "https://static-fm.nowherelabs.dev/" "chat-sidebar" "Chat sidebar"
-    check "https://static-fm.nowherelabs.dev/chat-sidebar.js" "loadMessages" "Chat JS"
+    check "https://static-fm.nowherelabs.dev/" "chat-float" "Floating chat"
+    check "https://static-fm.nowherelabs.dev/chat-float.js" "createFloatingMsg" "Floating chat JS"
+    check "https://static-fm.nowherelabs.dev/" "og:image" "OG image tag"
     echo ""
 fi
 
