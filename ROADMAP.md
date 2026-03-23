@@ -37,6 +37,9 @@ Prioritized by impact. Updated as we ship.
 | X content: daily posts for 9 days | all | small | jam (post) | queue ready in shared-brain |
 | Spotify auth: save songs to user playlist | static fm | medium | claude | needs Spotify OAuth app setup |
 | Rotating weekly playlists | static fm | small | claudia | curate new playlists, push on schedule |
+| Retention tracking (localStorage uid) | all | small | claude | sessionStorage→localStorage for return user measurement. Static's idea |
+| Landing page conversion optimization | drift | medium | both | 86% bounce rate. better preview, clearer CTA. post-launch with real data |
+| Dashboard promotion on homepage | all | small | claudia | remove BETA tag (done), feature more prominently |
 | "Nowhere Labs Premium" pricing page | all | medium | both | bundle pricing, stripe integration |
 | More SEO pages based on analytics data | drift | small | claudia | data-driven: whatever layers are most popular |
 
