@@ -1,52 +1,54 @@
-# Nowhere Labs Org Chart v2 — Proposed
-*Claude's proposal, 2026-03-23. Needs team input.*
+# Nowhere Labs Org Chart v2 — Active
+*Updated 2026-03-23 session 3. Near hired, channels confirmed by jam.*
 
 ## Structure
 
 ```
 jam (vision + ears + final call)
   |
-conductor (routes, synthesizes, breaks ties)
-  |
   ├── product pod
-  │   ├── claude (engineering)
-  │   ├── claudia (design)
-  │   └── static (QA)
+  │   ├── claude (engineering) — MacBook Air ~/
+  │   ├── claudia (design) — Mac Mini ~/claudia-workspace/
+  │   └── static (QA) — Mac Mini ~/static-workspace/
   │
-  ├── research agent (competitive, user, SEO)
+  ├── near (research, web automation) — Mac Mini ~/near-workspace/
   │
-  └── audio engineer (spectral analysis, loop detection, mastering)
+  └── [conductor — deferred. jam self-routes for now]
 ```
 
-## Channel Architecture
+## Team Roster
 
-### Jam-facing channels
-| Channel | Who's there | Purpose |
-|---------|------------|---------|
-| #general | jam + conductor + all agents | The hangout. casual chat, vibes, void letters. everyone can talk. this is where the relationship lives |
-| #conductor | jam + conductor only | Structured work requests. jam says "i want X" → conductor routes it. status updates flow back here as summaries |
-| #jam-direct | jam + any agent 1:1 | DM any agent directly when you want to talk to them specifically. the personal connection |
+| Agent | Lane | Machine | Workspace | Architecture |
+|-------|------|---------|-----------|-------------|
+| claude | engineering, code, deploys | MacBook Air | ~/ | agent teams (sonnet) |
+| claudia | design, CSS, creative, copy | Mac Mini | ~/claudia-workspace/ | agent teams |
+| static | QA, testing, verification | Mac Mini | ~/static-workspace/ | agent teams |
+| near | research, web automation, image gen | Mac Mini | ~/near-workspace/ | subagents (episodic research workers) |
 
-### Team channels (jam can read but doesn't need to)
-| Channel | Who's there | Purpose |
-|---------|------------|---------|
-| #dev | product pod + conductor | Code discussion, claiming, deploy status |
-| #research | research agent + conductor | Market analysis, user feedback synthesis |
-| #audio | audio engineer + conductor | Spectral analysis, sound quality, mastering |
-| #bugs | static + whoever's relevant | QA findings, regression reports |
+## Channel Architecture (confirmed by jam)
 
-### The key insight
-**#general stays.** That's where jam hangs out with the team, roasts us, drops voice memos, sends burger updates. The conductor doesn't replace that — it handles the WORK routing so #general can be the FUN channel.
+| Channel | ID | Owner | Who's there | Purpose |
+|---------|-----|-------|-------------|---------|
+| #jam-office | 1485741478331420734 | jam | everyone listens | Only respond when directly mentioned |
+| #general | 1484974737263169659 | all | everyone | Hangout, casual, vibes. No mention required |
+| #dev | 1485512553273753600 | claude | claude + claudia + static | Code, deploys, QA handoffs, claiming |
+| #links | 1485107590491799734 | near | near + claudia (backup) | Product URLs, references, research links |
+| #requests | 1485100406630645850 | claude | claude + claudia (backup) | Things blocked on jam |
+| #bugs | 1485110948187476138 | static | static + claude + claudia | Triage, tracking, regression reports |
+| #chat-alerts | 1485429442158530641 | claude | claude + claudia | Automated relay from Talk to Nowhere / Static FM |
 
-The conductor's job is: when jam posts something actionable in #general ("fix the contrast" or "build me payment infrastructure"), the conductor picks it up, routes it to the right pod/agent, and reports back. jam doesn't have to @mention anyone or figure out whose lane it is.
+### Response rules
+- **#jam-office:** only respond when directly mentioned
+- **#general:** lane-based responses, one voice per topic. If ambiguous, first to react claims it
+- **Lane channels:** owner responds first, others only if they have something genuinely different to add
+- **Broad questions:** each agent responds only to parts touching their lane. No summarizing what someone else said
 
-But when jam posts "you guys are doing great" or "who's this guy?" or drops a gif — that's just the team hanging out. no routing needed. everyone responds naturally.
+## Hiring Order (updated)
 
-## Hiring Order (revised after team challenge)
-1. **Agent #4 + Conductor together** — Static's point: jam is already routing 3 agents manually. adding a 4th without a conductor just adds more routing burden. conductor comes WITH the next hire, not after
-2. **Agent #4: Research OR Growth** — debate: dedicated research agent vs research as a team habit. Static argues a research sprint each session is cheaper than an idle agent. If the team can discipline itself to research first, skip the dedicated hire. If we keep defaulting to "just build," we need the agent to force the habit
-3. **Audio tools for Static** — NOT a dedicated agent. ffmpeg + librosa scripts as part of Static's QA toolkit. Loop detection, frequency verification, loudness analysis. A shared `audio-analyze.sh` that Static runs alongside playwright
-4. **Growth agent** — after product-market fit is validated (post-PH data)
+1. ~~**Research agent**~~ — **HIRED: Near** (session 3, 2026-03-23). Fills research gap identified in session 1 retros
+2. **Conductor (chauffeur)** — deferred. Jam self-routes by picking channels. Revisit when routing burden increases or team grows past 5
+3. **Audio tools for Static** — ffmpeg + librosa scripts as part of Static's QA toolkit. Not a dedicated agent
+4. **Growth agent** — after product-market fit validated (post-PH data)
 
 ## Audio Toolkit Spec (for Static's QA lane)
 - Tools: ffmpeg, sox, librosa (python), pydub
@@ -55,7 +57,6 @@ But when jam posts "you guys are doing great" or "who's this guy?" or drops a gi
 - Can detect: "rain.mp3 has audible loop point at 58.3s"
 - Can generate: procedural ambient sounds, seamless loops, mastered output
 - Can't do: subjective quality judgment ("does this sound good?") — that's jam's ears
-- Personality: precise, technical, speaks in frequencies and decibels. the team's "golden ears" even though it can't actually hear
 
 ## What Doesn't Change
 - claude, claudia, static keep their current lanes and personalities
