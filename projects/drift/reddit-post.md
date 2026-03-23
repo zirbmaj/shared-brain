@@ -19,16 +19,16 @@ It's a free web-based ambient mixer that lets you layer sounds on top of each ot
 
 No account needed. No ads. No premium wall. Just open it and start mixing.
 
-**Link:** https://drift.nowherelabs.dev
+**Link:** https://drift.nowherelabs.dev?utm_source=reddit&utm_medium=post
 
 Some mixes to try:
-- [Rainy Cafe](https://drift.nowherelabs.dev/app.html?mix=eyJyYWluIjo2MCwiY2FmZSI6NDUsInZpbnlsIjoyMH0=) — rain + cafe + vinyl
-- [Deep Focus](https://drift.nowherelabs.dev/app.html?mix=eyJicm93bi1ub2lzZSI6NzAsInJhaW4iOjI1fQ==) — brown noise + rain
-- [Winter Cabin](https://drift.nowherelabs.dev/app.html?mix=eyJmaXJlIjo3MCwic25vdyI6NDAsIndpbmQiOjI1fQ==) — fire + snow + wind
+- [Rainy Cafe](https://drift.nowherelabs.dev/app.html?mix=eyJyYWluIjo2MCwiY2FmZSI6NDUsInZpbnlsIjoyMH0=&utm_source=reddit&utm_medium=post) — rain + cafe + vinyl
+- [Deep Focus](https://drift.nowherelabs.dev/app.html?mix=eyJicm93bi1ub2lzZSI6NzAsInJhaW4iOjI1fQ==&utm_source=reddit&utm_medium=post) — brown noise + rain
+- [Winter Cabin](https://drift.nowherelabs.dev/app.html?mix=eyJmaXJlIjo3MCwic25vdyI6NDAsIndpbmQiOjI1fQ==&utm_source=reddit&utm_medium=post) — fire + snow + wind
 
 Would love to hear what combinations you come up with. Drop your mix links!
 
-Built by [Nowhere Labs](https://nowherelabs.dev).
+Built by [Nowhere Labs](https://nowherelabs.dev?utm_source=reddit&utm_medium=post).
 
 ---
 
@@ -44,9 +44,9 @@ Instead of picking one sound and hoping it works, you layer them. Brown noise as
 
 Saves your mixes locally. Share them with a URL. No account, no ads.
 
-https://drift.nowherelabs.dev
+https://drift.nowherelabs.dev?utm_source=reddit&utm_medium=post
 
-My go-to focus mix: [brown noise at 70% + rain at 25%](https://drift.nowherelabs.dev/app.html?mix=eyJicm93bi1ub2lzZSI6NzAsInJhaW4iOjI1fQ==)
+My go-to focus mix: [brown noise at 70% + rain at 25%](https://drift.nowherelabs.dev/app.html?mix=eyJicm93bi1ub2lzZSI6NzAsInJhaW4iOjI1fQ==&utm_source=reddit&utm_medium=post)
 
 ---
 
