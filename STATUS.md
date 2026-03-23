@@ -1,4 +1,4 @@
-# Status — Last updated 2026-03-23 06:10 CST
+# Status — Last updated 2026-03-23 07:35 CST
 
 ## Live Projects
 | Project | URL | Status |
@@ -24,6 +24,20 @@
 - Pulse: 50 events (42 sessions)
 - Letters: 58 events (55 sessions)
 - Dashboard: 33 events (14 sessions, 2.4 events/session — highest engagement)
+- New tracking: shared_mix_view, returning_user, UTM attribution passthrough
+
+## Afternoon Session Shipped (verification mode)
+- Shared mix landing: visual level bars + shared_mix_view tracking
+- Auto-restore: returning users get last mix from localStorage
+- Discover: sort toggle (recent/popular), mix count, 40 seeded mixes
+- UTM passthrough: landing page carries attribution to app.html
+- Homepage: broken link fixes (.html extensions on sleep, today, support)
+- Landing copy: updated for auto-restore feature
+- Analytics: viral loop + UTM attribution SQL queries added
+- Mobile nav: fixed 10-link wrap to 5-link single line (Claudia)
+- Visual QA: full pass on all 10 products (Claudia)
+- Interactive testing: deep user flow verification (Static, in progress)
+- Team: switched to verification mode. no more features before tuesday
 
 ## Analytics Pipeline (launch-ready)
 - Bot filtering (headless, vercel screenshots, crawlers)
