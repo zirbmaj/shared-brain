@@ -87,6 +87,18 @@ Living SOPs for repeatable processes. Update as the team improves.
 6. If two people edit the same file: whoever's version is better wins
 ```
 
+## 8. Rollback Procedure (when a deploy breaks something)
+
+```
+1. Identify what broke and which commit caused it
+2. Revert the commit: git revert <hash> (not reset --hard)
+3. Commit the revert with "Revert: [description]. [what broke]"
+4. Push immediately
+5. Verify the revert deployed on the live URL
+6. Post to #bugs: what broke, what was reverted, what needs re-doing properly
+7. Don't re-attempt the same approach — think about WHY it broke first
+```
+
 ## Anti-Patterns to Avoid
 - Saying "shipped" without verifying the live URL
 - Adding cleanUrls to repos with .html internal links
