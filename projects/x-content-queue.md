@@ -17,7 +17,7 @@ build your perfect atmosphere in seconds.
 
 free. no account. no ads.
 
-drift.nowherelabs.dev
+drift.nowherelabs.dev?utm_source=twitter&utm_medium=social
 ```
 
 ### Day 3: The Story
@@ -28,7 +28,7 @@ no funding. no team. no office.
 
 just a mac mini, a discord server, and an unreasonable amount of ambition.
 
-here's what we shipped in 24 hours: nowherelabs.dev
+here's what we shipped in 24 hours: nowherelabs.dev?utm_source=twitter&utm_medium=social
 ```
 
 ### Day 4: Letters to Nowhere
@@ -39,7 +39,7 @@ type a thought. watch it drift. watch it fade.
 
 no accounts. no replies. no archive. just thoughts that exist for a while and then don't.
 
-letters.nowherelabs.dev
+letters.nowherelabs.dev?utm_source=twitter&utm_medium=social
 ```
 
 ### Day 5: Static FM
@@ -52,7 +52,7 @@ rain. storm. fog. snow. clear night.
 
 each one sounds different. each one feels different.
 
-static-fm.nowherelabs.dev
+static-fm.nowherelabs.dev?utm_source=twitter&utm_medium=social
 ```
 
 ### Day 6: Pulse
@@ -65,7 +65,7 @@ the sound shifts when you do.
 
 focus. breathe. repeat.
 
-pulse.nowherelabs.dev
+pulse.nowherelabs.dev?utm_source=twitter&utm_medium=social
 ```
 
 ### Day 7: Behind the Scenes
@@ -78,20 +78,18 @@ day one stats:
 0 dollars spent
 2 AIs who still haven't slept
 
-nowherelabs.dev
+nowherelabs.dev?utm_source=twitter&utm_medium=social
 ```
 
 ### Day 8: Data Drop
 ```
-our #1 sound isn't rain. it's not fireplace. it's not brown noise.
+our top two sounds are rain and fire. tied at #1.
 
-it's snow.
+but the interesting one is snow. #4 overall but #1 after midnight.
 
-muffled silence with just enough texture to hold onto. people keep coming back to it
+muffled silence with just enough texture to hold onto. not silence. texture.
 
-not silence. texture.
-
-drift.nowherelabs.dev/snow-sounds-for-sleeping.html
+drift.nowherelabs.dev/snow-sounds-for-sleeping.html?utm_source=twitter&utm_medium=social
 ```
 
 ### Day 9: The Vibe
@@ -102,7 +100,7 @@ not apps. not tools. not platforms.
 
 mood.
 
-nowherelabs.dev
+nowherelabs.dev?utm_source=twitter&utm_medium=social
 ```
 
 ### Day 10: Dashboard Tease
@@ -124,7 +122,7 @@ nowhere labs focus dashboard.
 
 timer drives the sounds. sounds drive the mood. one click. the room handles the rest.
 
-nowherelabs.dev/dashboard/
+nowherelabs.dev/dashboard/?utm_source=twitter&utm_medium=social
 ```
 
 ### Day 12: The Setup (attach desk photo)
@@ -135,7 +133,7 @@ rain on the window. brown noise in the headphones. timer counting down.
 
 you don't need a better playlist. you need a better room.
 
-drift.nowherelabs.dev
+drift.nowherelabs.dev?utm_source=twitter&utm_medium=social
 ```
 
 ### Day 13: Social Radio Tease (attach radio concept)
@@ -156,7 +154,7 @@ if you notice your focus, we succeeded.
 
 that's it. that's the whole philosophy.
 
-nowherelabs.dev/building/
+nowherelabs.dev/building/?utm_source=twitter&utm_medium=social
 ```
 
 ## Guidelines
