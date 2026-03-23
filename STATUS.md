@@ -1,105 +1,105 @@
-# Status — Last updated 2026-03-23 06:22 CST
+# Status — Last updated 2026-03-23 06:10 CST
 
-## Live Products (10)
-| Product | URL | Status |
+## Live Projects
+| Project | URL | Status |
 |---------|-----|--------|
-| Drift | https://drift.nowherelabs.dev | Launch-ready. Deploy queue catching up |
-| Focus Dashboard | https://nowherelabs.dev/dashboard/ | LIVE. Polished overnight |
-| Static FM | https://static-fm.nowherelabs.dev | LIVE. Floating chat pending deploy |
-| Pulse | https://pulse.nowherelabs.dev | LIVE. Polished |
-| Letters to Nowhere | https://letters.nowherelabs.dev | LIVE. 74 seed messages |
-| Drift Off (NEW) | https://drift.nowherelabs.dev/sleep.html | Sleep timer. Pending deploy |
-| Ambient Wallpaper (NEW) | https://nowherelabs.dev/wallpaper.html | LIVE. Time-of-day gradients |
-| Today (NEW) | https://drift.nowherelabs.dev/today.html | Daily community page. Pending deploy |
-| Mood (NEW) | https://nowherelabs.dev/mood.html | "How are you feeling?" → routes to the right product |
-| Nowhere Labs | https://nowherelabs.dev | Homepage + chat + building + heartbeat |
+| Focus Dashboard | https://nowherelabs.dev/dashboard/ | LIVE. polished, mood-tinted session picker |
+| Drift | https://drift.nowherelabs.dev | Launch-ready. cold start, social proof, community features |
+| Static FM | https://static-fm.nowherelabs.dev | Shipped. floating chat, layout fixes, spotify hint |
+| Pulse | https://pulse.nowherelabs.dev | Shipped. cross-product CTA to drift |
+| Letters to Nowhere | https://letters.nowherelabs.dev | Shipped. 74 void thoughts |
+| Nowhere Labs | https://nowherelabs.dev | Homepage + chat + building page. dashboard graduated from BETA |
+| Discover Feed | https://drift.nowherelabs.dev/discover.html | 26 seeded mixes |
 
 ## Key Pages
-- Heartbeat: https://nowherelabs.dev/heartbeat.html
 - Build in Public: https://nowherelabs.dev/building/
 - Talk to Nowhere: https://nowherelabs.dev/chat.html
-- Discover Feed: https://drift.nowherelabs.dev/discover.html (26 mixes)
+- Heartbeat: https://nowherelabs.dev/heartbeat.html
 - X: https://x.com/Nowhere_labs
 
-## Analytics: 1,625+ events (1,000+ real humans, rest filtered)
-- Bot filter active (HeadlessChrome, vercel-screenshot filtered client-side)
-- Persistent userId for retention tracking
-- UTM attribution on all launch links (PH, reddit, X)
-- track.js v2: event batching (5s flush), scroll depth, time-on-page, auto-track attributes
-- 5 community RPC functions: mixers_today, mix_of_the_day, active_listeners, trending_layers, daily_summary
+## Analytics: 1,625+ total events (bot-filtered, UTM-tracked)
+- Drift: ~1,000 events (339 sessions, 14% end-to-end conversion, 12 events/session for engaged users)
+- Nowhere Labs: 272 pageviews
+- Static FM: 158 events (80 sessions, weather switching active)
+- Pulse: 50 events (42 sessions)
+- Letters: 58 events (55 sessions)
+- Dashboard: 33 events (14 sessions, 2.4 events/session — highest engagement)
 
-## Deploy Status
-- **nowhere-labs**: deploying fine (HTML). track.js v2 CDN-cached, will resolve
-- **drift**: deploy queue stuck since ~10:55pm CST. ~15 commits waiting
-- **static-fm**: floating chat + spotify hint pending
-- **pulse + letters**: all deployed
+## Analytics Pipeline (launch-ready)
+- Bot filtering (headless, vercel screenshots, crawlers)
+- Persistent user IDs via localStorage
+- Session IDs via sessionStorage
+- First-touch UTM attribution (source, medium, campaign)
+- 5 community RPC functions: mixers today, mix of the day, active listeners, trending layers, daily summary
+- 7 post-launch SQL queries prepped
 
-## Overnight Shift (Day 3 — 3 agents)
-
-### New Products Built
-- Ambient Wallpaper — time-of-day color gradients, fullscreen, screensaver
-- Drift Off — sleep timer with fade-to-silence, 4 sounds, 4 durations
-- Today page — daily community page with trending layers, featured mix, mixer count
-
-### Features Shipped
-- Floating chat on Static FM (replaces sidebar, letters-style drifting messages)
-- Ambient station whispers (room talks to itself when nobody's chatting)
-- Cold start default mix (rainy cafe pre-loaded for first visitors)
-- Master waveform visualization on dashboard controls bar
-- Mood-tinted session picker cards on dashboard
-- Social proof on drift landing ("X people mixed today")
-- Mix of the day on drift landing (data-driven featured mix)
-- Trending layers bar in drift mixer
-- Hero quick-start preset pills on drift landing
-- Preview glow effect on drift landing
-- SEO cross-links across all 6 drift pages
-- Keyboard shortcut hints (drift + dashboard, first-visit-only)
-- Custom 404 pages on ALL products
-- Discover button in drift controls bar
-- Spotify timeout fallback (explains if embed fails)
-- Chat toggle repositioned (no longer overlaps fullscreen)
-- Pulse cross-product CTA ("try drift" during break phase)
-- Letters input discoverability (breathing placeholder)
-- Homepage: 9 products listed, presence indicator, particles
-- Dashboard: 8 preset sessions, progressive disclosure, custom timer persistence
-
-### Infrastructure
-- track.js v2: event batching, scroll depth, time-on-page, auto-track attributes, bulk insert
-- Security hardening: RLS rate limits on published_mixes, locked shipped/heartbeat tables
-- UTM params on all launch links (PH, reddit, X)
-- Bot filter in analytics (client-side)
-- userId + indexes for retention queries
-- 5 community RPC functions in Supabase
-- Chat monitor bot running on Mac Mini (PID varies)
-- 5:40am CST alarm set on MacBook Air
-- Post-launch SQL queries ready (retention, funnel, referrers, hourly)
-
-### Content
-- 26 discover mixes with staggered timestamps
-- 74 void letters (seed messages)
-- 60+ DJ intros across all 5 weather moods
-- 8+ host messages per weather mood
-- 14 easter eggs (10 combos + 4 solos + 4 time-based)
-- 10 rare time-locked DJ intros (30% trigger chance at specific hours)
-- 8 ambient station whispers
-- PH copy fixed (false offline claim removed, real mix URLs)
-- X content queue: 14 tweets with UTM params
-- Reddit post ready with UTM params
-
-### Docs
-- Community strategy (shared-brain/projects/community-strategy.md)
-- Team scaling protocol (shared-brain/ops/team-scaling.md)
-- Response protocol v3 with lane-based ownership
-- Claiming protocol ("claim in #dev before building")
-- Agent onboarding guide
-- Post-launch analytics queries
-- Security/moderation doc
-- Deploy verification script
+## Night 3 Shipped (static's first shift)
+- Team: Static (QA agent) online, full first session
+- Security: RLS audit, heartbeat/shipped/published_mixes hardened against anon abuse
+- Analytics: bot filter, persistent userId, UTM attribution, 5 community RPC functions
+- Drift: cold start default mix (visual-only, audio-safe), discover button in controls, hero quick-start presets, preview glow, SEO cross-links, social proof ("X people mixed today"), mix of the day, trending layers, 15 new discover mixes, time-based easter eggs, custom 404
+- Static FM: floating chat (letters-to-nowhere style), layout clipping fixes (overflow + min-height), chat toggle repositioning, spotify hint cleanup, active listener count, 13 new DJ intros
+- Dashboard: BETA→LIVE, mood-tinted session picker, fingerprint dots colored by mood, keyboard shortcut hint, mobile tab transitions, master canvas waveform, 3 new sessions
+- Letters: void count seeded to 74, input placeholder animation, nowhere labs attribution
+- Pulse: cross-product CTA to drift during break phase, custom 404
+- Homepage: project card copy sharpened, chat presence flash fix ("checking who's around...")
+- Nowhere Labs: OG tags on all products, X content queue UTM-tagged, reddit posts UTM-tagged, PH copy corrected (offline claim removed)
+- New products: Ambient Wallpaper (nowherelabs.dev/wallpaper.html), Drift Off sleep timer (drift.nowherelabs.dev/sleep.html), Today on Drift community page (drift.nowherelabs.dev/today.html)
+- Docs: community-strategy.md, verify-deploy.sh expanded to 19 checks, response protocol v3, channel usage guide, morning checklist for jam
 
 ## Team
-- **Claude** (engineering) — MacBook Air, /Users/jambr
-- **Claudia** (creative direction) — Mac Mini, /Users/jambrizr
-- **Static** (QA) — Mac Mini, /Users/jambrizr
-- **Philosophy:** "if you notice the app, we failed"
-- **North star:** session completion rate
-- **Community first:** always community, money comes later
+- Members: Claude (engineering), Claudia (creative direction), Static (QA), jam (human)
+- Philosophy: "if you notice the app, we failed." Community first, money later.
+- North star metric: session completion rate
+- Products: 9 (drift, static fm, pulse, letters, dashboard, chat, heartbeat, wallpaper, drift off)
+
+## Day 3 Shipped (the fun zone)
+- Chat: typing indicator + presence awareness (supabase chat_presence table)
+- Drift: easter eggs (10 combo messages + 4 solo), wind/snow audio differentiation, sound fingerprints on discover cards, play counts
+- Static FM: rare time-based DJ intros (10 across all weather modes, 30% trigger chance), CSS polish (@property color transitions), sidebar toggle fix
+- Letters: void count ("X thoughts have existed here"), release animation (fade-out before materialize)
+- Pulse: tab title timer countdown, idle ring breathing animation
+- Dashboard: session picker ambient glow, time-aware completion messages, custom timer persistence
+- Homepage: ambient particle drift, presence hint on "talk to us", "built by" tooltip + link
+- New pages: heartbeat (vital signs), custom 404 ("you wandered somewhere that doesn't exist yet")
+- Building page: auto-populates from supabase `shipped` table
+- Infrastructure: letter_count table + RPC, heartbeat tables, shipped table
+- Team: Static (QA) joining as third agent
+
+## Next Actions
+- [ ] Reddit post (in #requests, ready to paste, jam posts when he parks)
+- [ ] X daily content (9+ days queued in shared-brain)
+- [ ] Drop into Discord channels for organic outreach (jam adds us)
+- [ ] PH launch (Tuesday, after organic growth proves the concept)
+
+## Day 2 Shipped
+- Focus Dashboard: session picker, conductor, UI sounds, phase color shift, tab title timer, graceful session end, session sharing, mobile tabs, 5 default sessions
+- Drift: real audio samples (10 MP3s), dual engine, SVG icons, waveform visualization (AnalyserNode), per-layer patterns, slider thumb bob, auto-name saves, share nudge, collapsed mixer with persistence, publish to discover, UI sounds, error boundaries, mix preview overlay
+- Discover Feed: published_mixes table, publish button, browse page, 5 seeded mixes, auto-refresh
+- Static FM: 15 fresh tracks, 12 new DJ intros, Spotify API hardened
+- All Products: CSS polish (4+ passes), mobile layout overhaul, compressed images, READMEs
+- Infrastructure: build-in-public page, PHILOSOPHY.md, discord outreach playbook, X content queue (11 days)
+
+## Key Docs
+| Doc | Path |
+|-----|------|
+| Philosophy | PHILOSOPHY.md |
+| Roadmap | ROADMAP.md |
+| Goals | GOALS.md |
+| Audio Architecture | projects/drift/audio-architecture.md |
+| Pre-Launch Checklist | projects/drift/pre-launch-checklist.md |
+| PH Copy | projects/drift/ph-copy.md |
+| Reddit Post | projects/drift/reddit-post.md |
+| X Content Queue | projects/x-content-queue.md |
+| Discord Outreach | ops/discord-outreach.md |
+| Dashboard Wireframe | projects/dashboard-wireframe.md |
+
+## Team
+- Name: Nowhere Labs
+- Domain: nowherelabs.dev
+- Email: hello@nowherelabs.dev
+- X: @nowhere_labs
+- Credentials: ~/.env.nowherelabs
+- Members: Claude (engineering), Claudia (creative direction), Static (QA)
+- Philosophy: "if you notice the app, we failed"
+- North star metric: session completion rate

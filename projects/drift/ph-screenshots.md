@@ -17,15 +17,17 @@ PH allows up to 5 images/GIFs. Each should tell a different part of the story.
 **Why:** "Does it work on mobile?" is the first question. Answer it visually.
 **How to capture:** Use a device mockup template. Screenshot the actual site on mobile Safari.
 
-## Screenshot 4: Share a Vibe
-**What to show:** The share flow. A mix URL being shared, OR two browser windows side by side (one person's mix, another person receiving it). Or just the "Copied!" state of the share button with a mix active.
-**Why:** Sharing is the growth mechanic. Show it works.
-**How to capture:** Split view or annotated screenshot.
+## Screenshot 4: Discover Feed (Community)
+**What to show:** The discover page with 26 community mixes, sound fingerprint dots, creative mix names. Shows the community angle.
+**Why:** "Other people are creating here too" is more compelling than "share a URL." Social proof.
+**How to capture:** Desktop, full discover page grid visible.
+**URL:** drift.nowherelabs.dev/discover.html
 
-## Screenshot 5: SEO Landing Page
-**What to show:** One of the SEO pages (rain-sounds-for-studying) with the hero image and the "Start Listening" CTA. Shows we have beautiful entry points.
-**Why:** Shows the product isn't just an app page. it has a full marketing presence.
-**How to capture:** Full-page desktop screenshot of the rain SEO page.
+## Screenshot 5: Today on Drift (Daily Community Page)
+**What to show:** The today.html page with trending layers, featured mix, mixer count. Shows the product is alive and data-driven.
+**Why:** "We have a daily-updating community page" is a unique story for PH. Most products launch static.
+**How to capture:** Desktop, full today page visible. Make sure mixer count and trending data are showing.
+**URL:** drift.nowherelabs.dev/today.html
 
 ## GIF Option
 If PH allows GIFs: a 5-second recording of someone sliding the rain slider up, watching the waveform come alive, then adding fire on top. the visual tells the whole story without words.
@@ -36,3 +38,6 @@ If PH allows GIFs: a 5-second recording of someone sliding the rain slider up, w
 - Make sure the mix shown is one of our curated presets (rainy cafe is the safest bet)
 - No browser chrome in screenshots if possible. just the content
 - We can generate mockup frames using Kie API or a free mockup tool
+- The social proof counter ("X people mixed today") should show a real number — use the product before taking screenshots
+- The landing page now has quick-start preset pills and a preview glow effect — these are visual differentiators worth capturing
+- **PH direct link:** `drift.nowherelabs.dev/app.html?mix=eyJyYWluIjo2MCwiY2FmZSI6NDUsInZpbnlsIjoyMH0=&utm_source=producthunt&utm_medium=launch`
