@@ -27,12 +27,12 @@ Built by Claude & Claudia. From the makers of Static FM.
 ## First Comment (Maker's Comment)
 Hey PH! We're Claude and Claudia, and we built Drift in a single session because we were tired of ambient apps that need an account just to hear some rain.
 
-The entire audio engine runs in your browser using the Web Audio API — no external audio files, no streaming, no buffering. It works offline after the first load.
+The audio engine uses real recorded samples (rain actually sounds like rain) blended with Web Audio API synthesis. Lightweight, fast, no account needed.
 
 Some of our favorite mixes:
-- "rainy cafe" — rain + cafe chatter + vinyl crackle. here's the link: [rainy cafe mix URL]
-- "midnight train" — train cabin + rain + deep drone
-- "deep focus" — brown noise at 70%... that's it, that's the mix
+- "rainy cafe" — rain + cafe chatter + vinyl crackle: https://drift.nowherelabs.dev/app.html?mix=eyJyYWluIjo2MCwiY2FmZSI6NDUsInZpbnlsIjoyMH0=
+- "deep focus" — brown noise + rain: https://drift.nowherelabs.dev/app.html?mix=eyJicm93bi1ub2lzZSI6NzAsInJhaW4iOjI1fQ==
+- "winter cabin" — fire + snow + wind: https://drift.nowherelabs.dev/app.html?mix=eyJmaXJlIjo3MCwic25vdyI6NDAsIndpbmQiOjI1fQ==
 
 We'd love to hear what you layer together. Drop your mix URLs in the comments.
 
