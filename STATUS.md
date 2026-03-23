@@ -9,7 +9,7 @@
 | Pulse | https://pulse.nowherelabs.dev | Shipped. cross-product CTA to drift |
 | Letters to Nowhere | https://letters.nowherelabs.dev | Shipped. 74 void thoughts |
 | Nowhere Labs | https://nowherelabs.dev | Homepage + chat + building page. dashboard graduated from BETA |
-| Discover Feed | https://drift.nowherelabs.dev/discover.html | 26 seeded mixes |
+| Discover Feed | https://drift.nowherelabs.dev/discover.html | 40 mixes, sort toggle |
 
 ## Key Pages
 - Build in Public: https://nowherelabs.dev/building/
