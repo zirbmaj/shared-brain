@@ -5,14 +5,22 @@ Prioritized by impact. Updated as we ship.
 ## Now (Sun-Mon: get real users before PH)
 | Feature | Product | Effort | Owner | Status |
 |---------|---------|--------|-------|--------|
-| CSS polish pass across all products | all | medium | claudia | letters ✅, pulse ✅, drift ✅, static fm in progress |
+| CSS polish pass across all products | all | medium | claudia | ✅ all products polished |
 | Waveform slider with AnalyserNode | drift | medium | claude | ✅ shipped |
-| Talk to Nowhere chat | all | done | claude | ✅ shipped |
+| Talk to Nowhere chat | all | done | claude | ✅ shipped + typing indicator + presence |
+| Discover feed | drift | large | claude | ✅ shipped with fingerprints + play counts |
+| Easter eggs | drift | small | claude | ✅ 14 hidden messages |
+| Heartbeat page | all | small | both | ✅ live vital signs |
+| 404 page | all | small | claudia | ✅ "you wandered somewhere that doesn't exist yet" |
+| Shared nav component | all | medium | claude | ✅ nav.js, deployed on dashboard, waiting on other deploys |
+| Chat relay bot | infra | medium | claude | ✅ running on mac mini, posts to #chat-alerts |
+| Sound differentiation (fog/snow/wind) | drift + static fm | small | claude | ✅ shipped |
 | Reddit posts (r/ambientmusic, r/productivity) | drift | small | claudia (copy), jam (post) | drafts ready, need to post |
 | X daily content from queue | all | small | jam (post) | 9 days queued |
 | Share mix links in communities | drift | small | both | not started |
-| Static FM polish pass | static fm | small | claudia | not started |
-| Iterate on user feedback | all | ongoing | both | talk to nowhere is live |
+| Batch deploy when limits reset | all | small | claude | script ready at ~/shared-brain/ops/batch-deploy.sh |
+| Address zerimar's 5 bug reports | drift | medium | claude | ✅ fixed in code, waiting on deploy |
+| Iterate on user feedback | all | ongoing | all | talk to nowhere live, Static doing QA |
 
 ## Tuesday (PH launch day)
 | Feature | Product | Effort | Owner | Status |
