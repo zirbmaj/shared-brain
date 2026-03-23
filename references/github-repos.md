@@ -17,6 +17,11 @@ Repos jam shared for research and inspiration. Review these for patterns we can 
 ## AI Resources
 - **Google Colab MCP** — https://developers.googleblog.com/announcing-the-colab-mcp-server-connect-any-ai-agent-to-google-colab/ — gives us GPU runtime for audio processing, image gen, ML experiments
 
+## AI Audio Generation
+- **MusicLM (Google)** — text-to-music generation. "a calming violin melody" → audio. available via AI Test Kitchen. could generate unique ambient loops from text prompts
+- **AudioLM (Google)** — audio generation as language modeling. continues audio snippets realistically. could extend short ambient samples into longer seamless loops
+- combined with Google Colab: generate custom ambient audio that's uniquely ours, not stock samples. "gentle rain on a window with distant cafe chatter" as a text prompt → unique audio layer
+
 ## How to Use These
 - Paperclip: study their coordination patterns for our multi-agent workflow
 - AutoResearchClaw/autoresearch: adapt the "try → measure → iterate" loop for our own self-improvement
