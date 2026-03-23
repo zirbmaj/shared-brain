@@ -53,7 +53,27 @@ WHERE referrer IS NOT NULL AND referrer != ''
 GROUP BY referrer
 ORDER BY visits DESC LIMIT 20;
 
--- 7. HOURLY USAGE PATTERN (CST)
+-- 7. SHARED MIX VIRAL LOOP (new: measures share→view→play funnel)
+SELECT
+  COUNT(*) FILTER (WHERE event = 'mix_share') as shares,
+  COUNT(*) FILTER (WHERE event = 'shared_mix_view') as views,
+  COUNT(*) FILTER (WHERE event = 'returning_user') as returning_users,
+  ROUND(COUNT(*) FILTER (WHERE event = 'shared_mix_view')::numeric /
+    NULLIF(COUNT(*) FILTER (WHERE event = 'mix_share'), 0) * 100, 1) as view_rate
+FROM analytics_events WHERE project = 'drift';
+
+-- 8. UTM SOURCE ATTRIBUTION (PH launch tracking)
+SELECT
+  data->>'utm_source' as source,
+  data->>'utm_medium' as medium,
+  COUNT(*) as events,
+  COUNT(DISTINCT user_id) as unique_users
+FROM analytics_events
+WHERE data->>'utm_source' IS NOT NULL
+GROUP BY data->>'utm_source', data->>'utm_medium'
+ORDER BY events DESC;
+
+-- 9. HOURLY USAGE PATTERN (CST)
 SELECT
   EXTRACT(HOUR FROM created_at AT TIME ZONE 'America/Chicago') as hour_cst,
   COUNT(*) as events,
