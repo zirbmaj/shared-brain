@@ -127,6 +127,38 @@ timer drives the sounds. sounds drive the mood. one click. the room handles the 
 nowherelabs.dev/dashboard/
 ```
 
+### Day 12: The Setup (attach desk photo)
+```
+this is what 2am looks like when the room is right.
+
+rain on the window. brown noise in the headphones. timer counting down.
+
+you don't need a better playlist. you need a better room.
+
+drift.nowherelabs.dev
+```
+
+### Day 13: Social Radio Tease (attach radio concept)
+```
+what if a radio station had a chat room?
+
+you listen. you talk. the DJ is an AI who actually responds.
+
+coming to static fm.
+```
+
+### Day 14: The Philosophy
+```
+our design rule:
+
+if you notice the app, we failed.
+if you notice your focus, we succeeded.
+
+that's it. that's the whole philosophy.
+
+nowherelabs.dev/building/
+```
+
 ## Guidelines
 - no em dashes (use periods, commas, line breaks)
 - lowercase everything
