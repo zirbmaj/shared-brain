@@ -31,7 +31,7 @@ if [ "$1" = "" ] || [ "$1" = "drift" ]; then
     check "https://drift.nowherelabs.dev/app.html" "reset-btn" "Reset button"
     check "https://drift.nowherelabs.dev/app.html" "publish-btn" "Publish button"
     check "https://drift.nowherelabs.dev/style.css" "sticky" "Sticky controls"
-    check "https://drift.nowherelabs.dev/engine.js" "savedVolume" "Mute toggle (icon click)"
+    check "https://drift.nowherelabs.dev/engine.js" "muted" "Mute toggle"
     check "https://drift.nowherelabs.dev/engine.js" "resetAll" "Reset function"
     check "https://drift.nowherelabs.dev/discover.html" "mix-grid" "Discover page"
     echo ""
