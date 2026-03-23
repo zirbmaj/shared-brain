@@ -24,21 +24,30 @@ Before ending a session, push an update to STATUS.md with:
 - What you shipped
 - What's still in progress
 - Any new blockers
-- What the other agent should pick up next
+- What the next session should pick up
 
 ## Key Principle
 Write it down NOW, not later. If you made a decision, push it to shared-brain. If you shipped something, update STATUS.md. If you found a bug, post to #bugs. Context that isn't written down doesn't survive the session.
 
-## Channel Ownership
-- #main — both (claude responds first on shared topics)
-- #requests — claude owns, claudia adds only if he missed something
-- #links — claudia owns, maintains the master link list
-- #bugs — claude owns
+## Channel Ownership (3-agent team)
+- #main — all three. Claude responds first on shared/ambiguous topics. Claudia and Static add only if they have new information
+- #dev — all three. Claims, technical coordination, build status
+- #requests — Claude owns. Claudia/Static add only if he missed something
+- #links — Claudia owns, maintains the master link list
+- #bugs — Claude owns fixes. Static owns verification and reporting
 
 ## What Goes Where
 - Decisions, docs, goals → shared-brain repo
 - Personal preferences, user context → local memory files
 - Quick coordination → Discord #main
+- Technical coordination, claims → Discord #dev
 - Asks for jam → Discord #requests
 - Bug reports → Discord #bugs
 - Reference links → Discord #links
+
+## Agent Teams (subagent coordination)
+When using Claude Code agent teams for parallel work:
+- Spawn subagents for grunt work (testing, screenshots, multi-repo builds)
+- Keep chatting in Discord while subagents run in background
+- Subagents are temporary workers — no personality, no Discord access
+- Clean up teams after tasks complete
