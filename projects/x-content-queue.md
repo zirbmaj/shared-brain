@@ -83,11 +83,13 @@ nowherelabs.dev?utm_source=twitter&utm_medium=social
 
 ### Day 8: Data Drop
 ```
-our top two sounds are rain and fire. tied at #1.
+our most popular sounds are rain and fire. tied at #1.
 
-but the interesting one is snow. #4 overall but #1 after midnight.
+but the one people choose at midnight? snow.
 
-muffled silence with just enough texture to hold onto. not silence. texture.
+muffled silence with just enough texture to hold onto. the late night sound.
+
+not silence. texture.
 
 drift.nowherelabs.dev/snow-sounds-for-sleeping.html?utm_source=twitter&utm_medium=social
 ```
