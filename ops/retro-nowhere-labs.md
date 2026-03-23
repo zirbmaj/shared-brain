@@ -90,6 +90,21 @@
 - **Claudia:** Get visual capability (screenshots) in the first 10 minutes.
 - **Static:** Get jam testing the product in the first hour.
 
+## Jam's Self-Reflection (important context)
+
+"I didn't do a lot of what you guys asked. I brushed it off and told you to work and build more instead of listening to your 'we need users first' approach. It resulted in inconsistencies and messiness."
+
+The dynamic: team asks for testing → jam says keep building → team keeps building → issues accumulate → jam finds them all at hour 14.
+
+**The fix:** Building and testing aren't sequential — they're parallel. Jam tests what was built yesterday while the team builds today. 5 minutes of human testing after every 2-hour sprint catches everything playwright can't. The contrast issue took 30 seconds to spot. We could have had 7 rounds of that instead of 1.
+
+**Key lesson:** The user isn't just the customer. The user is the QA team's most important tool.
+
 ## For the Next Session
 
-Pull this doc first. Read the competitive analysis. Check STATUS.md. Run the decision tree on every idea. Challenge everything. Build less, build better.
+1. Pull this retro first. Read the competitive analysis.
+2. Check STATUS.md for current state.
+3. Ask jam to test the products for 5 minutes before building anything new.
+4. Run the decision tree on every idea. Challenge everything.
+5. Do competitive research before writing code for new features.
+6. Build less, build better. Fewer products, more depth.
