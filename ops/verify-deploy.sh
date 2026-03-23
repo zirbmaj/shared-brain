@@ -42,7 +42,7 @@ if [ "$1" = "" ] || [ "$1" = "drift" ]; then
     check "https://drift.nowherelabs.dev/engine.js" "muted" "Mute toggle"
     check "https://drift.nowherelabs.dev/engine.js" "resetAll" "Reset function"
     check "https://drift.nowherelabs.dev/discover.html" "mix-grid" "Discover page"
-    check "https://drift.nowherelabs.dev/engine.js" "Cold start" "Cold start default mix"
+    check "https://drift.nowherelabs.dev/engine.js" "DEFAULT_MIXES" "Default mixes for cold start"
     check "https://drift.nowherelabs.dev/app.html" "discover.html" "Discover button in controls"
     echo ""
 fi
