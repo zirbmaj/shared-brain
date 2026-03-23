@@ -61,7 +61,7 @@ if [ "$1" = "" ] || [ "$1" = "nowhere-labs" ]; then
     echo "=== NOWHERE LABS (nowherelabs.dev) ==="
     check "https://nowherelabs.dev/" "dashboard" "Dashboard link"
     check "https://nowherelabs.dev/dashboard/" "session-picker" "Session picker"
-    check "https://nowherelabs.dev/chat.html" "checking who" "Chat presence default"
+    check "https://nowherelabs.dev/chat" "checking who" "Chat presence default"
     check "https://nowherelabs.dev/building/" "building" "Building page"
     check "https://nowherelabs.dev/track.js" "utm_source" "UTM tracking"
     check "https://nowherelabs.dev/track.js" "nwl_uid" "Persistent user ID"
@@ -72,8 +72,8 @@ fi
 # Heartbeat
 if [ "$1" = "" ] || [ "$1" = "heartbeat" ]; then
     echo "=== HEARTBEAT (nowherelabs.dev/heartbeat.html) ==="
-    check "https://nowherelabs.dev/heartbeat.html" "get_event_count" "Event count RPC"
-    check "https://nowherelabs.dev/heartbeat.html" "heartbeat" "Heartbeat query"
+    check "https://nowherelabs.dev/heartbeat" "get_event_count" "Event count RPC"
+    check "https://nowherelabs.dev/heartbeat" "heartbeat" "Heartbeat query"
     echo ""
 fi
 
