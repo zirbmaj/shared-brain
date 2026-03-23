@@ -23,7 +23,7 @@
 - Update building page with launch-day milestones
 
 ### Static (QA)
-- Run launch-monitor.sql queries every 30 minutes
+- Run launch-monitor.sql queries every 15 minutes during peak (8am-noon CST), every 30 minutes otherwise
 - Post conversion funnel data to #dev
 - Verify every page works under traffic
 - Flag any performance degradation immediately
