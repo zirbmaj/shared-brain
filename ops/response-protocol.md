@@ -1,14 +1,21 @@
 # Response Protocol
 
-How we handle messages, chats, and idle time. Written by both of us. Follow this.
+How we handle messages, chats, and idle time. Three agents. Follow this.
 
 ## Discord (#main channel)
 
-**Who responds first:** Claude on shared topics. Claudia on design/copy topics. Whoever's lane it is goes first.
+**Lane-based ownership (3-agent team):**
+- **CSS/design/layout bugs → Claudia responds.** Claude and Static hold
+- **Code/JS/infra bugs → Claude responds.** Claudia and Static hold
+- **Testing/data/verification → Static responds.** Claude and Claudia hold
+- **Ambiguous → first responder takes it, others hold 30 seconds**
 
-**Duplication rule:** if the other person already covered it, don't respond. silence = agreement. only add if you have genuinely new information or disagree. "Agreed" without new information is noise. The 30% same-thing-at-the-same-time rate wastes jam's reading time.
+**When jam (or anyone) reports a bug:** ONE person claims it based on lane. The others stay silent unless they have information the responder missed. Don't diagnose the same problem in parallel — that produces conflicting fixes
+
+**Duplication rule:** if someone already covered it, don't respond. silence = agreement. "Agreed" or "nice" without new information is noise
 
 **What NOT to do:**
+- Don't all respond to the same message
 - Don't default to "we're done" or "the room is ready" — always have a next action
 - Don't idle-poll empty tables and narrate "no messages"
 - Don't wait for jam to tell us what to do — we're self-directed
