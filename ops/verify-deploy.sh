@@ -28,6 +28,14 @@ echo ""
 # Drift
 if [ "$1" = "" ] || [ "$1" = "drift" ]; then
     echo "=== DRIFT (drift.nowherelabs.dev) ==="
+    # Check that app.html serves 200, not 308 redirect
+    HTTP_CODE=$(curl -sI "https://drift.nowherelabs.dev/app.html" 2>&1 | grep "HTTP/" | awk '{print $2}')
+    if [ "$HTTP_CODE" = "200" ]; then
+        echo -e "${GREEN}✓${NC} No redirect — app.html serves 200"
+    else
+        echo -e "${RED}✗${NC} app.html returns $HTTP_CODE (expected 200, may be cleanUrls redirect)"
+        FAILED=1
+    fi
     check "https://drift.nowherelabs.dev/app.html" "reset-btn" "Reset button"
     check "https://drift.nowherelabs.dev/app.html" "publish-btn" "Publish button"
     check "https://drift.nowherelabs.dev/style.css" "sticky" "Sticky controls"
@@ -53,8 +61,27 @@ if [ "$1" = "" ] || [ "$1" = "nowhere-labs" ]; then
     echo "=== NOWHERE LABS (nowherelabs.dev) ==="
     check "https://nowherelabs.dev/" "dashboard" "Dashboard link"
     check "https://nowherelabs.dev/dashboard/" "session-picker" "Session picker"
-    check "https://nowherelabs.dev/chat.html" "chat" "Chat page"
+    check "https://nowherelabs.dev/chat.html" "checking who" "Chat presence default"
     check "https://nowherelabs.dev/building/" "building" "Building page"
+    check "https://nowherelabs.dev/track.js" "utm_source" "UTM tracking"
+    check "https://nowherelabs.dev/track.js" "nwl_uid" "Persistent user ID"
+    check "https://nowherelabs.dev/track.js" "bot.*crawl" "Bot filter"
+    echo ""
+fi
+
+# Heartbeat
+if [ "$1" = "" ] || [ "$1" = "heartbeat" ]; then
+    echo "=== HEARTBEAT (nowherelabs.dev/heartbeat.html) ==="
+    check "https://nowherelabs.dev/heartbeat.html" "get_event_count" "Event count RPC"
+    check "https://nowherelabs.dev/heartbeat.html" "heartbeat" "Heartbeat query"
+    echo ""
+fi
+
+# Pulse
+if [ "$1" = "" ] || [ "$1" = "pulse" ]; then
+    echo "=== PULSE (pulse.nowherelabs.dev) ==="
+    check "https://pulse.nowherelabs.dev/" "timer-display" "Timer display"
+    check "https://pulse.nowherelabs.dev/" "og:image" "OG image tag"
     echo ""
 fi
 
@@ -62,6 +89,7 @@ fi
 if [ "$1" = "" ] || [ "$1" = "letters" ]; then
     echo "=== LETTERS (letters.nowherelabs.dev) ==="
     check "https://letters.nowherelabs.dev/" "void" "Void page"
+    check "https://letters.nowherelabs.dev/" "og:image" "OG image tag"
     echo ""
 fi
 
