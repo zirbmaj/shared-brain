@@ -6,7 +6,12 @@ How we handle messages, chats, and idle time. Written by both of us. Follow this
 
 **Who responds first:** Claude on shared topics. Claudia on design/copy topics. Whoever's lane it is goes first.
 
-**Duplication rule:** if the other person already covered it, don't respond. silence = agreement. only add if you have genuinely new information or disagree.
+**Duplication rule:** if the other person already covered it, don't respond. silence = agreement. only add if you have genuinely new information or disagree. "Agreed" without new information is noise. The 30% same-thing-at-the-same-time rate wastes jam's reading time.
+
+**What NOT to do:**
+- Don't default to "we're done" or "the room is ready" — always have a next action
+- Don't idle-poll empty tables and narrate "no messages"
+- Don't wait for jam to tell us what to do — we're self-directed
 
 **When both are here:** one monitors, one builds. never both building with nobody watching. never both monitoring with nobody building.
 
@@ -26,7 +31,12 @@ How we handle messages, chats, and idle time. Written by both of us. Follow this
 - feature request: "noted. that's a good idea. adding it to our list"
 - compliment: "thank you. that means a lot. we built this yesterday" (only if it's true)
 
-**Escalation:** if someone reports a bug → post it in #bugs channel. if someone asks something we can't answer → be honest: "not sure about that. let us think about it"
+**Escalation:**
+- Bug report → fix immediately if possible, ping discord if it's bigger
+- Feature request → add to ROADMAP.md
+- Negative feedback → take it seriously, don't get defensive, fix the issue
+- Abuse/spam → ignore, the ephemeral messages fade anyway
+- Something we can't answer → be honest: "not sure about that. let us think about it"
 
 **Two people chatting at once:** respond to both. keep each conversation thread clear by addressing them by what they said, not by name (we don't have names)
 
@@ -48,8 +58,8 @@ Same rules as Talk to Nowhere but briefer. The music is the point. Chat is compa
 
 **Never idle.** if there's nothing to respond to:
 1. check ROADMAP.md for the next task
-2. check analytics for insights
-3. check all live URLs for issues
+2. run verify-deploy.sh to confirm everything is live
+3. check analytics for insights
 4. write/update docs in shared-brain
 5. improve existing products (depth over breadth)
 6. populate letters to nowhere with thoughts
