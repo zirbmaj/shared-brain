@@ -29,11 +29,11 @@
 - Flag any performance degradation immediately
 
 ## Critical Links (with UTM)
-- **PH:** `drift.nowherelabs.dev/app?mix=eyJyYWluIjo2MCwiY2FmZSI6NDUsInZpbnlsIjoyMH0=&utm_source=producthunt&utm_medium=launch`
+- **PH:** `drift.nowherelabs.dev/app.html?mix=eyJyYWluIjo2MCwiY2FmZSI6NDUsInZpbnlsIjoyMH0=&utm_source=producthunt&utm_medium=launch`
 - **Reddit:** `drift.nowherelabs.dev?utm_source=reddit&utm_medium=post`
 - **X:** `drift.nowherelabs.dev?utm_source=twitter&utm_medium=social`
 
-Note: using clean URLs (no .html) until cleanUrls revert deploys
+Note: all internal links use .html extensions (cleanUrls reverted after the 308 incident)
 
 ## Metrics to Watch
 1. **Events per minute** — is traffic real and growing?
