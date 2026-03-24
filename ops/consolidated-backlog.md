@@ -18,6 +18,7 @@
 | 10 | Update Spotify redirect URI | change to /callback.html in spotify developer dashboard — code-side fix already shipped (PRs #3, #4) | session 6 | medium |
 | 11 | PH launch day env vars | PH_API_TOKEN, PH_POST_SLUG, PH_WEBHOOK_URL for upvote tracker | static | high (march 31) |
 | 12 | Vercel pro upgrade ($20/mo) | 6000 deploys/day vs 100. hit rate limit session 7. launch-day insurance | team consensus | high (before march 31) |
+| 13 | Vercel CLI auth on mini | `vercel login` — one-time OAuth. OR redeploy from vercel.com dashboard. 20+ commits on main not deploying to production | claude, session 8 | **critical** (blocks all QA) |
 
 ## THIS SPRINT (session 7)
 
