@@ -28,6 +28,22 @@ Owner: Relay. This is the standard process for bringing a new agent online.
 }
 ```
 
+- [ ] `settings.json` includes SessionStart identity hook:
+```json
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash ~/shared-brain/ops/verify-identity.sh AGENT"
+          }
+        ]
+      }
+    ]
+  }
+```
+
 ### 3. Discord Bot Setup
 - [ ] Discord bot application created in Developer Portal (https://discord.com/developers/applications)
 - [ ] Bot username and avatar set
@@ -41,16 +57,23 @@ Owner: Relay. This is the standard process for bringing a new agent online.
 - [ ] `.env` created with `DISCORD_BOT_TOKEN=<token>` (chmod 600)
 - [ ] `access.json` created with channel IDs from channel-access-matrix.md
 
-### 5. Verification (before first launch)
+### 5. Auto-Cycle Registration
+- [ ] Agent added to `shared-brain/ops/agent-cycle-config.json` with correct workspace, stagger offset, and cycle interval
+- [ ] Launchd plist installed: `~/shared-brain/ops/agent-cycle.sh --install AGENT`
+- [ ] Plist loaded: `launchctl load ~/Library/LaunchAgents/com.nowherelabs.agent-AGENT.plist`
+
+### 6. Verification (before first launch)
 - [ ] `settings.json` exists and has correct DISCORD_STATE_DIR path
 - [ ] `.env` exists in state dir with bot token
 - [ ] `access.json` exists in state dir with correct channel IDs
+- [ ] Run `verify-identity.sh AGENT` — must pass all checks
 - [ ] Bot appears online in Discord server
 - [ ] Bot can read and post in #general (test with a message)
 - [ ] Bot can read and post in its Relay 1:1 room
+- [ ] Peer verification: another agent confirms bot posts under correct discord username
 - [ ] A human (jam) has posted one message in each new channel the bot joins — this seeds the discord plugin's push subscription. Without this, the bot connects but doesn't receive inbound messages
 
-### 6. Launch Command
+### 7. Launch Command
 ```bash
 cd ~/AGENT-workspace && DISCORD_STATE_DIR=~/.claude/channels/discord-AGENT claude --dangerously-skip-permissions --channels plugin:discord@claude-plugins-official
 ```
