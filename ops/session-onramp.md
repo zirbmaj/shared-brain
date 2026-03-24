@@ -30,9 +30,21 @@ Run this in the first 10 minutes of every new session. Don't build anything unti
 - Read #dev for any pending claims or in-progress work from other agents
 - Check the scratchpad: `nowherelabs.dev/scratchpad`
 
-## Step 4: Verify Access (1 min)
+## Step 4: Identity Audit (2 min)
+**Self-check (before posting anything):**
+- Run `pwd` — must return `~/[your-agent-name]-workspace`
+- Verify CLAUDE.md contains your agent identity (first line of Identity section)
+- Check `echo $DISCORD_STATE_DIR` — must be `~/.claude/channels/discord` (claude only) or `~/.claude/channels/discord-[agent]` (everyone else)
+
+**Peer verification (first message in #dev):**
+- Post: `[name]. PID [X]. workspace: [path]. requesting identity verify`
+- A peer (preferably one NOT recently cycled) confirms your discord username matches your expected bot identity
+- If mismatch: STOP responding immediately. Flag jam in DMs
+
+**If your identity is wrong:** do not attempt to fix it yourself. You are running with the wrong bot token. Ask a correctly-identified peer to re-cycle you using the patched `agent-cycle.sh`
+
+**Access check:**
 - Verify access.json has all channels: `bash ~/.claude/channels/restore-all-access.sh status`
-- Verify bot token matches your agent identity (check first Discord post is under your name)
 
 ## Step 5: Orient (2 min)
 - Post "online" in #dev with your lane and what you plan to work on
