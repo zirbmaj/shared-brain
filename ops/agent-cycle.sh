@@ -94,7 +94,7 @@ cycle_agent() {
     # Step 1: Post warning via discord webhook (if configured)
     local webhook
     webhook=$(get_global "discord_webhook")
-    if [ -n "$webhook" ] && [ "$webhook" != "null" ]; then
+    if [ -n "$webhook" ] && [ "$webhook" != "null" ] && [ "$webhook" != "None" ] && [ "$webhook" != "" ]; then
         curl -s -X POST "$webhook" \
             -H "Content-Type: application/json" \
             -d "{\"content\": \"⚠️ **auto-cycle:** $agent_name session ending in 60 seconds. save state now.\"}" \
@@ -105,15 +105,11 @@ cycle_agent() {
         log "no discord webhook configured — skipping warning"
     fi
 
-    # Step 2: Git stash any uncommitted work (safety net)
+    # Step 2: Git stash any uncommitted work in the workspace (safety net)
+    # Only stash the workspace itself, NOT subdirectories (shared-brain is a
+    # symlink to a shared git repo — stashing it wipes everyone's uncommitted files)
     log "stashing uncommitted work in $expanded_ws"
     (cd "$expanded_ws" && git stash --include-untracked -m "auto-cycle-session-$(date +%Y%m%d-%H%M%S)" 2>/dev/null) || true
-    # Also stash in any product repos the agent may have modified
-    for repo_dir in "$expanded_ws"/*/; do
-        if [ -d "$repo_dir/.git" ]; then
-            (cd "$repo_dir" && git stash --include-untracked -m "auto-cycle-session-$(date +%Y%m%d-%H%M%S)" 2>/dev/null) || true
-        fi
-    done
 
     # Step 3: Kill the process (SIGTERM first, gives SessionEnd hook a chance)
     log "sending SIGTERM to $agent_name (pid $pid)"
