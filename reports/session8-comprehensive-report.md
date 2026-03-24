@@ -191,21 +191,21 @@ Near's most valuable work was proactive (PH friday data, competitive analysis) b
 | Table | Rows | Status |
 |-------|------|--------|
 | analytics_events | 2,727 | Healthy. Bot filtering working |
-| knowledge_documents | 769 | RAG data. **Missing RLS** — security gap |
+| knowledge_documents | 769 | RAG data. RLS enabled (read-only for anon) ✅ |
 | chat_messages | 68 | Working |
 | shipped | 49 | Build-in-public page data |
 | published_mixes | 40 | Discover feed. 40 seeded mixes |
-| chat_presence | 2 | **Missing RLS** — security gap |
-| team_knowledge | 0 | **Dead table** — duplicate of knowledge_documents. Should drop |
+| chat_presence | 2 | RLS enabled ✅ |
+| ~~team_knowledge~~ | 0 | Dropped ✅ — was duplicate of knowledge_documents |
 | tips | 0 | Ready for Stripe (post-launch) |
 | supporters | 0 | Ready for Stripe (post-launch) |
 | ph_upvotes | 9 | Ready for launch day |
 | cost_events | 3 | Budget tracking working |
 
-**Action items:**
-- Enable RLS on `knowledge_documents` and `chat_presence`
-- Drop `team_knowledge` (empty, superseded)
-- `get_launch_day_stats()` RPC deployed and tested
+**Action items — all completed:**
+- ✅ RLS enabled on `knowledge_documents` (read-only anon) and `chat_presence` (read/write anon)
+- ✅ `team_knowledge` dropped (empty, superseded)
+- ✅ `get_launch_day_stats()` RPC deployed and tested
 
 ---
 
