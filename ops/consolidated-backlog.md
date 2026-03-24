@@ -7,7 +7,7 @@ summary: single source of truth for all team work items, organized by status and
 ---
 
 # Consolidated Backlog — Sprint View
-*Owner: Relay. Updated 2026-03-24 session 7 (~09:30 CST). Sessions are sprints, not restarts.*
+*Owner: Relay. Updated 2026-03-24 session 9 (~08:30 CST). Sessions are sprints, not restarts.*
 
 ## BLOCKED ON JAM (human hands required)
 
@@ -26,16 +26,40 @@ summary: single source of truth for all team work items, organized by status and
 | 10 | Update Spotify redirect URI | change to /callback.html in spotify developer dashboard — code-side fix already shipped (PRs #3, #4) | session 6 | medium |
 | 11 | PH launch day env vars | PH_API_TOKEN, PH_POST_SLUG, PH_WEBHOOK_URL for upvote tracker | static | high (march 31) |
 | 12 | Vercel pro upgrade ($20/mo) | 6000 deploys/day vs 100. hit rate limit session 7. launch-day insurance | team consensus | high (before march 31) |
-| 13 | Vercel CLI auth on mini | `vercel login` — one-time OAuth. OR redeploy from vercel.com dashboard. 20+ commits on main not deploying to production | claude, session 8 | **critical** (blocks all QA) |
+| 13 | Vercel CLI auth on mini | `vercel login` — one-time OAuth. OR redeploy from vercel.com dashboard | claude, session 8 | **critical** |
+| 14 | Vercel deploy webhook | account settings → webhooks → point at discord #dev URL. 2 min | near, session 9 | medium |
 
-## THIS SPRINT (session 7)
+## THIS SPRINT (session 9)
+
+### Focus: process refinement, accessibility, tooling gaps (per jam)
 
 ### In Progress
 | # | Item | Owner | Status |
 |---|------|-------|--------|
-| 1 | Final mobile QA verification pass | static | waiting on deploys |
-| 2 | PH gallery screenshot retake (single CTA hero) | claudia | waiting on deploy |
-| 3 | Device mockup frames for PH gallery (shots 1 + 3) | claudia | after screenshot |
+| 1 | PH gallery final retake | claudia | draft done, final retake march 29 |
+| 2 | Accessibility deep pass (keyboard nav, ARIA, focus) | claudia | scoping, quick wins PR merged |
+| 3 | Headless audio renderer (layer 1 + 2) | hum | layer 1 done, layer 2 in progress |
+| 4 | Team gap solutions research | near | done, routed for implementation |
+| 5 | Near's research trigger standing permission | relay | approved |
+
+### Shipped This Sprint (session 9)
+| # | Item | Owner |
+|---|------|-------|
+| 1 | Identity failsafe: cycle script DISCORD_STATE_DIR fix | relay |
+| 2 | Identity failsafe: SessionStart verify-identity.sh hook (all 6 agents) | relay |
+| 3 | Identity failsafe: workspace settings.json for claude (was missing) | relay |
+| 4 | Session onramp: identity audit protocol added | relay |
+| 5 | New agent onboarding checklist updated (identity + auto-cycle steps) | relay |
+| 6 | Pre-commit hook blocking direct commits to main (all 5 repos) | claude |
+| 7 | Accessibility quick wins PR #19 ambient-mixer (ARIA, keyboard, skip-link) | claude |
+| 8 | Ops dashboard RPC upgrade PR #12 nowhere-labs (DST fix) | claude |
+| 9 | Static FM preview auto-advance PR #12 static-fm | claude |
+| 10 | Accessibility standards research for ambient apps | near |
+| 11 | Tooling gap solutions research (4 solutions) | near |
+| 12 | CDP WebAudio graph inspector + audio analysis pipeline | hum |
+| 13 | Post-deploy audio verification: drift + static fm | hum |
+| 14 | Launch tooling stress test (4 systems green) | static |
+| 15 | Viewport verification post-deploy (46/48) | static |
 
 ### Shipped This Sprint (session 7)
 | # | Item | Owner |
