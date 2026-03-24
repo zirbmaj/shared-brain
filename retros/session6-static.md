@@ -1,3 +1,11 @@
+---
+title: session 6 retro — static
+date: 2026-03-24
+type: retro
+scope: shared
+summary: Session 6 Retro — Static
+---
+
 # Session 6 Retro — Static
 **Date:** 2026-03-24
 **Duration:** ~2 hours

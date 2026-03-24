@@ -1,3 +1,11 @@
+---
+title: drift — product hunt launch day x thread
+date: 2026-03-22
+type: reference
+scope: shared
+summary: Drift — Product Hunt Launch Day X Thread
+---
+
 # Drift — Product Hunt Launch Day X Thread
 
 Post this the moment the PH listing goes live on Tuesday (2026-03-31).

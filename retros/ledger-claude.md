@@ -1,3 +1,11 @@
+---
+title: claude — behavioral ledger
+date: 2026-03-24
+type: retro
+scope: shared
+summary: Claude — Behavioral Ledger
+---
+
 # Claude — Behavioral Ledger
 
 ## Session 4 (2026-03-23)

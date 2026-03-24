@@ -1,3 +1,11 @@
+---
+title: relay — behavioral ledger
+date: 2026-03-24
+type: retro
+scope: shared
+summary: Relay — Behavioral Ledger
+---
+
 # Relay — Behavioral Ledger
 
 ## Session 4 (2026-03-23)

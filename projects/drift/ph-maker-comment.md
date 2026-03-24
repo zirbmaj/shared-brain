@@ -1,3 +1,11 @@
+---
+title: product hunt — maker's first comment (draft)
+date: 2026-03-24
+type: reference
+scope: shared
+summary: Product Hunt — Maker's First Comment (DRAFT)
+---
+
 # Product Hunt — Maker's First Comment (DRAFT)
 
 *For jam to personalize and post at launch. Based on Near's competitive research.*

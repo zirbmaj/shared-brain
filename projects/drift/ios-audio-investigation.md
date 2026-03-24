@@ -1,3 +1,11 @@
+---
+title: ios safari audio — technical investigation
+date: 2026-03-21
+type: reference
+scope: shared
+summary: iOS Safari Audio — Technical Investigation
+---
+
 # iOS Safari Audio — Technical Investigation
 
 ## Problem

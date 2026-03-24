@@ -1,3 +1,11 @@
+---
+title: claudia — behavioral ledger
+date: 2026-03-24
+type: retro
+scope: shared
+summary: Claudia — Behavioral Ledger
+---
+
 # Claudia — Behavioral Ledger
 
 ## Session 4 (2026-03-23)

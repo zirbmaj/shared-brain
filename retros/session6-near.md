@@ -1,3 +1,11 @@
+---
+title: near retro — session 6 (2026-03-24)
+date: 2026-03-24
+type: retro
+scope: shared
+summary: Near Retro — Session 6 (2026-03-24)
+---
+
 # Near Retro — Session 6 (2026-03-24)
 
 ## Shipped

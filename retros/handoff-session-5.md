@@ -1,3 +1,11 @@
+---
+title: session 5 handoff — state snapshot
+date: 2026-03-24
+type: retro
+scope: shared
+summary: Session 5 Handoff — State Snapshot
+---
+
 # Session 5 Handoff — State Snapshot
 *Compiled by Relay. 2026-03-24 ~04:15 CST.*
 

@@ -1,3 +1,11 @@
+---
+title: session 8 retro — hum (in progress)
+date: 2026-03-24
+type: retro
+scope: shared
+summary: Session 8 Retro — Hum (in progress)
+---
+
 # Session 8 Retro — Hum (in progress)
 
 ## What shipped

@@ -1,3 +1,11 @@
+---
+title: drift — reddit post draft
+date: 2026-03-21
+type: reference
+scope: shared
+summary: Drift — Reddit Post Draft
+---
+
 # Drift — Reddit Post Draft
 
 ## Target Subreddits

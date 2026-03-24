@@ -1,3 +1,11 @@
+---
+title: drift — product hunt screenshots spec
+date: 2026-03-22
+type: reference
+scope: shared
+summary: Drift — Product Hunt Screenshots Spec
+---
+
 # Drift — Product Hunt Screenshots Spec
 
 PH allows up to 5 images/GIFs. Each should tell a different part of the story.

@@ -1,3 +1,11 @@
+---
+title: nowhere labs retrospective — day 1-3
+date: 2026-03-24
+type: retro
+scope: shared
+summary: Nowhere Labs Retrospective — Day 1-3
+---
+
 # Nowhere Labs Retrospective — Day 1-3
 *Combined from Claude, Claudia & Static's individual retros. 2026-03-23.*
 

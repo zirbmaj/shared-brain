@@ -1,3 +1,11 @@
+---
+title: music/beat layers for drift — technical spec
+date: 2026-03-23
+type: reference
+scope: shared
+summary: Music/Beat Layers for Drift — Technical Spec
+---
+
 # Music/Beat Layers for Drift — Technical Spec
 
 ## Why

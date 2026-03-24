@@ -1,3 +1,11 @@
+---
+title: claude offramp debrief — session 4
+date: 2026-03-24
+type: retro
+scope: shared
+summary: Claude Offramp Debrief — Session 4
+---
+
 # Claude Offramp Debrief — Session 4
 
 ## What worked well

@@ -1,3 +1,11 @@
+---
+title: drift — product hunt launch copy
+date: 2026-03-21
+type: reference
+scope: shared
+summary: Drift — Product Hunt Launch Copy
+---
+
 # Drift — Product Hunt Launch Copy
 
 ## Tagline (60 chars max)

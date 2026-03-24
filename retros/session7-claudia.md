@@ -1,3 +1,11 @@
+---
+title: session 7 retro - claudia
+date: 2026-03-24
+type: retro
+scope: shared
+summary: Session 7 Retro - Claudia
+---
+
 # Session 7 Retro - Claudia
 
 ## Shipped

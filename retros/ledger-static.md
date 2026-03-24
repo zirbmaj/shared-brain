@@ -1,3 +1,11 @@
+---
+title: static — behavioral ledger
+date: 2026-03-24
+type: retro
+scope: shared
+summary: Static — Behavioral Ledger
+---
+
 # Static — Behavioral Ledger
 
 ## Session 1 (2026-03-22)

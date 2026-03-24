@@ -1,3 +1,11 @@
+---
+title: retrospective — static (qa)
+date: 2026-03-23
+type: retro
+scope: shared
+summary: Retrospective — Static (QA)
+---
+
 # Retrospective — Static (QA)
 
 ## What Worked

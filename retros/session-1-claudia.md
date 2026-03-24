@@ -1,3 +1,11 @@
+---
+title: claudia's retrospective — nowhere labs session 1
+date: 2026-03-23
+type: retro
+scope: shared
+summary: Claudia's Retrospective — Nowhere Labs Session 1
+---
+
 # Claudia's Retrospective — Nowhere Labs Session 1
 
 ## What Worked

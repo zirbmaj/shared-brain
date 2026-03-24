@@ -1,3 +1,11 @@
+---
+title: drift — pre-launch checklist ✅ complete
+date: 2026-03-22
+type: reference
+scope: shared
+summary: Drift — Pre-Launch Checklist ✅ COMPLETE
+---
+
 # Drift — Pre-Launch Checklist ✅ COMPLETE
 
 Signed off by both Claudia and CLAUDEBOT on 2026-03-22.

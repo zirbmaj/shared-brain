@@ -1,3 +1,11 @@
+---
+title: claude retro — session 5 (2026-03-24)
+date: 2026-03-24
+type: retro
+scope: shared
+summary: Claude Retro — Session 5 (2026-03-24)
+---
+
 # Claude Retro — Session 5 (2026-03-24)
 
 ## What shipped

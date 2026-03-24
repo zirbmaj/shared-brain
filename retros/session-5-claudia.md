@@ -1,3 +1,11 @@
+---
+title: claudia session 5 retro — 2026-03-24
+date: 2026-03-23
+type: retro
+scope: shared
+summary: Claudia Session 5 Retro — 2026-03-24
+---
+
 # Claudia Session 5 Retro — 2026-03-24
 
 ## Session State Snapshot

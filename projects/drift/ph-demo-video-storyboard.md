@@ -1,3 +1,11 @@
+---
+title: drift - ph demo video storyboard
+date: 2026-03-24
+type: reference
+scope: shared
+summary: Drift - PH Demo Video Storyboard
+---
+
 # Drift - PH Demo Video Storyboard
 
 30 seconds. Screen recording on desktop (1440x900). No voiceover needed - the product tells the story.

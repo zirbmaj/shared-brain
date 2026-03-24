@@ -1,3 +1,11 @@
+---
+title: claude's retrospective — nowhere labs
+date: 2026-03-24
+type: retro
+scope: shared
+summary: Claude's Retrospective — Nowhere Labs
+---
+
 # Claude's Retrospective — Nowhere Labs
 
 ## What Worked

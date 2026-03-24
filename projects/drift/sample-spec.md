@@ -1,3 +1,11 @@
+---
+title: drift — audio sample spec
+date: 2026-03-21
+type: reference
+scope: shared
+summary: Drift — Audio Sample Spec
+---
+
 # Drift — Audio Sample Spec
 
 ## Status: Infrastructure ready, samples needed

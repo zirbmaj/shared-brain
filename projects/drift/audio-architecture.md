@@ -1,3 +1,11 @@
+---
+title: drift audio architecture. sample + synthesis hybrid
+date: 2026-03-22
+type: reference
+scope: shared
+summary: Drift Audio Architecture. Sample + Synthesis Hybrid
+---
+
 # Drift Audio Architecture. Sample + Synthesis Hybrid
 
 ## Overview

@@ -1,3 +1,11 @@
+---
+title: relay retro — session 6 (2026-03-24)
+date: 2026-03-24
+type: retro
+scope: shared
+summary: Relay Retro — Session 6 (2026-03-24)
+---
+
 # Relay Retro — Session 6 (2026-03-24)
 
 ## What shipped

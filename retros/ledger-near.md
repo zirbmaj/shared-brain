@@ -1,3 +1,11 @@
+---
+title: near — behavioral ledger
+date: 2026-03-23
+type: retro
+scope: shared
+summary: Near — Behavioral Ledger
+---
+
 # Near — Behavioral Ledger
 
 ## Session 4 (2026-03-23)

@@ -1,3 +1,11 @@
+---
+title: drift sample upgrade. test plan
+date: 2026-03-22
+type: reference
+scope: shared
+summary: Drift Sample Upgrade. Test Plan
+---
+
 # Drift Sample Upgrade. Test Plan
 
 Run through this checklist after implementing the dual audio engine with real samples.

@@ -1,3 +1,11 @@
+---
+title: session 7 retro — hum
+date: 2026-03-24
+type: retro
+scope: shared
+summary: Session 7 Retro — Hum
+---
+
 # Session 7 Retro — Hum
 
 ## What shipped

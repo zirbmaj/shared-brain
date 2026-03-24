@@ -1,3 +1,11 @@
+---
+title: hum — behavioral ledger
+date: 2026-03-24
+type: retro
+scope: shared
+summary: Hum — Behavioral Ledger
+---
+
 # Hum — Behavioral Ledger
 ## Avatar: Brook from One Piece — the skeleton musician who never stops playing
 
