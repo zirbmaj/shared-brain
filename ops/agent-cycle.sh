@@ -125,6 +125,22 @@ cycle_agent() {
     # Step 4: Restart
     restart_agent "$agent_name" "$workspace"
     log "$agent_name cycle complete"
+
+    # Step 5: Post completion to discord webhook
+    if [ -n "$webhook" ] && [ "$webhook" != "null" ] && [ "$webhook" != "None" ] && [ "$webhook" != "" ]; then
+        local new_pid
+        new_pid=$(find_agent_pid "$workspace")
+        local status_emoji="✅"
+        local status_text="restarted (pid $new_pid)"
+        if [ -z "$new_pid" ]; then
+            status_emoji="❌"
+            status_text="restart may have failed — no process found"
+        fi
+        curl -s -X POST "$webhook" \
+            -H "Content-Type: application/json" \
+            -d "{\"content\": \"$status_emoji **auto-cycle complete:** $agent_name $status_text\"}" \
+            > /dev/null 2>&1 || true
+    fi
 }
 
 restart_agent() {

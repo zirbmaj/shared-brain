@@ -3,7 +3,7 @@
   "stagger_minutes": 30,
   "sentinel_dir": "/tmp",
   "log_dir": "/tmp",
-  "discord_webhook": null,
+  "discord_webhook": "https://discord.com/api/webhooks/1485951605814853662/6HFbrqmJSBRBOiJXEFXOxJwE8DatyvDvPMVkRCh470zMhq1A5dAmQtPQx_E23jMyGz_q",
   "agents": [
     {
       "name": "claude",
