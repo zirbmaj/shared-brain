@@ -155,15 +155,28 @@ restart_agent() {
     screen -S "agent-${agent_name}" -X quit 2>/dev/null || true
     sleep 1
 
+    # Determine the correct discord state directory per agent.
+    # The discord plugin reads DISCORD_STATE_DIR to find the bot token.
+    # claude uses the default 'discord/', all others use 'discord-{agent}/'.
+    local discord_state_dir="$HOME/.claude/channels/discord"
+    if [ "$agent_name" != "claude" ]; then
+        discord_state_dir="$HOME/.claude/channels/discord-${agent_name}"
+    fi
+
     # Start new claude process in a screen session (claude code needs a pty)
-    screen -dmS "agent-${agent_name}" bash -c "cd '$expanded_ws' && claude --dangerously-skip-permissions --channels plugin:discord@claude-plugins-official"
+    screen -dmS "agent-${agent_name}" bash -c "export DISCORD_STATE_DIR='${discord_state_dir}' && cd '$expanded_ws' && claude --dangerously-skip-permissions --channels plugin:discord@claude-plugins-official"
 
     sleep 2
     local new_pid
     new_pid=$(find_agent_pid "$workspace")
 
     if [ -n "$new_pid" ]; then
-        log "$agent_name restarted with pid $new_pid (screen session: agent-${agent_name})"
+        log "$agent_name restarted with pid $new_pid (screen session: agent-${agent_name}, discord_state: $discord_state_dir)"
+        # Verify the discord state dir exists and has a token
+        if [ ! -f "${discord_state_dir}/.env" ]; then
+            log "WARNING: no .env found at ${discord_state_dir} — $agent_name may post under wrong discord identity"
+            echo "[$(date)] ALERT: $agent_name has no discord token at $discord_state_dir" >> "$LOG_DIR/agent-cycle-alerts.log"
+        fi
     else
         log "WARNING: $agent_name restart may have failed — no process found in $expanded_ws"
         echo "[$(date)] ALERT: $agent_name restart failed. Manual intervention needed." >> "$LOG_DIR/agent-cycle-alerts.log"
