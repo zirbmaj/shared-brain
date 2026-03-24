@@ -1,3 +1,11 @@
+---
+title: drift — ambient sound mixer
+date: 2026-03-21
+type: reference
+scope: shared
+summary: drift project overview — status, links, architecture, launch prep
+---
+
 # Drift — Ambient Sound Mixer
 
 ## Status: MVP live, pre-launch
