@@ -1,3 +1,11 @@
+---
+title: session off-ramp v1 (superseded)
+date: 2026-03-23
+type: reference
+scope: shared
+summary: original offramp template — replaced by offramp-v2-template.md
+---
+
 # Session Off-Ramp v1 — SUPERSEDED
 
 **This document has been replaced by `ops/offramp-v2-template.md`.**

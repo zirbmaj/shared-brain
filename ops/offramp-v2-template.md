@@ -1,3 +1,11 @@
+---
+title: session offramp v2 template
+date: 2026-03-24
+type: reference
+scope: shared
+summary: structured offramp with reflexion loop and state capture — 20 min process for session end
+---
+
 # Session Offramp v2 — Template
 *Owner: Relay. Based on Near's offramp research (session 5). Implements reflexion loop + structured state capture.*
 

@@ -1,3 +1,11 @@
+---
+title: new agent onboarding checklist
+date: 2026-03-24
+type: reference
+scope: shared
+summary: step-by-step checklist for bringing a new agent online — workspace, discord, identity, launch
+---
+
 # New Agent Onboarding Checklist
 
 Owner: Relay. This is the standard process for bringing a new agent online.
