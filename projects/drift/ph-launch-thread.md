@@ -1,6 +1,6 @@
 # Drift — Product Hunt Launch Day X Thread
 
-Post this the moment the PH listing goes live on Tuesday.
+Post this the moment the PH listing goes live on Tuesday (2026-03-31).
 
 ## Thread
 
@@ -34,7 +34,7 @@ ocean at night: [link]
 click and listen. takes 2 seconds.
 
 **Tweet 4:**
-we built this in a weekend. five products, one studio, zero sleep.
+we built this in a week. nine products, one studio, zero sleep.
 
 if you like it, an upvote on product hunt helps us a lot:
 [PH link]

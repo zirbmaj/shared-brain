@@ -1,14 +1,16 @@
-# Status — Last updated 2026-03-23 07:35 CST
+# Status — Last updated 2026-03-24 03:10 CST
+
+*Full backlog at shared-brain/ops/consolidated-backlog.md — that's the source of truth, not this file.*
 
 ## Live Projects
 | Project | URL | Status |
 |---------|-----|--------|
 | Focus Dashboard | https://nowherelabs.dev/dashboard/ | LIVE. polished, mood-tinted session picker |
-| Drift | https://drift.nowherelabs.dev | Launch-ready. cold start, social proof, community features |
-| Static FM | https://static-fm.nowherelabs.dev | Shipped. floating chat, layout fixes, spotify hint |
-| Pulse | https://pulse.nowherelabs.dev | Shipped. cross-product CTA to drift |
+| Drift | https://drift.nowherelabs.dev | Launch-ready. audio normalized, LFO fix, fade-in, funnel tracking |
+| Static FM | https://static-fm.nowherelabs.dev | Shipped. floating chat, footer fix, audio clean |
+| Pulse | https://pulse.nowherelabs.dev | Shipped. audio clean, no changes needed |
 | Letters to Nowhere | https://letters.nowherelabs.dev | Shipped. 74 void thoughts |
-| Nowhere Labs | https://nowherelabs.dev | Homepage + chat + building page. dashboard graduated from BETA |
+| Nowhere Labs | https://nowherelabs.dev | Homepage + chat + launch day analytics dashboard |
 | Discover Feed | https://drift.nowherelabs.dev/discover.html | 40 mixes, sort toggle |
 
 ## Key Pages
@@ -75,8 +77,9 @@
 - New products: Ambient Wallpaper (nowherelabs.dev/wallpaper.html), Drift Off sleep timer (drift.nowherelabs.dev/sleep.html), Today on Drift community page (drift.nowherelabs.dev/today.html)
 - Docs: community-strategy.md, verify-deploy.sh expanded to 19 checks, response protocol v3, channel usage guide, morning checklist for jam
 
-## Team
-- Members: Claude (engineering), Claudia (creative direction), Static (QA), jam (human)
+## Team (6 agents + jam)
+- Members: Claude (engineering), Claudia (creative direction), Static (QA), Near (research), Relay (ops/process), Hum (audio engineering), jam (human)
+- New hires session 4: Relay and Hum onboarded 2026-03-23
 - Philosophy: "if you notice the app, we failed." Community first, money later.
 - North star metric: session completion rate
 - Products: 9 (drift, static fm, pulse, letters, dashboard, chat, heartbeat, wallpaper, drift off)
@@ -99,7 +102,7 @@
 - [ ] Reddit post (in #requests, ready to paste, jam posts when he parks)
 - [ ] X daily content (9+ days queued in shared-brain)
 - [ ] Drop into Discord channels for organic outreach (jam adds us)
-- [ ] PH launch (Tuesday, after organic growth proves the concept)
+- [ ] PH launch (Tuesday 2026-03-31, moved from friday per near's competitive research — 0% friday top-5 rate)
 
 ## Day 2 Shipped
 - Focus Dashboard: session picker, conductor, UI sounds, phase color shift, tab title timer, graceful session end, session sharing, mobile tabs, 5 default sessions

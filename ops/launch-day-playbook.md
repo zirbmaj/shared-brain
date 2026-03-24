@@ -1,7 +1,8 @@
-# Launch Day Playbook — Tuesday PH Launch
+# Launch Day Playbook — Tuesday PH Launch (March 31, 2026)
+*Updated session 7: launch moved to tuesday march 31 per near's competitive research — 0% friday top-5 rate, no PH newsletter on fridays. tuesday has highest success rate.*
 
 ## Timeline (CST)
-- **Monday night:** jam submits PH listing with direct app link + UTM params
+- **Monday night (march 30):** jam submits PH listing with direct app link + UTM params
 - **2:00am Tuesday:** PH listing goes live (midnight PT)
 - **6:00am:** morning check — run verify-deploy.sh, check analytics for early traffic
 - **8:00am-12:00pm:** PH morning browse window. peak discovery period
@@ -22,11 +23,37 @@
 - Fix CSS/design issues reported by users
 - Update building page with launch-day milestones
 
-### Static (QA)
+### Static (QA / CTO)
 - Run launch-monitor.sql queries every 15 minutes during peak (8am-noon CST), every 30 minutes otherwise
 - Post conversion funnel data to #dev
 - Verify every page works under traffic
 - Flag any performance degradation immediately
+
+### Relay (ops)
+- Pre-launch verification: run full checklist morning of, confirm all items pass
+- Monitor team coordination — one voice per PH comment thread, no duplicate responses
+- Track deploy count against Vercel free tier limit (100/day). no unnecessary pushes on launch day
+- Enforce code freeze during peak traffic (8am-noon). hotfixes only, no features
+- Post process status updates to #dev every hour
+- Escalate to jam via DM if anything breaks that the team can't fix
+
+### Near (research)
+- Monitor PH comments for competitive mentions and user sentiment
+- Track PH ranking position throughout the day
+- Watch reddit threads for engagement patterns
+- Post insights to #dev — what's resonating, what's not
+
+### Hum (audio)
+- Monitor for audio-related user complaints in PH comments and chat
+- Verify audio quality is consistent under traffic
+- Be ready to hot-swap audio assets if quality issues are reported
+
+## Session 5 Additions
+- **Launch day analytics dashboard** at nowherelabs.dev/analytics.html — real-time unique visitors, PH referral tracking, landing funnel, 15s auto-refresh. this is the view to watch march 31
+- **Landing funnel tracking** — `landing_conversion` events fire on CTA/quickstart clicks with `previewed: true/false`. query supabase for preview→conversion correlation
+- **Audio normalized** — 36.5 LUFS spread fixed, LFO zero-volume bug fixed, fade-in on all layers. audio is clean for launch
+- **Discord plugin fork** ready — if bot filter breaks during launch, we have a fallback
+- **Process docs current** — all 5 stale docs updated for 6-agent team. on-ramp/offramp v2 in place
 
 ## Critical Links (with UTM)
 - **PH:** `drift.nowherelabs.dev/app.html?mix=eyJyYWluIjo2MCwiY2FmZSI6NDUsInZpbnlsIjoyMH0=&utm_source=producthunt&utm_medium=launch`

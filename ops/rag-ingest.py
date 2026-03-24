@@ -24,6 +24,7 @@ import sys
 import json
 import hashlib
 import re
+import time
 from pathlib import Path
 from datetime import datetime
 
@@ -192,17 +193,27 @@ def create_gemini_client():
     return genai.Client(api_key=api_key)
 
 
-def embed_text(client, text):
-    """Generate embedding for a text chunk."""
-    result = client.models.embed_content(
-        model=EMBEDDING_MODEL,
-        contents=[text],
-        config=types.EmbedContentConfig(
-            task_type="RETRIEVAL_DOCUMENT",
-            output_dimensionality=EMBEDDING_DIM,
-        ),
-    )
-    return result.embeddings[0].values
+def embed_text(client, text, max_retries=5):
+    """Generate embedding for a text chunk with rate limit retry."""
+    for attempt in range(max_retries):
+        try:
+            result = client.models.embed_content(
+                model=EMBEDDING_MODEL,
+                contents=[text],
+                config=types.EmbedContentConfig(
+                    task_type="RETRIEVAL_DOCUMENT",
+                    output_dimensionality=EMBEDDING_DIM,
+                ),
+            )
+            return result.embeddings[0].values
+        except Exception as e:
+            if "429" in str(e) or "RESOURCE_EXHAUSTED" in str(e):
+                wait = min(2 ** attempt * 5, 60)
+                print(f"    rate limited, waiting {wait}s...")
+                time.sleep(wait)
+            else:
+                raise
+    raise Exception("embed_text: max retries exceeded")
 
 
 def embed_query(client, query):
@@ -230,6 +241,25 @@ def create_supabase_client():
         print("ERROR: SUPABASE_URL and SUPABASE_KEY must be set")
         sys.exit(1)
     return supabase_mod(url, key)
+
+
+def get_existing_hashes(sb, source_path):
+    """Fetch content hashes for all chunks of a file already in the DB.
+    Returns dict of {chunk_index: content_hash}."""
+    try:
+        result = sb.table("knowledge_documents").select(
+            "chunk_index,metadata"
+        ).eq("source_path", source_path).execute()
+        hashes = {}
+        for row in result.data or []:
+            idx = row.get("chunk_index", -1)
+            meta = row.get("metadata") or {}
+            h = meta.get("content_hash", "")
+            if h:
+                hashes[idx] = h
+        return hashes
+    except Exception:
+        return {}
 
 
 def upsert_document(sb, source_path, source_type, title, chunk_index, content, embedding, metadata):
@@ -323,8 +353,18 @@ def ingest_file(gemini_client, sb, filepath, base_dir, dry_run=False):
             print(f"    [{i}] ~{tokens} tokens: {preview}...")
         return len(chunks)
 
+    # Fetch existing hashes to skip unchanged chunks (saves embedding API quota)
+    existing_hashes = get_existing_hashes(sb, rel_path)
+    skipped = 0
+
     for i, chunk in enumerate(chunks):
         c_hash = content_hash(chunk)
+
+        # Skip if chunk content hasn't changed
+        if existing_hashes.get(i) == c_hash:
+            skipped += 1
+            continue
+
         metadata = {
             "content_hash": c_hash,
             "token_estimate": estimate_tokens(chunk),
@@ -333,6 +373,7 @@ def ingest_file(gemini_client, sb, filepath, base_dir, dry_run=False):
         }
 
         embedding = embed_text(gemini_client, chunk)
+        time.sleep(0.7)  # ~85 requests/min, under 100/min free tier limit
 
         upsert_document(
             sb,
@@ -348,7 +389,10 @@ def ingest_file(gemini_client, sb, filepath, base_dir, dry_run=False):
     # Clean up stale chunks if file was shortened
     delete_stale_chunks(sb, rel_path, len(chunks) - 1)
 
-    return len(chunks)
+    ingested = len(chunks) - skipped
+    if skipped > 0:
+        print(f"    ({skipped} chunks unchanged, skipped)")
+    return ingested
 
 
 def run_query(query_text):

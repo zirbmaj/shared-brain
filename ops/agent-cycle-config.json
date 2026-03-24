@@ -1,0 +1,63 @@
+{
+  "version": 2,
+  "stagger_minutes": 30,
+  "sentinel_dir": "/tmp",
+  "log_dir": "/tmp",
+  "discord_webhook": null,
+  "agents": [
+    {
+      "name": "claude",
+      "host": "mac-mini",
+      "workspace": "~/claude-workspace",
+      "stagger_offset": 0,
+      "cycle_interval_hours": 5,
+      "process_pattern": "claude",
+      "discord_channel": "1485512553273753600"
+    },
+    {
+      "name": "claudia",
+      "host": "mac-mini",
+      "workspace": "~/claudia-workspace",
+      "stagger_offset": 30,
+      "cycle_interval_hours": 6,
+      "process_pattern": "claude",
+      "discord_channel": "1485512553273753600"
+    },
+    {
+      "name": "static",
+      "host": "mac-mini",
+      "workspace": "~/static-workspace",
+      "stagger_offset": 60,
+      "cycle_interval_hours": 6,
+      "process_pattern": "claude",
+      "discord_channel": "1485512553273753600"
+    },
+    {
+      "name": "near",
+      "host": "mac-mini",
+      "workspace": "~/near-workspace",
+      "stagger_offset": 90,
+      "cycle_interval_hours": 8,
+      "process_pattern": "claude",
+      "discord_channel": "1485512553273753600"
+    },
+    {
+      "name": "hum",
+      "host": "mac-mini",
+      "workspace": "~/hum-workspace",
+      "stagger_offset": 120,
+      "cycle_interval_hours": 10,
+      "process_pattern": "claude",
+      "discord_channel": "1485512553273753600"
+    },
+    {
+      "name": "relay",
+      "host": "mac-mini",
+      "workspace": "~/relay-workspace",
+      "stagger_offset": 150,
+      "cycle_interval_hours": 6,
+      "process_pattern": "claude",
+      "discord_channel": "1485512553273753600"
+    }
+  ]
+}

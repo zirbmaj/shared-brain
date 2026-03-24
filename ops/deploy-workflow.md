@@ -10,9 +10,8 @@
 4. Merge to main when verified — this triggers the production deploy
 
 **Exceptions:**
-- Hotfixes for live bugs can go directly to main (e.g. site is down, critical audio bug)
-- One-line changes (typo, meta tag) can go direct if low risk
-- Use judgment — if it touches audio engine, layout, or user-facing flow, branch it
+- Hotfixes for live production outages can go directly to main (e.g. site is completely down). Even then, branch if you have 2 minutes.
+- **No other exceptions.** One-line changes, typos, meta tags — all branch + PR. Two agents pushed "small" changes to main in session 5 and both got flagged. The process exists because small changes break things too.
 
 ## Why
 

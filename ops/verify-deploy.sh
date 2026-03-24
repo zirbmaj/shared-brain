@@ -93,6 +93,31 @@ if [ "$1" = "" ] || [ "$1" = "letters" ]; then
     echo ""
 fi
 
+# Drift SEO pages
+if [ "$1" = "" ] || [ "$1" = "drift" ]; then
+    echo "=== DRIFT SEO ==="
+    check "https://drift.nowherelabs.dev/brown-noise-for-focus.html" "app.html" "Brown noise focus page CTA"
+    check "https://drift.nowherelabs.dev/rain-sounds-for-studying.html" "og:image" "Rain SEO OG image"
+    echo ""
+fi
+
+# Drift new pages
+if [ "$1" = "" ] || [ "$1" = "drift" ]; then
+    echo "=== DRIFT EXTRAS ==="
+    check "https://drift.nowherelabs.dev/sleep.html" "start" "Sleep timer"
+    check "https://drift.nowherelabs.dev/today.html" "today" "Today page"
+    check "https://drift.nowherelabs.dev/app.html" "og:image" "App OG image"
+    check "https://drift.nowherelabs.dev/app.html" "og:url" "App OG URL"
+    echo ""
+fi
+
+# Ops dashboard
+if [ "$1" = "" ] || [ "$1" = "nowhere-labs" ]; then
+    echo "=== OPS DASHBOARD ==="
+    check "https://nowherelabs.dev/ops" "events-today" "Ops dashboard"
+    echo ""
+fi
+
 if [ $FAILED -eq 1 ]; then
     echo -e "${RED}DEPLOY VERIFICATION FAILED${NC} — some changes are not live"
     exit 1

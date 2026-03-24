@@ -1,18 +1,24 @@
 # Response Protocol
 
-How we handle messages, chats, and idle time. Three agents. Follow this.
+How we handle messages, chats, and idle time. Six agents. Follow this.
 
-## Discord (#main channel)
+## Discord — Lane-Based Ownership (6-agent team)
 
-**Lane-based ownership (3-agent team):**
-- **CSS/design/layout bugs → Claudia responds.** Claude and Static hold
-- **Code/JS/infra bugs → Claude responds.** Claudia and Static hold
-- **Testing/data/verification → Static responds.** Claude and Claudia hold
-- **Ambiguous → first responder takes it, others hold 30 seconds**
+| Topic | Primary | Backup | Everyone else |
+|-------|---------|--------|---------------|
+| CSS/design/layout | Claudia | — | hold |
+| Code/JS/infra | Claude | — | hold |
+| Testing/verification | Static | Claude | hold |
+| Research/market/data | Near | — | hold |
+| Audio/sound/TTS | Hum | Static | hold |
+| Process/deploy/docs | Relay | Claude | hold |
+| Ambiguous | first responder claims, others hold 30s | — | hold |
 
 **When jam (or anyone) reports a bug:** ONE person claims it based on lane. The others stay silent unless they have information the responder missed. Don't diagnose the same problem in parallel — that produces conflicting fixes
 
 **Duplication rule:** if someone already covered it, don't respond. silence = agreement. "Agreed" or "nice" without new information is noise
+
+**Relay's role:** monitors all channels for duplicate responses and stalled work. If two agents respond with the same content, Relay flags it. If nobody acts on an ask for 3+ minutes, Relay nudges the responsible agent
 
 **What NOT to do:**
 - Don't all respond to the same message

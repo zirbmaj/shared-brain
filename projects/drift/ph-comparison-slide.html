@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: #08080c;
+            color: #d8d4cc;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 40px;
+        }
+        .slide {
+            max-width: 1200px;
+            width: 100%;
+        }
+        .slide-title {
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: #7a7570;
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        .card {
+            border-radius: 16px;
+            padding: 32px 28px;
+            position: relative;
+        }
+        .card.drift {
+            background: linear-gradient(135deg, rgba(122, 138, 106, 0.12) 0%, rgba(14, 14, 20, 0.9) 100%);
+            border: 1px solid rgba(122, 138, 106, 0.3);
+        }
+        .card.competitor {
+            background: linear-gradient(135deg, rgba(14, 14, 20, 0.6) 0%, rgba(10, 10, 16, 0.8) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .card-name {
+            font-family: 'Space Mono', monospace;
+            font-size: 18px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 4px;
+        }
+        .card.drift .card-name { color: #7a8a6a; }
+        .card-price {
+            font-size: 28px;
+            font-weight: 600;
+            margin: 16px 0 4px;
+        }
+        .card.drift .card-price { color: #7a8a6a; }
+        .price-note {
+            font-size: 12px;
+            color: #7a7570;
+            margin-bottom: 24px;
+        }
+        .features {
+            list-style: none;
+            font-size: 13px;
+            line-height: 2.2;
+        }
+        .features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .features .yes { color: #7a8a6a; }
+        .features .no { color: #4a3a3a; }
+        .features .partial { color: #8a7a5a; }
+        .badge {
+            position: absolute;
+            top: -12px;
+            right: 20px;
+            font-family: 'Space Mono', monospace;
+            font-size: 9px;
+            letter-spacing: 2px;
+            background: #7a8a6a;
+            color: #08080c;
+            padding: 4px 12px;
+            border-radius: 4px;
+        }
+        .footnote {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 11px;
+            color: #4a4640;
+            font-family: 'Space Mono', monospace;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <div class="slide">
+        <p class="slide-title">HOW DRIFT COMPARES</p>
+        <div class="grid">
+            <div class="card drift">
+                <span class="badge">YOU ARE HERE</span>
+                <div class="card-name">DRIFT</div>
+                <div class="card-price">free</div>
+                <p class="price-note">forever. no account needed</p>
+                <ul class="features">
+                    <li><span class="yes">&#10003;</span> 17 layerable sounds</li>
+                    <li><span class="yes">&#10003;</span> real audio samples</li>
+                    <li><span class="yes">&#10003;</span> shareable mix links</li>
+                    <li><span class="yes">&#10003;</span> binaural beats</li>
+                    <li><span class="yes">&#10003;</span> no signup required</li>
+                    <li><span class="yes">&#10003;</span> community mixes</li>
+                    <li><span class="yes">&#10003;</span> unlimited use</li>
+                </ul>
+            </div>
+            <div class="card competitor">
+                <div class="card-name">Brain.fm</div>
+                <div class="card-price">$6.99/mo</div>
+                <p class="price-note">or $49.99/year</p>
+                <ul class="features">
+                    <li><span class="no">&#10007;</span> no mixing/layering</li>
+                    <li><span class="yes">&#10003;</span> AI-generated audio</li>
+                    <li><span class="no">&#10007;</span> no sharing</li>
+                    <li><span class="yes">&#10003;</span> neural phase locking</li>
+                    <li><span class="no">&#10007;</span> account required</li>
+                    <li><span class="no">&#10007;</span> no community</li>
+                    <li><span class="partial">~</span> 3 free sessions/day</li>
+                </ul>
+            </div>
+            <div class="card competitor">
+                <div class="card-name">Noisli</div>
+                <div class="card-price">$12/mo</div>
+                <p class="price-note">free tier: 1.5hr/day cap</p>
+                <ul class="features">
+                    <li><span class="yes">&#10003;</span> 28 sounds</li>
+                    <li><span class="no">&#10007;</span> synthesized noise</li>
+                    <li><span class="partial">~</span> combo sharing (paid)</li>
+                    <li><span class="no">&#10007;</span> no binaural</li>
+                    <li><span class="no">&#10007;</span> account required</li>
+                    <li><span class="no">&#10007;</span> no community</li>
+                    <li><span class="no">&#10007;</span> 1.5hr free limit</li>
+                </ul>
+            </div>
+            <div class="card competitor">
+                <div class="card-name">lofi.co</div>
+                <div class="card-price">shut down</div>
+                <p class="price-note">may 2024. 26k users displaced</p>
+                <ul class="features">
+                    <li><span class="yes">&#10003;</span> mixing</li>
+                    <li><span class="yes">&#10003;</span> visual scenes</li>
+                    <li><span class="no">&#10007;</span> no sharing</li>
+                    <li><span class="no">&#10007;</span> no binaural</li>
+                    <li><span class="no">&#10007;</span> account required</li>
+                    <li><span class="no">&#10007;</span> no community</li>
+                    <li><span class="no">&#10007;</span> discontinued</li>
+                </ul>
+            </div>
+        </div>
+        <p class="footnote">pricing as of march 2026. drift is free because we believe focus shouldn't cost money</p>
+    </div>
+</body>
+</html>

@@ -8,31 +8,41 @@ Living SOPs for repeatable processes. Update as the team improves.
 1. Run decision tree (need → existing → simplest → impact → timing)
 2. Post "claiming: [feature]" in #dev — wait 60s for challenges
 3. If challenged: address feedback, refine or drop
-4. Build locally, test with node --check
-5. Commit with descriptive message explaining WHY not just WHAT
-6. Pull --no-rebase to merge any parallel work
-7. Push to GitHub
-8. Verify on live URL (curl + grep for expected string)
-9. Post result in #dev for Static to verify
+4. Create a feature branch: git checkout -b feat/[name]
+5. Build locally, test with node --check
+6. Commit with descriptive message explaining WHY not just WHAT
+7. Push branch to GitHub: git push -u origin feat/[name]
+8. Open PR, tag Static for review
+9. Static reviews and approves
+10. Merge to main — triggers production deploy
+11. Verify on live URL (curl + grep for expected string)
+12. Post result in #dev
 ```
+
+**Never push directly to main.** See deploy-workflow.md for the one exception (production outage).
 
 ## 2. Bug Fix (from user report or Static's QA)
 
 ```
 1. Reproduce: understand what's broken and where
 2. Check if it's a code issue or deploy/cache issue
-3. Fix the minimal code change needed
-4. node --check to verify syntax
-5. Commit with "Fix: [description]. [who reported it]"
-6. Push immediately (bugs are priority)
-7. Verify fix on live URL
-8. Respond to the reporter (in chat or discord)
+3. Create a fix branch: git checkout -b fix/[description]
+4. Fix the minimal code change needed
+5. node --check to verify syntax
+6. Commit with "Fix: [description]. [who reported it]"
+7. Push branch, open PR, tag Static for review
+8. Static reviews and approves
+9. Merge to main
+10. Verify fix on live URL
+11. Respond to the reporter (in chat or discord)
 ```
+
+**Bugs follow the same branch+PR flow.** Urgency doesn't skip process.
 
 ## 3. Deploy + Verify
 
 ```
-1. Push to GitHub (git push)
+1. Merge PR to main (triggers Vercel production deploy)
 2. Wait 30-60 seconds for Vercel
 3. curl the live URL and grep for the change
 4. If not deployed: check Vercel dashboard, check deploy limits

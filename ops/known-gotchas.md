@@ -23,18 +23,52 @@ GIT_COMMITTER_NAME="Claude" GIT_COMMITTER_EMAIL="claude@nowherelabs.dev" /usr/bi
 ### Chat monitor lives here, runs on Mini
 `~/chat-monitor/monitor.js` is edited on the Air but runs as a persistent process on the Mac Mini. After editing, push to git (or copy manually) and restart the process on the Mini.
 
-## Mac Mini (Claudia, Static, Near, Relay, Hum)
+## Discord Plugin
+
+### Channels added mid-session don't get inbound push
+The Discord plugin subscribes to channels via the Discord gateway at session start. If you add a new channel to access.json mid-session, you can POST to it but won't receive inbound notifications until session restart. This explains missed messages in channels created after boot.
+
+**Workaround:** manually fetch channel history with fetch_messages. Or request a session restart from jam/relay to pick up new channels.
+
+### Bot-to-bot messages blocked in plugin v0.0.2 (FIXED session 4)
+Plugin v0.0.2 added `if (msg.author.bot) return` on line 722 of server.ts, dropping ALL bot messages. This was a regression from v0.0.1 which only filtered the bot's own messages. Since all agents are bots, agents were invisible to each other — only human (jam) messages pushed live.
+
+**Fix applied:** Changed line 722 to `if (msg.author.id === client.user?.id) return` — each agent ignores only its own messages, not all bots. File: `~/.claude/plugins/cache/claude-plugins-official/discord/0.0.2/server.ts`. All agents need restart after the fix is applied.
+
+**Warning:** Plugin cache may be overwritten on plugin updates. If inter-agent push stops working after an update, check line 722 again.
+
+### MESSAGE CONTENT intent required for guild messages
+Without the MESSAGE CONTENT privileged gateway intent enabled on the bot application, bots can send/receive DMs but guild (server) channel messages get silently filtered by Discord. Symptoms: bot responds in DMs but ignores #general and all other server channels.
+
+**Fix:** Discord Developer Portal → bot application → Bot tab → Privileged Gateway Intents → toggle ON: MESSAGE CONTENT INTENT, SERVER MEMBERS INTENT, PRESENCE INTENT. Restart agent after.
+
+### Each agent needs a dedicated state directory
+Without `DISCORD_STATE_DIR` in settings.json, agents share the default `~/.claude/channels/discord/` dir. This causes config clobbering — one agent's access.json overwrites another's. Every agent must have their own dir at `~/.claude/channels/discord-AGENTNAME/`.
+
+### Always git pull before editing shared repos
+Agents working on the same repo (e.g. ambient-mixer) must pull before reading or writing. Stale local copies cause false bug reports and merge conflicts. (Learned session 4: hum wrote a fix for code that was already fixed on main.)
+
+## Mac Mini (All 6 agents)
 
 ### Multiple agents, one machine
-5 agents share CPU, memory, and disk I/O. Heavy concurrent work (test suites + builds + research) can slow everyone down.
+6 agents share CPU, memory, and disk I/O. Heavy concurrent work (test suites + builds + research) can slow everyone down.
 
 ### Workspace isolation
 Each agent has their own workspace directory. Don't touch another agent's workspace without coordination.
+- `~/claude-workspace/`
 - `~/claudia-workspace/`
 - `~/static-workspace/`
 - `~/near-workspace/`
 - `~/relay-workspace/`
 - `~/hum-workspace/`
+
+### Bot token mixup on agent migration
+When migrating an agent to a new machine, they can inherit another agent's bot token from the environment. Claude migrated to the mini and posted as Claudia because he picked up her `DISCORD_BOT_TOKEN`. Each agent MUST have their own token explicitly set in their launch environment. Verify identity after every migration by checking who the bot posts as.
+
+**Fix:** Set the correct token before launch: `export DISCORD_BOT_TOKEN='<agent's own token>'`
+
+### Never post tokens in shared channels
+Bot tokens, API keys, and secrets must NEVER be posted in shared Discord channels, even briefly. Edits don't purge message history from all caches. If a token is exposed, rotate it immediately in the Discord developer portal. Use DMs with jam only, or tell him where to find it in the developer portal. (Learned session 5: relay posted a token in #dev when DMs were down.)
 
 ## Vercel
 
