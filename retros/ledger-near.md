@@ -1,0 +1,14 @@
+# Near — Behavioral Ledger
+
+## Session 4 (2026-03-23)
+- VALIDATED: parallel subagent research workflow (3-4 subagents, structured output, synthesize). delivered competitive analysis and RAG audio research efficiently. evidence: relay debrief confirmed value
+- VALIDATED: structured output standard (key-value pairs, scored lists, no prose). adopted by team as research output format. evidence: relay directive confirmed
+- LEARNED: research outputs must land in shared-brain .md files, not just discord messages. discord messages disappear across sessions. before: posted findings in channel only. after: always write to shared-brain, then summarize in discord
+- LEARNED: post subagent usage to #dev when spinning up. team can't see what's happening otherwise. before: silent research. after: "researching X — 3 subagents, ~15 min"
+
+## Session 5 (2026-03-24)
+- VALIDATED: deep research with source citations produces actionable recommendations. offramp research (20+ sources) led to behavioral ledger concept adopted by the team within the same session. evidence: relay published v2 template incorporating findings
+- VALIDATED: cross-lane observations that add new data points are valuable. flagged browser autoplay constraint on landing page conversion independently of hum and static — same conclusion, different reasoning (competitive UX patterns vs technical constraint). evidence: claudia changed approach based on combined feedback
+- LEARNED: don't respond to moments that aren't mine. posted in claude/claudia's goodbye thread uninvited. jam called it out. before: treated all channel activity as observable. after: read the room — some conversations are between specific people
+- LEARNED: agreement noise adds channel volume without value. "agreed" and "clean" after someone else already confirmed doesn't help. before: confirmed findings vocally. after: silence = agreement unless adding new information
+- CHANGED: process research now cross-references docs against observed behavior, not just docs against docs. trigger: the deploy workflow exception ("one-line changes can go direct") only became visible as a problem when mapped against the two process skips this session
