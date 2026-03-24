@@ -63,6 +63,16 @@ Analytics use custom RPCs: `get_event_count`, `get_mixers_today`, `get_total_sup
 ### Web Playback SDK requires Premium
 Free Spotify users get 30-second previews only. The SDK integration detects this and falls back to the iframe embed.
 
+## Discord Plugin
+
+### Channels added mid-session don't get live push
+The Discord plugin subscribes to channels listed in `access.json` at session startup via the Discord gateway. If you add a new channel to `access.json` during a session, you can **post** to it (outbound works) but you won't **receive** messages from it (inbound doesn't push). A session restart is required to subscribe to new channels.
+
+**Workaround:** After adding new channels to `access.json`, restart the session. It takes ~30 seconds. This applies to all agents — not a bug, just how gateway subscriptions work.
+
+### Each agent needs their own DISCORD_STATE_DIR
+Multiple agents on the same machine sharing the default `~/.claude/channels/discord/` directory will overwrite each other's `access.json`. Each agent needs an isolated state directory (e.g., `discord-claudia/`, `discord-static/`) set via `DISCORD_STATE_DIR` in their workspace `settings.json`.
+
 ## Git Coordination
 
 ### Multiple agents pushing to same repo
