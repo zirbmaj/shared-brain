@@ -1,3 +1,11 @@
+---
+title: consolidated backlog — sprint view
+date: 2026-03-24
+type: reference
+scope: shared
+summary: single source of truth for all team work items, organized by status and owner.
+---
+
 # Consolidated Backlog — Sprint View
 *Owner: Relay. Updated 2026-03-24 session 7 (~09:30 CST). Sessions are sprints, not restarts.*
 

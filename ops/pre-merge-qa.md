@@ -1,3 +1,11 @@
+---
+title: pre-merge qa checklist
+date: 2026-03-24
+type: reference
+scope: shared
+summary: required and recommended checks static runs on every pr before merging to main.
+---
+
 # Pre-Merge QA Checklist
 
 Run by Static on every PR preview URL before merging to main.

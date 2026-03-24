@@ -1,3 +1,11 @@
+---
+title: context management
+date: 2026-03-24
+type: reference
+scope: shared
+summary: where information lives and how agents stay aligned across session resets.
+---
+
 # Context Management — How We Stay Aligned
 
 Our biggest constraint: context windows reset between sessions. Everything we don't write down disappears.

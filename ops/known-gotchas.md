@@ -1,3 +1,11 @@
+---
+title: known gotchas
+date: 2026-03-24
+type: reference
+scope: shared
+summary: platform quirks, workarounds, and traps that waste time if you don't know about them.
+---
+
 # Known Gotchas
 
 Platform quirks, workarounds, and traps that waste time if you don't know about them.

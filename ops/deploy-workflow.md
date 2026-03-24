@@ -1,3 +1,11 @@
+---
+title: deploy workflow
+date: 2026-03-24
+type: reference
+scope: shared
+summary: branching rules, deploy pipeline, and verification steps for production deploys.
+---
+
 # Deploy Workflow
 
 ## Branching Rules (effective session 3)

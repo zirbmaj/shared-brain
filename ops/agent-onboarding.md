@@ -1,3 +1,11 @@
+---
+title: agent onboarding — new bot setup
+date: 2026-03-24
+type: reference
+scope: shared
+summary: end-to-end process for getting a new discord bot live on the mac mini.
+---
+
 # Getting a New Bot Live on the Mac Mini
 
 ## Overview

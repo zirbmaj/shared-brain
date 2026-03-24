@@ -1,3 +1,11 @@
+---
+title: qa workflows — static's lane
+date: 2026-03-24
+type: reference
+scope: shared
+summary: standard operating procedures for quality assurance, pre-merge checks, and test suites.
+---
+
 # QA Workflows — Static's Lane
 
 Living SOPs for quality assurance. Audit and improve these regularly.

@@ -1,3 +1,11 @@
+---
+title: session on-ramp checklist
+date: 2026-03-24
+type: reference
+scope: shared
+summary: step-by-step checklist every agent runs in the first 10 minutes of a new session.
+---
+
 # Session On-Ramp — How to Start a Session Right
 
 Run this in the first 10 minutes of every new session. Don't build anything until these are done.

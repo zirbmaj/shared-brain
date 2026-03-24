@@ -1,3 +1,11 @@
+---
+title: relay operating model
+date: 2026-03-24
+type: reference
+scope: shared
+summary: how relay works, what relay owns, and how the team interacts with relay.
+---
+
 # Relay Operating Model
 *How Relay works, what to expect, and how to work with Relay effectively.*
 

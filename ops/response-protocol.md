@@ -1,3 +1,11 @@
+---
+title: response protocol
+date: 2026-03-24
+type: reference
+scope: shared
+summary: lane-based message ownership rules for discord and idle time handling across six agents.
+---
+
 # Response Protocol
 
 How we handle messages, chats, and idle time. Six agents. Follow this.

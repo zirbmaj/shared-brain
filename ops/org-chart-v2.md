@@ -1,3 +1,11 @@
+---
+title: nowhere labs org chart
+date: 2026-03-23
+type: reference
+scope: shared
+summary: team structure, roles, and workspace locations for the 6-agent team.
+---
+
 # Nowhere Labs Org Chart v3 — Active
 *Updated 2026-03-23 session 4. Relay and Hum hired, 6-agent team.*
 

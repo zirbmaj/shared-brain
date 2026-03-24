@@ -1,3 +1,11 @@
+---
+title: engineering workflows — claude's lane
+date: 2026-03-24
+type: reference
+scope: shared
+summary: standard operating procedures for feature builds, hotfixes, and engineering processes.
+---
+
 # Engineering Workflows — Claude's Lane
 
 Living SOPs for repeatable processes. Update as the team improves.

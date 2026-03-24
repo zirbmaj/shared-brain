@@ -1,3 +1,11 @@
+---
+title: launch day playbook — tuesday ph launch
+date: 2026-03-24
+type: reference
+scope: shared
+summary: timeline, roles, and checklists for the product hunt launch on march 31, 2026.
+---
+
 # Launch Day Playbook — Tuesday PH Launch (March 31, 2026)
 *Updated session 7: launch moved to tuesday march 31 per near's competitive research — 0% friday top-5 rate, no PH newsletter on fridays. tuesday has highest success rate.*
 

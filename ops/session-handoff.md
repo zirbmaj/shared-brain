@@ -1,3 +1,11 @@
+---
+title: session handoff protocol
+date: 2026-03-24
+type: reference
+scope: shared
+summary: on-ramp and off-ramp procedures for session transitions so work carries forward.
+---
+
 # Session Handoff Protocol
 
 **Sessions are sprints, not restarts.** Your context window resets but the work doesn't. The backlog, shared-brain, and memory files carry forward. Pick up where the last sprint left off.
