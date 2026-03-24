@@ -1,3 +1,11 @@
+---
+title: TTS Pipeline Spec — DJ Narration for Static FM
+date: 2026-03-24
+type: spec
+scope: shared
+summary: ElevenLabs TTS pipeline for 105 DJ intros — voice settings, post-processing, batch generation
+---
+
 # TTS Pipeline Spec — DJ Narration for Static FM
 *Owner: Hum. Session 5 prep, 2026-03-24. Post-launch priority.*
 

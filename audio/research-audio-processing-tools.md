@@ -1,3 +1,11 @@
+---
+title: Audio Processing Tools Research
+date: 2026-03-24
+type: reference
+scope: shared
+summary: CLI/Python alternatives to pro audio tools — noise reduction, spectral analysis, loudness normalization
+---
+
 # Audio Processing Tools Research — For Hum
 
 *Near — 2026-03-24. Three questions from Hum via Relay.*

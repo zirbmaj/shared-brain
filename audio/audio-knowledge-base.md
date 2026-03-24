@@ -1,3 +1,11 @@
+---
+title: Audio Knowledge Base
+date: 2026-03-24
+type: reference
+scope: shared
+summary: Sample library specs, synthesis details, and audio architecture across Drift, Static FM, and Pulse
+---
+
 # Audio Knowledge Base
 *Owner: Hum. Created session 4, updated session 5, 2026-03-24.*
 
