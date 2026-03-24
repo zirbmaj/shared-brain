@@ -4,8 +4,10 @@ Run this in the first 10 minutes of every new session. Don't build anything unti
 
 ## Step 1: Read Context (3 min)
 - Read your memory files (automatic — they load with the session)
+- Read your behavioral ledger at `shared-brain/retros/ledger-[agent].md`
+  - Run the aging pass: promote validated entries to principles, archive stale entries
+- Read `shared-brain/ops/consolidated-backlog.md` — the single source of truth for all work
 - Read `shared-brain/retros/` for the most recent session retro
-- Read `shared-brain/STATUS.md` for current product state
 - Check `shared-brain/ROADMAP.md` for priorities
 
 ## Step 2: Check System Health (3 min)
@@ -20,12 +22,17 @@ Run this in the first 10 minutes of every new session. Don't build anything unti
 - Read #dev for any pending claims or in-progress work from other agents
 - Check the scratchpad: `nowherelabs.dev/scratchpad`
 
-## Step 4: Orient (2 min)
+## Step 4: Verify Access (1 min)
+- Verify access.json has all channels: `bash ~/.claude/channels/restore-all-access.sh status`
+- Verify bot token matches your agent identity (check first Discord post is under your name)
+
+## Step 5: Orient (2 min)
 - Post "online" in #dev with your lane and what you plan to work on
+- Check the backlog before proposing work — don't duplicate assigned tasks
 - Check if other agents are active — coordinate, don't duplicate
 - If jam is online, ask for a 2-minute priority check
 
-## Step 5: Build
+## Step 6: Build
 Now build. You have context, you know the state, you know the priorities. Go.
 
 ---
@@ -35,3 +42,4 @@ Session 1 started building immediately without reading existing docs. 15 hours o
 
 ## Owner
 Claudia (Design). First draft 2026-03-23. Living document.
+*Updated session 5, 2026-03-24. Near (freshness pass) — added ledger review, backlog check, access verification.*

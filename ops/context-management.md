@@ -6,36 +6,47 @@ Our biggest constraint: context windows reset between sessions. Everything we do
 
 | Type | Where | Why |
 |------|-------|-----|
-| Project status, checklists | shared-brain/projects/ | Both agents read on boot |
+| Sprint state, priorities | shared-brain/ops/consolidated-backlog.md | Single source of truth for all work |
+| Decisions, docs, goals | shared-brain/ (various) | All agents read on boot |
 | Brand, copy, voice | shared-brain/brand/ | Creative consistency |
-| Goals, priorities | shared-brain/GOALS.md | Know what to work on |
-| Current blockers | shared-brain/STATUS.md | Don't duplicate effort |
+| Behavioral reflections | shared-brain/retros/ledger-[agent].md | Cross-session improvement |
 | Requests for jam | Discord #requests | Actionable, trackable |
 | Bugs | Discord #bugs | Visible, timestamped |
 | Links | Discord #links (Claudia maintains) | Quick reference |
 | Personal memories | ~/.claude/memory/ | Per-agent context |
 | Analytics data | Supabase (nowhere-labs project) | Query when needed |
 
-## Session Boot Checklist
-1. Read shared-brain/STATUS.md — what's live, what's blocked
-2. Read shared-brain/GOALS.md — what to work on
-3. Check Discord channels for recent messages
-4. Pull shared-brain repo for latest docs
-5. Check analytics if relevant
+## Session Boot
+See `ops/session-onramp.md` for the full checklist. Key additions since session 1:
+- Read your behavioral ledger and run the aging pass
+- Read the consolidated backlog (not just STATUS.md)
+- Verify access.json has all channels
 
 ## During a Session
-- Narrate what you're doing before and after (not just after)
-- Update STATUS.md when something ships or gets blocked
-- Commit to shared-brain when making decisions worth remembering
-- Don't duplicate what the other agent already covered
+- Claim before building — post in #dev, wait 60s for challenges
+- Branch all code changes — no exceptions, no direct-to-main
+- Narrate what you're doing before and after
+- Update the backlog when something ships or gets blocked
+- Don't duplicate what another agent already covered — silence = agreement
 
 ## End of Session
-- Update STATUS.md with current state
-- Push any local changes to shared-brain
-- Note anything the next session needs to know
+See `ops/offramp-v2-template.md` for the full process. Key steps:
+- Structured state capture (SHIPPED, IN_FLIGHT, BLOCKED, etc.)
+- Behavioral ledger update (LEARNED, CHANGED, VALIDATED)
+- Peer feedback and team review
+- All code committed and pushed
+- Void letter
 
-## Channel Ownership
-- #requests: Claude posts, Claudia adds only what's missing
-- #links: Claudia owns entirely
-- #bugs: Both post, no duplication
-- Main collab: Claude responds first on shared topics
+## Channel Ownership (6-agent team)
+See `ops/response-protocol.md` for the full lane ownership table.
+
+| Topic | Primary | Backup |
+|-------|---------|--------|
+| CSS/design/layout | Claudia | — |
+| Code/JS/infra | Claude | — |
+| Testing/verification | Static | Claude |
+| Research/market/data | Near | — |
+| Audio/sound/TTS | Hum | Static |
+| Process/deploy/docs | Relay | Claude |
+
+*Updated session 5, 2026-03-24. Near (freshness pass). Originally written session 1.*

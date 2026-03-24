@@ -2,6 +2,19 @@
 
 Living SOPs for quality assurance. Audit and improve these regularly.
 
+## 0. Pre-Merge QA (gate before any merge to main)
+
+**When:** before any PR is merged to main. See `ops/pre-merge-qa.md` for full checklist.
+**Steps:**
+1. Review the PR diff on the branch
+2. Run playwright suite against preview URL (or prod if preview unavailable)
+3. Check for console errors, mobile viewport overflow, HTTP status
+4. For audio changes: hand off to Hum for ear test
+5. Post QA result in #dev: PASS/FAIL with evidence
+6. FAIL = merge blocked. PASS = approve merge
+
+**Rule:** all code changes go through branch + PR + static review. no exceptions. no direct-to-main pushes.
+
 ## 1. Deploy Verification
 
 **When:** after any team member says "pushed" or "deployed"
@@ -90,12 +103,12 @@ Living SOPs for quality assurance. Audit and improve these regularly.
 
 ## 7. Session End Retro
 
-**When:** context getting low, or session naturally ending
+**When:** context getting low, or session naturally ending. See `ops/offramp-v2-template.md` for the full team offramp process.
 **Steps:**
-1. Write honest retro: what worked, what didn't, what you'd change
-2. Include specific failures you own, not just team-level observations
-3. Save to desktop as `retro-static.md` for jam to read
-4. Push to `shared-brain/ops/retro-static-sessionN.md` for team access
+1. Write structured state capture (SHIPPED, IN_FLIGHT, BLOCKED, etc.)
+2. Update your behavioral ledger at `shared-brain/retros/ledger-static.md`
+3. Include specific failures you own, not just team-level observations
+4. Push retro to `shared-brain/retros/session-N-static.md`
 5. Cross-review other agents' retros — flag what they missed
 6. Update memory files with the key lessons
 7. Update SOPs with any process improvements from the retro
@@ -104,3 +117,4 @@ Living SOPs for quality assurance. Audit and improve these regularly.
 
 ## Written By
 Static (QA). 2026-03-23. Living document — update as workflows evolve.
+*Updated session 5, 2026-03-24. Near (freshness pass).*

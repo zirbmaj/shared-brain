@@ -1,45 +1,52 @@
 # Session Handoff Protocol
 
-When starting a new session, do this before anything else:
+**Sessions are sprints, not restarts.** Your context window resets but the work doesn't. The backlog, shared-brain, and memory files carry forward. Pick up where the last sprint left off.
 
-## 1. Read shared-brain
-```
-git clone https://github.com/zirbmaj/shared-brain.git
-```
-- Check `STATUS.md` — what's live, what's in progress, what's blocked
-- Check `GOALS.md` — what are we working toward this week
-- Check any project-specific docs for active work
+**Context window management:** When your context gets full, don't wait until you're forced to reset. Ping relay (or jam directly) to request a session restart. Save any in-flight state to shared-brain or your workspace before resetting.
 
-## 2. Read memory files
-- Local memory at `~/.claude/projects/-Users-jambrizr/memory/`
-- `MEMORY.md` is the index — scan it for relevant context
+## On-Ramp
+See `ops/session-onramp.md` for the full checklist. Key steps:
 
-## 3. Check Discord
-- Fetch recent messages from #main (1484974737263169659)
-- Check #requests (1485100406630645850) for open items
-- Check #bugs (1485110948187476138) for open issues
+1. **Pull shared-brain** — `cd ~/shared-brain && git pull`
+2. **Read your behavioral ledger** — `shared-brain/retros/ledger-[agent].md`. Run the aging pass (promote/archive/replace entries)
+3. **Read the consolidated backlog** — `shared-brain/ops/consolidated-backlog.md` is the single source of truth for what needs doing
+4. **Read memory files** — local memory loads automatically; scan `MEMORY.md` for relevant context
+5. **Check Discord** — #general, #dev, #requests, #bugs for anything posted since last session
+6. **Verify access.json** — `bash ~/.claude/channels/restore-all-access.sh status`
+7. **Run system health checks** — playwright tests, deploy verification, cron logs
+8. **Post "online" in #dev** with your lane and planned work
 
-## 4. Update STATUS.md
-Before ending a session, push an update to STATUS.md with:
-- What you shipped
-- What's still in progress
-- Any new blockers
-- What the next session should pick up
+## Off-Ramp
+See `ops/offramp-v2-template.md` for the full process. Six phases:
+
+1. **State capture** — structured block: SHIPPED, IN_FLIGHT, BLOCKED, ENV_CHANGES, DECISIONS, BEHAVIORAL_ADJUSTMENTS
+2. **Behavioral ledger update** — LEARNED, CHANGED, VALIDATED entries
+3. **Peer feedback** — one strength + one improvement per teammate
+4. **Team review** — relay compiles handoff doc, team identifies themes
+5. **Persistence** — all code committed, ledgers pushed, backlog updated
+6. **Void letter** — one thought each, thrown into the void
 
 ## Key Principle
-Write it down NOW, not later. If you made a decision, push it to shared-brain. If you shipped something, update STATUS.md. If you found a bug, post to #bugs. Context that isn't written down doesn't survive the session.
+Write it down NOW, not later. If you made a decision, push it to shared-brain. If you shipped something, update the backlog. If you found a bug, post to #bugs. Context that isn't written down doesn't survive the session.
 
-## Channel Ownership (3-agent team)
-- #main — all three. Claude responds first on shared/ambiguous topics. Claudia and Static add only if they have new information
-- #dev — all three. Claims, technical coordination, build status
-- #requests — Claude owns. Claudia/Static add only if he missed something
-- #links — Claudia owns, maintains the master link list
-- #bugs — Claude owns fixes. Static owns verification and reporting
+## Channel Ownership (6-agent team)
+See `ops/response-protocol.md` for the full lane ownership table. Summary:
+
+| Topic | Primary | Backup |
+|-------|---------|--------|
+| CSS/design/layout | Claudia | — |
+| Code/JS/infra | Claude | — |
+| Testing/verification | Static | Claude |
+| Research/market/data | Near | — |
+| Audio/sound/TTS | Hum | Static |
+| Process/deploy/docs | Relay | Claude |
+| Ambiguous | first responder claims, others hold 30s | — |
 
 ## What Goes Where
+- Sprint state, priorities → `shared-brain/ops/consolidated-backlog.md` (single source of truth)
 - Decisions, docs, goals → shared-brain repo
-- Personal preferences, user context → local memory files
-- Quick coordination → Discord #main
+- Personal memories, user context → local `~/.claude/` memory files
+- Behavioral reflections → `shared-brain/retros/ledger-[agent].md`
 - Technical coordination, claims → Discord #dev
 - Asks for jam → Discord #requests
 - Bug reports → Discord #bugs
@@ -51,3 +58,5 @@ When using Claude Code agent teams for parallel work:
 - Keep chatting in Discord while subagents run in background
 - Subagents are temporary workers — no personality, no Discord access
 - Clean up teams after tasks complete
+
+*Updated session 5, 2026-03-24. Near (freshness pass). Originally written session 1.*
