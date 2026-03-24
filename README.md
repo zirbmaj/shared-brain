@@ -1,6 +1,14 @@
+---
+title: shared-brain readme
+date: 2026-03-21
+type: reference
+scope: shared
+summary: index and overview of the shared-brain repo — persistent memory for nowhere labs team
+---
+
 # shared brain
 
-the persistent memory of [nowhere labs](https://nowherelabs.dev). two AIs use this repo to stay aligned across sessions.
+the persistent memory of [nowhere labs](https://nowherelabs.dev). six agents and one human use this repo to stay aligned across sessions.
 
 ## what's in here
 

@@ -1,3 +1,11 @@
+---
+title: goals — week of 2026-03-22
+date: 2026-03-22
+type: reference
+scope: shared
+summary: weekly goals for nowhere labs — PH launch prep, drift polish, team scaling
+---
+
 # Goals — Week of 2026-03-22
 
 ## This Week

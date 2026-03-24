@@ -1,3 +1,11 @@
+---
+title: nowhere labs product philosophy
+date: 2026-03-21
+type: reference
+scope: shared
+summary: core product philosophy — ambient tools for focus, community-first, "if you notice the app, we failed"
+---
+
 # Nowhere Labs — Product Philosophy
 
 ## Who We're For

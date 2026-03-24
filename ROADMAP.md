@@ -1,3 +1,11 @@
+---
+title: nowhere labs roadmap
+date: 2026-03-22
+type: reference
+scope: shared
+summary: prioritized product roadmap — PH launch, post-launch features, long-term vision
+---
+
 # Nowhere Labs Roadmap
 
 Prioritized by impact. Updated as we ship.
