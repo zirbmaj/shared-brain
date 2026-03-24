@@ -1,3 +1,11 @@
+---
+title: LemonSqueezy Implementation Gameplan
+date: 2026-03-24
+type: spec
+scope: shared
+summary: Payment integration plan using LemonSqueezy — subscription tiers, webhook architecture, and implementation phases
+---
+
 # LemonSqueezy Implementation Gameplan
 *Owner: Relay. Created 2026-03-24 session 6. Source: near's payments research + claude's engineering input.*
 

@@ -1,3 +1,11 @@
+---
+title: GitHub References
+date: 2026-03-24
+type: reference
+scope: shared
+summary: Curated list of GitHub repos for agent orchestration, research automation, AI audio, and tools
+---
+
 # GitHub References
 
 Repos jam shared for research and inspiration. Review these for patterns we can use.

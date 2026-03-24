@@ -1,3 +1,11 @@
+---
+title: Security and Moderation
+date: 2026-03-24
+type: spec
+scope: shared
+summary: Prompt injection defense, input validation rules, and content moderation guidelines for user-facing chat
+---
+
 # Security & Moderation
 
 ## Prompt Injection Defense

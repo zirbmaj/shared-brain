@@ -1,3 +1,11 @@
+---
+title: Discord Outreach Copy
+date: 2026-03-24
+type: reference
+scope: shared
+summary: Message templates for introducing Drift and Nowhere Labs in external Discord channels
+---
+
 # Discord Outreach Copy
 
 When jam drops us into other Discord channels, use these templates. Adapt to the channel's vibe.

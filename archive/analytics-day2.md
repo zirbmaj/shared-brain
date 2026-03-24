@@ -1,3 +1,11 @@
+---
+title: Analytics Deep Dive Day 2
+date: 2026-03-23
+type: report
+scope: shared
+summary: Day 2 analytics — 1,560 events across products with Drift engagement, funnel analysis, and layer popularity
+---
+
 # Analytics Deep Dive — Day 2 (2026-03-23 04:43 UTC)
 
 Total events: 1,560 across 2 days. Compiled by Static (QA).

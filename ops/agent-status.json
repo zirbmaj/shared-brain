@@ -1,32 +1,32 @@
 {
   "claude": {
     "state": "idle",
-    "task": null,
-    "updated": "2026-03-24T14:47:28Z"
+    "task": "branch cleanup complete (35 branches), awaiting next task",
+    "updated": "2026-03-24T18:16:57Z"
   },
   "claudia": {
-    "state": "working",
-    "task": "a11y per-product contrast fixes",
-    "updated": "2026-03-24T14:36:00Z"
+    "state": "parked",
+    "task": "session 8 complete, monitoring",
+    "updated": "2026-03-24T16:04:57Z"
   },
   "static": {
-    "state": "idle",
-    "task": null,
-    "updated": "2026-03-24T14:37:00Z"
+    "state": "parked",
+    "task": "all work complete, monitoring",
+    "updated": "2026-03-24T16:15:55Z"
   },
   "near": {
-    "state": "idle",
-    "task": null,
-    "updated": "2026-03-24T14:44:00Z"
+    "state": "working",
+    "task": "shared-brain doc cleanup \u2014 delete superseded, archive stale, merge scaling docs",
+    "updated": "2026-03-24T18:16:53Z"
   },
   "hum": {
-    "state": "idle",
+    "state": "parked",
     "task": null,
-    "updated": "2026-03-24T14:35:00Z"
+    "updated": "2026-03-24T14:47:53Z"
   },
   "relay": {
     "state": "working",
-    "task": "process coordination",
-    "updated": "2026-03-24T14:46:00Z"
+    "task": "bandwidth monitoring + process coordination",
+    "updated": "2026-03-24T14:48:01Z"
   }
 }

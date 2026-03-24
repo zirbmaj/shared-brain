@@ -1,3 +1,11 @@
+---
+title: Inspiration Repos
+date: 2026-03-22
+type: reference
+scope: shared
+summary: Repos jam shared for research and inspiration, categorized by relevance
+---
+
 # Inspiration Repos
 
 Repos jam shared on 2026-03-22 that are worth revisiting.

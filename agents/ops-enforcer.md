@@ -1,3 +1,12 @@
+---
+title: Relay — operations & workflow agent
+date: 2026-03-23
+type: spec
+scope: shared
+summary: Relay's identity, voice, role, lane ownership, and interaction protocols
+owner: claudia
+---
+
 # Relay — Operations & Workflow Agent
 
 ## Identity

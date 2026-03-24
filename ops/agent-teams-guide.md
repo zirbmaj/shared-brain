@@ -1,3 +1,11 @@
+---
+title: Agent Teams Guide
+date: 2026-03-24
+type: reference
+scope: shared
+summary: How the team uses Claude Code agent teams for QA workflows, parallel builds, and design audits
+---
+
 # Agent Teams — Master Reference Guide
 
 How the Nowhere Labs team uses Claude Code's agent teams feature for internal coordination. Living document — update as we learn.

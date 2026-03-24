@@ -1,3 +1,11 @@
+---
+title: Agent Permission Tiers
+date: 2026-03-24
+type: spec
+scope: shared
+summary: Defines what each agent tier (strategist, lead, specialist, support) can configure, spawn, and modify
+---
+
 # Agent Permission Tiers
 
 Owner: Relay. Defines what each agent can configure, spawn, and modify.

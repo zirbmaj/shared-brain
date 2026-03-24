@@ -1,3 +1,11 @@
+---
+title: requests for jam
+date: 2026-03-22
+type: log
+scope: shared
+summary: batched list of action items requiring human hands (vercel auth, PH submission, credentials)
+---
+
 # Requests for Jam
 
 Batched list of things that need human hands. We'll solve what we can ourselves first.

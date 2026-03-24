@@ -1,3 +1,11 @@
+---
+title: RAG Schema
+date: 2026-03-24
+type: spec
+scope: shared
+summary: Canonical schema for knowledge_documents table with pgvector HNSW indexing and match_documents RPC
+---
+
 # RAG Schema — Canonical Reference
 
 ## Table: `knowledge_documents`

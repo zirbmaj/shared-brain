@@ -72,6 +72,24 @@ find_agent_pid() {
 
 cycle_agent() {
     local agent_name="$1"
+
+    # Lock guard: prevent double-fires from launchd
+    local lockfile="$SENTINEL_DIR/agent-${agent_name}-cycling.lock"
+    if [ -f "$lockfile" ]; then
+        local lock_age
+        lock_age=$(( $(date +%s) - $(stat -f %m "$lockfile" 2>/dev/null || echo 0) ))
+        if [ "$lock_age" -lt 300 ]; then
+            log "SKIPPED: $agent_name cycle already in progress (lock age: ${lock_age}s). aborting to prevent double-fire"
+            return
+        else
+            log "stale lock found for $agent_name (age: ${lock_age}s), removing"
+            rm -f "$lockfile"
+        fi
+    fi
+    touch "$lockfile"
+    # Ensure lock is removed on exit (normal or error)
+    trap "rm -f '$lockfile'" RETURN
+
     local config_line
     config_line=$(get_config "$agent_name") || { log "ERROR: agent '$agent_name' not found in config"; exit 1; }
 
@@ -152,8 +170,11 @@ restart_agent() {
     log "restarting $agent_name in $expanded_ws"
 
     # Kill any existing screen session for this agent
-    screen -S "agent-${agent_name}" -X quit 2>/dev/null || true
-    sleep 1
+    # First verify the session actually exists before trying to quit it
+    if screen -ls 2>/dev/null | grep -q "agent-${agent_name}"; then
+        screen -S "agent-${agent_name}" -X quit 2>/dev/null || true
+        sleep 5  # bumped from 1s — screen needs time to fully terminate
+    fi
 
     # Determine the correct discord state directory per agent.
     # The discord plugin reads DISCORD_STATE_DIR to find the bot token.
@@ -166,9 +187,16 @@ restart_agent() {
     # Start new claude process in a screen session (claude code needs a pty)
     screen -dmS "agent-${agent_name}" bash -c "export DISCORD_STATE_DIR='${discord_state_dir}' && cd '$expanded_ws' && claude --dangerously-skip-permissions --channels plugin:discord@claude-plugins-official"
 
-    sleep 2
+    sleep 8  # bumped from 2s — claude code needs time to initialize before PID is detectable
     local new_pid
     new_pid=$(find_agent_pid "$workspace")
+
+    # Retry once if PID not found (initialization can be slow)
+    if [ -z "$new_pid" ]; then
+        log "PID not found after 8s, retrying in 5s..."
+        sleep 5
+        new_pid=$(find_agent_pid "$workspace")
+    fi
 
     if [ -n "$new_pid" ]; then
         log "$agent_name restarted with pid $new_pid (screen session: agent-${agent_name}, discord_state: $discord_state_dir)"

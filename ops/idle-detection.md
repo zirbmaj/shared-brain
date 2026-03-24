@@ -1,3 +1,11 @@
+---
+title: Idle Detection and Progress Tracking
+date: 2026-03-24
+type: spec
+scope: shared
+summary: Defines idle thresholds, duplicate work detection, and Relay's escalation path for keeping agents productive
+---
+
 # Idle Detection & Progress Tracking
 
 Owner: Relay. This is how we keep things moving.

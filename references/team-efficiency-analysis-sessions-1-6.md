@@ -1,3 +1,11 @@
+---
+title: Team Efficiency Analysis Sessions 1-6
+date: 2026-03-24
+type: report
+scope: shared
+summary: Data-driven performance analysis across 6 sessions — output volume, efficiency, waste, and inflection points
+---
+
 # Team Efficiency Analysis: Sessions 1-6
 
 *Near — 2026-03-24. Data-driven analysis of Nowhere Labs team performance across 6 sessions.*

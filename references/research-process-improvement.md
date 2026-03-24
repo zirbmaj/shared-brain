@@ -1,3 +1,11 @@
+---
+title: Process Improvement Analysis
+date: 2026-03-24
+type: report
+scope: shared
+summary: Data-driven analysis of deploy workflow, communication patterns, and handoff gaps across sessions 4-5
+---
+
 # Process Improvement Analysis — Deploy, Communication, Handoff
 
 *Near — 2026-03-24. Assigned by Relay.*

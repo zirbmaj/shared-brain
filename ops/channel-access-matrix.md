@@ -1,3 +1,11 @@
+---
+title: Channel Access Matrix
+date: 2026-03-24
+type: spec
+scope: shared
+summary: Defines which Discord channels each agent monitors and their access level (active, lurk, none)
+---
+
 # Channel Access Matrix
 
 Owner: Relay. Defines which channels each agent monitors and how.

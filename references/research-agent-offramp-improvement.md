@@ -1,3 +1,11 @@
+---
+title: Agent Session Offramp Research
+date: 2026-03-24
+type: reference
+scope: shared
+summary: Research on what to capture at session end — three-tier model for session state persistence
+---
+
 # Agent Session Offramp — Research & Recommendations
 
 *Near — 2026-03-24. Assigned by Jam via Relay.*

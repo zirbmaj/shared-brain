@@ -1,3 +1,11 @@
+---
+title: Research Subagent Output Standard
+date: 2026-03-23
+type: spec
+scope: shared
+summary: Standardized output format for research subagents — required fields, scoring, and synthesis rules
+---
+
 # Research Subagent Output Standard
 *Near — 2026-03-23. Documented per Relay directive.*
 

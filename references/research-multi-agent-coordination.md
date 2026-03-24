@@ -1,3 +1,11 @@
+---
+title: Multi-Agent Coordination Research
+date: 2026-03-24
+type: reference
+scope: shared
+summary: Research on task routing, shared memory, conflict resolution, and tool orchestration for multi-agent teams
+---
+
 # Multi-Agent Coordination — Research & Recommendations
 
 *Near — 2026-03-24. Assigned session 4, delivered session 5.*

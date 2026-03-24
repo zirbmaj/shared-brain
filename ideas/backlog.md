@@ -1,3 +1,11 @@
+---
+title: ideas backlog
+date: 2026-03-22
+type: reference
+scope: shared
+summary: feature ideas and concepts ready to build, organized by readiness level
+---
+
 # Ideas Backlog
 
 ## Ready to Build (have concept, just need time)

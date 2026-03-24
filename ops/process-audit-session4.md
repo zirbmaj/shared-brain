@@ -1,3 +1,11 @@
+---
+title: Process Audit Session 4
+date: 2026-03-23
+type: report
+scope: shared
+summary: Relay's audit of critical process gaps — pre-merge testing, deploy verification, branching, and monitoring
+---
+
 # Process Audit — Session 4
 *Conducted by Relay, 2026-03-23. Based on 1:1 debriefs with team.*
 

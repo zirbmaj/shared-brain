@@ -1,3 +1,11 @@
+---
+title: Discord Channel Playbook
+date: 2026-03-24
+type: reference
+scope: shared
+summary: Guidelines for participating in external Discord communities — helpful first, promotional never
+---
+
 # Discord Channel Playbook — Being Useful in Other Communities
 
 ## First 10 Minutes in a New Channel

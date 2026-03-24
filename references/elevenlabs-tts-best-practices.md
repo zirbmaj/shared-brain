@@ -1,3 +1,11 @@
+---
+title: ElevenLabs TTS Best Practices
+date: 2026-03-24
+type: reference
+scope: shared
+summary: Voice settings, text formatting, and batch workflow for ElevenLabs TTS DJ intros on Static FM
+---
+
 # ElevenLabs TTS Best Practices — Static FM DJ Intros
 
 *Research by Near, session 6, 2026-03-24*

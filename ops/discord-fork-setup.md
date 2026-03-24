@@ -1,3 +1,11 @@
+---
+title: Discord Plugin Fork Setup Guide
+date: 2026-03-24
+type: reference
+scope: shared
+summary: How to switch agents to the Nowhere Labs Discord plugin fork with bot filter fix and channel management
+---
+
 # Discord Plugin Fork — Setup Guide
 
 ## What is this?

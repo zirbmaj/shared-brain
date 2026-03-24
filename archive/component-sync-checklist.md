@@ -1,3 +1,11 @@
+---
+title: Component Sync Checklist
+date: 2026-03-24
+type: spec
+scope: shared
+summary: Tracks shared functionality between Drift and Dashboard that needs syncing — mixer, timer, music components
+---
+
 # Component Sync Checklist
 
 Drift and Dashboard share functionality but were built separately. This checklist tracks what needs syncing.

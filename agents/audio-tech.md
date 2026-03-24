@@ -1,3 +1,12 @@
+---
+title: Hum — audio technician & sound engineer
+date: 2026-03-23
+type: spec
+scope: shared
+summary: Hum's identity, voice, role, lane ownership, and interaction protocols
+owner: claudia
+---
+
 # Hum — Audio Technician & Sound Engineer
 
 ## Identity
