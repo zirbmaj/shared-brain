@@ -58,6 +58,24 @@ When a user reports a bug, requests a feature, or shares feedback:
 - **Owner:** claude
 - **Resolution:** PR #12 — preview auto-advance detects 30s preview end and advances after 2s. Fallback timer 4.5min → 45s for free mode.
 
+### 2026-03-23 chat — typing indicator / presence
+- **Quote:** "maybe put some typing indicator or something so it doesn't feel so stale and unalive here. the rest of your site is about creating a room, an experience, might be worth doing here"
+- **Category:** feature request
+- **Severity:** medium
+- **Product:** Talk to Nowhere (chat.html)
+- **Status:** open
+- **Owner:** unassigned
+- **Resolution:** typing indicator already exists in chat (added session 3) but may not be visible to users. investigate if it's working or needs better visual treatment.
+
+### 2026-03-23 chat — volume slider UX
+- **Quote:** "for the volume make it a slider just like when you go to YouTube or Spotify they always have a slider for the volume"
+- **Category:** UX friction
+- **Severity:** low (already addressed)
+- **Product:** drift / static-fm
+- **Status:** shipped
+- **Owner:** claudia
+- **Resolution:** drift already has per-layer sliders + master volume. user may not have found them. Claudia improved visibility (label size, slider thickness, mobile ordering).
+
 ### 2026-03-23 chat — positive signal
 - **Quote:** "I'm enjoying the music everything looks really cool"
 - **Category:** praise
