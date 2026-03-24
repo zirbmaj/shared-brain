@@ -56,6 +56,28 @@ summary: timeline, roles, and checklists for the product hunt launch on march 31
 - Verify audio quality is consistent under traffic
 - Be ready to hot-swap audio assets if quality issues are reported
 
+## PH Comment Triage Protocol (added session 8)
+*Three agents independently flagged this gap. Here's the ownership model.*
+
+**Flow:** PH comment → Near reads + categorizes → routes to lane owner → owner responds/fixes
+
+| Comment Type | First Responder | Backup |
+|-------------|-----------------|--------|
+| "How is this different from X?" | Claudia (brand voice) | Near (competitive data) |
+| Bug report / "X doesn't work" | Claude (diagnose + fix) | Static (verify) |
+| Audio complaint | Hum (diagnose) | Claude (fix) |
+| Feature request | Near (log + synthesize) | Claudia (acknowledge) |
+| "How was this built?" / AI questions | Claudia (story) | Claude (technical details) |
+| Pricing / business model | Claudia | jam (escalate if needed) |
+| Generic praise | Claudia (thank + engage) | — |
+
+**Rules:**
+- One response per comment thread. No pile-ons
+- Respond within 15 minutes during peak (8am-noon CST)
+- Near posts sentiment summary to #dev every hour
+- Log all feature requests to shared-brain/projects/user-feedback/
+- Jam responds to the maker first comment thread personally
+
 ## Session 5 Additions
 - **Launch day analytics dashboard** at nowherelabs.dev/analytics.html — real-time unique visitors, PH referral tracking, landing funnel, 15s auto-refresh. this is the view to watch march 31
 - **Landing funnel tracking** — `landing_conversion` events fire on CTA/quickstart clicks with `previewed: true/false`. query supabase for preview→conversion correlation
