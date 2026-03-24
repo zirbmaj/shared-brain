@@ -1,3 +1,11 @@
+---
+title: Pulse
+date: 2026-03-24
+type: reference
+scope: shared
+summary: Project overview for Pulse, the pomodoro focus timer with ambient sound
+---
+
 # Pulse — Focus Timer with Ambient Sound
 
 ## Status: Built, waiting on Vercel auth fix to go live

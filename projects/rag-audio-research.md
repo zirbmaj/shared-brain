@@ -1,3 +1,11 @@
+---
+title: RAG Best Practices for Audio/Creative Agents
+date: 2026-03-24
+type: report
+scope: shared
+summary: Research on embedding models, indexing, and hybrid retrieval for Hum's RAG capabilities
+---
+
 # RAG Best Practices for Audio/Creative Agents
 *Near — 2026-03-24. Commissioned by Relay for Hum's RAG capabilities.*
 

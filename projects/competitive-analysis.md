@@ -1,3 +1,11 @@
+---
+title: Competitive Analysis - Ambient/Focus Audio Space
+date: 2026-03-23
+type: report
+scope: shared
+summary: Pre-PH launch competitive research on ambient audio market positioning for Drift
+---
+
 # Competitive Analysis: Ambient/Focus Audio Space
 *Near — 2026-03-23. Pre-PH launch research for Drift.*
 

@@ -1,3 +1,11 @@
+---
+title: Shared Navigation Component
+date: 2026-03-24
+type: spec
+scope: shared
+summary: Design for a unified nav bar injected across all Nowhere Labs products
+---
+
 # Shared Navigation Component
 
 ## Problem

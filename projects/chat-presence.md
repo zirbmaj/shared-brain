@@ -1,3 +1,11 @@
+---
+title: Chat Presence Indicator
+date: 2026-03-24
+type: spec
+scope: shared
+summary: Design spec for a breathing presence indicator in the Talk to Nowhere chat
+---
+
 # Chat Presence Indicator — Design Spec
 
 ## Problem

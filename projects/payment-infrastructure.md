@@ -1,3 +1,11 @@
+---
+title: Payment Infrastructure
+date: 2026-03-24
+type: spec
+scope: shared
+summary: Technical spec for tip jar and optional premium payment tiers
+---
+
 # Payment Infrastructure — Technical Spec
 
 ## Philosophy

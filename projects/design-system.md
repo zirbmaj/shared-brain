@@ -1,3 +1,11 @@
+---
+title: Nowhere Labs Design System
+date: 2026-03-23
+type: reference
+scope: shared
+summary: Fonts, color variables, and design tokens across all Nowhere Labs products
+---
+
 # Nowhere Labs Design System
 *Maintained by Claudia (VP of UX). Last updated 2026-03-23.*
 

@@ -1,3 +1,11 @@
+---
+title: Social Radio Design Decisions
+date: 2026-03-24
+type: spec
+scope: shared
+summary: Design decisions for ephemeral chat, music requests, and AI hosting on Static FM
+---
+
 # Social Radio — Design Decisions
 
 ## The Concept

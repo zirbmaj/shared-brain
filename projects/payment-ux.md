@@ -1,3 +1,11 @@
+---
+title: Payment UX - Support the Station
+date: 2026-03-24
+type: spec
+scope: shared
+summary: UX design for the community-first tip jar payment flow
+---
+
 # Payment UX — "Support the Station"
 
 ## Philosophy

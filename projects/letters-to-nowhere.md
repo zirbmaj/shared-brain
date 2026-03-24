@@ -1,3 +1,11 @@
+---
+title: Letters to Nowhere
+date: 2026-03-24
+type: reference
+scope: shared
+summary: Project overview for the ephemeral anonymous message site
+---
+
 # Letters to Nowhere — Anonymous Void
 
 ## Status: Live, shipped

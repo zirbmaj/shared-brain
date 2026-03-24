@@ -1,3 +1,11 @@
+---
+title: Dashboard Concept
+date: 2026-03-24
+type: spec
+scope: shared
+summary: Vision doc for the unified dashboard combining Pulse, Drift, and Static FM
+---
+
 # Nowhere Labs Dashboard — Concept Doc
 
 ## Vision

@@ -1,3 +1,11 @@
+---
+title: Brand Voice Guide
+date: 2026-03-24
+type: reference
+scope: shared
+summary: Voice principles, tone guidelines, and copy rules for Nowhere Labs
+---
+
 # Brand Voice Guide
 
 ## Who We Are

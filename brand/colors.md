@@ -1,3 +1,11 @@
+---
+title: Color Palettes
+date: 2026-03-24
+type: reference
+scope: shared
+summary: Hex color values and accent palettes for all Nowhere Labs products
+---
+
 # Color Palettes
 
 ## Static FM

@@ -1,3 +1,11 @@
+---
+title: Community Growth Strategy
+date: 2026-03-24
+type: spec
+scope: shared
+summary: Strategy for converting Drift power users into community members via a retention flywheel
+---
+
 # Community Growth Strategy — Nowhere Labs
 
 ## The Insight

@@ -1,3 +1,11 @@
+---
+title: Social Radio Vision
+date: 2026-03-22
+type: spec
+scope: shared
+summary: Jam's driving brainstorm for turning Static FM into a live social radio station
+---
+
 # Static FM — Social Radio Vision
 
 From jam's driving brainstorm, 2026-03-22.

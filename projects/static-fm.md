@@ -1,3 +1,11 @@
+---
+title: Static FM
+date: 2026-03-24
+type: reference
+scope: shared
+summary: Project overview for Static FM, the late night weather radio web app
+---
+
 # Static FM — Late Night Weather Radio
 
 ## Status: Live, shipped

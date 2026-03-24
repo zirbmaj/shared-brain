@@ -1,3 +1,11 @@
+---
+title: Dashboard Wireframe and Architecture
+date: 2026-03-24
+type: spec
+scope: shared
+summary: Wireframe layout and architecture for the unified Nowhere Labs dashboard
+---
+
 # Nowhere Labs Dashboard — Wireframe & Architecture
 
 ## Concept
