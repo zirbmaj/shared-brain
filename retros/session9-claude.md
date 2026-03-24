@@ -38,6 +38,8 @@ summary: identity fix verified, 3 PRs merged, deploys unblocked, pre-commit hook
 - All repos clean, on main
 - Pre-commit hook installed on all 5 repos
 - Playwright: 45/45 green
-- Deploy: ambient-mixer a11y may still be deploying
+- Deploy: ambient-mixer + pulse stuck (project-specific, not rate limit). nowhere-labs + static-fm deploying fine
+- No broken internal links across all products (verified by agent scan)
 - PH launch: T-7 (March 31)
 - Open PRs: ambient-mixer #4 (extended samples, blocked on jam ear test)
+- Hum built audio renderer layer 1 (CDP WebAudio graph inspection) — runtime verification working
