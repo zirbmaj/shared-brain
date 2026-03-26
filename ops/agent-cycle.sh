@@ -90,6 +90,30 @@ cycle_agent() {
     # Ensure lock is removed on exit (normal or error)
     trap "rm -f '$lockfile'" RETURN
 
+    # Daily cycle cap: prevent runaway cycling (session 9 incident)
+    local MAX_CYCLES_PER_DAY=2
+    local counter_file="/tmp/agent-monitor/${agent_name}-cycle-count"
+    local today
+    today=$(date +%Y-%m-%d)
+    local cycle_count=0
+    if [ -f "$counter_file" ]; then
+        local file_date
+        file_date=$(head -1 "$counter_file" 2>/dev/null || echo "")
+        if [ "$file_date" = "$today" ]; then
+            cycle_count=$(tail -1 "$counter_file" 2>/dev/null || echo "0")
+        fi
+    fi
+    if [ "$cycle_count" -ge "$MAX_CYCLES_PER_DAY" ]; then
+        log "BLOCKED: $agent_name has hit daily cycle cap ($cycle_count/$MAX_CYCLES_PER_DAY). skipping cycle."
+        echo "[$(date)] ALERT: $agent_name cycle blocked — daily cap reached ($cycle_count/$MAX_CYCLES_PER_DAY)" >> "$LOG_DIR/agent-cycle-alerts.log"
+        return
+    fi
+    # Increment counter
+    mkdir -p /tmp/agent-monitor
+    echo "$today" > "$counter_file"
+    echo "$((cycle_count + 1))" >> "$counter_file"
+    log "$agent_name cycle $((cycle_count + 1))/$MAX_CYCLES_PER_DAY today"
+
     local config_line
     config_line=$(get_config "$agent_name") || { log "ERROR: agent '$agent_name' not found in config"; exit 1; }
 
@@ -185,7 +209,9 @@ restart_agent() {
     fi
 
     # Start new claude process in a screen session (claude code needs a pty)
-    screen -dmS "agent-${agent_name}" bash -c "export DISCORD_STATE_DIR='${discord_state_dir}' && cd '$expanded_ws' && claude --dangerously-skip-permissions --channels plugin:discord@claude-plugins-official"
+    # TERM=xterm-256color is required — ghostty's terminfo (xterm-ghostty) isn't
+    # recognized by screen, causing silent initialization failures (session 9.3 root cause)
+    screen -dmS "agent-${agent_name}" bash -c "export TERM=xterm-256color && export DISCORD_STATE_DIR='${discord_state_dir}' && cd '$expanded_ws' && claude --dangerously-skip-permissions --channels plugin:discord@claude-plugins-official"
 
     sleep 8  # bumped from 2s — claude code needs time to initialize before PID is detectable
     local new_pid
@@ -198,16 +224,60 @@ restart_agent() {
         new_pid=$(find_agent_pid "$workspace")
     fi
 
-    if [ -n "$new_pid" ]; then
-        log "$agent_name restarted with pid $new_pid (screen session: agent-${agent_name}, discord_state: $discord_state_dir)"
-        # Verify the discord state dir exists and has a token
-        if [ ! -f "${discord_state_dir}/.env" ]; then
-            log "WARNING: no .env found at ${discord_state_dir} — $agent_name may post under wrong discord identity"
-            echo "[$(date)] ALERT: $agent_name has no discord token at $discord_state_dir" >> "$LOG_DIR/agent-cycle-alerts.log"
-        fi
+    # 4-step post-restart validation
+    local validation_passed=true
+
+    # Step 1: PID exists
+    if [ -z "$new_pid" ]; then
+        log "VALIDATION FAILED [1/4]: no PID found for $agent_name"
+        echo "[$(date)] ALERT: $agent_name restart failed — no process. Manual intervention needed." >> "$LOG_DIR/agent-cycle-alerts.log"
+        return 1
+    fi
+    log "VALIDATION [1/4]: PID $new_pid found"
+
+    # Step 2: Screen session responds
+    if ! screen -ls 2>/dev/null | grep -q "agent-${agent_name}"; then
+        log "VALIDATION FAILED [2/4]: screen session agent-${agent_name} not found"
+        validation_passed=false
     else
-        log "WARNING: $agent_name restart may have failed — no process found in $expanded_ws"
-        echo "[$(date)] ALERT: $agent_name restart failed. Manual intervention needed." >> "$LOG_DIR/agent-cycle-alerts.log"
+        log "VALIDATION [2/4]: screen session agent-${agent_name} exists"
+    fi
+
+    # Step 3: Discord state files exist and are valid
+    if [ ! -f "${discord_state_dir}/.env" ]; then
+        log "VALIDATION FAILED [3/4]: no .env at ${discord_state_dir}"
+        echo "[$(date)] ALERT: $agent_name has no discord token at $discord_state_dir" >> "$LOG_DIR/agent-cycle-alerts.log"
+        validation_passed=false
+    else
+        log "VALIDATION [3/4]: discord .env exists"
+    fi
+
+    # Check access.json integrity
+    local access_json="${discord_state_dir}/access.json"
+    if [ -f "$access_json" ]; then
+        if ! python3 -c "import json; json.load(open('$access_json'))" 2>/dev/null; then
+            log "VALIDATION FAILED [3b/4]: access.json is invalid JSON — attempting restore from backup"
+            # Try to restore from backup
+            local backup="${access_json}.bak"
+            if [ -f "$backup" ] && python3 -c "import json; json.load(open('$backup'))" 2>/dev/null; then
+                cp "$backup" "$access_json"
+                log "RESTORED access.json from backup"
+            else
+                echo "[$(date)] ALERT: $agent_name access.json corrupt, no valid backup. Agent may be deaf." >> "$LOG_DIR/agent-cycle-alerts.log"
+                validation_passed=false
+            fi
+        else
+            log "VALIDATION [3b/4]: access.json is valid JSON"
+        fi
+    fi
+
+    # Step 4: Agent check-in (logged, not blocking — check-in happens async via discord)
+    log "VALIDATION [4/4]: awaiting discord check-in from $agent_name (async)"
+
+    if [ "$validation_passed" = true ]; then
+        log "$agent_name restarted successfully — pid $new_pid, screen agent-${agent_name}, discord_state $discord_state_dir"
+    else
+        log "WARNING: $agent_name restarted with validation issues — check alerts log"
     fi
 }
 

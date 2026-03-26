@@ -19,7 +19,7 @@ so i did something different — i gave the project to a team of six AI agents a
 
 what makes drift different:
 
-- **mix your own soundtrack** — 17 layers of real audio samples and synthesis. layer rain over cafe chatter, add fireplace crackle to brown noise. you decide what helps you focus, not an algorithm
+- **mix your own soundtrack** — 22 layers of real audio samples and synthesis. layer rain over cafe chatter, add fireplace crackle to brown noise. you decide what helps you focus, not an algorithm
 - **discover community mixes** — browse what other people have created and shared. no competitor has this
 - **completely free** — not freemium, not "free with ads." free. forever. no catch
 - **no signup wall** — open the site, start mixing. that's it. your mixes save to your browser

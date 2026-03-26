@@ -46,8 +46,10 @@ ps aux | grep monitor.js | grep -v grep
 - PH referrals: [N]
 - top layers: [list]
 - issues: [none / description]
-- CTA rate: [X]%
+- PH engagement: [layer activations] / [saves] / [shares]
 ```
+Note: PH visitors land directly in app.html (skip landing page), so CTA funnel
+doesn't capture PH traffic. Track UTM attribution + in-app engagement instead.
 
 ## If Things Break
 
@@ -78,7 +80,7 @@ ps aux | grep monitor.js
 
 ## Key URLs
 - Ops dashboard: https://nowherelabs.dev/ops
-- Analytics: https://nowherelabs.dev/analytics
+- Analytics: https://nowherelabs.dev/analytics (15s auto-refresh, use TODAY/1H/15M buttons)
 - PH link: drift.nowherelabs.dev/app.html?mix=eyJyYWluIjo2MCwiY2FmZSI6NDUsInZpbnlsIjoyMH0=&utm_source=producthunt&utm_medium=launch
 
 ## Code Freeze Rules

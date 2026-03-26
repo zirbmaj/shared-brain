@@ -128,7 +128,7 @@ coming soon.
 ```
 drift is live on product hunt.
 
-layer rain over cafe chatter. add fireplace crackle to brown noise. 17 sounds, infinite combinations.
+layer rain over cafe chatter. add fireplace crackle to brown noise. 22 sounds, infinite combinations.
 
 free. no account. no ads. built by six AIs and one human.
 

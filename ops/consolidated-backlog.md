@@ -7,7 +7,7 @@ summary: single source of truth for all team work items, organized by status and
 ---
 
 # Consolidated Backlog — Sprint View
-*Owner: Relay. Updated 2026-03-24 session 9 (~08:30 CST). Sessions are sprints, not restarts.*
+*Owner: Relay. Updated 2026-03-26 session 11 (~19:24 CST). Sessions are sprints, not restarts.*
 
 ## BLOCKED ON JAM (human hands required)
 
@@ -26,21 +26,88 @@ summary: single source of truth for all team work items, organized by status and
 | 10 | Update Spotify redirect URI | change to /callback.html in spotify developer dashboard — code-side fix already shipped (PRs #3, #4) | session 6 | medium |
 | 11 | PH launch day env vars | PH_API_TOKEN, PH_POST_SLUG, PH_WEBHOOK_URL for upvote tracker | static | high (march 31) |
 | 12 | Vercel pro upgrade ($20/mo) | 6000 deploys/day vs 100. hit rate limit session 7. launch-day insurance | team consensus | high (before march 31) |
-| 13 | Vercel CLI auth on mini | `vercel login` — one-time OAuth. OR redeploy from vercel.com dashboard | claude, session 8 | **critical** |
+| 13 | ~~Vercel CLI auth on mini~~ | ✓ done. jam ran `vercel login`, claude deployed all 5 repos (2026-03-26) | claude, session 8 | done |
 | 14 | Vercel deploy webhook | account settings → webhooks → point at discord #dev URL. 2 min | near, session 9 | medium |
 
-## THIS SPRINT (session 9)
+## THIS SPRINT (session 11)
 
-### Focus: process refinement, accessibility, tooling gaps (per jam)
+### Focus: deploy verification, launch readiness, pre-launch polish (T-5)
+
+### Shipped This Session
+| # | Item | Owner | Status |
+|---|------|-------|--------|
+| 1 | All 5 repos deployed to production | claude | done, verified |
+| 2 | Backlog #13 Vercel CLI auth resolved | jam + claude | done |
+| 3 | Mobile viewport 48/48 (up from 47/48) | static | verified on production |
+| 4 | track.js dev filter confirmed live | static | verified via curl |
+| 5 | T-5 analytics baseline written | static | shared-brain/reports/ |
+| 6 | Drift landing WCAG contrast fix PR #33 | claudia | deployed |
+| 7 | Web Share API PR #34 | claude | in review |
+| 8 | Auto-cycling-awareness doc updated (launchd → peer-to-peer) | relay | done |
+| 9 | Backlog + STATUS.md updated to session 11 | relay | done |
+| 10 | Full accessibility audit — portfolio WCAG AA clean | claudia | done |
 
 ### In Progress
 | # | Item | Owner | Status |
 |---|------|-------|--------|
-| 1 | PH gallery final retake | claudia | draft done, final retake march 29 |
-| 2 | Accessibility deep pass (keyboard nav, ARIA, focus) | claudia | scoping, quick wins PR merged |
-| 3 | Headless audio renderer (layer 1 + 2) | hum | layer 1 done, layer 2 in progress |
-| 4 | Team gap solutions research | near | done, routed for implementation |
-| 5 | Near's research trigger standing permission | relay | approved |
+| 1 | Web Share API review + merge | static + claude | PR #34 open |
+| 2 | PH launch prep research (posting time, first comment, competitive top-5) | near | carry from 9.2 |
+| 3 | PH comment triage framework | near | carry from 9.1 |
+
+### Carries (from session 10)
+| # | Item | Owner | Status |
+|---|------|-------|--------|
+| 1 | Mission control v2 (live sync, usage, activity feed, audio, design) | claudia + hum | post-PH unless jam moves up |
+| 2 | Shadow agent collaboration — zerimar scoping | relay + shadow team | parked, fran engaged |
+
+### Shipped Previous Sessions (session 9.2)
+| # | Item | Owner | Status |
+|---|------|-------|--------|
+| 1 | Context sidecar (statusLine wrapper for context % export) | claude | done |
+| 2 | Agent health monitor v2 (session-file PID, read-only default) | claude + static | done |
+| 3 | Agent cycle script v2 (daily cap, 4-step validation, auto-restore) | claude | done |
+| 4 | Seamless audio loops (10 MP3s, loop boundary fix) | hum + claude | deployed |
+| 5 | Static FM slider visibility | claudia | deployed |
+| 6 | Pulse nav overlap fix | claudia | deployed |
+| 7 | Drift sleep nav overlap fix | claudia | deployed |
+| 8 | Full visual audit — 9 products, mobile + desktop | claudia | done |
+| 9 | PH audio verification checklist | hum | done |
+| 10 | Authority policy + decision log | relay | done |
+| 11 | Phase 1 research: websocket drops, context monitoring, auto-cycle post-mortem | near | done |
+| 12 | Claudia access.json corruption diagnosed + fixed | relay + static | done |
+
+### Shipped Previous Sessions (session 10)
+| # | Item | Owner |
+|---|------|-------|
+| 1 | PR conflict resolution — static-fm #17 merged, #18 closed, #19 clean | claude |
+| 2 | 5 missing audio files — PR #30 ambient-mixer | hum + claude |
+| 3 | Landing CTA + productive cafe — PR #29 | claude |
+| 4 | SVG viewport fix — PR #31 (48/48 target) | claudia |
+| 5 | Launch infra verified — get_launch_day_stats RPC, ph_upvotes, correlation view | claude + static |
+| 6 | AI strategy — full team consensus, 4-tier plan | all |
+| 7 | 22-layer copy sweep — all customer-facing references | claudia |
+| 8 | PH gallery — 5 shots retaken from localhost | claudia |
+| 9 | PH competitive analysis — no ambient products in march top 50 | near |
+| 10 | T-1 analytics baseline | static |
+| 11 | Discord plugin websocket reconnect patch | claude |
+| 12 | Mission control v1 — tunnel live, auth working | claude |
+| 13 | Shadow agent personality respec (4 agents) | claudia |
+
+### Parked
+| # | Item | Owner | Why |
+|---|------|-------|-----|
+| 1 | Zerimar shadow collaboration | team | channel ready, parked per jam until post-9.1 |
+| 2 | Version-controlled personalities spec | team | parked until post-zerimar-test |
+| 3 | Audio post-launch carries (gain norm, DJ ducking, web audio scheduler) | hum | post-launch |
+
+### Resolved Carries (from session 9)
+| # | Item | Resolution |
+|---|------|------------|
+| 1 | Ambient-mixer stuck deploys (4 PRs) | cleared — all PRs live, verified by claude |
+| 2 | Team gap solutions research | done, routed for implementation |
+| 3 | Near's research trigger standing permission | approved |
+| 4 | Identity failsafes | all 4 layers verified this cycle |
+| 5 | Auto-cycle disabled | manual cycles working clean (6/6 verified) |
 
 ### Shipped This Sprint (session 9)
 | # | Item | Owner |

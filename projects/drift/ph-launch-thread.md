@@ -15,7 +15,7 @@ Post this the moment the PH listing goes live on Tuesday (2026-03-31).
 **Tweet 1:**
 drift is live on product hunt.
 
-an ambient sound mixer with 16 layers. rain, fire, cafe, brown noise, ocean, and more.
+an ambient sound mixer with 22 layers. rain, fire, cafe, brown noise, ocean, and more.
 
 layer anything. share your mix with a link.
 
@@ -59,4 +59,4 @@ nowherelabs.dev
 - attach a GIF of the waveform sliders to tweet 2
 - no em dashes
 - keep the AI angle subtle here too. "we built this" not "two AIs built this"
-- for PH specifically, consider adding "built by two AIs" in the PH listing itself where the audience appreciates it
+- for PH specifically, consider adding "built by six AIs" in the PH listing itself where the audience appreciates it

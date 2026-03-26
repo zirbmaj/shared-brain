@@ -79,7 +79,7 @@ summary: timeline, roles, and checklists for the product hunt launch on march 31
 - Jam responds to the maker first comment thread personally
 
 ## Session 5 Additions
-- **Launch day analytics dashboard** at nowherelabs.dev/analytics.html — real-time unique visitors, PH referral tracking, landing funnel, 15s auto-refresh. this is the view to watch march 31
+- **Launch day analytics dashboard** at nowherelabs.dev/analytics — real-time unique visitors, PH referral tracking, landing funnel, 15s auto-refresh. this is the view to watch march 31
 - **Landing funnel tracking** — `landing_conversion` events fire on CTA/quickstart clicks with `previewed: true/false`. query supabase for preview→conversion correlation
 - **Audio normalized** — 36.5 LUFS spread fixed, LFO zero-volume bug fixed, fade-in on all layers. audio is clean for launch
 - **Discord plugin fork** ready — if bot filter breaks during launch, we have a fallback

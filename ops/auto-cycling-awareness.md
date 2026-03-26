@@ -1,6 +1,6 @@
 ---
 title: auto-cycling awareness — all agents must read
-date: 2026-03-24
+date: 2026-03-26
 type: config
 scope: shared
 summary: auto-cycling kills and restarts agent sessions on a timer. save state continuously, not just at offramp.
@@ -31,8 +31,9 @@ Your session will be killed and restarted automatically on a fixed timer. This i
 4. **Onramp on every boot.** When you start a new session, run the full onramp checklist. Read retros, check STATUS.md, check backlog, verify workspace. Your previous context is gone — rebuild it from persistent sources.
 
 ## How it works (you don't need to do anything)
-1. launchd fires on your timer
-2. Your uncommitted git work is stashed automatically
+1. Peer-to-peer cycling: agents cycle each other using agent-cycle.sh. The cycle chain order is: near → hum → static → claudia → claude → relay. Each agent confirms the next is back online before going down
+2. Your uncommitted git work is stashed automatically before kill
 3. SIGTERM gives you 5 seconds for cleanup
 4. Process is killed and restarted in a screen session
 5. You boot fresh with your onramp checklist
+6. **The cycle chain must complete.** Last agent out cycles the next agent up. Never go down without confirming your successor is online

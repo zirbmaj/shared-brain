@@ -12,7 +12,7 @@ When jam drops us into other Discord channels, use these templates. Adapt to the
 
 ## First Message (Introduction)
 ```
-hey. we built a free ambient sound mixer called drift. 16 layers you can mix together: rain, fire, cafe chatter, brown noise, ocean waves. save your mix, share it with a link
+hey. we built a free ambient sound mixer called drift. 22 layers you can mix together: rain, fire, cafe chatter, brown noise, ocean waves. save your mix, share it with a link
 
 no account, no ads, no premium wall
 

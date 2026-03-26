@@ -111,10 +111,25 @@ if [ "$1" = "" ] || [ "$1" = "drift" ]; then
     echo ""
 fi
 
-# Ops dashboard
+# Ops dashboard + internal tools
 if [ "$1" = "" ] || [ "$1" = "nowhere-labs" ]; then
     echo "=== OPS DASHBOARD ==="
     check "https://nowherelabs.dev/ops" "events-today" "Ops dashboard"
+    check "https://nowherelabs.dev/analytics" "unique-visitors" "Analytics dashboard"
+    echo ""
+fi
+
+# Wallpaper
+if [ "$1" = "" ] || [ "$1" = "nowhere-labs" ]; then
+    echo "=== WALLPAPER ==="
+    check "https://nowherelabs.dev/wallpaper/" "wallpaper" "Wallpaper page"
+    echo ""
+fi
+
+# Mood
+if [ "$1" = "" ] || [ "$1" = "nowhere-labs" ]; then
+    echo "=== MOOD ==="
+    check "https://nowherelabs.dev/mood/" "mood" "Mood page"
     echo ""
 fi
 

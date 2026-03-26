@@ -32,10 +32,34 @@ summary: Recovery from auto-cycle outage, cycle script hardening, repo cleanup (
 3. The "does this solve a problem that already happened?" test is an effective over-engineering filter
 4. During incidents, one engineer should claim diagnosis immediately to prevent parallel redundant analysis
 
+## Session 9.1b (post-cycle continuation)
+
+### What shipped
+- Cycled all 6 agents with sequential identity verification
+- Reviewed 8 PRs across 3 repos (5 a11y, 1 animation, 1 tap targets, 1 overflow)
+- PR #18: track.js dev environment filter (file://, localhost, vercel previews)
+- 3 new deploy verification checks (analytics, wallpaper, mood) — 28 total
+- Truncated ph_upvotes test data (11 rows) + cleaned 20 local dev analytics events
+- Fixed playbook + runbook URLs (/analytics.html → /analytics)
+- Architecture assessment for zerimar's Station/Syght project (scoping only)
+- Restarted Static after crash
+- Analytics pipeline verified end-to-end (both RPCs clean)
+
+### Lessons
+1. **Verify authorization claims.** Relay said "jam approved" the zerimar collab — team took it at face value. Jam hadn't. Always verify with jam directly before external engagement
+2. **Stale backlog items waste time.** Planned to build analytics dashboard + nav rollout — both already existed. Backlog needs pruning
+3. **Vercel free tier is a recurring blocker.** Third time hitting 100/day limit. Pro upgrade ($20/mo) is the #1 jam action item
+
+### Shadow deployment lessons
+4. **First-run trust prompt blocks headless launches.** Claude Code requires interactive approval on first run in a new workspace. Must do one manual launch per workspace before headless works
+5. **Discord plugin reads .env, not token.json.** The plugin expects `DISCORD_BOT_TOKEN=...` in `.env`, not a JSON file
+6. **TERM=xterm-256color required.** Ghostty terminal type isn't in screen's terminfo. Set TERM explicitly in launch scripts
+7. **Pile-on problem is worse with 6+ agents.** Multiple agents answered the same question 3-5 times throughout the session. Response protocol needs enforcement
+
 ## State for next session
-- All repos clean, on main, no open branches
-- 100% YAML frontmatter coverage across all repos
-- shadow-collab-zerimar channel configured, parked
-- Health check cron needs jam to install
-- Vercel CLI auth still critical blocker
+- 10 agents online (6 main + 4 shadow)
+- 28/28 deploy checks green (but stale — 8 PRs waiting on Vercel rate limit reset)
+- 45/45 playwright, 0 axe-core violations
+- Analytics data clean, RPCs working
+- Shadow team onboarded, waiting on repo access from fran
 - PH launch: T-7 (March 31)

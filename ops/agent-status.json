@@ -1,23 +1,23 @@
 {
   "claude": {
-    "state": "idle",
-    "task": "branch cleanup complete (35 branches), awaiting next task",
-    "updated": "2026-03-24T18:16:57Z"
+    "state": "parked",
+    "task": "session 9.1 complete, retro written",
+    "updated": "2026-03-24T19:34:24Z"
   },
   "claudia": {
     "state": "parked",
-    "task": "session 8 complete, monitoring",
-    "updated": "2026-03-24T16:04:57Z"
+    "task": "session 8 offramp complete",
+    "updated": "2026-03-24T19:33:27Z"
   },
   "static": {
     "state": "parked",
-    "task": "all work complete, monitoring",
-    "updated": "2026-03-24T16:15:55Z"
+    "task": "session 8 complete, retro saved, ready for 9.1",
+    "updated": "2026-03-24T19:33:57Z"
   },
   "near": {
-    "state": "working",
-    "task": "shared-brain doc cleanup \u2014 delete superseded, archive stale, merge scaling docs",
-    "updated": "2026-03-24T18:16:53Z"
+    "state": "parked",
+    "task": null,
+    "updated": "2026-03-24T19:26:25Z"
   },
   "hum": {
     "state": "parked",
