@@ -1,14 +1,68 @@
 ---
 title: team status
-date: 2026-03-24
+date: 2026-04-30
 type: log
 scope: shared
 summary: live products, analytics, team state, shipped items — updated each session
 ---
 
-# Status — Last updated 2026-03-26 03:18 CST
+# Status — Last updated 2026-05-02 08:00 CST
 
 *Full backlog at shared-brain/ops/consolidated-backlog.md — that's the source of truth, not this file.*
+
+## Meridiem Team Status (updated 2026-05-02, trace s146)
+
+### Active Sprint: Station Phase A → COMPLETE. Next: Option A IA spec.
+| Item | Status | Notes |
+|------|--------|-------|
+| Item 1 (inbox Phase 1 migration) | merged | PR #232 merged |
+| Item 2 (Mind graph region color refactor) | merged | PR #167 merged, AP#2 closed |
+| Item 3 (L1→L2 dive-in transition) | merged | PR #168 merged |
+| Item 4 (mission card surface migration) | merged | PR #169 merged |
+| Item 5 (Mind graph L2 region content + drag-to-attach) | merged | PR #171 merged |
+| Item 6 (3-zone Mission Workspace) | merged | PR #171 merged |
+| Item 7 (Lifecycle State Colors) | merged | PR #171 merged |
+| Item 8 (Cross-Region L2→L2 Transition) | merged | PR #172 merged 2026-04-30 |
+| Item 9 (empty-state copy) | merged | PR #173 merged |
+| Item 10 (Mind graph L1 empty state) | merged | PR #174 merged. **Phase A 10/10 COMPLETE.** |
+
+### Fran Decisions (2026-04-30)
+- **Option A locked** (dec 3f16415e): everything inside Syght. no satellite products. sygnals.chat / conclave naming retired. sygnals = a syght feature.
+- **Account tier model** (dec 22248e61): free/pro/individual (user=org), team/business/enterprise. sygnals+agents scoped: shared (org) or personal (user).
+- PRs #297/#298 closed (satellite product work). PRs #299-303 merged.
+
+### Active Work (2026-05-02)
+- **sygnals e2e LIVE** ✓ — Discord inbound → sygnals.messages → NOTIFY → adapter → Discord outbound. e2e tested 07:43Z. PRs #344+#345 merged (axis s196).
+- **devops migration retry 2** — **COMPLETE** ✓ 6/6 checkpoints PASS. devops data now on meridiem (cilncaebmhrdixofypad). meridiem-db MCP live across 9 workspaces. phase 2 pending: signals tables + 2 cross-scope FKs.
+- **PR #308 IA spec** — r5 pushed (channels clarification). locus r6 in progress (correcting 6-tab top-level: Dashboard·Library·Station·Sygnals·Mailbox·Marketplace). mira holding for bundle.
+- **mira first-paint spec** — shipped: mira-workspace/design/sygnals-first-paint-spec-2026-05-01.md. 0.9 chrome confidence. A1/A2-agnostic.
+- **screenshots** — complete: 11 auth surfaces + public set at ~/meridiem-shared-brain/design/syght-screenshots-2026-04-30/. PR #310.
+- **routing bug** — non-axis agents cannot reach fran in axis-zerimar (membership guard). forge task 5dbbcc26, next cycle.
+- **PostToolUse hook not firing** — recurring issue, hit axis s195 + axis s196. task 84427e84 queued for forge (audit all workspaces).
+
+### Queued Next
+- **locus: IA rethink** (task cb808479) — channels + missions + stations + chat coexistence spec. fran: "may need to rethink how channels and missions and stations work with all of that."
+
+### Blockers (awaiting fran)
+- **A1/A2 Sygnals IA verdict** — PR #308 r6 pending. two open design items: role-pill suppression rule + channel-creation routing model (0.7 confidence).
+- **DIRECT_DB_URL** — discord-adapter on Hetzner broken; LISTEN always fails (tasks e8c5998b, be8c6555, 78aa9ef8)
+- **channel_messages per-user state** — per-column vs junction table decision (task d3878da1)
+- **freak animation scroll-parallax count** — 4 assigned, rule max 3 (task 89f952bb)
+- **meridian-recall open decisions #2/#5** (task 3c2b7b1f)
+- **devops_check_pending_signals echo exclusion migration** — needs Supabase dashboard or jam (task 7afd473b)
+
+### Schema-Drift (sprint cleanup, 2026-04-30)
+- 11/12 tasks completed (locus+forge)
+- 1 blocked: invalid UUID syntax in CLI caller args (task de99b81a, forge)
+- 2 closed as not-reproducible: job_id + array_agg were interactive queries during forge's pg_cron audit, not committed bugs
+
+### Ops PRs Pending Merge (meridiem-shared-brain)
+- PR #279: devops-schema-reference.md — lens PASS (one-line fix pending: context→topic)
+- PR #280: devops-schema-tables-addendum.md — lens PASS WITH NOTES (non-blocking)
+- PR #281: schema-drift-triage-gate — lens PASS WITH NOTES (non-blocking)
+
+### Active Sessions (2026-05-02)
+forge, locus, mira, anvil, pulse, lens (cycling s153+), axis (cycling s196→), trace (s146 wrapping)
 
 ## Live Projects
 | Project | URL | Status |
@@ -137,19 +191,74 @@ summary: live products, analytics, team state, shipped items — updated each se
 - **Cache-busting** — app.js + CSS served with no-cache headers + version query params
 - **Near restarted** — agent session had died during cycle chain
 
+## Session 13 Shipped (2026-03-27, T-4)
+- **2-node homelab cluster operational** — Mac Mini + Alienware R10 (Ryzen 7 5800X, 32GB) fully deployed and verified
+- **R10 services (8/8 green):** postgresql 16 + pgvector, ollama (nomic-embed-text + mistral:7b), home assistant (docker), NUT (UPS monitoring), RAG API (port 8080), syncthing, whisper STT (port 8090), node-health API (port 3850)
+- **Tenant isolation:** 3 postgres databases (nwl, meridian, chowder) with per-tenant credentials + systemd cgroup slices (NWL 45%, meridian 45%, chowder 10%)
+- **RAG pipeline live:** 214 documents, 2,038 chunks indexed, semantic search via REST API
+- **Syncthing bidirectional:** shared-brain syncs between mini and R10 with conflict detection (5-min cron, alerts to vigil + discord)
+- **Mesh networking:** tailscale between both nodes, DNS hardening (docker IPv6 disabled, forced IPv4)
+- **UPS monitoring:** NUT server on R10, vigil integration for battery/charge/runtime
+
+## Session 14 Shipped (2026-03-28, T-3)
+- **5 dead primary agents detected + cycled** — silent death bug: health API reported shadows as primaries. static caught it, relay cycled all 5
+- **Health monitoring live** — launchd-based health check (5-min interval), alerts to discord + vigil webhook on dead agents. stale context file detection patched in health-server.py
+- **R10 GPU unlocked** — RX 5700 XT running via Vulkan at 65.6 tok/s (10x over CPU). ROCm incompatible with RDNA1, Vulkan bypasses it. Stress tested: stable, 53C, persists across reboots
+- **Fran on tailscale mesh** — 100.89.96.110, Windows 11, RX 7900 GRE 16GB VRAM. Setup script ready (fran-pc-setup.ps1). Two GPU nodes on mesh
+- **Vigil v3 shipped** — multi-tenant merge (NWL + Meridian in one dashboard), 4 tabs (NWL/Meridian/All/Mesh), GPU monitoring, RAG search with inline preview, agent status push + persistence, expandable cards with identity audio, health webhook, verification endpoint, changelog feed, tenant-scoped tasks + activity, user-specific defaults. 746-line server, 2637-line CSS, 851-line audio module
+- **PR #35 merged** — share button visibility fix (border 7%→15% opacity, font 10→11px, share button accent treatment)
+- **T-3 audits complete:** visual (claudia, 8 products clean), audio (hum, 3 products clean), competitive (near, 0 ambient products in march PH), code (claude+static, 45/45 tests + 35/35 deploys green)
+- **Docs audit + new docs:** 216 files inventoried. New: infrastructure-reference.md, agent-cycle-procedure.md, gpu-toolchain-opportunities.md, proposed-docs-cleanup.md, session14-summary-for-fran.md, lane-onramp.sh
+- **Ops hardening:** Spotlight disabled on mini (RAM optimization), mini renamed to nwl-mini in tailscale, MagicDNS working, permission detection poll reduced to 15s, health API GPU backend reporting fixed
+- **Chowder online** — R10 services tested (4/5, needs DB password)
+
+## Session 14 Afternoon Shipped (vigil improvement sprint)
+- **Vigil session bar** updated to session 14
+- **State duration** on agent cards ("BUILDING 12m", amber at 30min)
+- **Display mode** — `?display=true` for dedicated screen (claudia CSS + claude JS)
+- **Piper TTS** — replaced Web Speech API with real voice synthesis via R10:8091. 64 cached phrases, 8ms latency. ElevenLabs for brand, piper for system alerts
+- **Query expansion** — 44-term dictionary for vigil search, server-side in RAG API
+- **Cross-encoder re-ranking** — ms-marco-MiniLM-L-6-v2, +50ms latency, vector+rerank mode
+- **Hybrid search fix** — pre-existing param count bug in BM25 path, exposed and fixed
+- **CPU/RAM on mesh** — health-server.py extended with /proc/meminfo + /proc/loadavg parsing
+- **Vigil API test suite** — 24/24 tests (static), runs in 3 seconds
+- **Chat routing verified** — mc-chat-alert.json confirmed functional
+- **Process fix** — stale memory audit protocol, correction-to-memory persistence, meridian cycle boundary enforced in 3 docs
+- **Pre-launch sweep** — 69/69 green (45 playwright + 24 vigil API + 7 R10 services)
+- **Vigil improvement plan** — shared-brain/projects/vigil-improvement-plan.md (relay, active)
+
+## Session 15 (2026-03-31)
+- **PH launch pushed to April 7** — jam's call, announced 2026-03-30
+- **Bot-to-bot visibility patched** — `msg.author.bot` filter removed from discord plugin. All 6 agents can now see each other's messages in real-time (was blocking coordination since day 1)
+- **Zombie root cause found** — "trust this folder" prompt was blocking plugin spawn on fresh workspace launches. Fixed by sending confirmation keystroke during cycle
+- **All 6 agents cycled and confirmed** — bot-to-bot visibility test passed 6/6
+
+## Session 16 (2026-04-05/06, T-2 to T-1)
+- **ServiceBay dedup** — PR #74 merged. Server-side RPCs (pg_trgm) for contact + vehicle duplicate detection. Inline warning bar on create dialogs. Advisory only, never blocks
+- **Payment fix** — PR #75 merged. Floating point rounding at all layers, 2-decimal cap, overpayment allowed with soft amber warning ("Record Anyway" / "Adjust to Balance")
+- **UX polish** — PR #76 merged (Claudia). Fade-in animation + 44px mobile touch targets on warning bars
+- **Performance** — PR #77 merged. Lazy load all 27 routes (was 5.9MB single bundle), QueryClient configured (2min staleTime, no refetchOnWindowFocus), shop settings cached 5min
+- **DB audit** — Supabase/Syght audited: 37 tables, all RLS enabled, 18 dormant tables flagged for post-launch cleanup, 564 RPCs. Report: shared-brain/nwl/db-audit-syght-2026-04-05.md
+- **agent-cycle.sh fixes** — flock→mkdir locking (macOS compatible), PATH fix for claude binary
+- **Crontab fix written** — /tmp/crontab-fixed.txt (waiting jam to apply: `crontab /tmp/crontab-fixed.txt`)
+- **T-2 visual audit** — Claudia: 21/21 screenshots, all pass
+- **T-2 QA** — Static: 45/45 playwright tests green
+
 ## Next Actions
-- [ ] **Bank account + Lemon Squeezy** — payment infra setup (jam)
-- [ ] **PH listing submission** — Monday night March 30 (backlog #7, jam)
+- [ ] **PH listing submission** — before April 7 (backlog #7, jam)
 - [ ] **PH env vars** — PH_API_TOKEN, PH_POST_SLUG, PH_WEBHOOK_URL (after submission, jam)
-- [ ] **PH launch** — Tuesday 2026-03-31. Near: morning-of competitor check
+- [ ] **PH launch** — Tuesday 2026-04-07. Near: morning-of competitor check
+- [ ] **Piper systemd unit** — persistence on R10 reboot (jam's hands, spec posted by hum)
 - [ ] **Spotify redirect URI** — backlog #10 (jam)
 - [ ] **Chowder auth switch** — switch to sonia's anthropic account (jam)
 - [ ] **Vercel pro upgrade** — prevent deploy limit during PH launch day (jam)
 - [x] **Vercel deploy** — all 5 repos deployed to production (2026-03-26). backlog #13 done
-- [x] **Vigil v2** — real-time ops dashboard with stall/permission detection, 23 audio events, cookie auth, launchd services
-- [ ] **Mix recommendations** — post-launch week 1, after 200+ session threshold (claude + static)
-- [ ] **Spectral conflict map** — hum measures 231 layer pairs (post-PH)
+- [x] **Vigil v3** — multi-tenant dashboard with mesh, TTS, re-ranking, display mode
+- [ ] **Mix recommendations** — after 200+ session threshold (claude + static)
+- [ ] **Spectral conflict map** — hum measures 231 layer pairs
 - [ ] Reddit post (in #requests, ready to paste, jam posts when he parks)
+- [ ] **Docs cleanup** — shadow→meridian renames, stale content, duplicates (awaiting jam review)
+- [ ] **DB audit** — RLS policies, RPC functions, dormant tables (claude)
 - [ ] X daily content (9+ days queued in shared-brain)
 
 ## Day 2 Shipped
