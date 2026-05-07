@@ -26,6 +26,15 @@ summary: live products, analytics, team state, shipped items — updated each se
 | Item 9 (empty-state copy) | merged | PR #173 merged |
 | Item 10 (Mind graph L1 empty state) | merged | PR #174 merged. **Phase A 10/10 COMPLETE.** |
 
+### Fran Decisions (2026-05-07)
+- **Sygnals + admin = session focus** (dec:2aa72cf2): sygnals full build + admin.syght.io are priority. Station Phase A deprioritized (stays queued, not urgent).
+- **Admin.syght.io APPROVED** (dec:855a8845): operator console for fran/team. operator==super_admin v1. build starts after Sygnals P1.x (~16-18d). reuses product components with operator permissions.
+- **Agentbox — final** (dec:6f9641eb supersedes dec:afdca29f+dec:0c91f45b): meridiem-internal operator agent views (inbox/tasks/signals) live in admin.syght.io §1.1 — NOT cancelled. customer-facing agentbox tab = does NOT exist. customer agent inbox (org-scoped email) deferred v2.
+- **Mailbox = deliverability only** (dec:290bef8e): mailbox is email deliverability + testing/preview + saving. NOT AI, NOT agentbox. fixing all internal doc references.
+- **Sygnals P1 feature decisions — all 6 YES** (dec:111bcc49–3271441c, from sig:fd6e8533 17:00Z): typing indicators YES, emoji YES, markdown FULL GFM, file YES + image + syght items, search YES, topic YES. all P1 phases unblocked.
+- **Credential hygiene** (dec:68cf1630, dec:a8b5803f): new service accounts (Refero etc.) use strong generated passwords immediately. storage: password manager OR meridiem DB — both approved.
+- **Refero Pro recommended** (dec:63e8e232): $12/mo, wins over Mobbin for meridiem due to MCP server.
+
 ### Fran Decisions (2026-04-30)
 - **Option A locked** (dec 3f16415e): everything inside Syght. no satellite products. sygnals.chat / conclave naming retired. sygnals = a syght feature.
 - **Account tier model** (dec 22248e61): free/pro/individual (user=org), team/business/enterprise. sygnals+agents scoped: shared (org) or personal (user).
@@ -50,7 +59,9 @@ summary: live products, analytics, team state, shipped items — updated each se
 - **forge 514e7320** — forge-improvements-brief: in_progress. lens re-review on PR #409 complete.
 - **forge 34b406ee** — GenericAgent TS build: blocked (M1 migration in review, M2 in progress).
 - **anvil 84427e84** — drpulse PostToolUse heartbeat hook: blocked (PostToolUse hook not firing).
-- **PR #225** — sygnals edit/delete UI: **MERGED ✓** 19:14Z earlier today.
+- **PR #225** — sygnals edit/delete UI: **MERGED ✓** 19:14Z.
+- **PR #227** (task 5646fe4c) — sygnals P1.3 typing indicators: open 20:11Z. lens + mira review in progress. 4 files +152/-1. spec §4 compliant (500ms debounce, 4s TTL, self-skip).
+- **forge P1.3 → P1.4**: forge shipping at pace. P1.4 (file/image upload) + P1.7 (slash commands) will delegate to anvil per fran directive sig:1e6912aa.
 
 ### Queued Next
 - **locus: IA rethink** (task cb808479) — channels + missions + stations + chat coexistence spec. fran: "may need to rethink how channels and missions and stations work with all of that."
@@ -74,8 +85,8 @@ summary: live products, analytics, team state, shipped items — updated each se
 - PR #280: devops-schema-tables-addendum.md — lens PASS WITH NOTES (non-blocking)
 - PR #281: schema-drift-triage-gate — lens PASS WITH NOTES (non-blocking)
 
-### Active Sessions (2026-05-02)
-forge, locus, mira, anvil, pulse, lens (cycling s153+), axis (cycling s196→), trace (s146 wrapping)
+### Active Sessions (2026-05-07)
+forge (s224+), locus, mira, anvil, pulse, lens, axis, trace (s220 — started 19:37Z)
 
 ## Live Projects
 | Project | URL | Status |
