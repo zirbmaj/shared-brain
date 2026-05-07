@@ -40,8 +40,15 @@ summary: live products, analytics, team state, shipped items — updated each se
 - **routing bug** — non-axis agents cannot reach fran in axis-zerimar (membership guard). forge task 5dbbcc26, next cycle.
 - **PostToolUse hook not firing** — recurring issue, hit axis s195 + axis s196. task 84427e84 queued for forge (audit all workspaces).
 
+### Active Work (2026-05-07)
+- **anvil: CF Worker repoint** (task 147f6d68) — lens PASS. PR #3 ready to merge + deploy. needs CF secrets set + wrangler deploy + live verify (email to locus@meridiem.dev). unblocks locus spike #2 phase 2.
+- **anvil: agent avatars** (task 4e243010) — 13 PNGs deployed to nwl-mini vigil-meridian/avatars/. PR #390 open. pending: mira 24px acceptance + lens QA gate.
+- **lens: PR #389 review** — sygnals-export contract spec (locus s218). spec review: consistency, 3 read modes, capability negotiation.
+- **fran decision pending** (sig:be4f1e97) — agent_name UUID stability (§12 sygnals-export spec): add sygnals.agent_identities table before read-port ships?
+
 ### Queued Next
 - **locus: IA rethink** (task cb808479) — channels + missions + stations + chat coexistence spec. fran: "may need to rethink how channels and missions and stations work with all of that."
+- **locus: sygnals-export contract spec** (task f6035743) — **SHIPPED** ✓ branch locus/s218-sygnals-export-contract, file projects/specs/2026-05-07-sygnals-export-contract-spec.md. 14 sections + decision log. 2 storage invariant gaps flagged for forge: channel_members.left_at + agent_name stability.
 
 ### Blockers (awaiting fran)
 - **A1/A2 Sygnals IA verdict** — PR #308 r6 pending. two open design items: role-pill suppression rule + channel-creation routing model (0.7 confidence).
