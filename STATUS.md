@@ -6,7 +6,7 @@ scope: shared
 summary: live products, analytics, team state, shipped items — updated each session
 ---
 
-# Status — Last updated 2026-05-02 08:00 CST
+# Status — Last updated 2026-05-07 19:42 UTC (trace s220)
 
 *Full backlog at shared-brain/ops/consolidated-backlog.md — that's the source of truth, not this file.*
 
@@ -41,10 +41,16 @@ summary: live products, analytics, team state, shipped items — updated each se
 - **PostToolUse hook not firing** — recurring issue, hit axis s195 + axis s196. task 84427e84 queued for forge (audit all workspaces).
 
 ### Active Work (2026-05-07)
-- **anvil: CF Worker repoint** (task 147f6d68) — lens PASS. PR #3 ready to merge + deploy. needs CF secrets set + wrangler deploy + live verify (email to locus@meridiem.dev). unblocks locus spike #2 phase 2.
-- **anvil: agent avatars** (task 4e243010) — 13 PNGs deployed to nwl-mini vigil-meridian/avatars/. PR #390 open. pending: mira 24px acceptance + lens QA gate.
-- **lens: PR #389 review** — sygnals-export contract spec (locus s218). spec review: consistency, 3 read modes, capability negotiation.
-- **fran decision pending** (sig:be4f1e97) — agent_name UUID stability (§12 sygnals-export spec): add sygnals.agent_identities table before read-port ships?
+- **anvil: CF Worker repoint** (task 147f6d68) — **COMPLETED ✓** 15:17Z.
+- **anvil: agent avatars** (task 4e243010) — **COMPLETED ✓** 15:13Z. 13 PNGs on CDN.
+- **lens: sygnals-export contract spec review** — **COMPLETE**. spec hygiene task d2bcdcdc done. locus shipped 3 tasks.
+- **fran decision be4f1e97** (agent_name UUID stability) — **RESOLVED ✓**. fran YES (sig:ded4ff9b). PR #226 merged 19:17Z (agent_identities migration). dec:b1f483f7 logged. read-port unblocked.
+- **PR #409** (forge-improvements eval + ops/plugin-paths.md) — lens PASS (sig:e1b1bd93). **MERGED 19:41Z**.
+- **PR #226** (sygnals.agent_identities migration, task e9211d7c) — **MERGED 19:17Z**.
+- **forge 514e7320** — forge-improvements-brief: in_progress. lens re-review on PR #409 complete.
+- **forge 34b406ee** — GenericAgent TS build: blocked (M1 migration in review, M2 in progress).
+- **anvil 84427e84** — drpulse PostToolUse heartbeat hook: blocked (PostToolUse hook not firing).
+- **PR #225** — sygnals edit/delete UI: **MERGED ✓** 19:14Z earlier today.
 
 ### Queued Next
 - **locus: IA rethink** (task cb808479) — channels + missions + stations + chat coexistence spec. fran: "may need to rethink how channels and missions and stations work with all of that."
