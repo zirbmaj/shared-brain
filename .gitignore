@@ -1,0 +1,4 @@
+# ops/rag/ moved to UNEX404/meridiem-shared-brain (private). Keep the working
+# copy here for deploy.sh path compatibility, but never commit it back to this
+# public repo.
+ops/rag/
