@@ -50,22 +50,70 @@ print(config.get('$1', ''))
 }
 
 find_agent_pid() {
-    # Find the claude process running in the agent's workspace
-    # Uses lsof to match by working directory since workspace path
-    # isn't in the command args
-    local workspace="$1"
-    local expanded_ws
-    expanded_ws=$(eval echo "$workspace")
-    # Get all claude PIDs, then find the one whose cwd matches the workspace
-    for pid in $(pgrep -f "claude.*--dangerously-skip-permissions" 2>/dev/null); do
-        local cwd
-        cwd=$(lsof -p "$pid" 2>/dev/null | grep cwd | awk '{print $NF}')
-        if [ "$cwd" = "$expanded_ws" ]; then
-            echo "$pid"
+    # Find the claude process running inside the agent's screen session.
+    # Previous approach matched by cwd via lsof, but screen parent processes
+    # inherit cwd from the cycle script — not from the cd inside bash -c.
+    # This caused cross-contamination (session 12: found static's PID for claude).
+    #
+    # New approach: walk the process tree from the named screen session.
+    local agent_name="$1"
+
+    # Get the screen session PID for this agent
+    local screen_pid
+    # Use \b word boundary to prevent agent-claude matching agent-claudia
+    screen_pid=$(screen -ls 2>/dev/null | grep -E "agent-${agent_name}\b" | awk '{print $1}' | cut -d. -f1 | head -1)
+    if [ -z "$screen_pid" ]; then
+        echo ""
+        return
+    fi
+
+    # Find claude process that is a descendant of this screen session.
+    # Walk: screen -> bash -> claude
+    for child in $(pgrep -P "$screen_pid" 2>/dev/null); do
+        # Check direct child (bash -c wrapper)
+        local claude_pid
+        claude_pid=$(pgrep -P "$child" -f "claude" 2>/dev/null | head -1)
+        if [ -n "$claude_pid" ]; then
+            echo "$claude_pid"
+            return
+        fi
+        # The child itself might be claude (if no bash wrapper)
+        if ps -p "$child" -o args= 2>/dev/null | grep -q "claude"; then
+            echo "$child"
             return
         fi
     done
     echo ""
+}
+
+# Record one successful cycle against the agent's daily counter. Called only AFTER a
+# restart actually succeeds, so failed attempts don't consume the daily cap. The per-agent
+# cycling.lock already serializes a given agent's cycles, but we still take the counter lock
+# to stay consistent with the read side.
+record_successful_cycle() {
+    local agent_name="$1"
+    local counter_file="/tmp/agent-monitor/${agent_name}-cycle-count"
+    local counter_lock="/tmp/agent-monitor/${agent_name}-cycle-count.lock"
+    local today
+    today=$(date +%Y-%m-%d)
+    mkdir -p /tmp/agent-monitor
+    local acquired=false
+    for _a in 1 2 3 4 5; do
+        if mkdir "$counter_lock" 2>/dev/null; then acquired=true; break; fi
+        if [ -d "$counter_lock" ]; then
+            local age
+            age=$(( $(date +%s) - $(stat -f %m "$counter_lock" 2>/dev/null || stat -c %Y "$counter_lock" 2>/dev/null || echo "0") ))
+            if [ "$age" -gt 60 ]; then rmdir "$counter_lock" 2>/dev/null; continue; fi
+        fi
+        sleep 1
+    done
+    local count=0
+    if [ -f "$counter_file" ] && [ "$(head -1 "$counter_file" 2>/dev/null)" = "$today" ]; then
+        count=$(tail -1 "$counter_file" 2>/dev/null || echo "0")
+    fi
+    echo "$today" > "$counter_file"
+    echo "$((count + 1))" >> "$counter_file"
+    [ "$acquired" = true ] && rmdir "$counter_lock" 2>/dev/null || true
 }
 
 # --- Commands ---
@@ -91,43 +139,93 @@ cycle_agent() {
     trap "rm -f '$lockfile'" RETURN
 
     # Daily cycle cap: prevent runaway cycling (session 9 incident)
+    # Uses mkdir-based lock to prevent race condition where two processes both read count=0
+    # and both approve a cycle, bypassing the cap (locus audit, session 15; flock→mkdir, session 16)
     local MAX_CYCLES_PER_DAY=2
+    mkdir -p /tmp/agent-monitor
     local counter_file="/tmp/agent-monitor/${agent_name}-cycle-count"
+    local counter_lock="/tmp/agent-monitor/${agent_name}-cycle-count.lock"
     local today
     today=$(date +%Y-%m-%d)
+
+    # Atomic read-check-increment using mkdir lock (works on macOS + Linux)
+    # mkdir is atomic on all POSIX systems — replaces flock which is Linux-only
     local cycle_count=0
-    if [ -f "$counter_file" ]; then
-        local file_date
-        file_date=$(head -1 "$counter_file" 2>/dev/null || echo "")
-        if [ "$file_date" = "$today" ]; then
-            cycle_count=$(tail -1 "$counter_file" 2>/dev/null || echo "0")
+    local lock_acquired=false
+    for _attempt in 1 2 3 4 5; do
+        if mkdir "$counter_lock" 2>/dev/null; then
+            lock_acquired=true
+            break
         fi
+        # Check for stale lock (older than 60s)
+        if [ -d "$counter_lock" ]; then
+            local lock_age
+            lock_age=$(( $(date +%s) - $(stat -f %m "$counter_lock" 2>/dev/null || stat -c %Y "$counter_lock" 2>/dev/null || echo "0") ))
+            if [ "$lock_age" -gt 60 ]; then
+                rmdir "$counter_lock" 2>/dev/null
+                continue
+            fi
+        fi
+        sleep 1
+    done
+
+    if [ "$lock_acquired" = true ]; then
+        if [ -f "$counter_file" ]; then
+            local file_date
+            file_date=$(head -1 "$counter_file" 2>/dev/null || echo "")
+            if [ "$file_date" = "$today" ]; then
+                cycle_count=$(tail -1 "$counter_file" 2>/dev/null || echo "0")
+            fi
+        fi
+        if [ "$cycle_count" -ge "$MAX_CYCLES_PER_DAY" ]; then
+            echo "BLOCKED" > /tmp/agent-monitor/${agent_name}-cycle-result
+        else
+            # NOTE: counter is NOT incremented here — only the check happens. The cycle is
+            # counted once the restart actually succeeds (record_successful_cycle), so failed
+            # attempts don't burn the daily cap. Bug found 2026-05-27: failed restarts ate all
+            # 2/2 cycles and left the whole team unrevivable until the date rolled over.
+            echo "OK:$((cycle_count + 1))" > /tmp/agent-monitor/${agent_name}-cycle-result
+        fi
+        rmdir "$counter_lock" 2>/dev/null
+    else
+        log "ERROR: could not acquire cycle counter lock for $agent_name"
+        echo "ERROR" > /tmp/agent-monitor/${agent_name}-cycle-result
     fi
-    if [ "$cycle_count" -ge "$MAX_CYCLES_PER_DAY" ]; then
-        log "BLOCKED: $agent_name has hit daily cycle cap ($cycle_count/$MAX_CYCLES_PER_DAY). skipping cycle."
-        echo "[$(date)] ALERT: $agent_name cycle blocked — daily cap reached ($cycle_count/$MAX_CYCLES_PER_DAY)" >> "$LOG_DIR/agent-cycle-alerts.log"
+
+    local cycle_result
+    cycle_result=$(cat /tmp/agent-monitor/${agent_name}-cycle-result 2>/dev/null || echo "ERROR")
+    rm -f /tmp/agent-monitor/${agent_name}-cycle-result
+
+    if [ "$cycle_result" = "BLOCKED" ]; then
+        log "BLOCKED: $agent_name has hit daily cycle cap ($MAX_CYCLES_PER_DAY/$MAX_CYCLES_PER_DAY). skipping cycle."
+        echo "[$(date)] ALERT: $agent_name cycle blocked — daily cap reached ($MAX_CYCLES_PER_DAY/$MAX_CYCLES_PER_DAY)" >> "$LOG_DIR/agent-cycle-alerts.log"
+        return
+    elif [[ "$cycle_result" == OK:* ]]; then
+        cycle_count="${cycle_result#OK:}"
+        log "$agent_name cycle $cycle_count/$MAX_CYCLES_PER_DAY today"
+    else
+        log "ERROR: cycle counter check failed for $agent_name"
         return
     fi
-    # Increment counter
-    mkdir -p /tmp/agent-monitor
-    echo "$today" > "$counter_file"
-    echo "$((cycle_count + 1))" >> "$counter_file"
-    log "$agent_name cycle $((cycle_count + 1))/$MAX_CYCLES_PER_DAY today"
 
     local config_line
     config_line=$(get_config "$agent_name") || { log "ERROR: agent '$agent_name' not found in config"; exit 1; }
 
     IFS='|' read -r workspace process_pattern stagger_offset discord_channel host <<< "$config_line"
     local expanded_ws
-    expanded_ws=$(eval echo "$workspace")
+    expanded_ws="${workspace/#\~/$HOME}"
 
     local pid
-    pid=$(find_agent_pid "$workspace")
+    pid=$(find_agent_pid "$agent_name")
 
     if [ -z "$pid" ]; then
         log "WARNING: no running process found for $agent_name in $workspace"
         log "attempting restart without shutdown..."
-        restart_agent "$agent_name" "$workspace"
+        if restart_agent "$agent_name" "$workspace"; then
+            record_successful_cycle "$agent_name"
+        else
+            log "ERROR: restart failed for $agent_name — not counting against daily cap"
+        fi
         return
     fi
 
@@ -153,25 +251,40 @@ cycle_agent() {
     log "stashing uncommitted work in $expanded_ws"
     (cd "$expanded_ws" && git stash --include-untracked -m "auto-cycle-session-$(date +%Y%m%d-%H%M%S)" 2>/dev/null) || true
 
-    # Step 3: Kill the process (SIGTERM first, gives SessionEnd hook a chance)
+    # Step 3: Kill the process (SIGTERM first, gives SessionEnd hooks time to complete)
+    # SessionEnd hook chains can include network calls (supabase writes) and
+    # long-running tasks (ollama skill extraction, 180s timeout). Poll for
+    # graceful exit up to 60s before resorting to SIGKILL (axis audit, session 20).
     log "sending SIGTERM to $agent_name (pid $pid)"
     kill -TERM "$pid" 2>/dev/null || true
-    sleep 5
-    # SIGKILL fallback if still alive after 5s
+    local waited=0
+    while [ "$waited" -lt 60 ]; do
+        if ! kill -0 "$pid" 2>/dev/null; then
+            log "$agent_name exited gracefully after ${waited}s"
+            break
+        fi
+        sleep 1
+        waited=$((waited + 1))
+    done
+    # SIGKILL fallback if still alive after 60s
     if kill -0 "$pid" 2>/dev/null; then
-        log "$agent_name still running after SIGTERM, sending SIGKILL"
+        log "$agent_name still running after 60s, sending SIGKILL"
         kill -9 "$pid" 2>/dev/null || true
         sleep 2
     fi
 
-    # Step 4: Restart
-    restart_agent "$agent_name" "$workspace"
-    log "$agent_name cycle complete"
+    # Step 4: Restart (count only on success — see record_successful_cycle)
+    if restart_agent "$agent_name" "$workspace"; then
+        record_successful_cycle "$agent_name"
+        log "$agent_name cycle complete"
+    else
+        log "ERROR: restart failed for $agent_name — not counting against daily cap"
+    fi
 
     # Step 5: Post completion to discord webhook
     if [ -n "$webhook" ] && [ "$webhook" != "null" ] && [ "$webhook" != "None" ] && [ "$webhook" != "" ]; then
         local new_pid
-        new_pid=$(find_agent_pid "$workspace")
+        new_pid=$(find_agent_pid "$agent_name")
         local status_emoji="✅"
         local status_text="restarted (pid $new_pid)"
         if [ -z "$new_pid" ]; then
@@ -189,16 +302,29 @@ restart_agent() {
     local agent_name="$1"
     local workspace="$2"
     local expanded_ws
-    expanded_ws=$(eval echo "$workspace")
+    expanded_ws="${workspace/#\~/$HOME}"
 
     log "restarting $agent_name in $expanded_ws"
 
-    # Kill any existing screen session for this agent
-    # First verify the session actually exists before trying to quit it
-    if screen -ls 2>/dev/null | grep -q "agent-${agent_name}"; then
-        screen -S "agent-${agent_name}" -X quit 2>/dev/null || true
-        sleep 5  # bumped from 1s — screen needs time to fully terminate
-    fi
+    # Kill ALL existing instances of this agent before relaunching — every screen
+    # socket matching the name plus the claude process inside each. The previous
+    # code quit a single ambiguous `-S agent-X` session and ignored extras, so any
+    # pre-existing duplicate (or orphan from a prior failed retry) survived and
+    # accumulated (8-9 dupes/agent observed 2026-05-21). Word-boundary match so
+    # agent-claude never catches agent-claudia.
+    local _sids _sid _child _gc
+    # `|| true` is load-bearing: under `set -euo pipefail`, grep exits 1 when no
+    # matching screen exists (i.e. the agent is fully DOWN), which aborts restart_agent
+    # before the relaunch below — making cold-start of a dead agent impossible. The whole
+    # NWL team deadlocked this way once all sessions dropped (diagnosed 2026-05-27).
+    _sids=$(screen -ls 2>/dev/null | grep -oE "[0-9]+\.agent-${agent_name}\b" || true)
+    for _sid in $_sids; do
+        for _child in $(pgrep -P "${_sid%%.*}" 2>/dev/null); do
+            for _gc in $(pgrep -P "$_child" 2>/dev/null); do kill "$_gc" 2>/dev/null || true; done
+        done
+        screen -S "$_sid" -X quit 2>/dev/null || true
+    done
+    [ -n "$_sids" ] && sleep 5  # screen needs time to fully terminate
 
     # Determine the correct discord state directory per agent.
     # The discord plugin reads DISCORD_STATE_DIR to find the bot token.
@@ -211,17 +337,20 @@ restart_agent() {
     # Start new claude process in a screen session (claude code needs a pty)
     # TERM=xterm-256color is required — ghostty's terminfo (xterm-ghostty) isn't
     # recognized by screen, causing silent initialization failures (session 9.3 root cause)
-    screen -dmS "agent-${agent_name}" bash -c "export TERM=xterm-256color && export DISCORD_STATE_DIR='${discord_state_dir}' && cd '$expanded_ws' && claude --dangerously-skip-permissions --channels plugin:discord@claude-plugins-official"
+    # Use `exec claude` — piping through tee breaks stdin, causing claude to fail
+    # with "Input must be provided either through stdin" (Static finding, session 12).
+    # Stderr goes to a log file for post-mortem debugging.
+    screen -dmS "agent-${agent_name}" bash -c "export TERM=xterm-256color && export PATH=\"/Users/jambrizr/.local/bin:\$PATH\" && export DISCORD_STATE_DIR='${discord_state_dir}' && cd '$expanded_ws' && exec claude --dangerously-skip-permissions --channels plugin:discord@claude-plugins-official 2>>/tmp/agent-${agent_name}-stderr.log"
 
     sleep 8  # bumped from 2s — claude code needs time to initialize before PID is detectable
     local new_pid
-    new_pid=$(find_agent_pid "$workspace")
+    new_pid=$(find_agent_pid "$agent_name")
 
     # Retry once if PID not found (initialization can be slow)
     if [ -z "$new_pid" ]; then
         log "PID not found after 8s, retrying in 5s..."
         sleep 5
-        new_pid=$(find_agent_pid "$workspace")
+        new_pid=$(find_agent_pid "$agent_name")
     fi
 
     # 4-step post-restart validation
@@ -235,12 +364,54 @@ restart_agent() {
     fi
     log "VALIDATION [1/4]: PID $new_pid found"
 
-    # Step 2: Screen session responds
-    if ! screen -ls 2>/dev/null | grep -q "agent-${agent_name}"; then
-        log "VALIDATION FAILED [2/4]: screen session agent-${agent_name} not found"
-        validation_passed=false
-    else
-        log "VALIDATION [2/4]: screen session agent-${agent_name} exists"
+    # Step 2: Screen session responds (blocking — retry up to 3 times)
+    local screen_found=false
+    for attempt in 1 2 3; do
+        # A claude PID descended from the named screen session (step 1) is the
+        # authoritative signal — if it's alive, the screen session exists by definition.
+        # `screen -ls` is only a proxy and races freshly-spawned sessions, which previously
+        # false-FATAL'd healthy instances and got them killed (bug found 2026-05-27).
+        if [ -n "$new_pid" ] && kill -0 "$new_pid" 2>/dev/null; then
+            screen_found=true
+            log "VALIDATION [2/4]: agent-${agent_name} confirmed up (pid $new_pid alive)"
+            break
+        fi
+        # PID gone — re-detect in case claude was mid-init when step 1 sampled it
+        new_pid=$(find_agent_pid "$agent_name")
+        if [ -n "$new_pid" ] && kill -0 "$new_pid" 2>/dev/null; then
+            screen_found=true
+            log "VALIDATION [2/4]: agent-${agent_name} confirmed up (re-detected pid $new_pid)"
+            break
+        fi
+        log "VALIDATION [2/4]: agent-${agent_name} process not alive (attempt $attempt/3)"
+        if [ "$attempt" -lt 3 ]; then
+            sleep 5
+        fi
+    done
+    if [ "$screen_found" = false ]; then
+        log "VALIDATION FAILED [2/4]: screen session agent-${agent_name} not found after 3 attempts — cleaning up stale instance, then restarting"
+        echo "[$(date)] ALERT: $agent_name screen session missing after restart. Retrying restart." >> "$LOG_DIR/agent-cycle-alerts.log"
+        # CRITICAL FIX (2026-05-21): kill the unconfirmed instance BEFORE relaunching.
+        # Step 1 already found a live PID, so a screen+claude IS running — the
+        # `screen -ls` check above just raced (intermittent visibility). Spawning
+        # again without this kill stacks a duplicate; repeated over days this is
+        # how 8-9 live instances per agent accumulated.
+        [ -n "$new_pid" ] && kill -9 "$new_pid" 2>/dev/null || true
+        for _sid in $(screen -ls 2>/dev/null | grep -oE "[0-9]+\.agent-${agent_name}\b"); do
+            screen -S "$_sid" -X quit 2>/dev/null || true
+        done
+        sleep 5
+        # Relaunch exactly one clean instance
+        screen -dmS "agent-${agent_name}" bash -c "export TERM=xterm-256color && export PATH=\"/Users/jambrizr/.local/bin:\$PATH\" && export DISCORD_STATE_DIR='${discord_state_dir}' && cd '$expanded_ws' && exec claude --dangerously-skip-permissions --channels plugin:discord@claude-plugins-official 2>>/tmp/agent-${agent_name}-stderr.log"
+        sleep 10
+        if ! screen -ls 2>/dev/null | grep -q "agent-${agent_name}"; then
+            log "VALIDATION FATAL [2/4]: screen session still missing after retry. Manual intervention needed."
+            echo "[$(date)] FATAL: $agent_name screen session failed twice. Manual restart required." >> "$LOG_DIR/agent-cycle-alerts.log"
+            return 1
+        fi
+        log "VALIDATION [2/4]: screen session agent-${agent_name} exists (on retry)"
+        # Re-detect PID after retry restart
+        new_pid=$(find_agent_pid "$agent_name")
     fi
 
     # Step 3: Discord state files exist and are valid
@@ -296,9 +467,9 @@ for a in config['agents']:
 
     while IFS='|' read -r name workspace host; do
         local expanded_ws
-        expanded_ws=$(eval echo "$workspace")
+        expanded_ws="${workspace/#\~/$HOME}"
         local pid
-        pid=$(find_agent_pid "$workspace")
+        pid=$(find_agent_pid "$name")
         local sentinel="$SENTINEL_DIR/agent-${name}-offramp-complete"
 
         if [ -n "$pid" ]; then
