@@ -1,0 +1,1317 @@
+[2026-03-31T04:48:54] claude session ended
+[2026-03-31T09:09:01] near session ended
+[2026-03-31T09:58:42] claude session ended
+[2026-03-31T10:09:05] claude session ended
+[2026-03-31T10:49:54] claude session ended
+[2026-03-31T10:55:19] claude session ended
+[2026-03-31T20:23:00Z] forge session ended
+[2026-03-31T22:37:34Z] relay session ended
+[2026-04-01T02:02:30Z] lens session ended
+[2026-04-01T03:06:01Z] forge session ended
+[2026-04-01T03:16:11Z] forge session ended
+[2026-04-01T03:19:40Z] lens session ended
+[2026-04-01T03:19:48Z] forge session ended
+[2026-04-01T03:19:48Z] locus session ended
+[2026-04-03T15:30:57] claude session ended
+[2026-04-03T15:31:01] near session ended
+[2026-04-03T15:31:02] hum session ended
+[2026-04-04T00:02:08] claude session ended
+[2026-04-04T15:37:38Z] relay session ended
+[2026-04-05T13:57:17] claude session ended
+[2026-04-05 13:57:19] static session ended
+[2026-04-05 13:57:19] WARNING: no static retro found for 2026-04-05
+[2026-04-05T13:57:20] near session ended
+[2026-04-05T13:57:21] hum session ended
+[2026-04-05T19:01:24Z] relay session ended
+[2026-04-05T22:57:33Z] relay session ended
+[2026-04-06T22:25:40Z] relay session ended
+[2026-04-07T10:59:18Z] relay session ended
+[2026-04-07T15:24:09Z] relay session ended
+[2026-04-07T15:24:21Z] relay session ended
+[2026-04-07T17:00:51Z] relay session ended
+[2026-04-07T19:16:12Z] relay session ended
+[2026-04-07T19:16:23Z] relay session ended
+[2026-04-08T05:02:25Z] relay session ended
+[2026-04-08T11:03:55Z] relay session ended
+[2026-04-09T05:05:26Z] relay session ended
+[2026-04-09T11:06:57Z] relay session ended
+[2026-04-10T00:02:06] claude session ended
+[2026-04-10T05:08:28Z] relay session ended
+[2026-04-10T05:03:37] claude session ended
+[2026-04-10 05:59:20] static session ended
+[2026-04-10 05:59:20] WARNING: no static retro found for 2026-04-10
+[2026-04-10T11:09:59Z] relay session ended
+[2026-04-10T07:58:56] near session ended
+[2026-04-10T09:58:39] hum session ended
+[2026-04-10 12:00:51] static session ended
+[2026-04-10 12:00:51] WARNING: no static retro found for 2026-04-10
+[2026-04-10T16:00:27] near session ended
+[2026-04-10T20:00:10] hum session ended
+[2026-04-11T00:01:58] near session ended
+[2026-04-11 00:02:22] static session ended
+[2026-04-11 00:02:22] WARNING: no static retro found for 2026-04-11
+[2026-04-11T05:11:30Z] relay session ended
+[2026-04-11T01:05:08] claude session ended
+[2026-04-11T06:01:41] hum session ended
+[2026-04-11 06:03:52] static session ended
+[2026-04-11 06:03:52] WARNING: no static retro found for 2026-04-11
+[2026-04-11T06:06:39] claude session ended
+[2026-04-11T11:13:00Z] relay session ended
+[2026-04-11 06:14:37] static session ended
+[2026-04-11 06:14:37] WARNING: no static retro found for 2026-04-11
+[2026-04-11T08:03:28] near session ended
+[2026-04-11T16:03:12] hum session ended
+[2026-04-12T00:04:59] near session ended
+[2026-04-12 00:05:23] static session ended
+[2026-04-12 00:05:23] WARNING: no static retro found for 2026-04-12
+[2026-04-12T05:14:31Z] relay session ended
+[2026-04-12T02:04:43] hum session ended
+[2026-04-12T02:08:12] claude session ended
+[2026-04-12 06:06:54] static session ended
+[2026-04-12 06:06:54] WARNING: no static retro found for 2026-04-12
+[2026-04-12T11:16:03Z] relay session ended
+[2026-04-12T07:09:43] claude session ended
+[2026-04-12T08:06:30] near session ended
+[2026-04-12T12:06:14] hum session ended
+[2026-04-13T00:08:01] near session ended
+[2026-04-13 00:08:25] static session ended
+[2026-04-13 00:08:25] WARNING: no static retro found for 2026-04-13
+[2026-04-13T05:17:34Z] relay session ended
+[2026-04-13T03:11:15] claude session ended
+[2026-04-13 06:09:56] static session ended
+[2026-04-13 06:09:56] WARNING: no static retro found for 2026-04-13
+[2026-04-13T11:19:05Z] relay session ended
+[2026-04-13T08:07:45] hum session ended
+[2026-04-13T08:09:32] near session ended
+[2026-04-13T08:12:45] claude session ended
+[2026-04-13T13:27:58] near session ended
+[2026-04-13T18:27:58Z] relay session ended
+[2026-04-13T13:27:59] hum session ended
+[2026-04-13T13:27:59] near session ended
+[2026-04-13 13:28:00] static session ended
+[2026-04-13 13:28:00] WARNING: no static retro found for 2026-04-13
+[2026-04-13T13:28:00] hum session ended
+[2026-04-13 13:28:00] static session ended
+[2026-04-13 13:28:00] WARNING: no static retro found for 2026-04-13
+[2026-04-13 13:28:01] static session ended
+[2026-04-13 13:28:01] WARNING: no static retro found for 2026-04-13
+[2026-04-13 13:28:02] static session ended
+[2026-04-13 13:28:02] WARNING: no static retro found for 2026-04-13
+[2026-04-13T13:28:03] near session ended
+[2026-04-13T13:28:05] near session ended
+[2026-04-13 13:28:06] static session ended
+[2026-04-13 13:28:06] WARNING: no static retro found for 2026-04-13
+[2026-04-13T13:28:06] hum session ended
+[2026-04-13T13:28:07] near session ended
+[2026-04-13T13:28:07] claude session ended
+[2026-04-13T13:28:07] near session ended
+[2026-04-13T13:28:07] claude session ended
+[2026-04-13T18:28:08Z] relay session ended
+[2026-04-13T18:28:08Z] relay session ended
+[2026-04-13T18:28:09Z] relay session ended
+[2026-04-13T18:28:09Z] relay session ended
+[2026-04-13T13:28:10] hum session ended
+[2026-04-13T13:28:11] claude session ended
+[2026-04-13 13:28:12] static session ended
+[2026-04-13 13:28:12] static session ended
+[2026-04-13 13:28:12] WARNING: no static retro found for 2026-04-13
+[2026-04-13 13:28:12] WARNING: no static retro found for 2026-04-13
+[2026-04-13T13:28:12] claude session ended
+[2026-04-13T13:28:12] claude session ended
+[2026-04-13T13:28:12] claude session ended
+[2026-04-13T13:28:12] claude session ended
+[2026-04-13T13:28:12] claude session ended
+[2026-04-13T13:28:12] near session ended
+[2026-04-13T13:28:12] hum session ended
+[2026-04-13T13:28:12] hum session ended
+[2026-04-13T13:28:12] hum session ended
+[2026-04-13T13:28:12] claude session ended
+[2026-04-13 13:28:12] static session ended
+[2026-04-13T13:28:12] near session ended
+[2026-04-13T13:28:12] near session ended
+[2026-04-13T18:28:12Z] relay session ended
+[2026-04-13T18:28:12Z] relay session ended
+[2026-04-13T13:28:12] hum session ended
+[2026-04-13T18:28:12Z] relay session ended
+[2026-04-13 13:28:12] WARNING: no static retro found for 2026-04-13
+[2026-04-13 13:28:12] static session ended
+[2026-04-13 13:28:12] WARNING: no static retro found for 2026-04-13
+[2026-04-13T18:28:12Z] relay session ended
+[2026-04-13T18:28:12Z] relay session ended
+[2026-04-13T18:28:12Z] relay session ended
+[2026-04-13T18:28:12Z] relay session ended
+[2026-04-13T18:28:12Z] relay session ended
+[2026-04-14T04:09:46] hum session ended
+[2026-04-14 06:11:56] static session ended
+[2026-04-14 06:11:56] WARNING: no static retro found for 2026-04-14
+[2026-04-14T11:21:05Z] relay session ended
+[2026-04-14T08:11:32] near session ended
+[2026-04-14T09:14:46] claude session ended
+[2026-04-14T14:11:17] hum session ended
+[2026-04-15T00:12:47] hum session ended
+[2026-04-15T00:13:03] near session ended
+[2026-04-15 00:13:27] static session ended
+[2026-04-15 00:13:27] WARNING: no static retro found for 2026-04-15
+[2026-04-15T00:16:17] claude session ended
+[2026-04-15T05:22:36Z] relay session ended
+[2026-04-15T05:17:47] claude session ended
+[2026-04-15 06:14:58] static session ended
+[2026-04-15 06:14:58] WARNING: no static retro found for 2026-04-15
+[2026-04-15T11:24:07Z] relay session ended
+[2026-04-15T08:14:34] near session ended
+[2026-04-15T10:14:18] hum session ended
+[2026-04-16T00:16:06] near session ended
+[2026-04-16 00:16:28] static session ended
+[2026-04-16 00:16:28] WARNING: no static retro found for 2026-04-16
+[2026-04-16T05:25:38Z] relay session ended
+[2026-04-16T01:19:19] claude session ended
+[2026-04-16T06:15:49] hum session ended
+[2026-04-16 06:18:01] static session ended
+[2026-04-16 06:18:01] WARNING: no static retro found for 2026-04-16
+[2026-04-16T06:20:50] claude session ended
+[2026-04-16T11:27:09Z] relay session ended
+[2026-04-16T08:17:36] near session ended
+[2026-04-16T16:17:20] hum session ended
+[2026-04-16T23:07:12] hum session ended
+[2026-04-16T23:07:13] near session ended
+[2026-04-16T23:07:14] hum session ended
+[2026-04-16 23:07:14] static session ended
+[2026-04-16 23:07:14] WARNING: no static retro found for 2026-04-16
+[2026-04-16T23:07:15] claude session ended
+[2026-04-17T04:07:15Z] relay session ended
+[2026-04-16T23:07:16] near session ended
+[2026-04-17T04:07:16Z] relay session ended
+[2026-04-16T23:07:18] hum session ended
+[2026-04-16T23:07:19] claude session ended
+[2026-04-16T23:07:19] claude session ended
+[2026-04-16 23:07:19] static session ended
+[2026-04-16 23:07:19] WARNING: no static retro found for 2026-04-16
+[2026-04-16T23:07:20] hum session ended
+[2026-04-16 23:07:21] static session ended
+[2026-04-16 23:07:21] WARNING: no static retro found for 2026-04-16
+[2026-04-16T23:07:25] hum session ended
+[2026-04-17T04:07:25Z] relay session ended
+[2026-04-17T04:07:25Z] relay session ended
+[2026-04-16T23:07:26] claude session ended
+[2026-04-16T23:07:26] hum session ended
+[2026-04-16 23:07:26] static session ended
+[2026-04-16 23:07:26] WARNING: no static retro found for 2026-04-16
+[2026-04-16T23:07:26] claude session ended
+[2026-04-16 23:07:27] static session ended
+[2026-04-16 23:07:27] WARNING: no static retro found for 2026-04-16
+[2026-04-16T23:07:30] near session ended
+[2026-04-16T23:07:32] near session ended
+[2026-04-17T04:07:33Z] relay session ended
+[2026-04-16T23:07:34] hum session ended
+[2026-04-16T23:07:34] claude session ended
+[2026-04-16T23:07:34] near session ended
+[2026-04-16T23:07:35] claude session ended
+[2026-04-16T23:07:36] near session ended
+[2026-04-16 23:07:38] static session ended
+[2026-04-16 23:07:38] WARNING: no static retro found for 2026-04-16
+[2026-04-17T04:07:38Z] relay session ended
+[2026-04-16 23:07:38] static session ended
+[2026-04-16 23:07:38] WARNING: no static retro found for 2026-04-16
+[2026-04-17T04:07:39Z] relay session ended
+[2026-04-16T23:07:39] hum session ended
+[2026-04-16T23:07:41] near session ended
+[2026-04-17 06:20:01] static session ended
+[2026-04-17 06:20:01] WARNING: no static retro found for 2026-04-17
+[2026-04-17T11:29:09Z] relay session ended
+[2026-04-17T07:22:50] claude session ended
+[2026-04-17T08:19:36] near session ended
+[2026-04-17T12:19:20] hum session ended
+[2026-04-17T12:22:22] hum session ended
+[2026-04-17T12:22:23] claude session ended
+[2026-04-17T12:22:24] hum session ended
+[2026-04-17 12:22:24] static session ended
+[2026-04-17 12:22:24] WARNING: no static retro found for 2026-04-17
+[2026-04-17T12:22:27] near session ended
+[2026-04-17T12:22:29] near session ended
+[2026-04-17T17:22:31Z] relay session ended
+[2026-04-17T17:22:32Z] relay session ended
+[2026-04-17 12:22:35] static session ended
+[2026-04-17 12:22:35] WARNING: no static retro found for 2026-04-17
+[2026-04-17 12:22:36] static session ended
+[2026-04-17 12:22:36] WARNING: no static retro found for 2026-04-17
+[2026-04-17T12:22:39] near session ended
+[2026-04-17T12:22:40] hum session ended
+[2026-04-17T12:22:41] claude session ended
+[2026-04-17T17:22:42Z] relay session ended
+[2026-04-17T12:22:42] claude session ended
+[2026-04-18 06:22:02] static session ended
+[2026-04-18 06:22:02] WARNING: no static retro found for 2026-04-18
+[2026-04-18T11:31:09Z] relay session ended
+[2026-04-18 07:36:33] static session ended
+[2026-04-18 07:36:33] WARNING: no static retro found for 2026-04-18
+[2026-04-18 07:36:35] static session ended
+[2026-04-18 07:36:35] WARNING: no static retro found for 2026-04-18
+[2026-04-18T07:36:39] near session ended
+[2026-04-18T07:36:40] claude session ended
+[2026-04-18T12:36:41Z] relay session ended
+[2026-04-18T07:36:52] claude session ended
+[2026-04-18 07:36:52] static session ended
+[2026-04-18 07:36:52] WARNING: no static retro found for 2026-04-18
+[2026-04-18T07:36:57] near session ended
+[2026-04-18T12:36:59Z] relay session ended
+[2026-04-18T12:37:00Z] relay session ended
+[2026-04-18T13:49:51] claude session ended
+[2026-04-18T13:49:53] hum session ended
+[2026-04-18T13:49:56] near session ended
+[2026-04-18T13:50:08] near session ended
+[2026-04-18T13:50:10] claude session ended
+[2026-04-18T13:50:11] hum session ended
+[2026-04-19T04:21:51] hum session ended
+[2026-04-19 06:24:02] static session ended
+[2026-04-19 06:24:02] WARNING: no static retro found for 2026-04-19
+[2026-04-19T11:33:09Z] relay session ended
+[2026-04-19T08:22:35] near session ended
+[2026-04-19T09:25:49] claude session ended
+[2026-04-19T14:23:22] hum session ended
+[2026-04-20T00:24:06] near session ended
+[2026-04-20T00:24:53] hum session ended
+[2026-04-20 00:25:33] static session ended
+[2026-04-20 00:25:33] WARNING: no static retro found for 2026-04-20
+[2026-04-20T00:27:20] claude session ended
+[2026-04-20T05:34:40Z] relay session ended
+[2026-04-20T05:28:50] claude session ended
+[2026-04-20 06:27:04] static session ended
+[2026-04-20 06:27:04] WARNING: no static retro found for 2026-04-20
+[2026-04-20T11:36:11Z] relay session ended
+[2026-04-20T08:25:37] near session ended
+[2026-04-20T10:26:24] hum session ended
+[2026-04-21T00:27:08] near session ended
+[2026-04-21 00:28:35] static session ended
+[2026-04-21 00:28:35] WARNING: no static retro found for 2026-04-21
+[2026-04-21T05:37:42Z] relay session ended
+[2026-04-21T01:30:22] claude session ended
+[2026-04-21T06:27:55] hum session ended
+[2026-04-21 06:30:06] static session ended
+[2026-04-21 06:30:06] WARNING: no static retro found for 2026-04-21
+[2026-04-21T06:31:52] claude session ended
+[2026-04-21T11:39:13Z] relay session ended
+[2026-04-21T08:28:39] near session ended
+[2026-04-21T16:29:26] hum session ended
+[2026-04-22T00:30:39] near session ended
+[2026-04-22 00:32:07] static session ended
+[2026-04-22 00:32:07] WARNING: no static retro found for 2026-04-22
+[2026-04-22T05:41:14Z] relay session ended
+[2026-04-22T02:31:27] hum session ended
+[2026-04-22T02:33:53] claude session ended
+[2026-04-22 06:34:07] static session ended
+[2026-04-22 06:34:07] WARNING: no static retro found for 2026-04-22
+[2026-04-22T11:43:14Z] relay session ended
+[2026-04-22T07:35:54] claude session ended
+[2026-04-22T08:32:40] near session ended
+[2026-04-22T12:32:58] hum session ended
+[2026-04-23T00:34:11] near session ended
+[2026-04-23 00:35:38] static session ended
+[2026-04-23 00:35:38] WARNING: no static retro found for 2026-04-23
+[2026-04-23T05:44:46Z] relay session ended
+[2026-04-23T03:37:25] claude session ended
+[2026-04-23 06:37:09] static session ended
+[2026-04-23 06:37:09] WARNING: no static retro found for 2026-04-23
+[2026-04-23T11:46:16Z] relay session ended
+[2026-04-23T08:34:29] hum session ended
+[2026-04-23T08:35:42] near session ended
+[2026-04-23T08:38:56] claude session ended
+[2026-04-23T17:12:34] near session ended
+[2026-04-23T17:12:37] hum session ended
+[2026-04-23 17:12:41] static session ended
+[2026-04-23 17:12:41] WARNING: no static retro found for 2026-04-23
+[2026-04-23T17:12:45] near session ended
+[2026-04-23 17:12:47] static session ended
+[2026-04-23 17:12:47] WARNING: no static retro found for 2026-04-23
+[2026-04-23T17:12:48] near session ended
+[2026-04-23 17:12:50] static session ended
+[2026-04-23 17:12:50] WARNING: no static retro found for 2026-04-23
+[2026-04-23T17:12:52] near session ended
+[2026-04-23 17:12:57] static session ended
+[2026-04-23 17:12:57] WARNING: no static retro found for 2026-04-23
+[2026-04-23T17:13:00] claude session ended
+[2026-04-23T17:13:03] hum session ended
+[2026-04-23T17:13:29] hum session ended
+[2026-04-23T22:13:31Z] relay session ended
+[2026-04-23 17:13:33] static session ended
+[2026-04-23 17:13:33] WARNING: no static retro found for 2026-04-23
+[2026-04-23 17:13:34] static session ended
+[2026-04-23T22:13:34Z] relay session ended
+[2026-04-23 17:13:34] WARNING: no static retro found for 2026-04-23
+[2026-04-23T17:13:35] near session ended
+[2026-04-23T17:13:35] claude session ended
+[2026-04-23T17:13:35] hum session ended
+[2026-04-23T17:13:36] near session ended
+[2026-04-23T17:13:36] claude session ended
+[2026-04-23T17:13:36] hum session ended
+[2026-04-23T17:13:38] hum session ended
+[2026-04-23T17:13:39] near session ended
+[2026-04-23T22:13:39Z] relay session ended
+[2026-04-23 17:13:40] static session ended
+[2026-04-23 17:13:40] WARNING: no static retro found for 2026-04-23
+[2026-04-23T17:13:40] claude session ended
+[2026-04-23T22:13:40Z] relay session ended
+[2026-04-23T17:13:40] near session ended
+[2026-04-23T17:13:41] hum session ended
+[2026-04-23T17:13:41] hum session ended
+[2026-04-23T17:13:44] near session ended
+[2026-04-23T22:13:44Z] relay session ended
+[2026-04-23T17:13:45] claude session ended
+[2026-04-23T17:13:45] claude session ended
+[2026-04-23 17:13:45] static session ended
+[2026-04-23 17:13:45] WARNING: no static retro found for 2026-04-23
+[2026-04-23 17:13:49] static session ended
+[2026-04-23 17:13:49] WARNING: no static retro found for 2026-04-23
+[2026-04-23T17:13:49] claude session ended
+[2026-04-23T22:13:49Z] relay session ended
+[2026-04-23T17:13:49] claude session ended
+[2026-04-23T17:13:50] claude session ended
+[2026-04-23T17:13:50] near session ended
+[2026-04-23T22:13:51Z] relay session ended
+[2026-04-23T22:13:51Z] relay session ended
+[2026-04-23T17:13:51] hum session ended
+[2026-04-23T17:13:52] hum session ended
+[2026-04-23 17:13:52] static session ended
+[2026-04-23 17:13:52] WARNING: no static retro found for 2026-04-23
+[2026-04-23T17:13:53] claude session ended
+[2026-04-23T17:13:55] near session ended
+[2026-04-23T17:13:55] hum session ended
+[2026-04-23T22:13:56Z] relay session ended
+[2026-04-23T22:13:57Z] relay session ended
+[2026-04-23 17:13:58] static session ended
+[2026-04-23 17:13:58] WARNING: no static retro found for 2026-04-23
+[2026-04-23T17:13:58] claude session ended
+[2026-04-23T22:13:58Z] relay session ended
+[2026-04-24T04:36:29] hum session ended
+[2026-04-24 06:39:10] static session ended
+[2026-04-24 06:39:10] WARNING: no static retro found for 2026-04-24
+[2026-04-24T11:48:16Z] relay session ended
+[2026-04-24T08:37:42] near session ended
+[2026-04-24T09:40:56] claude session ended
+[2026-04-24T14:38:00] hum session ended
+[2026-04-24T16:47:23] hum session ended
+[2026-04-24T16:47:25] hum session ended
+[2026-04-24T16:47:30] claude session ended
+[2026-04-24T16:47:30] claude session ended
+[2026-04-24T16:47:32] hum session ended
+[2026-04-24 16:47:33] static session ended
+[2026-04-24 16:47:33] WARNING: no static retro found for 2026-04-24
+[2026-04-24T16:47:34] near session ended
+[2026-04-24 16:47:35] static session ended
+[2026-04-24 16:47:35] WARNING: no static retro found for 2026-04-24
+[2026-04-24T16:47:36] near session ended
+[2026-04-24T21:47:39Z] relay session ended
+[2026-04-24T21:47:40Z] relay session ended
+[2026-04-24 16:47:45] static session ended
+[2026-04-24 16:47:45] WARNING: no static retro found for 2026-04-24
+[2026-04-24T16:47:46] near session ended
+[2026-04-24T16:47:48] claude session ended
+[2026-04-24T16:47:50] hum session ended
+[2026-04-24T21:47:51Z] relay session ended
+[2026-04-25T05:04:28] claude session ended
+[2026-04-25 05:04:31] static session ended
+[2026-04-25 05:04:31] WARNING: no static retro found for 2026-04-25
+[2026-04-25T05:04:31] hum session ended
+[2026-04-25T05:04:32] near session ended
+[2026-04-25T10:04:37Z] relay session ended
+[2026-04-25 05:04:42] static session ended
+[2026-04-25 05:04:42] WARNING: no static retro found for 2026-04-25
+[2026-04-25T05:04:44] near session ended
+[2026-04-25T05:04:47] claude session ended
+[2026-04-25T10:04:48Z] relay session ended
+[2026-04-25T05:04:50] hum session ended
+[2026-04-25T13:16:35Z] relay session ended
+[2026-04-25 08:16:40] static session ended
+[2026-04-25 08:16:40] WARNING: no static retro found for 2026-04-25
+[2026-04-25T08:16:45] claude session ended
+[2026-04-25T13:16:47Z] relay session ended
+[2026-04-25T08:16:57] claude session ended
+[2026-04-25 08:16:59] static session ended
+[2026-04-25 08:16:59] WARNING: no static retro found for 2026-04-25
+[2026-04-26T00:40:11] near session ended
+[2026-04-26T06:40:29] hum session ended
+[2026-04-26 06:42:08] static session ended
+[2026-04-26 06:42:08] WARNING: no static retro found for 2026-04-26
+[2026-04-26T06:43:55] claude session ended
+[2026-04-26T11:51:16Z] relay session ended
+[2026-04-26T08:41:42] near session ended
+[2026-04-26T16:42:00] hum session ended
+[2026-04-27T00:43:13] near session ended
+[2026-04-27 00:43:39] static session ended
+[2026-04-27 00:43:39] WARNING: no static retro found for 2026-04-27
+[2026-04-27T05:52:47Z] relay session ended
+[2026-04-27T02:43:31] hum session ended
+[2026-04-27T02:45:26] claude session ended
+[2026-04-27 06:45:10] static session ended
+[2026-04-27 06:45:10] WARNING: no static retro found for 2026-04-27
+[2026-04-27T11:54:18Z] relay session ended
+[2026-04-27T07:46:57] claude session ended
+[2026-04-27T08:44:44] near session ended
+[2026-04-27T12:45:02] hum session ended
+[2026-04-28T00:46:15] near session ended
+[2026-04-28 00:46:41] static session ended
+[2026-04-28 00:46:41] WARNING: no static retro found for 2026-04-28
+[2026-04-28T05:55:49Z] relay session ended
+[2026-04-28T03:48:28] claude session ended
+[2026-04-28 06:48:12] static session ended
+[2026-04-28 06:48:12] WARNING: no static retro found for 2026-04-28
+[2026-04-28T11:57:20Z] relay session ended
+[2026-04-28T08:46:34] hum session ended
+[2026-04-28T08:47:46] near session ended
+[2026-04-28T08:49:58] claude session ended
+[2026-04-28T18:48:05] hum session ended
+[2026-04-29T00:49:17] near session ended
+[2026-04-29 00:49:43] static session ended
+[2026-04-29 00:49:43] WARNING: no static retro found for 2026-04-29
+[2026-04-29T05:58:51Z] relay session ended
+[2026-04-29T04:49:36] hum session ended
+[2026-04-29T04:51:30] claude session ended
+[2026-04-29 06:51:14] static session ended
+[2026-04-29 06:51:14] WARNING: no static retro found for 2026-04-29
+[2026-04-29T12:00:21Z] relay session ended
+[2026-04-29T08:50:48] near session ended
+[2026-04-29T09:53:01] claude session ended
+[2026-04-29T14:51:07] hum session ended
+[2026-04-29T19:59:02] hum session ended
+[2026-04-30T00:59:02Z] relay session ended
+[2026-04-29T19:59:02] near session ended
+[2026-04-29T19:59:03] near session ended
+[2026-04-29T19:59:04] hum session ended
+[2026-04-29T19:59:05] claude session ended
+[2026-04-30T00:59:05Z] relay session ended
+[2026-04-29T19:59:05] claude session ended
+[2026-04-30T00:59:06Z] relay session ended
+[2026-04-29 19:59:06] static session ended
+[2026-04-29 19:59:06] WARNING: no static retro found for 2026-04-29
+[2026-04-29T19:59:06] near session ended
+[2026-04-29T19:59:07] claude session ended
+[2026-04-29 19:59:07] static session ended
+[2026-04-29 19:59:07] WARNING: no static retro found for 2026-04-29
+[2026-04-29T19:59:08] hum session ended
+[2026-04-29T19:59:09] claude session ended
+[2026-04-29 19:59:09] static session ended
+[2026-04-29 19:59:09] WARNING: no static retro found for 2026-04-29
+[2026-04-29T19:59:09] hum session ended
+[2026-04-29 19:59:10] static session ended
+[2026-04-29 19:59:10] WARNING: no static retro found for 2026-04-29
+[2026-04-29T19:59:11] hum session ended
+[2026-04-29T19:59:11] near session ended
+[2026-04-29T19:59:11] hum session ended
+[2026-04-30T00:59:12Z] relay session ended
+[2026-04-29T19:59:12] hum session ended
+[2026-04-29T19:59:14] claude session ended
+[2026-04-29T19:59:14] claude session ended
+[2026-04-29 19:59:14] static session ended
+[2026-04-29 19:59:14] WARNING: no static retro found for 2026-04-29
+[2026-04-30T00:59:15Z] relay session ended
+[2026-04-29T19:59:15] hum session ended
+[2026-04-29 19:59:15] static session ended
+[2026-04-29 19:59:15] WARNING: no static retro found for 2026-04-29
+[2026-04-29T19:59:16] near session ended
+[2026-04-29T19:59:18] claude session ended
+[2026-04-29 19:59:20] static session ended
+[2026-04-29 19:59:20] WARNING: no static retro found for 2026-04-29
+[2026-04-29T19:59:20] near session ended
+[2026-04-29T19:59:23] near session ended
+[2026-04-29T19:59:23] claude session ended
+[2026-04-29T19:59:23] near session ended
+[2026-04-29T19:59:24] claude session ended
+[2026-04-30T00:59:24Z] relay session ended
+[2026-04-29 19:59:25] static session ended
+[2026-04-29 19:59:25] WARNING: no static retro found for 2026-04-29
+[2026-04-29T19:59:26] near session ended
+[2026-04-30T00:59:26Z] relay session ended
+[2026-04-29T19:59:26] near session ended
+[2026-04-29 19:59:27] static session ended
+[2026-04-29 19:59:27] WARNING: no static retro found for 2026-04-29
+[2026-04-30T00:59:27Z] relay session ended
+[2026-04-30T00:59:28Z] relay session ended
+[2026-04-29T19:59:29] hum session ended
+[2026-04-29T19:59:30] hum session ended
+[2026-04-30T05:55:01] claude session ended
+[2026-04-30 06:53:14] static session ended
+[2026-04-30 06:53:14] WARNING: no static retro found for 2026-04-30
+[2026-04-30T12:02:22Z] relay session ended
+[2026-04-30T08:52:48] near session ended
+[2026-04-30T10:53:09] hum session ended
+[2026-05-01T00:54:19] near session ended
+[2026-05-01 00:54:46] static session ended
+[2026-05-01 00:54:46] WARNING: no static retro found for 2026-05-01
+[2026-05-01T06:03:53Z] relay session ended
+[2026-05-01T01:56:32] claude session ended
+[2026-05-01T06:54:40] hum session ended
+[2026-05-01 06:56:16] static session ended
+[2026-05-01 06:56:16] WARNING: no static retro found for 2026-05-01
+[2026-05-01T06:58:03] claude session ended
+[2026-05-01T12:05:24Z] relay session ended
+[2026-05-01T12:44:14Z] relay session ended
+[2026-05-01 07:44:14] static session ended
+[2026-05-01 07:44:14] WARNING: no static retro found for 2026-05-01
+[2026-05-01T07:44:14] near session ended
+[2026-05-01T07:44:17] hum session ended
+[2026-05-01T07:44:17] hum session ended
+[2026-05-01 07:44:18] static session ended
+[2026-05-01 07:44:18] WARNING: no static retro found for 2026-05-01
+[2026-05-01T12:44:19Z] relay session ended
+[2026-05-01 07:44:19] static session ended
+[2026-05-01 07:44:19] WARNING: no static retro found for 2026-05-01
+[2026-05-01T12:44:19Z] relay session ended
+[2026-05-01T07:44:22] near session ended
+[2026-05-01T07:44:23] claude session ended
+[2026-05-01T12:44:25Z] relay session ended
+[2026-05-01T12:44:26Z] relay session ended
+[2026-05-01T07:44:27] near session ended
+[2026-05-01T07:44:28] claude session ended
+[2026-05-01T07:44:28] claude session ended
+[2026-05-01T07:44:30] hum session ended
+[2026-05-01T07:44:34] claude session ended
+[2026-05-01T07:44:35] claude session ended
+[2026-05-01 07:44:36] static session ended
+[2026-05-01 07:44:36] WARNING: no static retro found for 2026-05-01
+[2026-05-01 07:44:38] static session ended
+[2026-05-01 07:44:38] WARNING: no static retro found for 2026-05-01
+[2026-05-01T07:44:41] near session ended
+[2026-05-01T07:44:42] hum session ended
+[2026-05-02T00:56:19] near session ended
+[2026-05-02T02:56:40] hum session ended
+[2026-05-02 06:58:16] static session ended
+[2026-05-02 06:58:16] WARNING: no static retro found for 2026-05-02
+[2026-05-02T12:07:24Z] relay session ended
+[2026-05-02T08:00:03] claude session ended
+[2026-05-02T08:57:50] near session ended
+[2026-05-02T12:58:11] hum session ended
+[2026-05-03T00:59:21] near session ended
+[2026-05-03 00:59:48] static session ended
+[2026-05-03 00:59:48] WARNING: no static retro found for 2026-05-03
+[2026-05-03T06:08:55Z] relay session ended
+[2026-05-03T04:01:34] claude session ended
+[2026-05-03 07:01:18] static session ended
+[2026-05-03 07:01:18] WARNING: no static retro found for 2026-05-03
+[2026-05-03T12:10:26Z] relay session ended
+[2026-05-03T08:59:42] hum session ended
+[2026-05-03T09:00:52] near session ended
+[2026-05-03T09:03:05] claude session ended
+[2026-05-03T19:01:13] hum session ended
+[2026-05-04T00:04:36] claude session ended
+[2026-05-04T01:02:22] near session ended
+[2026-05-04 01:02:49] static session ended
+[2026-05-04 01:02:49] WARNING: no static retro found for 2026-05-04
+[2026-05-04T06:11:57Z] relay session ended
+[2026-05-04T05:02:44] hum session ended
+[2026-05-04T05:06:06] claude session ended
+[2026-05-04 07:04:20] static session ended
+[2026-05-04 07:04:20] WARNING: no static retro found for 2026-05-04
+[2026-05-04T12:13:28Z] relay session ended
+[2026-05-04T09:03:53] near session ended
+[2026-05-04T15:04:15] hum session ended
+[2026-05-05T01:05:24] near session ended
+[2026-05-05T01:05:46] hum session ended
+[2026-05-05 01:05:51] static session ended
+[2026-05-05 01:05:51] WARNING: no static retro found for 2026-05-05
+[2026-05-05T01:07:38] claude session ended
+[2026-05-05T06:14:59Z] relay session ended
+[2026-05-05T06:09:09] claude session ended
+[2026-05-05 07:07:22] static session ended
+[2026-05-05 07:07:22] WARNING: no static retro found for 2026-05-05
+[2026-05-05T12:16:30Z] relay session ended
+[2026-05-05T09:06:55] near session ended
+[2026-05-05T11:07:20] hum session ended
+[2026-05-06T01:08:26] near session ended
+[2026-05-06 01:08:53] static session ended
+[2026-05-06 01:08:53] WARNING: no static retro found for 2026-05-06
+[2026-05-06T06:18:01Z] relay session ended
+[2026-05-06T02:10:40] claude session ended
+[2026-05-06T07:08:51] hum session ended
+[2026-05-06 07:10:24] static session ended
+[2026-05-06 07:10:24] WARNING: no static retro found for 2026-05-06
+[2026-05-06T07:12:11] claude session ended
+[2026-05-06T12:19:32Z] relay session ended
+[2026-05-06T09:09:57] near session ended
+[2026-05-06T17:10:22] hum session ended
+[2026-05-07T01:11:28] near session ended
+[2026-05-07 01:11:55] static session ended
+[2026-05-07 01:11:55] WARNING: no static retro found for 2026-05-07
+[2026-05-07T06:21:03Z] relay session ended
+[2026-05-07T03:11:55] hum session ended
+[2026-05-07T03:13:42] claude session ended
+[2026-05-07T05:27:45] claude session ended
+[2026-05-07T05:27:46] near session ended
+[2026-05-07T05:27:46] hum session ended
+[2026-05-07T10:27:46Z] relay session ended
+[2026-05-07 05:27:47] static session ended
+[2026-05-07 05:27:47] WARNING: no static retro found for 2026-05-07
+[2026-05-07T05:27:49] near session ended
+[2026-05-07T05:27:50] hum session ended
+[2026-05-07T05:27:51] hum session ended
+[2026-05-07 05:27:52] static session ended
+[2026-05-07 05:27:52] WARNING: no static retro found for 2026-05-07
+[2026-05-07 05:27:52] static session ended
+[2026-05-07 05:27:52] WARNING: no static retro found for 2026-05-07
+[2026-05-07T05:27:53] claude session ended
+[2026-05-07T05:27:53] near session ended
+[2026-05-07T05:27:53] near session ended
+[2026-05-07T05:27:54] near session ended
+[2026-05-07T10:27:54Z] relay session ended
+[2026-05-07T05:27:54] claude session ended
+[2026-05-07T05:27:56] hum session ended
+[2026-05-07T05:27:57] near session ended
+[2026-05-07T05:27:57] claude session ended
+[2026-05-07 05:27:57] static session ended
+[2026-05-07 05:27:57] WARNING: no static retro found for 2026-05-07
+[2026-05-07T05:27:57] hum session ended
+[2026-05-07 05:27:58] static session ended
+[2026-05-07 05:27:58] WARNING: no static retro found for 2026-05-07
+[2026-05-07 05:27:59] static session ended
+[2026-05-07 05:27:59] WARNING: no static retro found for 2026-05-07
+[2026-05-07T10:28:00Z] relay session ended
+[2026-05-07T05:28:00] near session ended
+[2026-05-07T05:28:01] claude session ended
+[2026-05-07T05:28:01] near session ended
+[2026-05-07 05:28:01] static session ended
+[2026-05-07 05:28:01] WARNING: no static retro found for 2026-05-07
+[2026-05-07T05:28:02] claude session ended
+[2026-05-07T05:28:02] hum session ended
+[2026-05-07T05:28:02] hum session ended
+[2026-05-07T05:28:03] claude session ended
+[2026-05-07T10:28:03Z] relay session ended
+[2026-05-07T05:28:03] hum session ended
+[2026-05-07T05:28:04] hum session ended
+[2026-05-07T05:28:04] hum session ended
+[2026-05-07 05:28:04] static session ended
+[2026-05-07 05:28:04] WARNING: no static retro found for 2026-05-07
+[2026-05-07T05:28:05] hum session ended
+[2026-05-07 05:28:05] static session ended
+[2026-05-07 05:28:05] WARNING: no static retro found for 2026-05-07
+[2026-05-07T10:28:05Z] relay session ended
+[2026-05-07 05:28:06] static session ended
+[2026-05-07 05:28:06] WARNING: no static retro found for 2026-05-07
+[2026-05-07T05:28:07] hum session ended
+[2026-05-07T10:28:07Z] relay session ended
+[2026-05-07T05:28:07] claude session ended
+[2026-05-07T05:28:07] claude session ended
+[2026-05-07T05:28:07] near session ended
+[2026-05-07T10:28:07Z] relay session ended
+[2026-05-07T05:28:08] claude session ended
+[2026-05-07T05:28:09] near session ended
+[2026-05-07T10:28:09Z] relay session ended
+[2026-05-07 05:28:10] static session ended
+[2026-05-07 05:28:10] WARNING: no static retro found for 2026-05-07
+[2026-05-07 05:28:10] static session ended
+[2026-05-07 05:28:10] WARNING: no static retro found for 2026-05-07
+[2026-05-07T05:28:11] near session ended
+[2026-05-07T10:28:11Z] relay session ended
+[2026-05-07T05:28:12] claude session ended
+[2026-05-07T05:28:13] near session ended
+[2026-05-07T05:28:14] near session ended
+[2026-05-07T05:28:14] claude session ended
+[2026-05-07T10:28:14Z] relay session ended
+[2026-05-07T05:28:14] hum session ended
+[2026-05-07T10:28:15Z] relay session ended
+[2026-05-07T10:28:15Z] relay session ended
+[2026-05-08T01:13:28] near session ended
+[2026-05-08 01:13:55] static session ended
+[2026-05-08 01:13:55] WARNING: no static retro found for 2026-05-08
+[2026-05-08T06:23:03Z] relay session ended
+[2026-05-08T04:15:43] claude session ended
+[2026-05-08 07:15:26] static session ended
+[2026-05-08 07:15:26] WARNING: no static retro found for 2026-05-08
+[2026-05-08T12:24:34Z] relay session ended
+[2026-05-08T09:13:56] hum session ended
+[2026-05-08T09:14:59] near session ended
+[2026-05-08T09:17:13] claude session ended
+[2026-05-08T19:15:27] hum session ended
+[2026-05-09T00:18:44] claude session ended
+[2026-05-09T01:16:30] near session ended
+[2026-05-09 01:16:57] static session ended
+[2026-05-09 01:16:57] WARNING: no static retro found for 2026-05-09
+[2026-05-09T06:26:06Z] relay session ended
+[2026-05-09T05:16:58] hum session ended
+[2026-05-09T05:20:15] claude session ended
+[2026-05-09 07:18:27] static session ended
+[2026-05-09 07:18:27] WARNING: no static retro found for 2026-05-09
+[2026-05-09T12:27:36Z] relay session ended
+[2026-05-09T09:18:01] near session ended
+[2026-05-09T15:18:29] hum session ended
+[2026-05-10T01:19:32] near session ended
+[2026-05-10 01:19:59] static session ended
+[2026-05-10 01:19:59] WARNING: no static retro found for 2026-05-10
+[2026-05-10T01:20:00] hum session ended
+[2026-05-10T01:21:46] claude session ended
+[2026-05-10T06:29:08Z] relay session ended
+[2026-05-10T06:23:18] claude session ended
+[2026-05-10 07:21:29] static session ended
+[2026-05-10 07:21:29] WARNING: no static retro found for 2026-05-10
+[2026-05-10T12:30:38Z] relay session ended
+[2026-05-10T09:21:03] near session ended
+[2026-05-10T11:21:31] hum session ended
+[2026-05-11T01:22:34] near session ended
+[2026-05-11 01:23:01] static session ended
+[2026-05-11 01:23:01] WARNING: no static retro found for 2026-05-11
+[2026-05-11T06:32:10Z] relay session ended
+[2026-05-11T02:24:49] claude session ended
+[2026-05-11T07:23:02] hum session ended
+[2026-05-11 07:24:31] static session ended
+[2026-05-11 07:24:31] WARNING: no static retro found for 2026-05-11
+[2026-05-11T07:26:20] claude session ended
+[2026-05-11T12:33:40Z] relay session ended
+[2026-05-11T09:24:05] near session ended
+[2026-05-11T17:24:33] hum session ended
+[2026-05-12T01:25:36] near session ended
+[2026-05-12 01:26:03] static session ended
+[2026-05-12 01:26:03] WARNING: no static retro found for 2026-05-12
+[2026-05-12T06:35:12Z] relay session ended
+[2026-05-12T03:26:03] hum session ended
+[2026-05-12T03:27:51] claude session ended
+[2026-05-12 07:27:33] static session ended
+[2026-05-12 07:27:33] WARNING: no static retro found for 2026-05-12
+[2026-05-12T12:36:43Z] relay session ended
+[2026-05-12T08:29:22] claude session ended
+[2026-05-12T09:27:07] near session ended
+[2026-05-12T13:27:34] hum session ended
+[2026-05-13T02:58:40] claude session ended
+[2026-05-13T09:58:40Z] relay session ended
+[2026-05-13 04:58:40] static session ended
+[2026-05-13 04:58:40] WARNING: no static retro found for 2026-05-13
+[2026-05-13T08:00:11] claude session ended
+[2026-05-13T08:58:40] near session ended
+[2026-05-13T09:32:12] near session ended
+[2026-05-13T09:32:12] hum session ended
+[2026-05-13T09:32:13] claude session ended
+[2026-05-13T14:32:13Z] relay session ended
+[2026-05-13T09:32:13] claude session ended
+[2026-05-13 09:32:13] static session ended
+[2026-05-13 09:32:13] WARNING: no static retro found for 2026-05-13
+[2026-05-13T09:32:30] near session ended
+[2026-05-13T09:32:31] hum session ended
+[2026-05-13T09:32:31] claude session ended
+[2026-05-13T09:32:31] near session ended
+[2026-05-13T14:32:31Z] relay session ended
+[2026-05-13T09:32:31] claude session ended
+[2026-05-13T14:32:32Z] relay session ended
+[2026-05-13 09:32:32] static session ended
+[2026-05-13 09:32:32] WARNING: no static retro found for 2026-05-13
+[2026-05-13 09:32:33] static session ended
+[2026-05-13 09:32:33] WARNING: no static retro found for 2026-05-13
+[2026-05-17T23:33:26] claude session ended
+[2026-05-18 01:54:35] static session ended
+[2026-05-18 01:54:35] WARNING: no static retro found for 2026-05-18
+[2026-05-18T06:54:35Z] relay session ended
+[2026-05-18T04:56:35] claude session ended
+[2026-05-18T06:00:34] near session ended
+[2026-05-18 08:15:52] static session ended
+[2026-05-18 08:15:52] WARNING: no static retro found for 2026-05-18
+[2026-05-18T13:15:53Z] relay session ended
+[2026-05-18T10:56:14] hum session ended
+[2026-05-18T10:59:15] claude session ended
+[2026-05-18T15:36:46] near session ended
+[2026-05-18T21:36:46] hum session ended
+[2026-05-19T02:39:48] claude session ended
+[2026-05-19 03:38:17] static session ended
+[2026-05-19 03:38:17] WARNING: no static retro found for 2026-05-19
+[2026-05-19T08:38:17Z] relay session ended
+[2026-05-19T07:38:17] near session ended
+[2026-05-19T07:38:17] hum session ended
+[2026-05-19T07:41:18] claude session ended
+[2026-05-19T14:39:48Z] relay session ended
+[2026-05-19 09:39:48] static session ended
+[2026-05-19 09:39:48] WARNING: no static retro found for 2026-05-19
+[2026-05-19T15:39:48] near session ended
+[2026-05-19T17:39:49] hum session ended
+[2026-05-20 03:41:19] static session ended
+[2026-05-20 03:41:19] WARNING: no static retro found for 2026-05-20
+[2026-05-20T03:41:19] hum session ended
+[2026-05-20T08:41:20Z] relay session ended
+[2026-05-20T03:42:49] claude session ended
+[2026-05-20T07:41:20] near session ended
+[2026-05-20T08:44:20] claude session ended
+[2026-05-20T14:42:50Z] relay session ended
+[2026-05-20 09:42:50] static session ended
+[2026-05-20 09:42:50] WARNING: no static retro found for 2026-05-20
+[2026-05-20T13:42:51] hum session ended
+[2026-05-20T15:42:50] near session ended
+[2026-05-21T03:46:58Z] relay session ended
+[2026-05-21T03:47:17Z] relay session ended
+[2026-05-21T03:47:17Z] relay session ended
+[2026-05-21T03:47:17Z] relay session ended
+[2026-05-21T03:47:17Z] relay session ended
+[2026-05-21T03:47:19Z] relay session ended
+[2026-05-21T03:47:25Z] relay session ended
+[2026-05-21T03:47:43Z] relay session ended
+[2026-05-21T03:47:44Z] relay session ended
+[2026-05-20 22:51:50] static session ended
+[2026-05-20 22:51:50] WARNING: no static retro found for 2026-05-20
+[2026-05-20 22:51:50] static session ended
+[2026-05-20 22:51:50] WARNING: no static retro found for 2026-05-20
+[2026-05-20 22:51:50] static session ended
+[2026-05-20 22:51:50] WARNING: no static retro found for 2026-05-20
+[2026-05-20T22:51:54] near session ended
+[2026-05-20T22:51:54] near session ended
+[2026-05-20T22:51:54] claude session ended
+[2026-05-20T22:51:55] hum session ended
+[2026-05-20 22:51:56] static session ended
+[2026-05-20 22:51:56] WARNING: no static retro found for 2026-05-20
+[2026-05-20T22:51:56] near session ended
+[2026-05-20T22:51:58] hum session ended
+[2026-05-20T22:51:58] claude session ended
+[2026-05-20T22:51:59] claude session ended
+[2026-05-20 22:52:00] static session ended
+[2026-05-20 22:52:00] WARNING: no static retro found for 2026-05-20
+[2026-05-20T22:52:01] near session ended
+[2026-05-20 22:52:01] static session ended
+[2026-05-20 22:52:01] WARNING: no static retro found for 2026-05-20
+[2026-05-20T22:52:02] hum session ended
+[2026-05-20T22:52:13] near session ended
+[2026-05-20T22:52:13] claude session ended
+[2026-05-20T22:52:14] hum session ended
+[2026-05-20 22:52:15] static session ended
+[2026-05-20 22:52:15] WARNING: no static retro found for 2026-05-20
+[2026-05-20T22:52:15] hum session ended
+[2026-05-20T22:52:16] hum session ended
+[2026-05-20T22:52:17] hum session ended
+[2026-05-20T22:52:17] near session ended
+[2026-05-20T22:52:17] near session ended
+[2026-05-20T22:52:17] claude session ended
+[2026-05-20T22:52:17] claude session ended
+[2026-05-20T22:52:17] claude session ended
+[2026-05-20T22:52:18] claude session ended
+[2026-05-20T23:51:15] claude session ended
+[2026-05-20 23:52:46] static session ended
+[2026-05-20 23:52:46] WARNING: no static retro found for 2026-05-20
+[2026-05-20T23:53:02] near session ended
+[2026-05-20T23:53:10] hum session ended
+[2026-05-21 03:44:23] static session ended
+[2026-05-21 03:44:23] WARNING: no static retro found for 2026-05-21
+[2026-05-21T08:44:23Z] relay session ended
+[2026-05-21T04:45:53] claude session ended
+[2026-05-21T07:44:25] near session ended
+[2026-05-21T09:44:24] hum session ended
+[2026-05-21 09:45:52] static session ended
+[2026-05-21 09:45:52] WARNING: no static retro found for 2026-05-21
+[2026-05-21T14:45:53Z] relay session ended
+[2026-05-21T09:47:24] claude session ended
+[2026-05-22T00:48:27] claude session ended
+[2026-05-22 03:46:55] static session ended
+[2026-05-22 03:46:55] WARNING: no static retro found for 2026-05-22
+[2026-05-22T08:46:55Z] relay session ended
+[2026-05-28T01:45:33] hum session ended
+[2026-05-28T01:49:37] claude session ended
+[2026-05-28T08:48:05Z] relay session ended
+[2026-05-28 03:48:05] static session ended
+[2026-05-28 03:48:05] WARNING: no static retro found for 2026-05-28
+[2026-05-28T06:50:47] claude session ended
+[2026-05-28T07:45:35] near session ended
+[2026-05-28 09:49:15] static session ended
+[2026-05-28 09:49:15] WARNING: no static retro found for 2026-05-28
+[2026-05-28T14:49:16Z] relay session ended
+[2026-05-28T11:46:44] hum session ended
+[2026-05-28T15:46:45] near session ended
+[2026-05-29T02:51:59] claude session ended
+[2026-05-29 03:50:26] static session ended
+[2026-05-29 03:50:26] WARNING: no static retro found for 2026-05-29
+[2026-05-29T08:50:27Z] relay session ended
+[2026-05-29T07:47:55] hum session ended
+[2026-05-29T07:47:56] near session ended
+[2026-05-29T07:53:09] claude session ended
+[2026-05-29 09:51:37] static session ended
+[2026-05-29 09:51:37] WARNING: no static retro found for 2026-05-29
+[2026-05-29T14:51:37Z] relay session ended
+[2026-05-29T15:49:07] near session ended
+[2026-05-29T17:49:06] hum session ended
+[2026-05-30T03:50:17] hum session ended
+[2026-05-30 03:52:48] static session ended
+[2026-05-30 03:52:48] WARNING: no static retro found for 2026-05-30
+[2026-05-30T08:52:49Z] relay session ended
+[2026-05-30T03:54:21] claude session ended
+[2026-05-30T07:50:18] near session ended
+[2026-05-30T08:55:31] claude session ended
+[2026-05-30 09:53:59] static session ended
+[2026-05-30 09:53:59] WARNING: no static retro found for 2026-05-30
+[2026-05-30T14:53:59Z] relay session ended
+[2026-05-30T13:51:28] hum session ended
+[2026-05-30T15:51:28] near session ended
+[2026-05-31 03:55:10] static session ended
+[2026-05-31 03:55:10] WARNING: no static retro found for 2026-05-31
+[2026-05-31T08:55:11Z] relay session ended
+[2026-05-31T04:56:42] claude session ended
+[2026-05-31T07:52:39] near session ended
+[2026-05-31T09:52:39] hum session ended
+[2026-05-31 09:56:21] static session ended
+[2026-05-31 09:56:21] WARNING: no static retro found for 2026-05-31
+[2026-05-31T14:56:21Z] relay session ended
+[2026-05-31T09:57:53] claude session ended
+[2026-05-31T15:53:50] near session ended
+[2026-05-31T19:53:49] hum session ended
+[2026-06-01T00:59:05] claude session ended
+[2026-06-01T08:57:32Z] relay session ended
+[2026-06-01 03:57:32] static session ended
+[2026-06-01 03:57:32] WARNING: no static retro found for 2026-06-01
+[2026-06-01T05:55:00] hum session ended
+[2026-06-01T06:00:16] claude session ended
+[2026-06-01T07:55:01] near session ended
+[2026-06-01T14:58:42Z] relay session ended
+[2026-06-01 09:58:42] static session ended
+[2026-06-01 09:58:42] WARNING: no static retro found for 2026-06-01
+[2026-06-01T15:56:10] hum session ended
+[2026-06-01T15:56:12] near session ended
+[2026-06-02T01:57:21] hum session ended
+[2026-06-02T02:01:27] claude session ended
+[2026-06-02T08:59:53Z] relay session ended
+[2026-06-02 03:59:54] static session ended
+[2026-06-02 03:59:54] WARNING: no static retro found for 2026-06-02
+[2026-06-02T07:02:38] claude session ended
+[2026-06-02T07:57:25] near session ended
+[2026-06-02T15:01:04Z] relay session ended
+[2026-06-02 10:01:05] static session ended
+[2026-06-02 10:01:05] WARNING: no static retro found for 2026-06-02
+[2026-06-02T11:58:32] hum session ended
+[2026-06-02T15:58:38] near session ended
+[2026-06-03T03:03:49] claude session ended
+[2026-06-03T09:02:15Z] relay session ended
+[2026-06-03 04:02:16] static session ended
+[2026-06-03 04:02:16] WARNING: no static retro found for 2026-06-03
+[2026-06-03T07:59:43] hum session ended
+[2026-06-03T07:59:48] near session ended
+[2026-06-03T08:05:00] claude session ended
+[2026-06-03T15:03:26Z] relay session ended
+[2026-06-03 10:03:27] static session ended
+[2026-06-03 10:03:27] WARNING: no static retro found for 2026-06-03
+[2026-06-03T16:00:59] near session ended
+[2026-06-03T18:00:53] hum session ended
+[2026-06-04T00:02:10] near session ended
+[2026-06-04T04:02:04] hum session ended
+[2026-06-04T09:04:37Z] relay session ended
+[2026-06-04 04:04:38] static session ended
+[2026-06-04 04:04:38] WARNING: no static retro found for 2026-06-04
+[2026-06-04T04:06:11] claude session ended
+[2026-06-04T08:03:21] near session ended
+[2026-06-04T09:07:22] claude session ended
+[2026-06-04T15:05:48Z] relay session ended
+[2026-06-04 10:05:48] static session ended
+[2026-06-04 10:05:48] WARNING: no static retro found for 2026-06-04
+[2026-06-04T14:03:15] hum session ended
+[2026-06-05T04:04:31Z] relay session ended
+[2026-06-05T04:09:57Z] relay session ended
+[2026-06-05T04:14:13Z] relay session ended
+[2026-06-05T04:14:35Z] relay session ended
+[2026-06-05T00:04:26] hum session ended
+[2026-06-05T00:04:32] near session ended
+[2026-06-05T00:08:33] claude session ended
+[2026-06-05 04:06:59] static session ended
+[2026-06-05 04:06:59] WARNING: no static retro found for 2026-06-05
+[2026-06-05T09:07:01Z] relay session ended
+[2026-06-05T05:09:43] claude session ended
+[2026-06-05T08:05:42] near session ended
+[2026-06-05T10:05:37] hum session ended
+[2026-06-05 10:08:10] static session ended
+[2026-06-05 10:08:10] WARNING: no static retro found for 2026-06-05
+[2026-06-05T15:08:12Z] relay session ended
+[2026-06-06T00:06:53] near session ended
+[2026-06-06T01:10:55] claude session ended
+[2026-06-06 04:09:20] static session ended
+[2026-06-06 04:09:20] WARNING: no static retro found for 2026-06-06
+[2026-06-06T09:09:23Z] relay session ended
+[2026-06-06T06:06:48] hum session ended
+[2026-06-06T06:12:05] claude session ended
+[2026-06-06T08:08:04] near session ended
+[2026-06-06 10:10:31] static session ended
+[2026-06-06 10:10:31] WARNING: no static retro found for 2026-06-06
+[2026-06-06T15:10:33Z] relay session ended
+[2026-06-06T16:07:59] hum session ended
+[2026-06-07T00:09:15] near session ended
+[2026-06-07T02:09:10] hum session ended
+[2026-06-07T02:13:17] claude session ended
+[2026-06-07 04:11:43] static session ended
+[2026-06-07 04:11:43] WARNING: no static retro found for 2026-06-07
+[2026-06-07T09:11:45Z] relay session ended
+[2026-06-07T07:14:27] claude session ended
+[2026-06-07T08:10:27] near session ended
+[2026-06-07 10:12:53] static session ended
+[2026-06-07 10:12:53] WARNING: no static retro found for 2026-06-07
+[2026-06-07T15:12:55Z] relay session ended
+[2026-06-07T12:10:21] hum session ended
+[2026-06-08T00:11:38] near session ended
+[2026-06-08T03:15:38] claude session ended
+[2026-06-08 04:14:04] static session ended
+[2026-06-08 04:14:04] WARNING: no static retro found for 2026-06-08
+[2026-06-08T09:14:06Z] relay session ended
+[2026-06-08T08:11:31] hum session ended
+[2026-06-08T08:12:48] near session ended
+[2026-06-08T08:16:49] claude session ended
+[2026-06-08 10:15:14] static session ended
+[2026-06-08 10:15:14] WARNING: no static retro found for 2026-06-08
+[2026-06-08T15:15:17Z] relay session ended
+[2026-06-08 12:10:45] static session ended
+[2026-06-08 12:10:45] WARNING: no static retro found for 2026-06-08
+[2026-06-08T17:10:46Z] relay session ended
+[2026-06-08T12:10:46] claude session ended
+[2026-06-08T12:10:46] hum session ended
+[2026-06-08T12:10:46] near session ended
+[2026-06-08T20:20:13] hum session ended
+[2026-06-23T07:50:54] claude session ended
+[2026-06-23 09:50:53] static session ended
+[2026-06-23 09:50:53] WARNING: no static retro found for 2026-06-23
+[2026-06-23T14:50:53Z] relay session ended
+[2026-06-23T13:50:54] near session ended
+[2026-06-23T17:50:54] hum session ended
+[2026-06-24T03:52:34] hum session ended
+[2026-06-24 03:52:34] static session ended
+[2026-06-24 03:52:34] WARNING: no static retro found for 2026-06-24
+[2026-06-24T03:52:34] claude session ended
+[2026-06-24T08:52:34Z] relay session ended
+[2026-06-24T05:52:34] near session ended
+[2026-06-24T08:53:45] claude session ended
+[2026-06-24T14:53:45Z] relay session ended
+[2026-06-24 09:53:45] static session ended
+[2026-06-24 09:53:45] WARNING: no static retro found for 2026-06-24
+[2026-06-24T13:53:45] near session ended
+[2026-06-24T13:53:45] hum session ended
+[2026-06-25T08:54:56Z] relay session ended
+[2026-06-25 03:54:56] static session ended
+[2026-06-25 03:54:56] WARNING: no static retro found for 2026-06-25
+[2026-06-25T04:54:56] claude session ended
+[2026-06-25T05:54:56] near session ended
+[2026-06-25T09:54:56] hum session ended
+[2026-06-25 09:56:06] static session ended
+[2026-06-25 09:56:06] WARNING: no static retro found for 2026-06-25
+[2026-06-25T14:56:06Z] relay session ended
+[2026-06-25T09:56:06] claude session ended
+[2026-06-25T13:56:06] near session ended
+[2026-06-25T19:56:06] hum session ended
+[2026-06-26T00:57:17] claude session ended
+[2026-06-26 03:57:17] static session ended
+[2026-06-26 03:57:17] WARNING: no static retro found for 2026-06-26
+[2026-06-26T08:57:17Z] relay session ended
+[2026-06-26T05:57:17] near session ended
+[2026-06-26T05:57:17] hum session ended
+[2026-06-26T05:58:27] claude session ended
+[2026-06-26 09:58:27] static session ended
+[2026-06-26 09:58:27] WARNING: no static retro found for 2026-06-26
+[2026-06-26T14:58:27Z] relay session ended
+[2026-06-26T13:58:28] near session ended
+[2026-06-26T15:58:28] hum session ended
+[2026-06-26T22:22:01] claude session ended
+[2026-06-27T03:22:32Z] relay session ended
+[2026-06-27T03:51:56Z] relay session ended
+[2026-06-27T01:59:38] hum session ended
+[2026-06-27 03:59:39] static session ended
+[2026-06-27 03:59:39] WARNING: no static retro found for 2026-06-27
+[2026-06-27T05:59:39] near session ended
+[2026-06-27 10:00:49] static session ended
+[2026-06-27 10:00:49] WARNING: no static retro found for 2026-06-27
+[2026-06-27T12:00:49] hum session ended
+[2026-06-27T14:00:49] near session ended
+[2026-06-28 04:02:00] static session ended
+[2026-06-28 04:02:00] WARNING: no static retro found for 2026-06-28
+[2026-06-28T06:02:01] near session ended
+[2026-06-28T08:02:01] hum session ended
+[2026-06-28 10:03:11] static session ended
+[2026-06-28 10:03:11] WARNING: no static retro found for 2026-06-28
+[2026-06-28T14:03:12] near session ended
+[2026-06-28T18:03:12] hum session ended
+[2026-06-29 04:04:22] static session ended
+[2026-06-29T04:04:22] hum session ended
+[2026-06-29 04:04:22] WARNING: no static retro found for 2026-06-29
+[2026-06-29T06:04:23] near session ended
+[2026-06-29 10:05:32] static session ended
+[2026-06-29 10:05:32] WARNING: no static retro found for 2026-06-29
+[2026-06-29T14:05:33] hum session ended
+[2026-06-29T14:05:34] near session ended
+[2026-06-30T00:06:43] hum session ended
+[2026-06-30 04:06:43] static session ended
+[2026-06-30 04:06:43] WARNING: no static retro found for 2026-06-30
+[2026-06-30T06:06:44] near session ended
+[2026-06-30 10:07:54] static session ended
+[2026-06-30 10:07:54] WARNING: no static retro found for 2026-06-30
+[2026-06-30T10:07:54] hum session ended
+[2026-06-30T14:07:55] near session ended
+[2026-07-01 04:09:05] static session ended
+[2026-07-01 04:09:05] WARNING: no static retro found for 2026-07-01
+[2026-07-01T06:09:05] hum session ended
+[2026-07-01T06:09:07] near session ended
+[2026-07-01 10:10:16] static session ended
+[2026-07-01 10:10:16] WARNING: no static retro found for 2026-07-01
+[2026-07-01T14:10:18] near session ended
+[2026-07-01T16:10:17] hum session ended
+[2026-07-02T02:11:28] hum session ended
+[2026-07-02 04:11:26] static session ended
+[2026-07-02 04:11:26] WARNING: no static retro found for 2026-07-02
+[2026-07-02T06:11:29] near session ended
+[2026-07-02 10:12:37] static session ended
+[2026-07-02 10:12:37] WARNING: no static retro found for 2026-07-02
+[2026-07-02T12:12:39] hum session ended
+[2026-07-02T14:12:39] near session ended
+[2026-07-03 04:13:48] static session ended
+[2026-07-03 04:13:48] WARNING: no static retro found for 2026-07-03
+[2026-07-03T06:13:50] near session ended
+[2026-07-03T08:13:50] hum session ended
+[2026-07-03 10:14:59] static session ended
+[2026-07-03 10:14:59] WARNING: no static retro found for 2026-07-03
+[2026-07-03T14:15:01] near session ended
+[2026-07-03T18:15:01] hum session ended
+[2026-07-04 04:16:10] static session ended
+[2026-07-04 04:16:10] WARNING: no static retro found for 2026-07-04
+[2026-07-04T04:16:11] hum session ended
+[2026-07-04T06:16:12] near session ended
+[2026-07-04 10:17:20] static session ended
+[2026-07-04 10:17:20] WARNING: no static retro found for 2026-07-04
+[2026-07-04T14:17:22] hum session ended
+[2026-07-04T14:17:23] near session ended
+[2026-07-05T00:18:33] hum session ended
+[2026-07-05 04:18:31] static session ended
+[2026-07-05 04:18:31] WARNING: no static retro found for 2026-07-05
+[2026-07-05T06:18:34] near session ended
+[2026-07-05 10:19:42] static session ended
+[2026-07-05 10:19:42] WARNING: no static retro found for 2026-07-05
+[2026-07-05T10:19:44] hum session ended
+[2026-07-05T14:19:45] near session ended
+[2026-07-06 04:20:53] static session ended
+[2026-07-06 04:20:53] WARNING: no static retro found for 2026-07-06
+[2026-07-06T06:20:55] hum session ended
+[2026-07-06T06:21:07] near session ended
+[2026-07-06 10:22:04] static session ended
+[2026-07-06 10:22:04] WARNING: no static retro found for 2026-07-06
+[2026-07-06T14:22:18] near session ended
+[2026-07-06T16:22:05] hum session ended
+[2026-07-07T02:23:16] hum session ended
+[2026-07-07 04:23:14] static session ended
+[2026-07-07 04:23:14] WARNING: no static retro found for 2026-07-07
+[2026-07-07T06:23:28] near session ended
+[2026-07-07 10:24:25] static session ended
+[2026-07-07 10:24:25] WARNING: no static retro found for 2026-07-07
+[2026-07-07T12:24:27] hum session ended
+[2026-07-07T14:24:39] near session ended
+[2026-07-08 04:25:36] static session ended
+[2026-07-08 04:25:36] WARNING: no static retro found for 2026-07-08
+[2026-07-08T06:25:50] near session ended
+[2026-07-08T08:25:37] hum session ended
+[2026-07-08 10:26:47] static session ended
+[2026-07-08 10:26:47] WARNING: no static retro found for 2026-07-08
+[2026-07-08T14:27:00] near session ended
+[2026-07-08T18:26:48] hum session ended
+[2026-07-09 04:27:58] static session ended
+[2026-07-09 04:27:58] WARNING: no static retro found for 2026-07-09
+[2026-07-09T04:27:59] hum session ended
+[2026-07-09T06:28:11] near session ended
+[2026-07-09 10:29:08] static session ended
+[2026-07-09 10:29:08] WARNING: no static retro found for 2026-07-09
+[2026-07-09T14:29:10] hum session ended
+[2026-07-09T14:29:22] near session ended
+[2026-07-10T00:30:20] hum session ended
+[2026-07-10 04:30:19] static session ended
+[2026-07-10 04:30:19] WARNING: no static retro found for 2026-07-10
+[2026-07-10T06:30:33] near session ended
+[2026-07-10 10:31:30] static session ended
+[2026-07-10 10:31:30] WARNING: no static retro found for 2026-07-10
+[2026-07-10T10:31:31] hum session ended
+[2026-07-10T14:31:44] near session ended
+[2026-07-11 04:32:41] static session ended
+[2026-07-11 04:32:41] WARNING: no static retro found for 2026-07-11
+[2026-07-11T06:32:42] hum session ended
+[2026-07-11T06:32:54] near session ended
+[2026-07-11 10:33:52] static session ended
+[2026-07-11 10:33:52] WARNING: no static retro found for 2026-07-11
+[2026-07-11T14:34:05] near session ended
+[2026-07-11T16:33:52] hum session ended
+[2026-07-12T02:35:03] hum session ended
+[2026-07-12 04:35:02] static session ended
+[2026-07-12 04:35:02] WARNING: no static retro found for 2026-07-12
+[2026-07-12T06:35:16] near session ended
+[2026-07-12 10:36:13] static session ended
+[2026-07-12 10:36:13] WARNING: no static retro found for 2026-07-12
+[2026-07-12T12:36:13] hum session ended
+[2026-07-12T14:36:27] near session ended
+[2026-07-13 04:37:24] static session ended
+[2026-07-13 04:37:24] WARNING: no static retro found for 2026-07-13
+[2026-07-13T06:37:38] near session ended
+[2026-07-13T08:37:24] hum session ended
+[2026-07-13 10:38:34] static session ended
+[2026-07-13 10:38:34] WARNING: no static retro found for 2026-07-13
+[2026-07-13T14:38:48] near session ended
+[2026-07-13T18:38:35] hum session ended
+[2026-07-14 04:39:45] static session ended
+[2026-07-14 04:39:45] WARNING: no static retro found for 2026-07-14
+[2026-07-14T04:39:46] hum session ended
+[2026-07-14T06:40:00] near session ended
+[2026-07-14 10:40:56] static session ended
+[2026-07-14 10:40:56] WARNING: no static retro found for 2026-07-14
+[2026-07-14T14:40:56] hum session ended
+[2026-07-14T14:41:10] near session ended
+[2026-07-15T00:42:07] hum session ended
+[2026-07-15 04:42:07] static session ended
+[2026-07-15 04:42:07] WARNING: no static retro found for 2026-07-15
+[2026-07-15T06:42:21] near session ended
+[2026-07-15 10:43:18] static session ended
+[2026-07-15 10:43:18] WARNING: no static retro found for 2026-07-15
+[2026-07-15T10:43:18] hum session ended
+[2026-07-15T14:43:32] near session ended
+[2026-07-16 04:44:31] static session ended
+[2026-07-16 04:44:31] WARNING: no static retro found for 2026-07-16
+[2026-07-16T06:44:29] hum session ended
+[2026-07-16T06:44:43] near session ended
+[2026-07-16 10:45:41] static session ended
+[2026-07-16 10:45:41] WARNING: no static retro found for 2026-07-16
+[2026-07-16T14:45:53] near session ended
+[2026-07-16T16:45:39] hum session ended
+[2026-07-17T02:46:50] hum session ended
+[2026-07-17 04:46:52] static session ended
+[2026-07-17 04:46:52] WARNING: no static retro found for 2026-07-17
+[2026-07-17T06:47:04] near session ended
+[2026-07-17 10:48:02] static session ended
+[2026-07-17 10:48:02] WARNING: no static retro found for 2026-07-17
+[2026-07-17T12:48:01] hum session ended
+[2026-07-17T14:48:15] near session ended
+[2026-07-18 04:49:13] static session ended
+[2026-07-18 04:49:13] WARNING: no static retro found for 2026-07-18
+[2026-07-18T06:49:26] near session ended
+[2026-07-18T08:49:12] hum session ended
+[2026-07-18 10:50:24] static session ended
+[2026-07-18 10:50:24] WARNING: no static retro found for 2026-07-18
+[2026-07-18T14:50:37] near session ended
+[2026-07-18T18:50:23] hum session ended
+[2026-07-19T04:51:33] hum session ended
+[2026-07-19 04:51:35] static session ended
+[2026-07-19 04:51:35] WARNING: no static retro found for 2026-07-19
+[2026-07-19T06:51:48] near session ended
+[2026-07-19 10:52:45] static session ended
+[2026-07-19 10:52:45] WARNING: no static retro found for 2026-07-19
+[2026-07-19T14:52:44] hum session ended
+[2026-07-19T14:52:59] near session ended
+[2026-07-20T00:53:55] hum session ended
+[2026-07-20 04:53:56] static session ended
+[2026-07-20 04:53:56] WARNING: no static retro found for 2026-07-20
+[2026-07-20T06:54:10] near session ended
+[2026-07-20T10:55:05] hum session ended
+[2026-07-20 10:55:07] static session ended
+[2026-07-20 10:55:07] WARNING: no static retro found for 2026-07-20
+[2026-07-20T14:55:20] near session ended
+[2026-07-21 04:56:18] static session ended
+[2026-07-21 04:56:18] WARNING: no static retro found for 2026-07-21
+[2026-07-21T06:56:16] hum session ended
+[2026-07-21T06:56:31] near session ended
+[2026-07-21 10:57:29] static session ended
+[2026-07-21 10:57:29] WARNING: no static retro found for 2026-07-21
+[2026-07-21T14:57:42] near session ended
+[2026-07-21T16:57:27] hum session ended
+[2026-07-21T21:55:22] near session ended
+[2026-07-21T21:55:22] hum session ended
+[2026-07-21 21:55:22] static session ended
+[2026-07-21 21:55:22] WARNING: no static retro found for 2026-07-21
+[2026-07-22 10:58:49] static session ended
+[2026-07-22 10:58:49] WARNING: no static retro found for 2026-07-22
+[2026-07-22T12:58:46] hum session ended
+[2026-07-22T14:59:02] near session ended
+[2026-07-23 04:59:59] static session ended
+[2026-07-23 04:59:59] WARNING: no static retro found for 2026-07-23
+[2026-07-23T07:00:13] near session ended
+[2026-07-23T08:59:58] hum session ended
+[2026-07-23 11:01:11] static session ended
+[2026-07-23 11:01:11] WARNING: no static retro found for 2026-07-23
+[2026-07-23T15:01:24] near session ended
+[2026-07-23T19:01:08] hum session ended
+[2026-07-24T05:02:20] hum session ended
+[2026-07-24 05:02:23] static session ended
+[2026-07-24 05:02:23] WARNING: no static retro found for 2026-07-24
+[2026-07-24T07:02:35] near session ended
+[2026-07-24 11:03:34] static session ended
+[2026-07-24 11:03:34] WARNING: no static retro found for 2026-07-24
+[2026-07-24T15:03:31] hum session ended
+[2026-07-24T15:03:47] near session ended

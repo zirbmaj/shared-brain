@@ -6,9 +6,47 @@ scope: shared
 summary: live products, analytics, team state, shipped items — updated each session
 ---
 
-# Status — Last updated 2026-05-07 19:42 UTC (trace s220)
+# Status — Last updated 2026-05-27 19:20 UTC (relay)
 
 *Full backlog at shared-brain/ops/consolidated-backlog.md — that's the source of truth, not this file.*
+
+## NWL Team Status (updated 2026-05-27, relay)
+**GEAR SHIFT → ANR Tires ecom (jam directive).** NWL active products (Drift + the products-build sprint below) **wrapping**; team pivoted to building/ecom for **ANR Automotive** (St. Cloud, MN; client = Fernando, jam's brother). Decision: `nwl/decisions/2026-05-27-defer-obsidian-llm-wiki-pilot.md`. Memory: `project_anr_ecom_pivot`.
+
+**ANR Tires build (repo: github zirbmaj/anr-tires → `~/clients/anr-workspace/anr-tires/`):** headless Next.js tire storefront, differentiator "buy online, install at our bay." Storefront + JDM design + AI fitment agent + live BigCommerce catalog were already DONE on arrival. This session shipped **12+ PRs merged to `main`; build FULLY LAUNCH-READY** (Static independent QA sign-off + all post-import fixes QA-passed). G1+G2 live-verified on main; **real 619-tire catalog imported + QA-verified** (cost×1.15, hidden drafts, all specs). Three post-import fixes QA-green: recommended sort (brand-tier), season A/S-override, live-derived facets (suppress 0-match). **The full pipeline is proven end-to-end: portal scrape → CSV → import → live catalog.** Remaining for actual launch = jam's queue only, prioritized: 🔴 REVENUE GATE — **open the BC store (it's in `prelaunch` → checkout 503s for everyone) + confirm/upgrade off the 15-day trial plan** + tax 7.56%. 🟡 DEPLOY — re-scoped CF token (the one provided lacks Pages + Workers Scripts/Routes). 🟢 ENHANCEMENTS (post-launch ok) — Slack webhook (order-feed) + ANTHROPIC_API_KEY (live chat). 619 tires flipped visible; final browser-checkout proof runs at store-open.
+- **G1 `bc:import`** ✅ merged — supplier-CSV→BigCommerce importer; retail = cost × **1.15**; `load_range` first-class BC field; PUT-before-reconcile (no field-stripping); `--limit/--update/--markup/--dry-run`.
+- **G2 checkout → BC hosted/Stripe** ✅ merged — install fees ($30 mount-balance + $6 disposal /tire) ride as sku'd custom line items; ≤20"-rim checkout guard.
+- **G3** = re-gated: ServiceBay wiring PARKED (env-gated seam stub merged); **G3 is now the Slack order-feed** (CF Worker on BC order webhook → ANR Slack) — pending jam's webhook + thumbs-up.
+- **G4 deploy at `/tires`** ✅ basePath config merged + QA-verified (NOT multi-zone — anrautomotivemn.com is Cloudflare-fronted, not a Next app; edge-route `/tires/*` to a CF Pages origin). Actual deploy pending CF zone access.
+- **Pricing/curation/constraints** decided + logged (`nwl/decisions/2026-05-27-anr-tires-{pricing-and-shop-constraints,catalog-curation}.md`): ≤20"-rim only, no alignment; 32-size MN-weighted curated scrape list.
+- **Supplier data — scraper deliverable CLOSED:** Tire Solutions portal (Kerridge, `http://96.3.195.194/`, 7725/ANR) cracked by Static via Playwright — blocker was the cookie-consent gate, not creds; size-search wants concat `2256517` (R stripped). No CSV export → scraper (`static-workspace/spikes/ts-scrape.mjs`, session-reuse). Full curated catalog scraped: **661 tires (619 importable, 42 blank-cost skipped), 661/661 brand+model, all rich specs (UTQG/sidewall/max_load/load_index/etc.), LT covered by numeric query, FET confirmed $0**. CSV validated via `bc:import --dry-run` on main (PR #8 alias fix). **STAGED: catalog imports as hidden drafts on jam's single pricing pick** (retail = supplier `resale` or `cost × 1.15`; FET moot). Then Claudia's populated-grid QA.
+- **Near research:** official Kerridge/ESP feed is a reliability upgrade not a cost play (`nwl/research/kerridge-tire-solutions-data-feed.md`); Obsidian LLM-wiki deferred to a future sprint.
+- **Git lesson logged:** `ops/lesson-git-stacked-pr-delete-branch.md` (don't `--delete-branch` a stacked base mid-train; verify integration on origin/main, not PR status).
+
+**🔴 Needs jam (critical path order):** (1) **BC creds** into `anr-tires/.env.local` (`BIGCOMMERCE_STORE_HASH`/`_ACCESS_TOKEN`) — clone didn't carry them (gitignored); unblocks G1+G2 live verify, top leverage. (2) retail **markup rule** (default ×1.35 shipped). (3) **curation** — which sizes/brands to scrape first. (4) **G3/ServiceBay** scope: wire/defer/stub. (5) **Cloudflare zone access** for anrautomotivemn.com (G4, sequences after creds). Plus non-urgent: ask supplier the 2 feed yes/no Qs (see Near's report).
+
+---
+### NWL products (PAUSED — pre-pivot state, 2026-05-21)
+**Refocus → Drift + NWL products.** PH launch (Apr 7) missed — passion-project framing, no deadline pressure (jam). ServiceBay/meridian winding down. Launch-gated carries dropped.
+
+**Agents:** all 6 healthy. Recovered from a full zombie state (5 agents process-alive but Discord-unresponsive) by cycling ~05:00Z 2026-05-21. See incident-log + memory project-zombie-agent-pattern.
+
+**Drift Re-Entry sprint: SHIPPED ✅** — #36 loudness, #37 prune, #38 entry-path, #21 Spotify-surfacing all merged+deployed+verified live (contract `nwl/sprints/2026-05-21-drift-re-entry.md`). P4 share-loop held (Supabase OAuth).
+
+**Create/sunset verdict: DECIDED ✅** (team consensus + jam advisory, see decisions.md): Drift LEAN-IN · Static FM INVEST · Dashboard→"focus suite" hub · Pulse MERGE→Dashboard · Letters SUNSET→archive read-only. jam: "OK with aggressively sunsetting."
+
+**Next sprint READY (picks up next active cycle):** `nwl/sprints/2026-05-21-nwl-products-build.md` — 7 deliverables, owners + static's per-deliverable QA gates + sequencing. Track 1 consolidate (Letters tombstone, Pulse→Dashboard merge) · Track 2 data-foundation (instrument + Supabase OAuth) · Track 3 invest (Static FM DJ-intro deploy + provider-abstraction, audio-engine.js, name-unification). Team at clean stop post-Drift; builds queued for next cycle.
+
+**Scope widened 2026-05-21 (jam, see decisions.md):** full authority across ALL NWL products — build/fix/polish/rebrand/create/sunset. Land Drift PRs first, then fan out. In flight: claudia cross-product brand-coherence pass. create/sunset = team+jam verdict, not solo.
+
+**🔴 Needs jam when awake:**
+- r10 + xps13 DOWN (jam owns recovery, his timeline). r10 = RAG/ollama/pgvector/piper TTS; xps13 = remote test runner. Public products unaffected.
+- Crontab path-fix staged `/tmp/crontab-fixed.txt` — install blocked by macOS TCC; run `crontab /tmp/crontab-fixed.txt` or grant Full Disk Access.
+- Spotify (Static FM): confirm test account is **Premium** + check Spotify dashboard app is out of **Dev Mode** (25-user cap) / account added under User Management. Code-side fix shipping separately.
+
+- Authorize **Supabase MCP** (`/mcp` → "claude.ai Supabase", browser OAuth) — unblocks P4 Drift funnel-analytics pull (held tonight).
+
+**Ops:** zombie watchdog v1 live (observe-only, screen `nwl-zombie-watchdog`); static hardening detection + harness.
 
 ## Meridiem Team Status (updated 2026-05-02, trace s146)
 
@@ -85,8 +123,15 @@ summary: live products, analytics, team state, shipped items — updated each se
 - PR #280: devops-schema-tables-addendum.md — lens PASS WITH NOTES (non-blocking)
 - PR #281: schema-drift-triage-gate — lens PASS WITH NOTES (non-blocking)
 
-### Active Sessions (2026-05-07)
-forge (s224+), locus, mira, anvil, pulse, lens, axis, trace (s220 — started 19:37Z)
+### Active Sessions (2026-05-08)
+forge (s227), anvil (s227), lens (s227), axis (s227), mira (s227), pulse (s227), trace (s227 — started ~03:40Z)
+
+### Trace s227 — Stale Task Scrub (fran directive sig:7ad37271)
+- **Root cause confirmed**: task_queue entries not closed at delivery → agents re-claim completed work. Phase A false-spinup occurred 4+ times (s227 is 5th, caught before branches opened).
+- **862794c7 closed**: "Station Phase A — start build" was stale queued entry. Phase A COMPLETE as of prior sessions (PRs #166-174). Closed by trace.
+- **25 stale queued tasks identified** (2026-04-18 to 2026-05-07) — surfacing to axis for routing decision.
+- **Two critical learnings logged** (ids: 567a91ed, 98a81314) — closure-at-delivery rule, routing-without-verification rule.
+- **Forge halted and rerouted**: Phase A items cancelled, sygnals gaps (S2/S3/098a58a4) confirmed and greenlighted by axis.
 
 ## Live Projects
 | Project | URL | Status |

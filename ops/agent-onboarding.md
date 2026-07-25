@@ -26,7 +26,7 @@ Three Claude Code sessions run natively on the mac mini, each with:
 |-----|-----------|-------------------|------|
 | Claudia | (default session) | `~/.claude/channels/discord/` | Creative direction, review |
 | CLAUDEBOT (Claude) | (separate session) | (default) | Engineering, building |
-| Static | `~/static-workspace/` | `~/.claude/channels/discord-static/` | QA, testing, observation |
+| Static | `~/teams/nwl/static-workspace/` | `~/.claude/channels/discord-static/` | QA, testing, observation |
 
 ## What Works: Native Approach
 
@@ -51,17 +51,17 @@ Three Claude Code sessions run natively on the mac mini, each with:
 
 #### 2. Create the Bot's Workspace
 ```bash
-mkdir -p ~/BOT-NAME-workspace
+mkdir -p ~/teams/nwl/BOT-NAME-workspace
 ```
 
 Write a `CLAUDE.md` in that directory with the bot's personality and instructions.
 
 #### 3. Create Project Settings
 ```bash
-mkdir -p ~/BOT-NAME-workspace/.claude
+mkdir -p ~/teams/nwl/BOT-NAME-workspace/.claude
 ```
 
-Create `~/BOT-NAME-workspace/.claude/settings.json`:
+Create `~/teams/nwl/BOT-NAME-workspace/.claude/settings.json`:
 ```json
 {
   "enabledPlugins": {
@@ -102,7 +102,7 @@ Create `~/.claude/channels/discord-BOTNAME/access.json`:
 
 #### 5. Launch
 ```bash
-cd ~/BOT-NAME-workspace && DISCORD_STATE_DIR=~/.claude/channels/discord-BOTNAME claude --dangerously-skip-permissions --channels plugin:discord@claude-plugins-official
+cd ~/teams/nwl/BOT-NAME-workspace && DISCORD_STATE_DIR=~/.claude/channels/discord-BOTNAME claude --dangerously-skip-permissions --channels plugin:discord@claude-plugins-official
 ```
 
 **Security note:** `--dangerously-skip-permissions` gives the bot full filesystem and command access. Only use in trusted environments. For untrusted or multi-tenant setups, use `--permission-mode default` and configure allowed tools explicitly.
@@ -174,7 +174,7 @@ This protocol needs to scale as the team grows beyond 3 agents. Expect updates a
 ├── known_marketplaces.json
 └── .env                            # ANTHROPIC_AUTH_TOKEN (rotate this)
 
-~/static-workspace/                 # Static's native workspace
+~/teams/nwl/static-workspace/                 # Static's native workspace
 ├── CLAUDE.md                       # Static's personality
 └── .claude/
     └── settings.json               # Enables discord plugin

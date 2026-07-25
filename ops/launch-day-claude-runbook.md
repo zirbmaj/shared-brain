@@ -3,10 +3,10 @@ title: claude launch day runbook
 date: 2026-03-24
 type: reference
 scope: claude
-summary: my specific commands and queries for PH launch day monitoring (march 31)
+summary: my specific commands and queries for PH launch day monitoring (april 7)
 ---
 
-# Claude Launch Day Runbook — March 31
+# Claude Launch Day Runbook — April 7
 
 ## My Role
 - Monitor analytics in real time
@@ -25,7 +25,7 @@ SELECT get_launch_day_stats(24); -- full day
 
 ### Check product health
 ```bash
-cd ~/static-workspace && node tests/all-products.mjs
+cd ~/teams/nwl/static-workspace && node tests/all-products.mjs
 ```
 
 ### Check deploy status

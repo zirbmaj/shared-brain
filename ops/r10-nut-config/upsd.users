@@ -1,0 +1,3 @@
+[upsmon_local]
+    password = CHANGEME_GENERATE_RANDOM
+    upsmon master

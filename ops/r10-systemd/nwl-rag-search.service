@@ -1,0 +1,37 @@
+[Unit]
+Description=NWL RAG Search API — semantic search over shared-brain (port 8080)
+Documentation=file:///srv/nwl/shared-brain/projects/homelab-service-architecture.md
+After=postgresql.service ollama.service
+Requires=postgresql.service
+Wants=ollama.service
+
+# Hard bind to postgres — search can't function without it.
+# Ollama is Wants= (soft) — search degrades to keyword-only if Ollama is down.
+BindsTo=postgresql.service
+StartLimitBurst=3
+StartLimitIntervalSec=600
+
+[Service]
+Type=simple
+User=nwl-svc
+Group=nwl-svc
+WorkingDirectory=/srv/nwl/rag
+ExecStart=/srv/nwl/rag/venv/bin/python3 -m uvicorn search_api:app --host 0.0.0.0 --port 8080
+EnvironmentFile=/srv/nwl/.env
+
+# Tenant slice for cgroup resource limits
+Slice=nwl.slice
+
+# Failure policy: HTTP API, moderate restart speed
+Restart=on-failure
+RestartSec=10
+
+# Security hardening
+NoNewPrivileges=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/srv/nwl /var/log/nwl
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

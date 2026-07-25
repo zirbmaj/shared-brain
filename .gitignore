@@ -2,3 +2,15 @@
 # copy here for deploy.sh path compatibility, but never commit it back to this
 # public repo.
 ops/rag/
+
+# secrets — never commit to this public repo
+ops/.vigil-auth
+ops/sms-certs/
+
+# compiled binary, not source
+ops/smsgate
+
+# OS / sync metadata
+.DS_Store
+**/.DS_Store
+.stfolder/

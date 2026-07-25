@@ -15,6 +15,7 @@ AGENTS="claude claudia static near hum relay"
 WEBHOOK_URL="${DISCORD_DEV_WEBHOOK:-}"
 LOG_FILE="/tmp/agent-health-check.log"
 ALERT_COOLDOWN_FILE="/tmp/agent-health-alert-sent"
+STATE_FILE="/tmp/agent-health-state"
 COOLDOWN_MINUTES=10
 
 log() {
@@ -53,6 +54,17 @@ check_agents() {
         log "all agents healthy"
         # Clear cooldown on healthy check
         rm -f "$ALERT_COOLDOWN_FILE" 2>/dev/null
+        # Notify vigil of recoveries (only for agents that were previously down)
+        for agent in $AGENTS; do
+            if [ -f "${STATE_FILE}-${agent}" ]; then
+                curl -s -X POST "http://localhost:3847/api/agent-health" \
+                    -H "Content-Type: application/json" \
+                    -d "{\"agent\": \"${agent}\", \"status\": \"recovered\"}" \
+                    > /dev/null 2>&1
+                rm -f "${STATE_FILE}-${agent}"
+                log "vigil: ${agent} recovered"
+            fi
+        done
         return 0
     else
         log "DOWN:${down_agents}"
@@ -86,6 +98,20 @@ send_alert() {
     else
         log "WARNING: no DISCORD_DEV_WEBHOOK set — alert not sent"
     fi
+
+    # Push dead agent events to vigil v3 health webhook (only on transition)
+    for agent_info in $down_agents; do
+        local agent_name
+        agent_name=$(echo "$agent_info" | sed 's/(.*//')
+        if [ ! -f "${STATE_FILE}-${agent_name}" ]; then
+            curl -s -X POST "http://localhost:3847/api/agent-health" \
+                -H "Content-Type: application/json" \
+                -d "{\"agent\": \"${agent_name}\", \"status\": \"dead\"}" \
+                > /dev/null 2>&1
+            touch "${STATE_FILE}-${agent_name}"
+            log "vigil: ${agent_name} marked dead"
+        fi
+    done
 
     date +%s > "$ALERT_COOLDOWN_FILE"
 }

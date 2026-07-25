@@ -20,7 +20,7 @@ ERRORS=()
 WARNINGS=()
 
 # Check 1: Workspace path matches agent name
-EXPECTED_WS="$HOME/${AGENT_NAME}-workspace"
+EXPECTED_WS="$HOME/teams/nwl/${AGENT_NAME}-workspace"
 if [ "$WORKSPACE" != "$EXPECTED_WS" ]; then
     ERRORS+=("workspace mismatch: expected $EXPECTED_WS, got $WORKSPACE")
 fi
@@ -28,7 +28,7 @@ fi
 # Check 2: CLAUDE.md exists and contains agent identity
 if [ -f "$WORKSPACE/CLAUDE.md" ]; then
     # Check if the agent's name appears in the Identity section
-    if ! grep -qi "you are ${AGENT_NAME}\|you ARE ${AGENT_NAME}\|# ${AGENT_NAME}" "$WORKSPACE/CLAUDE.md" 2>/dev/null; then
+    if ! grep -qi "# ${AGENT_NAME} \|you are ${AGENT_NAME}\|you ARE ${AGENT_NAME}" "$WORKSPACE/CLAUDE.md" 2>/dev/null; then
         ERRORS+=("CLAUDE.md does not contain identity for $AGENT_NAME")
     fi
 else

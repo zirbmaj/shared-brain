@@ -1,0 +1,376 @@
+---
+title: "Memory Architecture Research Briefing"
+date: 2026-03-27
+type: briefing
+scope: shared
+for: Syght DevOps Team + Axis
+from: Francisco (via external research session with Claude)
+purpose: Research findings for team audit. You decide what to adopt.
+confidence:
+  shared_brain_foundation: 90%
+  gap_a_highest_priority: 85%
+  hindsight_adds_novel_capabilities: 80%
+  hindsight_worth_operational_overhead: 50%
+  hybrid_approach_correct: 60%
+  understanding_of_full_system: 45%
+summary: >
+  Deep research session on multi-agent memory architecture. Compared current
+  shared-brain system against state-of-the-art tools. Found existing foundation
+  is stronger than expected. Identified 5 genuine gaps. Recommends activating
+  existing knowledge_documents pipeline as top priority, with Hindsight as
+  optional learning layer for capabilities Supabase can't provide.
+---
+
+# existing_foundation:
+#   source: shared-brain repo (zirbmaj/shared-brain)
+#   status: battle-tested across 8+ sessions with real failure recovery
+
+session_lifecycle:
+  onramp:
+    status: solved
+    description: "10-minute structured session start"
+    includes:
+      - context loading from memory files
+      - behavioral ledger review with aging pass
+      - consolidated backlog check
+      - system health checks (playwright, cron, uptime, screenshot)
+      - communications check (discord channels)
+      - identity audit (workspace, CLAUDE.md, DISCORD_STATE_DIR, peer verify)
+      - orientation and lane coordination
+  offramp:
+    status: solved
+    description: "20-minute structured session end with reflexion loop"
+    phases:
+      - name: state_capture
+        time: 5min
+        parallel: true
+        captures: [SHIPPED, IN_FLIGHT, BLOCKED, ENV_CHANGES, DECISIONS]
+        note: "Design agents include screenshots. Machine-readable handoff."
+      - name: behavioral_ledger
+        time: 5min
+        parallel: true
+        entry_types: [LEARNED, CHANGED, VALIDATED]
+        aging:
+          promote: "validated entries → principles"
+          archive: "unreferenced across 3+ sessions"
+          replace: "contradicted by newer understanding"
+          claude_md_candidate: "principles with 3+ supporting entries"
+      - name: peer_feedback
+        time: 5min
+        format: "one strength + one improvement per teammate"
+      - name: team_review
+        time: 5min
+        output: "shared-brain/ops/handoff-session-N.md"
+        identifies: [common themes, CLAUDE.md changes, process changes]
+      - name: persistence
+        time: 5min
+        checklist:
+          - all code committed and pushed
+          - behavioral ledger updated and pushed
+          - session handoff doc compiled
+          - STATUS.md updated
+          - MEMORY.md index updated
+          - access.json backed up
+          - consolidated backlog updated
+      - name: next_session_priorities
+        time: 5min
+        format: "3-5 guideposts, not mandates. jam validates at on-ramp."
+      - name: void_letter
+        time: 2min
+        purpose: "ritual boundary between sessions"
+
+scaling_and_coordination:
+  status: solved
+  lane_ownership: "defined roles, silence = agreement, claim before building"
+  identity_isolation:
+    per_agent: [workspace, bot_token, CLAUDE.md, memory_files, DISCORD_STATE_DIR]
+    shared: "shared-brain repo for shared state"
+    enforcement: "structural (verify-identity.sh on boot), not behavioral"
+  pod_architecture:
+    designed_for: "10+ agents"
+    pods: [product, growth, ops, research]
+    conductor_agent: "routes requests, breaks ties, synthesizes updates, maintains claims db, does NOT build"
+    claiming: "behavioral claiming breaks at 5+, use Supabase agent_claims table"
+    git: "branches mandatory, PRs with tests, pod-prefixed branches"
+    communication: "jam → conductor → pod lead → members"
+  lessons_from_3_to_6:
+    - "define lanes before adding agents, not after"
+    - "claiming protocol is the most important process"
+    - "config changes need QA too"
+    - "self-healing is expected — agents modify own configs"
+    - "wrapping up bias is real — don't default to 'we're done'"
+    - "identity isolation must be structural, not behavioral"
+
+semantic_search:
+  status: built_but_empty
+  table: knowledge_documents
+  columns:
+    id: "bigint (auto)"
+    title: "text"
+    content: "text"
+    embedding: "vector(1536)"
+    metadata: "jsonb (source, agent, category, tags)"
+    created_at: "timestamptz"
+  rpc: match_documents
+  rpc_params:
+    query_embedding: "vector(1536)"
+    match_threshold: "float (recommend 0.5+)"
+    match_count: "int"
+  index: "HNSW on embedding column"
+  deprecated: "team_knowledge table (ivfflat, never ingested)"
+  ingestion_categories:
+    - audio knowledge
+    - research findings
+    - product decisions
+    - user feedback
+    - retro lessons
+  pipeline_status: "reference implementation exists, not deployed"
+  embedding_model: "TBD — OpenAI text-embedding-3-small vs Gemini vs local"
+  data_ingested: none
+
+---
+# GAPS — what the existing system does NOT handle
+
+gaps:
+  A:
+    name: "Empty semantic search layer"
+    severity: highest
+    description: >
+      knowledge_documents table and match_documents RPC exist but contain
+      zero data. Agents still load context from markdown files. The
+      infrastructure is built and waiting.
+    impact: "All semantic search capabilities are offline"
+    effort_to_fix: "1-2 sessions"
+    recommendation: "Fix this first regardless of any other decision"
+    
+  B:
+    name: "No synthesis operation"
+    severity: high
+    description: >
+      match_documents returns similarity-ranked chunks. It cannot answer
+      'what patterns are emerging across all sessions?' or 'what architectural
+      risks have we accumulated?' — those require LLM-powered reasoning
+      over retrieved context, not just retrieval.
+    current_workaround: "Manual review of retros and ledgers"
+    
+  C:
+    name: "No automatic knowledge extraction from sessions"
+    severity: medium
+    description: >
+      Offramp captures structured state (SHIPPED/IN_FLIGHT/BLOCKED/DECISIONS)
+      and behavioral ledger entries. Unstructured session knowledge — gotchas,
+      tool-specific learnings, patterns noticed — only captured if agent
+      explicitly documents it. Knowledge the agent forgets to write down is lost.
+    current_workaround: "Agents manually document in ledger and state blocks"
+    
+  D:
+    name: "No per-agent accumulated expertise"
+    severity: medium
+    description: >
+      Behavioral ledgers track behavioral changes. They don't track accumulated
+      domain expertise. A builder who worked on the marketplace for 10 sessions
+      has no persistent store of marketplace-specific knowledge that loads on
+      session start. Expertise resets unless manually documented.
+    current_workaround: "Agent re-reads past retros and handoffs"
+    
+  E:
+    name: "No contradiction detection"
+    severity: medium
+    description: >
+      When a new decision contradicts an old one, nothing flags it
+      automatically. Ledger aging handles behavioral contradictions. Domain
+      and architectural contradictions are invisible until something breaks.
+    current_workaround: "Team review during offramp catches some"
+
+---
+# OPTIONS — how to fill the gaps
+
+options:
+  option_1:
+    name: "Activate existing infrastructure"
+    effort: "1-2 sessions"
+    covers: [A]
+    does_not_cover: [B, C, D, E]
+    description: >
+      Build and deploy the ingestion pipeline for knowledge_documents.
+      Choose embedding model. Integrate into offramp so session knowledge
+      auto-ingests. Start using match_documents in on-ramp.
+    recommendation: "Do this first no matter what else you decide"
+    
+  option_2:
+    name: "Add Hindsight alongside existing system"
+    effort: "2-3 sessions setup + 1 week training"
+    covers: [A, B, C, D, E]
+    description: >
+      Deploy Hindsight Docker container. Per-agent memory banks + team bank.
+      Integrate retain/recall/reflect into existing on-ramp/offramp.
+    tradeoffs:
+      pros:
+        - automatic fact extraction (covers Gap C)
+        - reflect operation for synthesis (covers Gap B)
+        - per-agent banks with disposition profiles (covers Gap D)
+        - opinion tracking with confidence scores (covers Gap E)
+        - entity resolution across sessions
+        - MIT licensed, self-hosted, free
+        - Claude Code plugin for auto-capture
+        - can use claude-code as LLM provider (no separate API bill)
+      cons:
+        - another Docker + Postgres instance to maintain
+        - agents interact with two knowledge stores
+        - tool is 4 months old
+        - token cost for retain and reflect operations
+        - data in separate Postgres (exit cost is low but migration needed if abandoned)
+        
+  option_3:
+    name: "Build missing capabilities in Supabase"
+    effort: "3-4 weeks"
+    covers: [A, B, C, D, E]
+    description: >
+      Extend knowledge_documents schema. Build custom fact extraction,
+      entity resolution, synthesis, opinion tracking, contradiction detection.
+    tradeoffs:
+      pros:
+        - single database for everything
+        - full control over schema and behavior
+        - no external dependency
+      cons:
+        - significant engineering time before testable
+        - building what Hindsight provides free
+        - risk of weeks on infra instead of product
+    recommendation: "Only if Option 2 tried and insufficient"
+    
+  option_4:
+    name: "Hybrid — activate Supabase RAG + Hindsight for unique capabilities"
+    effort: "3-4 sessions total"
+    covers: [A, B, C, D, E]
+    description: >
+      Phase 1: Deploy ingestion pipeline for knowledge_documents (Option 1).
+      Phase 2: Add Hindsight for automatic fact extraction, entity resolution,
+      reflect synthesis, opinion tracking (Option 2). Clear separation —
+      Supabase for structured state + basic semantic search, Hindsight for
+      learning, synthesis, and individual agent expertise.
+    recommendation: "Logically strongest, but team knows operational reality"
+
+---
+# HINDSIGHT — key details if adopted
+
+hindsight:
+  repo: "https://github.com/vectorize-io/hindsight"
+  docs: "https://hindsight.vectorize.io"
+  cookbook: "https://github.com/vectorize-io/hindsight-cookbook"
+  paper: "https://arxiv.org/abs/2512.12818"
+  claude_code_integration: "https://github.com/vectorize-io/hindsight/tree/main/hindsight-integrations/claude-code"
+  conflict_resolution: "https://hindsight.vectorize.io/blog/2026/02/09/resolving-memory-conflicts"
+  discord_bot_example: "cookbook repo, chat-sdk-multi-platform"
+  
+  deployment:
+    local: |
+      export HINDSIGHT_LLM_PROVIDER=claude-code
+      docker run --rm -it --pull always -p 8888:8888 -p 9999:9999 \
+        -v $HOME/.hindsight-docker:/home/hindsight/.pg0 \
+        ghcr.io/vectorize-io/hindsight:latest
+    api: "http://localhost:8888"
+    admin_ui: "http://localhost:9999"
+    llm_providers: [openai, anthropic, gemini, groq, ollama, lmstudio, minimax, claude-code]
+    
+  claude_code_plugin:
+    install: |
+      claude plugin marketplace add vectorize-io/hindsight
+      claude plugin install hindsight-memory
+    settings:
+      bankIdPrefix: "syght-"
+      retainEveryNTurns: "start at 3-4, tune based on value"
+      retainOverlapTurns: "default 12 turn window"
+    capabilities:
+      - dynamic bank IDs per agent/project/session
+      - auto-retain during sessions
+      - works with Claude Code Channels (Discord, Slack, Telegram)
+      - zero dependencies
+      
+  skill_install: "npx skills add https://github.com/vectorize-io/hindsight --skill hindsight-docs"
+  
+  operations:
+    retain:
+      description: "Store with automatic fact extraction and entity resolution"
+      async: true
+      cost: "LLM call for fact extraction"
+    recall:
+      description: "4-way parallel retrieval (semantic, BM25, graph, temporal) + cross-encoder reranking"
+      cost: "No LLM call — retrieval only"
+    reflect:
+      description: "LLM-powered synthesis across full memory bank"
+      cost: "LLM call — use strategically, not for routine lookups"
+      
+  memory_networks:
+    world: "objective facts"
+    experience: "what the agent actually did (first person)"
+    opinion: "beliefs with confidence scores, updatable"
+    observation: "synthesized patterns from raw facts"
+    
+  disposition_profiles:
+    traits: [skepticism, literalism, empathy]
+    scale: "1-5 each"
+    effect: "shapes how reflect() reasons for each bank"
+    suggested:
+      builder: { skepticism: 2, literalism: 4, empathy: 2 }
+      reviewer: { skepticism: 5, literalism: 4, empathy: 3 }
+      researcher: { skepticism: 4, literalism: 2, empathy: 3 }
+      coordinator: { skepticism: 3, literalism: 2, empathy: 4 }
+      
+  tag_security:
+    description: "consolidation respects tag boundaries"
+    internal: "consolidates only with internal knowledge"
+    external_shared: "consolidates separately, preserves source attribution"
+    tags_merge_on_update: true
+    
+  backup:
+    critical: true
+    method: "daily pg_dump of Hindsight Postgres volume"
+    command: "docker exec hindsight-postgres pg_dump -U hindsight > /backup/hindsight-$(date +%Y%m%d).sql"
+    warning: "if Docker volume dies without backup, all accumulated learning is lost"
+    
+  risks:
+    - name: "concurrent write conflicts"
+      severity: medium
+      mitigation: "retain is async, consolidation runs in background, non-overlapping work assignments"
+      open_problem: "semantic conflict resolution across agents is unsolved industry-wide"
+    - name: "retain latency on CPU"
+      severity: low
+      mitigation: "async — doesn't block agent work. batch processing available"
+    - name: "project maturity"
+      severity: medium
+      mitigation: "MIT licensed, data in Postgres, low exit cost. used at Fortune 500s but only 4 months old"
+    - name: "knowledge poisoning"
+      severity: medium
+      mitigation: "reviewer spot-checks, periodic reflect for contradictions, opinion network separates uncertain beliefs from facts"
+    - name: "token costs"
+      severity: low
+      mitigation: "use claude-code provider, tune retainEveryNTurns, reserve reflect for strategic use"
+
+---
+# TEAM ACTION ITEMS
+
+action_items:
+  - priority: 1
+    action: "Audit this briefing against what we actually have. Correct anything wrong."
+    owner: team
+    
+  - priority: 2
+    action: "Activate knowledge_documents pipeline. Get data flowing into semantic search."
+    owner: team_proposes
+    effort: "1-2 sessions"
+    
+  - priority: 3
+    action: "Evaluate whether Gaps B-E are causing real problems in daily work right now"
+    owner: team
+    question: "Are agents losing knowledge between sessions? Are the behavioral ledgers sufficient?"
+    
+  - priority: 4
+    action: "If gaps are real, propose integration plan for Hindsight into existing on-ramp/offramp"
+    owner: team
+    constraint: "Don't replace what works. Add to it."
+    
+  - priority: 5
+    action: "Propose back to Francisco with recommendation and evidence"
+    owner: team
+    rule: "Francisco has final say"

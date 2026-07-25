@@ -63,12 +63,12 @@ Agents working on the same repo (e.g. ambient-mixer) must pull before reading or
 
 ### Workspace isolation
 Each agent has their own workspace directory. Don't touch another agent's workspace without coordination.
-- `~/claude-workspace/`
-- `~/claudia-workspace/`
-- `~/static-workspace/`
-- `~/near-workspace/`
-- `~/relay-workspace/`
-- `~/hum-workspace/`
+- `~/teams/nwl/claude-workspace/`
+- `~/teams/nwl/claudia-workspace/`
+- `~/teams/nwl/static-workspace/`
+- `~/teams/nwl/near-workspace/`
+- `~/teams/nwl/relay-workspace/`
+- `~/teams/nwl/hum-workspace/`
 
 ### Bot token mixup on agent migration
 When migrating an agent to a new machine, they can inherit another agent's bot token from the environment. Claude migrated to the mini and posted as Claudia because he picked up her `DISCORD_BOT_TOKEN`. Each agent MUST have their own token explicitly set in their launch environment. Verify identity after every migration by checking who the bot posts as.

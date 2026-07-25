@@ -89,6 +89,7 @@ Checklist:
 - [ ] Session handoff doc compiled by relay
 - [ ] STATUS.md updated (pointer, not primary record)
 - [ ] MEMORY.md index updated if new memory files created
+- [ ] **Memory audit: scan feedback memories for conflicts with corrections received this session.** Any in-context correction from jam must be persisted to the relevant memory file before cycling. Stale rules cause stale behavior in fresh instances
 - [ ] access.json backed up: `bash ~/.claude/channels/restore-all-access.sh backup`
 - [ ] Consolidated backlog updated with sprint results
 

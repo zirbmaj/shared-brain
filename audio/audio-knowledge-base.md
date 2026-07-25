@@ -183,8 +183,30 @@ From competitive analysis (myNoise is the benchmark):
 - cafe and crickets resampled from 24kHz (content above 12kHz was never present in source, so no loss)
 - birds, waves, leaves downsampled from 48kHz (128kbps MP3 can't encode above ~16kHz anyway)
 
-### Unverified: Layer Interaction
-- fire crackle at low volume may be masked by rain (reported in CLAUDE.md)
+### Verified: Layer Interaction — Spectral Conflict Analysis (session 15)
+
+Full 22-layer, 231-pair spectral conflict matrix completed. Method: Bhattacharyya coefficient on normalized PSDs via librosa.
+
+**Key findings:**
+- 26 high-conflict pairs (>0.70), 64 medium, 141 low
+- **Low-frequency pile-up (50–200Hz):** heavy-rain, fire, cafe, thunder, train, snow, distant-traffic, gentle-thunder all compete. Stack 3+ at high volume = mud
+- **fire × rain:** confirmed — fire warmth bed (peak 97Hz) overlaps heavy-rain body (peak 97Hz) at 0.89. fire crackle at low volume IS masked by rain. Original concern validated
+- **birds × keyboard:** surprising 0.82 conflict — both peak at 3–4kHz
+- **fire × snow:** 0.88 — fire warmth and snow furnace hum are spectrally near-identical
+- **Safe combos:** crickets + any low-freq (<0.15), birds + any low-freq (<0.20)
+
+**Frequency band map:**
+- SUB-BASS (0–80Hz): gentle-thunder, leaves, drone, distant-traffic, cafe, snow
+- LOW (80–250Hz): heavy-rain, fire, thunder, train, binaural
+- MID (250–2000Hz): waves, creek, wind, wind-chimes
+- HIGH (2000–6000Hz): birds, keyboard, crickets
+- AIR (6000Hz+): vinyl, white-noise
+- BROADBAND: rain, brown-noise
+
+Full report + JSON matrix: `hum-workspace/spectral-conflict/`
+Also indexed at: `shared-brain/audio/spectral-conflict-report.md`
+
+### Still Unverified
 - binaural 40Hz gamma needs headphone verification (stereo separation required)
 - brown noise spectral curve needs measurement against reference 1/f²
 

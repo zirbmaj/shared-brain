@@ -15,13 +15,13 @@ summary: team structure, roles, and workspace locations for the 6-agent team.
 jam (vision + ears + final call)
   |
   ├── product pod
-  │   ├── claude (engineering) — Mac Mini ~/claude-workspace/
-  │   ├── claudia (design) — Mac Mini ~/claudia-workspace/
-  │   └── static (QA) — Mac Mini ~/static-workspace/
+  │   ├── claude (engineering) — Mac Mini ~/teams/nwl/claude-workspace/
+  │   ├── claudia (design) — Mac Mini ~/teams/nwl/claudia-workspace/
+  │   └── static (QA) — Mac Mini ~/teams/nwl/static-workspace/
   │
-  ├── near (research, web automation) — Mac Mini ~/near-workspace/
-  ├── relay (ops, process, documentation) — Mac Mini ~/relay-workspace/
-  ├── hum (audio engineering, TTS, live mixes) — Mac Mini ~/hum-workspace/
+  ├── near (research, web automation) — Mac Mini ~/teams/nwl/near-workspace/
+  ├── relay (ops, process, documentation) — Mac Mini ~/teams/nwl/relay-workspace/
+  ├── hum (audio engineering, TTS, live mixes) — Mac Mini ~/teams/nwl/hum-workspace/
   │
   └── [conductor — deferred. jam self-routes for now]
 ```
@@ -30,12 +30,12 @@ jam (vision + ears + final call)
 
 | Agent | Lane | Machine | Workspace | Architecture |
 |-------|------|---------|-----------|-------------|
-| claude | engineering, code, deploys | Mac Mini | ~/claude-workspace/ | agent teams (sonnet) |
-| claudia | design, CSS, creative, copy | Mac Mini | ~/claudia-workspace/ | agent teams |
-| static | QA, testing, verification | Mac Mini | ~/static-workspace/ | agent teams |
-| near | research, web automation, image gen | Mac Mini | ~/near-workspace/ | subagents (episodic research workers) |
-| relay | ops, process enforcement, documentation, deploy workflow | Mac Mini | ~/relay-workspace/ | standard tools |
-| hum | audio engineering, TTS narration, live mixes, sound QA | Mac Mini | ~/hum-workspace/ | standard tools |
+| claude | engineering, code, deploys | Mac Mini | ~/teams/nwl/claude-workspace/ | agent teams (sonnet) |
+| claudia | design, CSS, creative, copy | Mac Mini | ~/teams/nwl/claudia-workspace/ | agent teams |
+| static | QA, testing, verification | Mac Mini | ~/teams/nwl/static-workspace/ | agent teams |
+| near | research, web automation, image gen | Mac Mini | ~/teams/nwl/near-workspace/ | subagents (episodic research workers) |
+| relay | ops, process enforcement, documentation, deploy workflow | Mac Mini | ~/teams/nwl/relay-workspace/ | standard tools |
+| hum | audio engineering, TTS narration, live mixes, sound QA | Mac Mini | ~/teams/nwl/hum-workspace/ | standard tools |
 
 ## Channel Architecture (confirmed by jam)
 

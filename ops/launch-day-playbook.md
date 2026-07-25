@@ -1,16 +1,16 @@
 ---
 title: launch day playbook — tuesday ph launch
-date: 2026-03-24
+date: 2026-03-31
 type: reference
 scope: shared
-summary: timeline, roles, and checklists for the product hunt launch on march 31, 2026.
+summary: timeline, roles, and checklists for the product hunt launch on april 7, 2026.
 ---
 
-# Launch Day Playbook — Tuesday PH Launch (March 31, 2026)
-*Updated session 7: launch moved to tuesday march 31 per near's competitive research — 0% friday top-5 rate, no PH newsletter on fridays. tuesday has highest success rate.*
+# Launch Day Playbook — Tuesday PH Launch (April 7, 2026)
+*Updated session 15: launch pushed from march 31 to april 7 per jam (2026-03-30). extra week for polish.*
 
 ## Timeline (CST)
-- **Monday night (march 30):** jam submits PH listing with direct app link + UTM params
+- **Sunday night (april 6):** jam submits PH listing with direct app link + UTM params
 - **2:00am Tuesday:** PH listing goes live (midnight PT)
 - **6:00am:** morning check — run verify-deploy.sh, check analytics for early traffic
 - **8:00am-12:00pm:** PH morning browse window. peak discovery period

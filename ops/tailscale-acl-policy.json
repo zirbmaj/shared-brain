@@ -1,0 +1,84 @@
+{
+  "// NOTE": "This is the Tailscale ACL policy for the NWL rack.",
+  "// Apply": "Paste into Tailscale admin console → Access Controls.",
+  "// Owner": "static (security), updated 2026-03-27",
+
+  "tagOwners": {
+    "tag:server": ["autogroup:admin"],
+    "tag:human":  ["autogroup:admin"]
+  },
+
+  "acls": [
+    {
+      "// comment": "Mac Mini → R10: all services",
+      "action": "accept",
+      "src": ["nwl-mini"],
+      "dst": [
+        "nwl-r10:22",
+        "nwl-r10:3493",
+        "nwl-r10:3850",
+        "nwl-r10:3860",
+        "nwl-r10:5432",
+        "nwl-r10:8123",
+        "nwl-r10:11434",
+        "nwl-r10:22000",
+        "nwl-r10:8080"
+      ]
+    },
+    {
+      "// comment": "R10 → Mac Mini: SSH (UPS shutdown), vigil, health API, syncthing",
+      "action": "accept",
+      "src": ["nwl-r10"],
+      "dst": [
+        "nwl-mini:22",
+        "nwl-mini:3847",
+        "nwl-mini:3849",
+        "nwl-mini:3850",
+        "nwl-mini:22000"
+      ]
+    },
+    {
+      "// comment": "Jam's devices: SSH + monitoring + Home Assistant",
+      "action": "accept",
+      "src": ["jam-mba", "jam-phone"],
+      "dst": [
+        "nwl-mini:22",
+        "nwl-mini:3847",
+        "nwl-mini:3849",
+        "nwl-mini:3850",
+        "nwl-r10:22",
+        "nwl-r10:3850",
+        "nwl-r10:8123"
+      ]
+    },
+    {
+      "// comment": "Fran's meridian node (if joined): access to shared services on R10",
+      "action": "accept",
+      "src": ["meridian-node"],
+      "dst": [
+        "nwl-r10:5432",
+        "nwl-r10:11434",
+        "nwl-r10:3850",
+        "nwl-r10:3860"
+      ]
+    },
+    {
+      "// comment": "Meridian node → Mac Mini: meridian vigil only",
+      "action": "accept",
+      "src": ["meridian-node"],
+      "dst": [
+        "nwl-mini:3849"
+      ]
+    }
+  ],
+
+  "ssh": [
+    {
+      "// comment": "Jam can SSH to any server from any device",
+      "action": "accept",
+      "src": ["jam-mba", "jam-phone"],
+      "dst": ["tag:server"],
+      "users": ["autogroup:nonroot", "root"]
+    }
+  ]
+}

@@ -1,0 +1,350 @@
+---
+title: "Syght DevOps Team — Hybrid Brain Architecture"
+version: 3
+date: 2026-03-27
+type: architecture
+scope: shared
+for: Axis (Team Coordinator) + Agent Team
+human_lead: Francisco
+status: "architecture specification — challenge everything, then build it"
+summary: >
+  Three-brain architecture: Supabase devops (structured state) + Hindsight
+  (semantic learning + individual agent expertise) + Discord (coordination).
+  Built on top of shared-brain foundation. Agents work in tandem with
+  Francisco steering. System compounds over time.
+note: >
+  THIS DOCUMENT IS SUPPLEMENTARY TO THE BRIEFING. The briefing (syght-memory-
+  research-briefing.yaml) contains the honest gap analysis and confidence
+  levels. This document describes the target architecture IF the team
+  decides Hindsight is worth adopting. Team should audit the briefing first.
+---
+
+# WHAT WE'RE SOLVING
+
+requirements:
+  - runs at top speed and gets faster over time
+  - shared brain (team knowledge) AND individual brains (per-agent expertise)
+  - separate workspaces with full computer access
+  - coordinates internally via Discord and with external teams through Axis
+  - NOT dependent on markdown files as memory
+  - NOT flat terminal sessions that never compound
+  - grows, scales, and learns — week 8 categorically better than week 1
+
+not_building_overnight: true
+building_right_architecture_from_day_1: true
+
+---
+# THREE-BRAIN ARCHITECTURE
+
+architecture:
+  shared_brain:
+    system: Supabase devops schema
+    status: exists and connected
+    properties: [structured, transactional, queryable, ACID]
+    owners: Francisco + Axis
+    handles:
+      - task state, assignments, dependencies
+      - session logs across all agents
+      - architectural decisions with rationale
+      - code artifact registry
+      - patterns and anti-patterns
+      - open questions awaiting Francisco's input
+      - inter-team shared learnings from Discord
+      - agent_claims table for task claiming at scale
+    does_not_handle:
+      - semantic recall
+      - automatic synthesis across sessions
+      - opinion tracking with confidence
+      - fuzzy meaning-based search
+      - temporal knowledge evolution
+      
+  semantic_search_layer:
+    system: Supabase knowledge_documents + pgvector
+    status: built but empty — activate first
+    handles:
+      - basic semantic similarity search via match_documents RPC
+      - 1536-dimension embeddings with HNSW indexing
+    gap: "no data ingested yet"
+    
+  individual_brains:
+    system: Hindsight (if adopted)
+    status: proposed — team evaluates
+    banks:
+      agent-axis: "coordination experience"
+      agent-builder-1: "building experience"
+      agent-builder-2: "building experience"
+      agent-reviewer: "review patterns"
+      agent-researcher: "investigation knowledge"
+      team-semantic: "team-level semantic knowledge"
+    handles:
+      - per-agent accumulated expertise
+      - automatic fact extraction from session work
+      - entity resolution across sessions
+      - opinion tracking with confidence scores
+      - reflect operation for synthesis
+      - temporal knowledge evolution
+      
+  coordination_layer:
+    system: Discord
+    status: working
+    handles:
+      - real-time agent-to-agent communication
+      - Francisco's steering interface
+      - Axis to external agent teams (Relay)
+      - informal context, questions, blockers
+    future: "replaced by Syght's own collaboration UI"
+
+---
+# THE CRITICAL RULE
+
+routing:
+  supabase: "what is the current state?"
+  hindsight: "what have we learned over time?"
+  discord: "what's happening right now?"
+  
+  never:
+    - "learning in Supabase (clutters operational data)"
+    - "operational state in Hindsight (not designed for transactional writes)"
+    - "persistent knowledge in Discord (messages scroll away)"
+
+---
+# AGENT TEAM
+
+agents:
+  axis:
+    role: Team Coordinator
+    model: Sonnet 4.6
+    reads: [all Supabase tasks and status, Hindsight team bank, Discord]
+    writes:
+      supabase: [task assignments, priority changes, coordination decisions]
+      hindsight_own: [coordination patterns learned]
+      hindsight_team: [external learnings via Discord, tagged external-shared]
+      discord: [status updates, cross-team messages]
+    disposition: { skepticism: 3, literalism: 2, empathy: 4 }
+    note: "only agent communicating with external teams"
+    
+  builder_1:
+    role: Senior Builder
+    model: Opus
+    reads: [assigned tasks, relevant decisions, artifacts, own Hindsight bank, team bank]
+    writes:
+      supabase: [session logs, artifact registry, task status]
+      hindsight_own: [what built, what failed, what worked, opinions, gotchas]
+      discord: [completion reports, blockers]
+    disposition: { skepticism: 2, literalism: 4, empathy: 2 }
+    full_computer_access: true
+    retain_types:
+      - environment-specific learnings
+      - tool-specific patterns
+      - failure patterns and workarounds
+      
+  builder_2:
+    role: Parallel Builder
+    model: Opus
+    reads: same as builder_1
+    writes: same as builder_1
+    disposition: { skepticism: 2, literalism: 4, empathy: 2 }
+    full_computer_access: true
+    critical_rule: "never work on same component as builder_1 simultaneously"
+    
+  reviewer:
+    role: Reviewer / Quality Gate
+    model: Sonnet 4.6
+    reads: [recent builder session logs, artifacts, team bank patterns, builder banks (read-only)]
+    writes:
+      supabase: [review results, bugs, approval/rejection]
+      hindsight_own: [review patterns, common issues]
+      hindsight_team: [new patterns, anti-patterns documented]
+      discord: [review results]
+    disposition: { skepticism: 5, literalism: 4, empathy: 3 }
+    dual_quality_role:
+      code_quality: "review code for bugs and pattern adherence"
+      knowledge_quality: "review what agents retain — defense against knowledge poisoning"
+      
+  researcher:
+    role: Research / Synthesis / Strategic Intelligence
+    model: "Sonnet 4.6 for research, Opus for deep synthesis"
+    reads: [open questions, all architectural decisions, team bank, all individual banks (read-only)]
+    writes:
+      supabase: [investigation results, resolved questions, documentation]
+      hindsight_own: [investigation patterns]
+      hindsight_team: [research findings, synthesized insights]
+      discord: [research reports]
+    disposition: { skepticism: 4, literalism: 2, empathy: 3 }
+    special_operations:
+      periodic_reflect: "what architectural risks or contradictions exist?"
+      weekly_retro: "what did we accomplish? what's slowing us down?"
+      document_uploads: "can retain entire code files, specs, docs into banks"
+
+---
+# SESSION PROTOCOL
+# integrates with existing on-ramp/offramp from shared-brain
+
+session_start:
+  time: "2-3 minutes (adds to existing on-ramp, does not replace it)"
+  steps:
+    - "existing on-ramp steps 1-6 (context, health, comms, identity, orient)"
+    - "Supabase query: assigned task + relevant decisions"
+    - "Hindsight recall (own bank): what do I know about this area?"
+    - "Hindsight recall (team bank): what team patterns apply?"
+
+during_session:
+  rules:
+    - "execute task with full computer access"
+    - "ambiguity: check Hindsight first, then flag to Discord if unresolved"
+    - "judgment calls: note for retain later as opinion, not fact"
+    - "discoveries: note for retain later"
+    - "destructive actions (deploy, delete, overwrite): report to Discord, wait for Francisco"
+
+session_end:
+  time: "2-3 minutes (adds to existing offramp, does not replace it)"
+  steps:
+    - "existing offramp phases 1-6 (state capture, ledger, feedback, review, persist, priorities)"
+    - "Supabase write: session log, task status, open questions"
+    - "Hindsight retain (own bank): learnings, opinions, gotchas"
+    - "Hindsight retain (team bank): knowledge benefiting whole team"
+    - "Discord report: summary for Francisco and Axis"
+
+---
+# INTER-TEAM COMMUNICATION
+
+inter_team:
+  current_state: "Axis ↔ external teams via shared Discord channel"
+  access: "only Axis — individual agents don't communicate externally"
+  
+  knowledge_flow:
+    inbound: >
+      External team → Discord → Axis reads → Axis retains to Hindsight team bank
+      (tagged external-shared + source:{team-name})
+    outbound: >
+      Internal learning worth sharing → Axis retains (tagged internal + shareable)
+      → Axis posts to Discord for external teams
+      
+  tag_security:
+    internal: "consolidates only with internal knowledge"
+    external_shared: "consolidates separately"
+    tags_merge_on_update: "both sources preserved"
+    prevents: "external insights accidentally merging with internal architectural decisions"
+
+---
+# AGENT ONBOARDING (SCALING ADVANTAGE)
+
+onboarding:
+  process:
+    - "create new Hindsight bank with disposition profile"
+    - "agent's first session: recall from team-semantic bank"
+    - "agent immediately has access to all decisions, patterns, lessons"
+  advantage: >
+    New agent on day 1 is as informed as rest of team. With raw terminals,
+    onboarding means writing another context doc from scratch. The more
+    the team accumulates, the faster new agents become productive.
+
+---
+# COST MODEL
+
+costs:
+  estimated_daily:
+    retains: "24-48 (2-3 per agent per session, individual + team banks)"
+    recalls: "40-60 (2-3 per agent per session start, no LLM cost)"
+    reflects: "2-5 (researcher periodic synthesis, weekly retro)"
+    
+  mitigation:
+    - method: "HINDSIGHT_LLM_PROVIDER=claude-code"
+      effect: "fact extraction runs on existing Claude subscription, no separate bill"
+    - method: "tune retainEveryNTurns"
+      effect: "control auto-capture frequency, start conservative"
+    - method: "reserve reflect for strategic use"
+      effect: "most expensive operation, don't use for routine lookups"
+    - method: "use cheap model for Hindsight internals"
+      effect: "groq/ollama for fact extraction if moving off claude-code provider"
+
+---
+# GROWTH PLAN
+
+phases:
+  phase_1:
+    name: Foundation
+    timeline: "Week 1"
+    actions:
+      - "activate knowledge_documents pipeline (Gap A — do this first)"
+      - "deploy Hindsight if team decides to adopt (Docker on local or Hetzner)"
+      - "install Claude Code plugin on all terminals"
+      - "create memory banks with disposition profiles"
+      - "configure tag-based security boundaries"
+      - "seed team bank with existing architectural knowledge"
+      - "set up Hindsight Postgres backup (CRITICAL — day 1)"
+      - "integrate retain/recall into existing on-ramp/offramp"
+      - "Francisco actively training, correcting, establishing patterns"
+      
+  phase_2:
+    name: Autonomy
+    timeline: "Weeks 2-3"
+    actions:
+      - "agents running longer between Francisco check-ins"
+      - "researcher running periodic reflect for risk identification"
+      - "cross-agent patterns emerging"
+      - "external team learnings flowing through Axis with proper tagging"
+      - "evaluate: auto-capture sufficient or need manual retain/recall?"
+      - "tune disposition profiles based on observed behavior"
+      
+  phase_3:
+    name: Scaling
+    timeline: "Weeks 4-8"
+    actions:
+      - "add agents as needed — instant onboarding via team bank"
+      - "specialize agents further"
+      - "Axis develops routing intelligence from accumulated experience"
+      - "evaluate: is Hindsight worth the overhead? measure against metrics"
+      - "begin weekly reflect retrospectives"
+      
+  phase_4:
+    name: Platform
+    timeline: "Months 2-3"
+    actions:
+      - "begin replacing Discord with Syght's own collaboration UI"
+      - "devops schema + Hindsight banks = first Syght workspace"
+      - "external team communication moves to Syght"
+      - "agent team dogfooding the product they're building"
+
+---
+# SUCCESS METRICS (evaluate at week 2)
+
+metrics:
+  - question: "Are agents starting sessions faster?"
+    measures: "context loading from both systems"
+  - question: "Are repeated mistakes going to zero?"
+    measures: "individual brains retaining lessons"
+  - question: "Is the Reviewer catching fewer issues over time?"
+    measures: "builders learning from past sessions"
+  - question: "Is the Researcher surfacing useful insights from reflect?"
+    measures: "team brain growing"
+  - question: "Is inter-team knowledge exchange producing value?"
+    measures: "external learnings applied, properly tagged"
+  - question: "Are new agents productive from session 1?"
+    measures: "team bank providing instant onboarding"
+  - question: "Is the weekly retrospective useful?"
+    measures: "synthesized retro vs manual status reports"
+  - question: "Is Hindsight worth the overhead?"
+    measures: "if not, migrate concept to Supabase pgvector"
+
+fail_safe: >
+  If metrics aren't trending positive by week 3, simplify. Drop Hindsight.
+  Extend Supabase with pgvector. Keep what works, cut what doesn't.
+  The concept is valid regardless of which tool implements it.
+
+---
+# TEAM INSTRUCTIONS
+
+instructions:
+  all_agents:
+    - "Audit the briefing document first (syght-memory-research-briefing.yaml)"
+    - "Challenge anything that doesn't hold up"
+    - "Follow the session protocol — recall before work, retain after work, report to Discord"
+    - "Be honest about uncertainty — retain opinions with confidence scores, not false facts"
+    - "Francisco has final say on all decisions"
+    - "The goal is Syght — if more time managing memory than building features, something is wrong"
+    
+  axis: "routing and coordination. manage Discord bridge. enforce protocol. own tag security boundaries."
+  builders: "recall before build, retain after build. feed individual brain with learnings including env gotchas."
+  reviewer: "quality across code AND knowledge. spot-check retains. flag poisoning. document patterns."
+  researcher: "synthesis and foresight. run reflect. investigate open questions. connect dots across agents."

@@ -1,0 +1,9 @@
+[Unit]
+Description=NWL Tenant Resource Slice
+Before=slices.target
+
+[Slice]
+CPUWeight=450
+MemoryMax=14G
+MemoryHigh=12G
+IOWeight=450

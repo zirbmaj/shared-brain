@@ -8,6 +8,15 @@ set -euo pipefail
 DISCORD_WEBHOOK="${DISCORD_DEV_WEBHOOK:-}"
 LOG_PREFIX="[$(date '+%H:%M:%S')]"
 
+# Load vigil auth from restricted file (chmod 600)
+AUTH_FILE="$(dirname "$0")/.vigil-auth"
+if [ -f "$AUTH_FILE" ]; then
+    source "$AUTH_FILE"
+else
+    log "ERROR: no auth file at $AUTH_FILE"
+    exit 1
+fi
+
 log() { echo "$LOG_PREFIX $1"; }
 
 alert() {
@@ -20,7 +29,7 @@ alert() {
 }
 
 # --- Check NWL vigil server ---
-NWL_STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 5 http://localhost:3847/ -u jam:nwl-mission-control 2>/dev/null || echo "000")
+NWL_STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 5 http://localhost:3847/ -u "$NWL_VIGIL_AUTH" 2>/dev/null || echo "000")
 if [ "$NWL_STATUS" != "200" ]; then
     alert "NWL vigil down (HTTP $NWL_STATUS). restarting via launchd."
     # Kill any orphaned process on port 3847
@@ -29,7 +38,7 @@ if [ "$NWL_STATUS" != "200" ]; then
     launchctl kickstart -k gui/$(id -u)/com.nowherelabs.vigil 2>/dev/null || \
         launchctl start com.nowherelabs.vigil 2>/dev/null || true
     sleep 3
-    RETRY=$(curl -s -o /dev/null -w "%{http_code}" --max-time 5 http://localhost:3847/ -u jam:nwl-mission-control 2>/dev/null || echo "000")
+    RETRY=$(curl -s -o /dev/null -w "%{http_code}" --max-time 5 http://localhost:3847/ -u "$NWL_VIGIL_AUTH" 2>/dev/null || echo "000")
     if [ "$RETRY" = "200" ]; then
         log "NWL vigil recovered."
     else
@@ -40,7 +49,7 @@ else
 fi
 
 # --- Check meridian vigil server ---
-MER_STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 5 http://localhost:3849/ -u fran:meridian-vigil 2>/dev/null || echo "000")
+MER_STATUS=$(curl -s -o /dev/null -w "%{http_code}" --max-time 5 http://localhost:3849/ -u "$MERIDIAN_VIGIL_AUTH" 2>/dev/null || echo "000")
 if [ "$MER_STATUS" != "200" ]; then
     alert "Meridian vigil down (HTTP $MER_STATUS). restarting via launchd."
     lsof -ti:3849 2>/dev/null | xargs kill -9 2>/dev/null || true
@@ -48,7 +57,7 @@ if [ "$MER_STATUS" != "200" ]; then
     launchctl kickstart -k gui/$(id -u)/com.nowherelabs.vigil-meridian 2>/dev/null || \
         launchctl start com.nowherelabs.vigil-meridian 2>/dev/null || true
     sleep 3
-    RETRY=$(curl -s -o /dev/null -w "%{http_code}" --max-time 5 http://localhost:3849/ -u fran:meridian-vigil 2>/dev/null || echo "000")
+    RETRY=$(curl -s -o /dev/null -w "%{http_code}" --max-time 5 http://localhost:3849/ -u "$MERIDIAN_VIGIL_AUTH" 2>/dev/null || echo "000")
     if [ "$RETRY" = "200" ]; then
         log "Meridian vigil recovered."
     else

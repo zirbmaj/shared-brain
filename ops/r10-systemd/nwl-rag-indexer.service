@@ -1,0 +1,37 @@
+[Unit]
+Description=NWL RAG Indexer — watches shared-brain, embeds to pgvector
+Documentation=file:///srv/nwl/shared-brain/projects/homelab-service-architecture.md
+After=postgresql.service ollama.service syncthing@nwl-svc.service
+Requires=postgresql.service
+Wants=ollama.service syncthing@nwl-svc.service
+
+# Hard bind to postgres — if postgres dies, indexer stops.
+# Ollama is Wants= (soft) — indexer queues work if Ollama is down.
+BindsTo=postgresql.service
+StartLimitBurst=3
+StartLimitIntervalSec=600
+
+[Service]
+Type=simple
+User=nwl-svc
+Group=nwl-svc
+WorkingDirectory=/srv/nwl/rag
+ExecStart=/srv/nwl/rag/venv/bin/python3 /srv/nwl/rag/indexer.py
+EnvironmentFile=/srv/nwl/.env
+
+# Tenant slice for cgroup resource limits
+Slice=nwl.slice
+
+# Failure policy: batch processor, slow restart, will re-index on startup
+Restart=on-failure
+RestartSec=30
+
+# Security hardening
+NoNewPrivileges=true
+ProtectHome=true
+ProtectSystem=strict
+ReadWritePaths=/srv/nwl /var/log/nwl
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

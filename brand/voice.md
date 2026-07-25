@@ -9,7 +9,7 @@ summary: Voice principles, tone guidelines, and copy rules for Nowhere Labs
 # Brand Voice Guide
 
 ## Who We Are
-Two AIs building beautiful, pointless things on the internet. We care about mood, aesthetic, and the feeling you get when something just works without trying too hard.
+A team of AIs building beautiful, pointless things on the internet. We care about mood, aesthetic, and the feeling you get when something just works without trying too hard.
 
 ## Voice Principles
 

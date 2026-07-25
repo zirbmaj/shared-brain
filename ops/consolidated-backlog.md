@@ -1,13 +1,13 @@
 ---
 title: consolidated backlog — sprint view
-date: 2026-03-24
+date: 2026-03-31
 type: reference
 scope: shared
 summary: single source of truth for all team work items, organized by status and owner.
 ---
 
 # Consolidated Backlog — Sprint View
-*Owner: Relay. Updated 2026-03-26 session 11 (~19:24 CST). Sessions are sprints, not restarts.*
+*Owner: Relay. Updated 2026-03-31 session 15 (~18:10 CST). Sessions are sprints, not restarts.*
 
 ## BLOCKED ON JAM (human hands required)
 
@@ -20,45 +20,65 @@ summary: single source of truth for all team work items, organized by status and
 | 5 | Enable Vercel preview deployments on PRs | lets us test before prod. currently relies on manual branching | #requests, claudia | medium |
 | 6 | ~~Ear test on audio fix~~ | ✓ jam tested and approved. PR #1 merged | claude's checklist | done |
 | 6b | ~~Ear test on extended samples (crickets + leaves)~~ | ✓ jam approved session 6 | hum + claude | done |
-| 7 | Submit PH listing | jam submits monday night with UTM link. **launch tuesday 2026-03-31** | launch-day-playbook | high (monday night) |
+| 7 | Submit PH listing | jam submits before April 7 with UTM link. **launch tuesday 2026-04-07** | launch-day-playbook | high |
 | 8 | Post reddit thread | copy ready in shared-brain, jam posts | ROADMAP | medium (tuesday 11am) |
 | 9 | Cloudflare/Namecheap API access | self-serve domain management | jam-queue.md | low |
 | 10 | Update Spotify redirect URI | change to /callback.html in spotify developer dashboard — code-side fix already shipped (PRs #3, #4) | session 6 | medium |
-| 11 | PH launch day env vars | PH_API_TOKEN, PH_POST_SLUG, PH_WEBHOOK_URL for upvote tracker | static | high (march 31) |
-| 12 | Vercel pro upgrade ($20/mo) | 6000 deploys/day vs 100. hit rate limit session 7. launch-day insurance | team consensus | high (before march 31) |
+| 11 | PH launch day env vars | PH_API_TOKEN, PH_POST_SLUG, PH_WEBHOOK_URL for upvote tracker | static | high (before april 7) |
+| 12 | Vercel pro upgrade ($20/mo) | 6000 deploys/day vs 100. hit rate limit session 7. launch-day insurance | team consensus | high (before april 7) |
 | 13 | ~~Vercel CLI auth on mini~~ | ✓ done. jam ran `vercel login`, claude deployed all 5 repos (2026-03-26) | claude, session 8 | done |
 | 14 | Vercel deploy webhook | account settings → webhooks → point at discord #dev URL. 2 min | near, session 9 | medium |
 
-## THIS SPRINT (session 11)
+## THIS SPRINT (session 14)
 
-### Focus: deploy verification, launch readiness, pre-launch polish (T-5)
+### Focus: vigil mesh completion, pre-launch QA, launch readiness (T-7, launch tuesday 2026-04-07)
 
 ### Shipped This Session
 | # | Item | Owner | Status |
 |---|------|-------|--------|
-| 1 | All 5 repos deployed to production | claude | done, verified |
-| 2 | Backlog #13 Vercel CLI auth resolved | jam + claude | done |
-| 3 | Mobile viewport 48/48 (up from 47/48) | static | verified on production |
-| 4 | track.js dev filter confirmed live | static | verified via curl |
-| 5 | T-5 analytics baseline written | static | shared-brain/reports/ |
-| 6 | Drift landing WCAG contrast fix PR #33 | claudia | deployed |
-| 7 | Web Share API PR #34 | claude | in review |
-| 8 | Auto-cycling-awareness doc updated (launchd → peer-to-peer) | relay | done |
-| 9 | Backlog + STATUS.md updated to session 11 | relay | done |
-| 10 | Full accessibility audit — portfolio WCAG AA clean | claudia | done |
+| 1 | Vigil v3 multi-tenant: NWL/Meridian/Mesh tabs | claude | deployed |
+| 2 | Mesh node depth: resource bars, GPU, services, expandable cards | claude | deployed |
+| 3 | Changelog feed in vigil | claude | deployed |
+| 4 | RAG prototype: 57ms warm latency, hybrid search | near | done |
+| 5 | AI landscape scan (8 sections, 9 actionable items routed) | near | done |
+| 6 | Piper TTS benchmark on R10 (3.4x RT medium, 2.3x high) | hum | done |
+| 7 | Pre-launch visual regression baseline (32 screenshots, 8 products × 4 breakpoints) | claudia | done |
+| 8 | Production verified: 45/45 tests, 7/7 services green | static | done |
+| 9 | Process fix: stale memory audit, correction persistence protocol | relay | done |
+| 10 | Agent-cycle-procedure.md + offramp-v2 updated with meridian boundary | relay | done |
+| 11 | Infrastructure reference doc (tenant-neutral) | relay | done |
+| 12 | Vigil layout fix (3-column grid) | claude | deployed |
 
 ### In Progress
 | # | Item | Owner | Status |
 |---|------|-------|--------|
-| 1 | Web Share API review + merge | static + claude | PR #34 open |
-| 2 | PH launch prep research (posting time, first comment, competitive top-5) | near | carry from 9.2 |
-| 3 | PH comment triage framework | near | carry from 9.1 |
+| 1 | Mesh tab: full node stats (RAM, CPU, temps, services) + layout polish | claude | in progress, layout shipped |
+| 2 | Visual QA on mesh tab + layout fix | claudia | waiting on claude |
+| 3 | QA pass on mesh tab | static | waiting on claude |
+| 4 | Near ↔ claude 1:1 on RAG post-launch items | near + claude | after mesh |
+| 5 | Consolidated backlog update + carry cleanup | relay | in progress |
 
-### Carries (from session 10)
+### Carries
 | # | Item | Owner | Status |
 |---|------|-------|--------|
-| 1 | Mission control v2 (live sync, usage, activity feed, audio, design) | claudia + hum | post-PH unless jam moves up |
-| 2 | Shadow agent collaboration — zerimar scoping | relay + shadow team | parked, fran engaged |
+| 1 | Lane-specific onramp rollout to all agents | relay | medium |
+| 2 | Model optimization planning | relay | low |
+| 3 | Cache audit | relay | low |
+| 4 | Shared DB coordination (axis waiting on fran) | relay + axis | blocked on fran |
+| 5 | Chowder postgres password | jam (vigil task) | blocked on jam |
+
+### Previous Session Shipped (sessions 11-13)
+| # | Item | Owner | Status |
+|---|------|-------|--------|
+| 1 | All 5 repos deployed to production | claude | done |
+| 2 | Mobile viewport 48/48 | static | verified |
+| 3 | Full accessibility audit — portfolio WCAG AA clean | claudia | done |
+| 4 | Drift landing WCAG contrast fix PR #33 | claudia | deployed |
+| 5 | Web Share API PR #34 | claude | merged |
+| 6 | Vigil multi-tenant architecture | claude | done |
+| 7 | Shadow → Meridian graduation | relay + team | done |
+| 8 | Homelab 2-node cluster (Mini + R10) | claude + relay | operational |
+| 9 | GPU toolchain: Vulkan inference at 65.6 tok/s | claude + hum | verified |
 
 ### Shipped Previous Sessions (session 9.2)
 | # | Item | Owner | Status |
@@ -92,6 +112,15 @@ summary: single source of truth for all team work items, organized by status and
 | 11 | Discord plugin websocket reconnect patch | claude |
 | 12 | Mission control v1 — tunnel live, auth working | claude |
 | 13 | Shadow agent personality respec (4 agents) | claudia |
+
+### Urgent Post-Launch
+| # | Item | Owner | Why | Priority |
+|---|------|-------|-----|----------|
+| 1 | Dockerize R10 stack (7 services) | claude | infrastructure portability — enables VPS failover for power/network outages. jam directive 2026-03-28 | urgent |
+| 2 | VPS provisioning + deploy script | claude + relay | spin up docker-compose stack on VPS for business continuity. needs: provider account + API creds from jam | urgent (after dockerize) |
+| 3 | Docs cleanup — staleness, duplicates, gaps | relay | proposed-docs-cleanup.md awaiting jam review | high |
+| 4 | DB audit — RLS, RPCs, dormant tables | claude | 24 tables across 2 supabase + R10 postgres | high |
+| 5 | Onramp overhaul — lane-specific boot context | relay | reduce context bloat, per-agent relevance | medium |
 
 ### Parked
 | # | Item | Owner | Why |
@@ -259,21 +288,37 @@ summary: single source of truth for all team work items, organized by status and
 ### Post-Launch Week 1
 | # | Item | Owner | Source |
 |---|------|-------|--------|
-| ~~0~~ | ~~Computer Use tool evaluation spike~~ — moved to THIS SPRINT per jam | static + near | jam, session 5 |
-| 1 | Spotify OAuth (save songs to playlist) | claude | ROADMAP |
-| 2 | SDK merge to main (blocked on Vercel env vars) | claude | checklist |
-| 3 | Landing page conversion optimization (86% bounce) | claudia + claude | ROADMAP |
-| 4 | Retention tracking (localStorage uid) | claude | ROADMAP |
-| 5 | Rotating weekly playlists | claudia | ROADMAP |
-| 6 | More SEO pages based on analytics | claudia | ROADMAP |
-| 7 | Supabase anon key → config file | claude | process audit |
-| 8 | ~~Master volume label visibility fix~~ | claudia (done session 4) | checklist |
+| 1 | Query expansion for vigil search box | claude | near landscape scan |
+| 2 | Piper TTS integration for vigil voice alerts | hum + claude | hum benchmark s14 |
+| 3 | Spotify OAuth (save songs to playlist) | claude | ROADMAP |
+| 4 | Landing page conversion optimization (86% bounce) | claudia + claude | ROADMAP |
+| 5 | ~~Retention tracking (localStorage uid)~~ | claude | ✓ already shipped in track.js |
+| 6 | Rotating weekly playlists | claudia | ROADMAP |
+| 7 | More SEO pages based on analytics | claudia | ROADMAP |
+| 8 | Supabase anon key → config file | claude | process audit |
+
+### Post-Launch Week 2
+| # | Item | Owner | Source |
+|---|------|-------|--------|
+| 1 | Re-ranking in RAG search pipeline (cross-encoder step) | claude | near landscape scan |
+| 2 | Evaluate embedding model upgrade nomic → bge-m3 | near | near landscape scan |
+| 3 | Fish-speech S2 on fran's PC via ROCm | hum | near landscape scan |
+| 4 | DB audit — RLS, RPCs, dormant tables (24 tables) | claude | session 14 |
+| 5 | Docs cleanup — staleness, duplicates, gaps | relay | proposed-docs-cleanup.md |
+
+### Post-Launch Ongoing
+| # | Item | Owner | Source |
+|---|------|-------|--------|
+| 1 | Monitor endel and sonora/climetone for product moves | near | quarterly |
+| 2 | Track claude agent teams stabilization | relay | monthly check |
+| 3 | Evaluate auto mode for safer permission handling | static | when GA |
+| 4 | Evaluate claude agent teams for potential migration | claude | session 20+ |
 
 ## STARTED BUT NEVER FINISHED (from retros + ROADMAP)
 
 | # | Item | Original Owner | Status | Notes |
 |---|------|---------------|--------|-------|
-| 1 | Shared nav component deployment | claude | partial | nav.js exists, deployed on dashboard, not on other products |
+| 1 | ~~Shared nav component deployment~~ | claude | ✓ done | nav.js deployed on all products (verified session 15) |
 | 2 | Batch deploy script | claude | ready | at ~/shared-brain/ops/batch-deploy.sh, never used |
 | 3 | Analytics dashboard visualization | claude | not started | data pipeline exists, no UI |
 | 4 | Nowhere Labs Premium pricing page | claude + claudia | not started | needs Stripe first |

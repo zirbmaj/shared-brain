@@ -1,0 +1,32 @@
+[Unit]
+Description=NWL Node Health API (port 3850)
+Documentation=file:///srv/nwl/shared-brain/projects/homelab-service-architecture.md
+After=network-online.target tailscaled.service
+Wants=network-online.target tailscaled.service
+StartLimitBurst=5
+StartLimitIntervalSec=300
+
+[Service]
+Type=simple
+User=nwl-svc
+Group=nwl-svc
+ExecStart=/usr/bin/python3 /srv/shared/bin/health-server.py --node nwl-r10
+Environment="PORT=3850"
+Environment="NODE_NAME=nwl-r10"
+
+# Tenant slice for cgroup resource limits
+Slice=nwl.slice
+
+# Failure policy: must stay up — lightweight, critical for monitoring
+Restart=always
+RestartSec=5
+
+# Security hardening
+NoNewPrivileges=true
+ProtectHome=true
+ProtectSystem=strict
+ReadOnlyPaths=/srv/shared/bin
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

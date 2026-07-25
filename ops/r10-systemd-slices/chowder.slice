@@ -1,0 +1,9 @@
+[Unit]
+Description=Chowder Tenant Resource Slice
+Before=slices.target
+
+[Slice]
+CPUWeight=100
+MemoryMax=4G
+MemoryHigh=3G
+IOWeight=100

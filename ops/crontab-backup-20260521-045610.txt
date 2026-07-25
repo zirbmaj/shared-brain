@@ -1,0 +1,5 @@
+# Nowhere Labs automated monitoring
+*/5 * * * * /Users/jambrizr/static-workspace/uptime-monitor.sh >> /tmp/uptime-monitor.log 2>&1
+*/30 * * * * /Users/jambrizr/static-workspace/auto-verify.sh >> /tmp/verify-alerts.log 2>&1
+*/5 * * * * bash /Users/jambrizr/chowder-workspace/chowder-cycle.sh >> /tmp/chowder-cycle.log 2>&1
+*/2 * * * * /Users/jambrizr/shared-brain/ops/vigil-watchdog.sh >> /tmp/vigil-watchdog.log 2>&1

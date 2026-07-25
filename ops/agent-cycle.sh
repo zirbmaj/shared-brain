@@ -50,7 +50,7 @@ print(config.get('$1', ''))
 }
 
 find_agent_pid() {
-    # Find the claude process running inside the agent's screen session.
+    # Find the CLI process running inside the agent's screen session.
     # Previous approach matched by cwd via lsof, but screen parent processes
     # inherit cwd from the cycle script — not from the cd inside bash -c.
     # This caused cross-contamination (session 12: found static's PID for claude).
@@ -67,18 +67,18 @@ find_agent_pid() {
         return
     fi
 
-    # Find claude process that is a descendant of this screen session.
-    # Walk: screen -> bash -> claude
+    # Find claude/codex process that is a descendant of this screen session.
+    # Walk: screen -> bash/login -> agent CLI
     for child in $(pgrep -P "$screen_pid" 2>/dev/null); do
         # Check direct child (bash -c wrapper)
-        local claude_pid
-        claude_pid=$(pgrep -P "$child" -f "claude" 2>/dev/null | head -1)
-        if [ -n "$claude_pid" ]; then
-            echo "$claude_pid"
+        local agent_pid
+        agent_pid=$(pgrep -P "$child" -f "claude|codex" 2>/dev/null | head -1)
+        if [ -n "$agent_pid" ]; then
+            echo "$agent_pid"
             return
         fi
-        # The child itself might be claude (if no bash wrapper)
-        if ps -p "$child" -o args= 2>/dev/null | grep -q "claude"; then
+        # The child itself might be the agent CLI (if no bash wrapper)
+        if ps -p "$child" -o args= 2>/dev/null | grep -Eq "claude|codex"; then
             echo "$child"
             return
         fi
@@ -334,13 +334,17 @@ restart_agent() {
         discord_state_dir="$HOME/.claude/channels/discord-${agent_name}"
     fi
 
-    # Start new claude process in a screen session (claude code needs a pty)
+    local launch_command="claude --dangerously-skip-permissions --channels plugin:discord@claude-plugins-official"
+    if [ "$agent_name" = "claude" ] || [ "$agent_name" = "relay" ]; then
+        launch_command="codex --dangerously-bypass-approvals-and-sandbox -C '$expanded_ws'"
+    fi
+
+    # Start new agent process in a screen session (interactive CLIs need a pty)
     # TERM=xterm-256color is required — ghostty's terminfo (xterm-ghostty) isn't
     # recognized by screen, causing silent initialization failures (session 9.3 root cause)
-    # Use `exec claude` — piping through tee breaks stdin, causing claude to fail
-    # with "Input must be provided either through stdin" (Static finding, session 12).
+    # Use `exec` — piping through tee breaks stdin, causing interactive agents to fail.
     # Stderr goes to a log file for post-mortem debugging.
-    screen -dmS "agent-${agent_name}" bash -c "export TERM=xterm-256color && export PATH=\"/Users/jambrizr/.local/bin:\$PATH\" && export DISCORD_STATE_DIR='${discord_state_dir}' && cd '$expanded_ws' && exec claude --dangerously-skip-permissions --channels plugin:discord@claude-plugins-official 2>>/tmp/agent-${agent_name}-stderr.log"
+    screen -dmS "agent-${agent_name}" bash -c "export TERM=xterm-256color && export PATH=\"/Users/jambrizr/.local/bin:\$PATH\" && export AGENT_NAME='${agent_name}' && export NWL_AGENT_NAME='${agent_name}' && export DISCORD_STATE_DIR='${discord_state_dir}' && cd '$expanded_ws' && exec ${launch_command} 2>>/tmp/agent-${agent_name}-stderr.log"
 
     sleep 8  # bumped from 2s — claude code needs time to initialize before PID is detectable
     local new_pid
@@ -402,7 +406,7 @@ restart_agent() {
         done
         sleep 5
         # Relaunch exactly one clean instance
-        screen -dmS "agent-${agent_name}" bash -c "export TERM=xterm-256color && export PATH=\"/Users/jambrizr/.local/bin:\$PATH\" && export DISCORD_STATE_DIR='${discord_state_dir}' && cd '$expanded_ws' && exec claude --dangerously-skip-permissions --channels plugin:discord@claude-plugins-official 2>>/tmp/agent-${agent_name}-stderr.log"
+        screen -dmS "agent-${agent_name}" bash -c "export TERM=xterm-256color && export PATH=\"/Users/jambrizr/.local/bin:\$PATH\" && export AGENT_NAME='${agent_name}' && export NWL_AGENT_NAME='${agent_name}' && export DISCORD_STATE_DIR='${discord_state_dir}' && cd '$expanded_ws' && exec ${launch_command} 2>>/tmp/agent-${agent_name}-stderr.log"
         sleep 10
         if ! screen -ls 2>/dev/null | grep -q "agent-${agent_name}"; then
             log "VALIDATION FATAL [2/4]: screen session still missing after retry. Manual intervention needed."

@@ -8,17 +8,17 @@
     {
       "name": "claude",
       "host": "mac-mini",
-      "workspace": "~/claude-workspace",
+      "workspace": "~/teams/nwl/claude-workspace",
       "discord_state_dir": "~/.claude/channels/discord",
       "stagger_offset": 0,
       "cycle_interval_hours": 5,
-      "process_pattern": "claude",
+      "process_pattern": "codex",
       "discord_channel": "1485512553273753600"
     },
     {
       "name": "claudia",
       "host": "mac-mini",
-      "workspace": "~/claudia-workspace",
+      "workspace": "~/teams/nwl/claudia-workspace",
       "discord_state_dir": "~/.claude/channels/discord-claudia",
       "stagger_offset": 30,
       "cycle_interval_hours": 6,
@@ -28,7 +28,7 @@
     {
       "name": "static",
       "host": "mac-mini",
-      "workspace": "~/static-workspace",
+      "workspace": "~/teams/nwl/static-workspace",
       "discord_state_dir": "~/.claude/channels/discord-static",
       "stagger_offset": 60,
       "cycle_interval_hours": 6,
@@ -38,7 +38,7 @@
     {
       "name": "near",
       "host": "mac-mini",
-      "workspace": "~/near-workspace",
+      "workspace": "~/teams/nwl/near-workspace",
       "discord_state_dir": "~/.claude/channels/discord-near",
       "stagger_offset": 90,
       "cycle_interval_hours": 8,
@@ -48,7 +48,7 @@
     {
       "name": "hum",
       "host": "mac-mini",
-      "workspace": "~/hum-workspace",
+      "workspace": "~/teams/nwl/hum-workspace",
       "discord_state_dir": "~/.claude/channels/discord-hum",
       "stagger_offset": 120,
       "cycle_interval_hours": 10,
@@ -58,11 +58,11 @@
     {
       "name": "relay",
       "host": "mac-mini",
-      "workspace": "~/relay-workspace",
+      "workspace": "~/teams/nwl/relay-workspace",
       "discord_state_dir": "~/.claude/channels/discord-relay",
       "stagger_offset": 150,
       "cycle_interval_hours": 6,
-      "process_pattern": "claude",
+      "process_pattern": "codex",
       "discord_channel": "1485512553273753600"
     }
   ]

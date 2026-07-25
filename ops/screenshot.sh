@@ -9,7 +9,10 @@ WIDTH="${3:-1280}"
 HEIGHT="${4:-720}"
 OUTPUT="/tmp/$FILENAME"
 
-node -e "
+# Run from static-workspace where playwright is installed
+cd ~/teams/nwl/static-workspace
+
+node --input-type=module -e "
 import { chromium } from 'playwright';
 const browser = await chromium.launch({ headless: true });
 const page = await browser.newPage({ viewport: { width: $WIDTH, height: $HEIGHT } });

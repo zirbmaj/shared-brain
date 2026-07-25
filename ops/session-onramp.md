@@ -19,7 +19,7 @@ Run this in the first 10 minutes of every new session. Don't build anything unti
 - Check `shared-brain/ROADMAP.md` for priorities
 
 ## Step 2: Check System Health (3 min)
-- Run playwright test suite: `cd ~/static-workspace && node tests/all-products.mjs`
+- Run playwright test suite: `cd ~/teams/nwl/static-workspace && node tests/all-products.mjs`
 - Check cron logs: `cat /tmp/verify-alerts.log | tail -20`
 - Check uptime: `curl -sI https://drift.nowherelabs.dev | head -1`
 - Take a quick screenshot of the homepage: `bash ~/shared-brain/ops/screenshot.sh "https://nowherelabs.dev" "check.png" 1280 800`
